@@ -10,8 +10,9 @@ import { HowItWorksPage } from './pages/HowItWorks';
 import { ForParentsPage } from './pages/ForParents';
 import { AiGuidancePage } from './pages/AiGuidance';
 import { FAQsPage } from './pages/FAQs';
-import { SignupPage } from './pages/SignupPage'; // Ensure this file exists
-import { LoginPage } from './pages/LoginPage';   // Ensure this file exists
+import { SignupPage } from './pages/SignupPage'; 
+import { LoginPage } from './pages/LoginPage'; 
+import { Menu, X } from 'lucide-react'; // Added Menu icons
 
 import { supabase } from './lib/supabase';
 import { getDreamCategory } from './data/dreamTrees';
@@ -32,6 +33,7 @@ interface SessionData {
 
 function App() {
   const [appState, setAppState] = useState<AppState>('landing');
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
   const [sessionData, setSessionData] = useState<SessionData>({
     studentId: null,
     sessionId: null,
@@ -103,9 +105,15 @@ function App() {
     setAppState('selection');
   };
 
+  // Helper to change page and close menu
+  const navigateTo = (state: AppState) => {
+    setAppState(state);
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* --- UNIVERSAL MINIMIZED NAVBAR (MANDATORY) --- */}
+      {/* --- UNIVERSAL RESPONSIVE NAVBAR --- */}
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-[100] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={handleBackToLanding}>
@@ -116,6 +124,7 @@ function App() {
             </div>
           </div>
           
+          {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-5 text-xs font-bold uppercase tracking-wider text-gray-600">
             <button onClick={() => setAppState('landing')} className="hover:text-blue-600 transition-colors">Home</button>
             <button onClick={() => setAppState('selection')} className="hover:text-blue-600 transition-colors">Categories</button>
@@ -127,37 +136,50 @@ function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            {/* TOGGLE TO LOGIN/SIGNUP */}
             <button 
               onClick={() => setAppState('login')} 
-              className="text-xs font-bold text-gray-500 hover:text-black uppercase"
+              className="hidden sm:block text-xs font-bold text-gray-500 hover:text-black uppercase"
             >
               Login / Signup
             </button>
+            
             <Button onClick={handleGetStarted} variant="primary" size="sm" className="bg-black text-white px-4 py-2 rounded-full text-xs font-bold uppercase shadow-md">
-              Start Journey
+              Start
             </Button>
+
+            {/* MOBILE MENU TOGGLE */}
+            <button 
+              className="lg:hidden p-1 text-black"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
+
+        {/* MOBILE OVERLAY MENU */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-200 shadow-xl flex flex-col p-6 gap-4 text-sm font-bold uppercase tracking-widest text-gray-600 animate-in slide-in-from-top duration-200">
+            <button onClick={() => navigateTo('landing')} className="text-left border-b pb-2">Home</button>
+            <button onClick={() => navigateTo('selection')} className="text-left border-b pb-2">Categories</button>
+            <button onClick={() => navigateTo('roadmap-info')} className="text-left border-b pb-2">Roadmaps</button>
+            <button onClick={() => navigateTo('how-it-works')} className="text-left border-b pb-2">How It Works</button>
+            <button onClick={() => navigateTo('parents')} className="text-left border-b pb-2">For Parents</button>
+            <button onClick={() => navigateTo('ai-guidance')} className="text-left border-b pb-2">AI Guidance</button>
+            <button onClick={() => navigateTo('faq')} className="text-left border-b pb-2">FAQs</button>
+            <button onClick={() => navigateTo('login')} className="text-left text-blue-600">Login / Signup</button>
+          </div>
+        )}
       </nav>
 
       {/* --- PAGE CONTENT --- */}
       <main>
-        {/* AUTH PAGES */}
         {appState === 'signup' && (
-          <SignupPage 
-            onSwitch={() => setAppState('login')} 
-            onSignupSuccess={() => setAppState('login')} 
-          />
+          <SignupPage onSwitch={() => setAppState('login')} onSignupSuccess={() => setAppState('login')} />
         )}
         {appState === 'login' && (
-          <LoginPage 
-            onSwitch={() => setAppState('signup')} 
-            onLoginSuccess={() => setAppState('landing')} 
-          />
+          <LoginPage onSwitch={() => setAppState('signup')} onLoginSuccess={() => setAppState('landing')} />
         )}
-
-        {/* HOME & INFO PAGES */}
         {appState === 'landing' && (
           <LandingPage onGetStarted={handleGetStarted} setAppState={setAppState} />
         )}
@@ -167,44 +189,24 @@ function App() {
         {appState === 'how-it-works' && (
           <HowItWorksPage onBack={handleBackToLanding} onStart={handleGetStarted} />
         )}
-        {appState === 'parents' && (
-          <ForParentsPage onBack={handleBackToLanding} />
-        )}
-        {appState === 'ai-guidance' && (
-          <AiGuidancePage onBack={handleBackToLanding} />
-        )}
-        {appState === 'faq' && (
-          <FAQsPage onBack={handleBackToLanding} />
-        )}
-
-        {/* CORE APP FLOW */}
+        {appState === 'parents' && <ForParentsPage onBack={handleBackToLanding} />}
+        {appState === 'ai-guidance' && <AiGuidancePage onBack={handleBackToLanding} />}
+        {appState === 'faq' && <FAQsPage onBack={handleBackToLanding} />}
         {appState === 'selection' && (
-          <DreamSelectionPage 
-            onSelectDream={handleSelectDream} 
-            onBack={handleBackToLanding} 
-          />
+          <DreamSelectionPage onSelectDream={handleSelectDream} onBack={handleBackToLanding} />
         )}
         {appState === 'questions' && sessionData.dreamKey && (
-          <QuestionFlowPage 
-            dreamKey={sessionData.dreamKey} 
-            onComplete={handleQuestionComplete} 
-            onBack={handleBackToSelection} 
-          />
+          <QuestionFlowPage dreamKey={sessionData.dreamKey} onComplete={handleQuestionComplete} onBack={handleBackToSelection} />
         )}
         {appState === 'confirmation' && sessionData.dreamKey && (
-          <ConfirmationPage 
-            dreamKey={sessionData.dreamKey} 
-            responses={sessionData.responses} 
-            onConfirm={handleConfirmRoadmap} 
-            onBack={handleBackToQuestions} 
-          />
+          <ConfirmationPage dreamKey={sessionData.dreamKey} responses={sessionData.responses} onConfirm={handleConfirmRoadmap} onBack={handleBackToQuestions} />
         )}
         {appState === 'roadmap' && (
           <RoadmapPage 
             roadmap={sessionData.roadmap} 
             loading={loading} 
             onStartNew={handleStartNew} 
-            dreamKey={sessionData.dreamKey || ''} // <--- ADD THIS LINE
+            dreamKey={sessionData.dreamKey || ''}
           />
         )}
       </main>
