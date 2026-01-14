@@ -2248,14 +2248,13 @@ export const dreamCategories: DreamCategory[] = [
 └─────────────────────────┘
 */
 
-  {
+{
   key: 'habits',
   name: 'Habits',
   icon: 'CheckCircle',
   description: 'Building good habits and breaking bad ones',
   questions: [
 
-    // 🔁 HABIT DIRECTION
     {
       key: 'habit_direction',
       text: 'What do you want to work on?',
@@ -2263,18 +2262,17 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: 'build_good', label: 'Build Good Habits', nextQuestion: 'good_habit_type' },
         { value: 'break_bad', label: 'Break Bad Habits', nextQuestion: 'bad_habit_type' },
-        { value: 'both', label: 'Both', nextQuestion: 'good_habit_type' },
+        { value: 'both', label: 'Both (Build & Break)', nextQuestion: 'good_habit_type' },
       ],
     },
 
-    // 🌱 GOOD HABIT TYPE
     {
       key: 'good_habit_type',
       text: 'Which good habit do you want to build?',
       type: 'single',
       options: [
         { value: 'exercise', label: 'Regular Exercise', nextQuestion: 'habit_time' },
-        { value: 'reading', label: 'Reading Daily', nextQuestion: 'habit_time' },
+        { value: 'reading', label: 'Daily Reading', nextQuestion: 'habit_time' },
         { value: 'meditation', label: 'Meditation / Mindfulness', nextQuestion: 'habit_time' },
         { value: 'sleep', label: 'Better Sleep Schedule', nextQuestion: 'habit_time' },
         { value: 'learning', label: 'Learning a New Skill', nextQuestion: 'habit_time' },
@@ -2282,7 +2280,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    // 🚫 BAD HABIT TYPE
     {
       key: 'bad_habit_type',
       text: 'Which bad habit do you want to break?',
@@ -2297,7 +2294,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    // ⏰ TIME AVAILABILITY
     {
       key: 'habit_time',
       text: 'How much time can you dedicate daily?',
@@ -2310,43 +2306,40 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    // 🔥 TRIGGER IDENTIFICATION
     {
       key: 'habit_trigger',
-      text: 'When does this bad habit usually occur?',
-      type: 'multi',
+      text: 'When does this habit usually happen most?',
+      type: 'single',
       options: [
-        { value: 'stress', label: 'During stress or anxiety' },
-        { value: 'boredom', label: 'When bored' },
-        { value: 'night', label: 'Late night' },
-        { value: 'social', label: 'Social situations' },
-        { value: 'routine', label: 'Part of daily routine' },
+        { value: 'stress', label: 'During stress or anxiety', nextQuestion: 'commitment_level' },
+        { value: 'boredom', label: 'When bored', nextQuestion: 'commitment_level' },
+        { value: 'night', label: 'Late night', nextQuestion: 'commitment_level' },
+        { value: 'social', label: 'Social situations', nextQuestion: 'commitment_level' },
+        { value: 'routine', label: 'Part of daily routine', nextQuestion: 'commitment_level' },
       ],
-      nextQuestion: 'commitment_level',
     },
 
-    // 💪 COMMITMENT
     {
       key: 'commitment_level',
       text: 'How committed are you to making this change?',
       type: 'single',
       options: [
-        { value: 'very', label: 'Very committed, ready to start now', nextQuestion: 'support_type' },
-        { value: 'moderate', label: 'Moderately committed, need support', nextQuestion: 'support_type' },
-        { value: 'exploring', label: 'Just exploring options', nextQuestion: 'support_type' },
+        { value: 'very', label: 'Very committed', nextQuestion: 'roadmap_goal' },
+        { value: 'moderate', label: 'Moderately committed', nextQuestion: 'roadmap_goal' },
+        { value: 'exploring', label: 'Just exploring', nextQuestion: 'roadmap_goal' },
       ],
     },
 
-    // 🤝 SUPPORT TYPE
+    // ✅ FINAL QUESTION — ROADMAP TRIGGER
     {
-      key: 'support_type',
-      text: 'What kind of support would help you most?',
+      key: 'roadmap_goal',
+      text: 'What do you want help with next?',
       type: 'single',
       options: [
-        { value: 'plan', label: 'Daily habit plan' },
-        { value: 'reminder', label: 'Reminders & tracking' },
-        { value: 'coach', label: 'Guidance / Coaching' },
-        { value: 'community', label: 'Community / Accountability partner' },
+        { value: 'build', label: 'Build strong daily habits' },
+        { value: 'break', label: 'Break bad habits permanently' },
+        { value: 'balance', label: 'Balance lifestyle habits' },
+        { value: 'plan', label: 'Generate my habit improvement roadmap' },
       ],
     },
 
@@ -2366,9 +2359,6 @@ export const dreamCategories: DreamCategory[] = [
   description: 'Agricultural problems, farming, and agribusiness solutions',
   questions: [
 
-    /* =========================
-       1️⃣ MAIN FOCUS
-    ========================== */
     {
       key: 'ag_focus',
       text: 'What do you want to focus on in agriculture?',
@@ -2380,9 +2370,7 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* =========================
-       2️⃣ PROBLEM SOLVING PATH
-    ========================== */
+    /* ===== PROBLEM PATH ===== */
     {
       key: 'problem_area',
       text: 'Which problem are you facing?',
@@ -2391,7 +2379,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'crop', label: 'Crop Issues', nextQuestion: 'crop_problem' },
         { value: 'soil', label: 'Soil Issues', nextQuestion: 'soil_problem' },
         { value: 'water', label: 'Water Issues', nextQuestion: 'water_problem' },
-        { value: 'market', label: 'Market Issues', nextQuestion: 'market_problem' },
+        { value: 'market', label: 'Market Issues', nextQuestion: 'roadmap_goal' },
       ],
     },
 
@@ -2408,7 +2396,7 @@ export const dreamCategories: DreamCategory[] = [
 
     {
       key: 'crop_stage',
-      text: 'Which stage is affected most?',
+      text: 'Which crop stage is affected?',
       type: 'single',
       options: [
         { value: 'sowing', label: 'Sowing Stage', nextQuestion: 'crop_support' },
@@ -2419,89 +2407,62 @@ export const dreamCategories: DreamCategory[] = [
 
     {
       key: 'crop_support',
-      text: 'What help do you need for crop improvement?',
-      type: 'multi',
+      text: 'What support do you need most?',
+      type: 'single',
       options: [
-        { value: 'expert', label: 'Crop Expert Guidance' },
-        { value: 'fertilizer', label: 'Fertilizer Plan' },
-        { value: 'pest', label: 'Pest Control Solution' },
-        { value: 'technology', label: 'Modern Farming Technology' },
+        { value: 'expert', label: 'Expert Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'fertilizer', label: 'Fertilizer Plan', nextQuestion: 'roadmap_goal' },
+        { value: 'pest', label: 'Pest Control Solution', nextQuestion: 'roadmap_goal' },
+        { value: 'tech', label: 'Modern Farming Technology', nextQuestion: 'roadmap_goal' },
       ],
     },
 
-    /* =========================
-       3️⃣ SOIL PATH
-    ========================== */
+    /* ===== SOIL PATH ===== */
     {
       key: 'soil_problem',
       text: 'What soil issue do you have?',
       type: 'single',
       options: [
-        { value: 'fertility', label: 'Low Fertility', nextQuestion: 'soil_tested' },
-        { value: 'salinity', label: 'Salinity / Alkaline', nextQuestion: 'soil_tested' },
-        { value: 'erosion', label: 'Soil Erosion', nextQuestion: 'soil_tested' },
-      ],
-    },
-
-    {
-      key: 'soil_tested',
-      text: 'Have you tested your soil?',
-      type: 'single',
-      options: [
-        { value: 'yes', label: 'Yes', nextQuestion: 'soil_support' },
-        { value: 'no', label: 'No', nextQuestion: 'soil_support' },
+        { value: 'fertility', label: 'Low Fertility', nextQuestion: 'soil_support' },
+        { value: 'salinity', label: 'Salinity / Alkaline', nextQuestion: 'soil_support' },
+        { value: 'erosion', label: 'Soil Erosion', nextQuestion: 'soil_support' },
       ],
     },
 
     {
       key: 'soil_support',
-      text: 'What soil-related support do you want?',
-      type: 'multi',
+      text: 'What soil support do you want?',
+      type: 'single',
       options: [
-        { value: 'testing', label: 'Soil Testing Guidance' },
-        { value: 'organic', label: 'Organic Soil Improvement' },
-        { value: 'fertilizer', label: 'Fertilizer Recommendation' },
+        { value: 'testing', label: 'Soil Testing Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'organic', label: 'Organic Improvement', nextQuestion: 'roadmap_goal' },
+        { value: 'fertilizer', label: 'Fertilizer Recommendation', nextQuestion: 'roadmap_goal' },
       ],
     },
 
-    /* =========================
-       4️⃣ WATER PATH
-    ========================== */
+    /* ===== WATER PATH ===== */
     {
       key: 'water_problem',
       text: 'What water issue are you facing?',
       type: 'single',
       options: [
-        { value: 'scarcity', label: 'Water Scarcity', nextQuestion: 'water_source' },
-        { value: 'irregular', label: 'Irregular Supply', nextQuestion: 'water_source' },
-      ],
-    },
-
-    {
-      key: 'water_source',
-      text: 'What is your water source?',
-      type: 'single',
-      options: [
-        { value: 'rain', label: 'Rain-fed', nextQuestion: 'water_support' },
-        { value: 'borewell', label: 'Borewell', nextQuestion: 'water_support' },
-        { value: 'canal', label: 'Canal', nextQuestion: 'water_support' },
+        { value: 'scarcity', label: 'Water Scarcity', nextQuestion: 'water_support' },
+        { value: 'irregular', label: 'Irregular Supply', nextQuestion: 'water_support' },
       ],
     },
 
     {
       key: 'water_support',
       text: 'What water solution do you need?',
-      type: 'multi',
+      type: 'single',
       options: [
-        { value: 'drip', label: 'Drip Irrigation' },
-        { value: 'harvesting', label: 'Rainwater Harvesting' },
-        { value: 'planning', label: 'Water Management Plan' },
+        { value: 'drip', label: 'Drip Irrigation', nextQuestion: 'roadmap_goal' },
+        { value: 'harvest', label: 'Rainwater Harvesting', nextQuestion: 'roadmap_goal' },
+        { value: 'planning', label: 'Water Management Plan', nextQuestion: 'roadmap_goal' },
       ],
     },
 
-    /* =========================
-       5️⃣ FARMING PATH
-    ========================== */
+    /* ===== FARMING PATH ===== */
     {
       key: 'farming_type',
       text: 'What type of farming do you want?',
@@ -2527,17 +2488,15 @@ export const dreamCategories: DreamCategory[] = [
     {
       key: 'farming_support',
       text: 'What farming support do you want?',
-      type: 'multi',
+      type: 'single',
       options: [
-        { value: 'training', label: 'Training & Courses' },
-        { value: 'schemes', label: 'Government Schemes' },
-        { value: 'machinery', label: 'Machinery Guidance' },
+        { value: 'training', label: 'Training & Courses', nextQuestion: 'roadmap_goal' },
+        { value: 'schemes', label: 'Government Schemes', nextQuestion: 'roadmap_goal' },
+        { value: 'machinery', label: 'Machinery Guidance', nextQuestion: 'roadmap_goal' },
       ],
     },
 
-    /* =========================
-       6️⃣ AGRIBUSINESS PATH
-    ========================== */
+    /* ===== AGRIBUSINESS PATH ===== */
     {
       key: 'business_area',
       text: 'Which agribusiness interests you?',
@@ -2554,20 +2513,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your investment capacity?',
       type: 'single',
       options: [
-        { value: 'low', label: 'Low', nextQuestion: 'business_support' },
-        { value: 'medium', label: 'Medium', nextQuestion: 'business_support' },
-        { value: 'high', label: 'High', nextQuestion: 'business_support' },
+        { value: 'low', label: 'Low', nextQuestion: 'roadmap_goal' },
+        { value: 'medium', label: 'Medium', nextQuestion: 'roadmap_goal' },
+        { value: 'high', label: 'High', nextQuestion: 'roadmap_goal' },
       ],
     },
 
+    /* ✅ FINAL ROADMAP QUESTION */
     {
-      key: 'business_support',
-      text: 'What business support do you need?',
-      type: 'multi',
+      key: 'roadmap_goal',
+      text: 'What do you want to generate now?',
+      type: 'single',
       options: [
-        { value: 'plan', label: 'Business Plan' },
-        { value: 'funding', label: 'Funding & Loans' },
-        { value: 'marketing', label: 'Marketing & Sales' },
+        { value: 'solution', label: 'Agricultural problem solution roadmap' },
+        { value: 'farming', label: 'Step-by-step farming roadmap' },
+        { value: 'business', label: 'Agribusiness startup roadmap' },
+        { value: 'complete', label: 'Complete agriculture growth roadmap' },
       ],
     },
 
