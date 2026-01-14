@@ -12,7 +12,7 @@ import { AiGuidancePage } from './pages/AiGuidance';
 import { FAQsPage } from './pages/FAQs';
 import { SignupPage } from './pages/SignupPage'; 
 import { LoginPage } from './pages/LoginPage'; 
-import { Menu, X } from 'lucide-react'; // Added Menu icons
+import { Menu, X, Star, Send } from 'lucide-react'; 
 
 import { supabase } from './lib/supabase';
 import { getDreamCategory } from './data/dreamTrees';
@@ -21,7 +21,7 @@ import logoImg from './assets/main logo of tp.png';
 // 1. UPDATED APP STATE TYPE
 type AppState = 'landing' | 'selection' | 'questions' | 'confirmation' | 'roadmap' | 
                 'how-it-works' | 'parents' | 'ai-guidance' | 'faq' | 'roadmap-info' |
-                'signup' | 'login';
+                'signup' | 'login' | 'feedback';
 
 interface SessionData {
   studentId: string | null;
@@ -33,7 +33,7 @@ interface SessionData {
 
 function App() {
   const [appState, setAppState] = useState<AppState>('landing');
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [sessionData, setSessionData] = useState<SessionData>({
     studentId: null,
     sessionId: null,
@@ -43,11 +43,21 @@ function App() {
   });
   const [loading, setLoading] = useState(false);
 
+  // --- FEEDBACK STATE ---
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [submittingFeedback, setSubmittingFeedback] = useState(false);
+
   // Navigation Handlers
   const handleGetStarted = () => setAppState('selection');
   const handleBackToLanding = () => setAppState('landing');
   const handleBackToSelection = () => setAppState('selection');
   const handleBackToQuestions = () => setAppState('questions');
+
+  const navigateTo = (state: AppState) => {
+    setAppState(state);
+    setIsMenuOpen(false);
+  };
 
   // Logic for Session/Roadmap
   const handleSelectDream = async (dreamKey: string) => {
@@ -105,10 +115,25 @@ function App() {
     setAppState('selection');
   };
 
-  // Helper to change page and close menu
-  const navigateTo = (state: AppState) => {
-    setAppState(state);
-    setIsMenuOpen(false);
+  const submitFeedback = async () => {
+    if (rating === 0) return alert("Please select a rating!");
+    setSubmittingFeedback(true);
+    try {
+      const { error } = await supabase.from('feedback').insert({
+        student_id: sessionData.studentId,
+        rating,
+        comment
+      });
+      if (error) throw error;
+      alert("Thank you for your feedback!");
+      setAppState('landing');
+      setRating(0);
+      setComment("");
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSubmittingFeedback(false);
+    }
   };
 
   return (
@@ -124,20 +149,18 @@ function App() {
             </div>
           </div>
           
-          {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-5 text-xs font-bold uppercase tracking-wider text-gray-600">
-            <button onClick={() => setAppState('landing')} className="hover:text-blue-600 transition-colors">Home</button>
-            <button onClick={() => setAppState('selection')} className="hover:text-blue-600 transition-colors">Categories</button>
-            <button onClick={() => setAppState('roadmap-info')} className="hover:text-blue-600 transition-colors">Roadmaps</button>
-            <button onClick={() => setAppState('how-it-works')} className="hover:text-blue-600 transition-colors">How It Works</button>
-            <button onClick={() => setAppState('parents')} className="hover:text-blue-600 transition-colors">For Parents</button>
-            <button onClick={() => setAppState('ai-guidance')} className="hover:text-blue-600 transition-colors">AI Guidance</button>
-            <button onClick={() => setAppState('faq')} className="hover:text-blue-600 transition-colors">FAQs</button>
+            <button onClick={() => navigateTo('landing')} className="hover:text-blue-600">Home</button>
+            <button onClick={() => navigateTo('selection')} className="hover:text-blue-600">Categories</button>
+            <button onClick={() => navigateTo('roadmap-info')} className="hover:text-blue-600">Roadmaps</button>
+            <button onClick={() => navigateTo('how-it-works')} className="hover:text-blue-600">How It Works</button>
+            <button onClick={() => navigateTo('feedback')} className="hover:text-blue-600">Feedback</button>
+            <button onClick={() => navigateTo('faq')} className="hover:text-blue-600">FAQs</button>
           </div>
 
           <div className="flex items-center gap-4">
             <button 
-              onClick={() => setAppState('login')} 
+              onClick={() => navigateTo('login')} 
               className="hidden sm:block text-xs font-bold text-gray-500 hover:text-black uppercase"
             >
               Login / Signup
@@ -147,11 +170,7 @@ function App() {
               Start
             </Button>
 
-            {/* MOBILE MENU TOGGLE */}
-            <button 
-              className="lg:hidden p-1 text-black"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
+            <button className="lg:hidden p-1 text-black" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -162,39 +181,49 @@ function App() {
           <div className="lg:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-200 shadow-xl flex flex-col p-6 gap-4 text-sm font-bold uppercase tracking-widest text-gray-600 animate-in slide-in-from-top duration-200">
             <button onClick={() => navigateTo('landing')} className="text-left border-b pb-2">Home</button>
             <button onClick={() => navigateTo('selection')} className="text-left border-b pb-2">Categories</button>
-            <button onClick={() => navigateTo('roadmap-info')} className="text-left border-b pb-2">Roadmaps</button>
-            <button onClick={() => navigateTo('how-it-works')} className="text-left border-b pb-2">How It Works</button>
-            <button onClick={() => navigateTo('parents')} className="text-left border-b pb-2">For Parents</button>
-            <button onClick={() => navigateTo('ai-guidance')} className="text-left border-b pb-2">AI Guidance</button>
+            <button onClick={() => navigateTo('feedback')} className="text-left border-b pb-2">Feedback</button>
             <button onClick={() => navigateTo('faq')} className="text-left border-b pb-2">FAQs</button>
             <button onClick={() => navigateTo('login')} className="text-left text-blue-600">Login / Signup</button>
           </div>
         )}
       </nav>
 
-      {/* --- PAGE CONTENT --- */}
       <main>
-        {appState === 'signup' && (
-          <SignupPage onSwitch={() => setAppState('login')} onSignupSuccess={() => setAppState('login')} />
-        )}
-        {appState === 'login' && (
-          <LoginPage onSwitch={() => setAppState('signup')} onLoginSuccess={() => setAppState('landing')} />
-        )}
-        {appState === 'landing' && (
-          <LandingPage onGetStarted={handleGetStarted} setAppState={setAppState} />
-        )}
-        {appState === 'roadmap-info' && (
-          <RoadmapInfoPage onBack={handleBackToLanding} onStart={handleGetStarted} />
-        )}
-        {appState === 'how-it-works' && (
-          <HowItWorksPage onBack={handleBackToLanding} onStart={handleGetStarted} />
-        )}
+        {appState === 'signup' && <SignupPage onSwitch={() => setAppState('login')} onSignupSuccess={() => setAppState('login')} />}
+        {appState === 'login' && <LoginPage onSwitch={() => setAppState('signup')} onLoginSuccess={() => setAppState('landing')} />}
+        {appState === 'landing' && <LandingPage onGetStarted={handleGetStarted} setAppState={setAppState} />}
+        {appState === 'roadmap-info' && <RoadmapInfoPage onBack={handleBackToLanding} onStart={handleGetStarted} />}
+        {appState === 'how-it-works' && <HowItWorksPage onBack={handleBackToLanding} onStart={handleGetStarted} />}
         {appState === 'parents' && <ForParentsPage onBack={handleBackToLanding} />}
         {appState === 'ai-guidance' && <AiGuidancePage onBack={handleBackToLanding} />}
         {appState === 'faq' && <FAQsPage onBack={handleBackToLanding} />}
-        {appState === 'selection' && (
-          <DreamSelectionPage onSelectDream={handleSelectDream} onBack={handleBackToLanding} />
+        
+        {/* FEEDBACK PAGE UI */}
+        {appState === 'feedback' && (
+          <div className="min-h-[80vh] flex items-center justify-center p-6 bg-white">
+            <div className="max-w-md w-full border-4 border-black p-8 rounded-[3rem] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+              <h2 className="text-3xl font-black uppercase italic mb-2">Your Feedback</h2>
+              <div className="flex gap-2 mb-8">
+                {[1, 2, 3, 4, 5].map((num) => (
+                  <button key={num} onClick={() => setRating(num)}>
+                    <Star size={32} fill={rating >= num ? "black" : "none"} className={rating >= num ? "text-black" : "text-gray-300"} />
+                  </button>
+                ))}
+              </div>
+              <textarea 
+                className="w-full border-2 border-black rounded-2xl p-4 h-32 mb-6"
+                placeholder="Share your thoughts..."
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
+              <Button onClick={submitFeedback} disabled={submittingFeedback} className="w-full bg-black text-white py-4 font-black uppercase flex items-center justify-center gap-2">
+                {submittingFeedback ? "Sending..." : <>Submit <Send size={20} /></>}
+              </Button>
+            </div>
+          </div>
         )}
+
+        {appState === 'selection' && <DreamSelectionPage onSelectDream={handleSelectDream} onBack={handleBackToLanding} />}
         {appState === 'questions' && sessionData.dreamKey && (
           <QuestionFlowPage dreamKey={sessionData.dreamKey} onComplete={handleQuestionComplete} onBack={handleBackToSelection} />
         )}
@@ -214,8 +243,7 @@ function App() {
   );
 }
 
-// --- DATABASE FUNCTIONS (Supabase) ---
-
+// --- DATABASE FUNCTIONS ---
 async function createOrGetStudent() {
   const sessionKey = 'hjr_student_id';
   let studentId = localStorage.getItem(sessionKey);
@@ -223,7 +251,7 @@ async function createOrGetStudent() {
     const { data: existing } = await supabase.from('students').select('*').eq('id', studentId).maybeSingle();
     if (existing) return existing;
   }
-  const { data: student, error } = await supabase.from('students').insert({ name: 'Anonymous Student', age: null, class_level: null }).select().single();
+  const { data: student, error } = await supabase.from('students').insert({ name: 'Anonymous Student' }).select().single();
   if (error) throw error;
   localStorage.setItem(sessionKey, student.id);
   return student;
@@ -233,9 +261,6 @@ async function createDreamSession(studentId: string, dreamKey: string) {
   const { data: session, error } = await supabase.from('dream_sessions').insert({
       student_id: studentId,
       dream_category: dreamKey,
-      current_step: 0,
-      total_steps: 0,
-      progress_percentage: 0,
     }).select().single();
   if (error) throw error;
   return session;
@@ -245,12 +270,10 @@ async function saveResponses(sessionId: string, responses: Record<string, string
   const entries = Object.entries(responses).map(([key, value], index) => ({
     session_id: sessionId,
     question_key: key,
-    question_text: key,
     answer: value,
     step_number: index + 1,
   }));
-  const { error } = await supabase.from('session_responses').insert(entries);
-  if (error) throw error;
+  await supabase.from('session_responses').insert(entries);
 }
 
 async function generateRoadmap(dreamKey: string, dreamName: string, responses: Record<string, string>) {
@@ -261,12 +284,11 @@ async function generateRoadmap(dreamKey: string, dreamName: string, responses: R
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${supabaseAnonKey}` },
     body: JSON.stringify({ dreamCategory: dreamKey, dreamName, responses }),
   });
-  if (!response.ok) throw new Error('Failed to generate roadmap');
   return await response.json();
 }
 
 async function saveRoadmap(sessionId: string, roadmap: any) {
-  const { error } = await supabase.from('dream_roadmaps').insert({
+  await supabase.from('dream_roadmaps').insert({
     session_id: sessionId,
     confirmed_dream: roadmap.confirmed_dream,
     exact_role: roadmap.exact_role,
@@ -276,16 +298,10 @@ async function saveRoadmap(sessionId: string, roadmap: any) {
     short_term_goals: roadmap.short_term_goals,
     backup_options: roadmap.backup_options,
   });
-  if (error) throw error;
 }
 
 async function updateSessionComplete(sessionId: string) {
-  const { error } = await supabase.from('dream_sessions').update({
-      is_completed: true,
-      completed_at: new Date().toISOString(),
-      progress_percentage: 100,
-    }).eq('id', sessionId);
-  if (error) throw error;
+  await supabase.from('dream_sessions').update({ is_completed: true }).eq('id', sessionId);
 }
 
 export default App;

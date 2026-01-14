@@ -2646,57 +2646,176 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
+  /*
+┌─────────────────────────┐
+│  Opportunity Discovery  │
+└─────────────────────────┘
+*/
 
+ {
+  key: 'opportunity',
+  name: 'Opportunity Discovery',
+  icon: 'Search',
+  description: 'Finding and evaluating opportunities',
+  questions: [
 
-  {
-    key: 'opportunity',
-    name: 'Opportunity Discovery',
-    icon: 'Search',
-    description: 'Finding and evaluating opportunities',
-    questions: [
-      {
-        key: 'opportunity_type',
-        text: 'What kind of opportunity are you looking for?',
-        type: 'single',
-        options: [
-          { value: 'career', label: 'Career Opportunities', nextQuestion: 'field_preference' },
-          { value: 'business', label: 'Business Opportunities', nextQuestion: 'investment_capacity' },
-          { value: 'education', label: 'Educational Opportunities', nextQuestion: 'education_level' },
-          { value: 'skill', label: 'Skill Development Opportunities', nextQuestion: 'skill_area' },
-        ],
-      },
-      {
-        key: 'field_preference',
-        text: 'Which field interests you most?',
-        type: 'text',
-      },
-      {
-        key: 'investment_capacity',
-        text: 'What is your investment capacity?',
-        type: 'single',
-        options: [
-          { value: 'low', label: 'Low (under 1 lakh)' },
-          { value: 'medium', label: 'Medium (1-5 lakhs)' },
-          { value: 'high', label: 'High (above 5 lakhs)' },
-        ],
-      },
-      {
-        key: 'education_level',
-        text: 'What level of education?',
-        type: 'single',
-        options: [
-          { value: 'school', label: 'School Level' },
-          { value: 'undergraduate', label: 'Undergraduate' },
-          { value: 'postgraduate', label: 'Postgraduate' },
-        ],
-      },
-      {
-        key: 'skill_area',
-        text: 'What skill area interests you?',
-        type: 'text',
-      },
-    ],
-  },
+    // 🔍 OPPORTUNITY TYPE
+    {
+      key: 'opportunity_type',
+      text: 'What kind of opportunity are you looking for?',
+      type: 'single',
+      options: [
+        { value: 'career', label: 'Career Opportunities', nextQuestion: 'field_preference' },
+        { value: 'business', label: 'Business Opportunities', nextQuestion: 'investment_capacity' },
+        { value: 'education', label: 'Educational Opportunities', nextQuestion: 'education_level' },
+        { value: 'skill', label: 'Skill Development Opportunities', nextQuestion: 'skill_area' },
+      ],
+    },
+
+    /* ======================
+       🎯 CAREER PATH
+    ====================== */
+    {
+      key: 'field_preference',
+      text: 'Which field interests you most?',
+      type: 'text',
+      nextQuestion: 'career_goal',
+    },
+
+    {
+      key: 'career_goal',
+      text: 'What is your primary career goal?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Get a Job', nextQuestion: 'career_level' },
+        { value: 'switch', label: 'Career Switch', nextQuestion: 'career_level' },
+        { value: 'growth', label: 'Career Growth / Promotion', nextQuestion: 'career_level' },
+      ],
+    },
+
+    {
+      key: 'career_level',
+      text: 'What is your experience level?',
+      type: 'single',
+      options: [
+        { value: 'fresher', label: 'Fresher' },
+        { value: 'mid', label: '1–5 Years Experience' },
+        { value: 'senior', label: '5+ Years Experience' },
+      ],
+    },
+
+    /* ======================
+       💼 BUSINESS PATH
+    ====================== */
+    {
+      key: 'investment_capacity',
+      text: 'What is your investment capacity?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low (under 1 lakh)', nextQuestion: 'business_risk' },
+        { value: 'medium', label: 'Medium (1–5 lakhs)', nextQuestion: 'business_risk' },
+        { value: 'high', label: 'High (above 5 lakhs)', nextQuestion: 'business_risk' },
+      ],
+    },
+
+    {
+      key: 'business_risk',
+      text: 'How much risk are you willing to take?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low risk', nextQuestion: 'business_mode' },
+        { value: 'medium', label: 'Medium risk', nextQuestion: 'business_mode' },
+        { value: 'high', label: 'High risk', nextQuestion: 'business_mode' },
+      ],
+    },
+
+    {
+      key: 'business_mode',
+      text: 'What type of business do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'online', label: 'Online Business' },
+        { value: 'offline', label: 'Offline / Physical Business' },
+        { value: 'hybrid', label: 'Hybrid Model' },
+      ],
+    },
+
+    /* ======================
+       🎓 EDUCATION PATH
+    ====================== */
+    {
+      key: 'education_level',
+      text: 'What level of education are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'school', label: 'School Level', nextQuestion: 'education_goal' },
+        { value: 'undergraduate', label: 'Undergraduate', nextQuestion: 'education_goal' },
+        { value: 'postgraduate', label: 'Postgraduate', nextQuestion: 'education_goal' },
+      ],
+    },
+
+    {
+      key: 'education_goal',
+      text: 'What is your purpose of education?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Job-Oriented', nextQuestion: 'education_mode' },
+        { value: 'research', label: 'Research / Higher Studies', nextQuestion: 'education_mode' },
+        { value: 'skill', label: 'Skill Enhancement', nextQuestion: 'education_mode' },
+      ],
+    },
+
+    {
+      key: 'education_mode',
+      text: 'Preferred learning mode?',
+      type: 'single',
+      options: [
+        { value: 'online', label: 'Online' },
+        { value: 'offline', label: 'Offline / Campus' },
+        { value: 'hybrid', label: 'Hybrid' },
+      ],
+    },
+
+    /* ======================
+       🧠 SKILL PATH
+    ====================== */
+    {
+      key: 'skill_area',
+      text: 'What skill area interests you?',
+      type: 'text',
+      nextQuestion: 'skill_goal',
+    },
+
+    {
+      key: 'skill_goal',
+      text: 'Why do you want to learn this skill?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Job / Career Growth', nextQuestion: 'skill_time' },
+        { value: 'freelance', label: 'Freelancing / Side Income', nextQuestion: 'skill_time' },
+        { value: 'interest', label: 'Personal Interest', nextQuestion: 'skill_time' },
+      ],
+    },
+
+    {
+      key: 'skill_time',
+      text: 'How much time can you dedicate weekly?',
+      type: 'single',
+      options: [
+        { value: 'low', label: '1–3 hours' },
+        { value: 'medium', label: '4–7 hours' },
+        { value: 'high', label: '8+ hours' },
+      ],
+    },
+
+  ],
+},
+/*
+┌─────────────────────────┐
+│        Film Dream       │
+└─────────────────────────┘
+*/
+
   {
     key: 'film',
     name: 'Film Industry',
@@ -2729,347 +2848,3006 @@ export const dreamCategories: DreamCategory[] = [
     ],
   },
   {
-    key: 'training',
-    name: 'Training & Skill Development',
-    icon: 'BookOpen',
-    description: 'Professional training and skill development',
-    questions: [
-      {
-        key: 'training_field',
-        text: 'What field do you want to develop skills in?',
-        type: 'single',
-        options: [
-          { value: 'technical', label: 'Technical Skills (IT/Programming)', nextQuestion: 'specific_skill' },
-          { value: 'soft_skills', label: 'Soft Skills (Communication/Leadership)', nextQuestion: 'specific_skill' },
-          { value: 'vocational', label: 'Vocational Skills (Trades)', nextQuestion: 'specific_skill' },
-          { value: 'creative', label: 'Creative Skills (Design/Arts)', nextQuestion: 'specific_skill' },
-        ],
-      },
-      {
-        key: 'specific_skill',
-        text: 'Please specify the skill you want to develop',
-        type: 'text',
-        nextQuestion: 'learning_commitment',
-      },
-      {
-        key: 'learning_commitment',
-        text: 'How many hours per week can you dedicate?',
-        type: 'number',
-        validation: { min: 1, max: 40 },
-      },
-    ],
-  },
+  key: 'training',
+  name: 'Training & Skill Development',
+  icon: 'BookOpen',
+  description: 'Professional training and skill development',
+  questions: [
+
+    /* ======================
+       1️⃣ TRAINING FIELD
+    ====================== */
+    {
+      key: 'training_field',
+      text: 'What field do you want to develop skills in?',
+      type: 'single',
+      options: [
+        { value: 'technical', label: 'Technical Skills (IT / Programming)', nextQuestion: 'specific_skill' },
+        { value: 'soft_skills', label: 'Soft Skills (Communication / Leadership)', nextQuestion: 'specific_skill' },
+        { value: 'vocational', label: 'Vocational Skills (Electrician, Mechanic, etc.)', nextQuestion: 'specific_skill' },
+        { value: 'creative', label: 'Creative Skills (Design / Arts)', nextQuestion: 'specific_skill' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ SPECIFIC SKILL
+    ====================== */
+    {
+      key: 'specific_skill',
+      text: 'Please specify the skill you want to develop',
+      type: 'text',
+      nextQuestion: 'experience_level',
+    },
+
+    /* ======================
+       3️⃣ EXPERIENCE LEVEL
+    ====================== */
+    {
+      key: 'experience_level',
+      text: 'What is your current level in this skill?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'learning_goal' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'learning_goal' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'learning_goal' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ LEARNING GOAL
+    ====================== */
+    {
+      key: 'learning_goal',
+      text: 'Why do you want to learn this skill?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Get a Job', nextQuestion: 'learning_commitment' },
+        { value: 'promotion', label: 'Career Growth / Promotion', nextQuestion: 'learning_commitment' },
+        { value: 'freelance', label: 'Freelancing / Side Income', nextQuestion: 'learning_commitment' },
+        { value: 'interest', label: 'Personal Interest', nextQuestion: 'learning_commitment' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ TIME COMMITMENT
+    ====================== */
+    {
+      key: 'learning_commitment',
+      text: 'How many hours per week can you dedicate?',
+      type: 'number',
+      validation: { min: 1, max: 40 },
+      nextQuestion: 'learning_mode',
+    },
+
+    /* ======================
+       6️⃣ LEARNING MODE
+    ====================== */
+    {
+      key: 'learning_mode',
+      text: 'Which learning mode do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'online', label: 'Online Courses', nextQuestion: 'budget_range' },
+        { value: 'offline', label: 'Offline / Classroom Training', nextQuestion: 'budget_range' },
+        { value: 'hybrid', label: 'Hybrid (Online + Offline)', nextQuestion: 'budget_range' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ BUDGET
+    ====================== */
+    {
+      key: 'budget_range',
+      text: 'What is your budget for training?',
+      type: 'single',
+      options: [
+        { value: 'free', label: 'Free Resources Only', nextQuestion: 'certification_need' },
+        { value: 'low', label: 'Low Budget', nextQuestion: 'certification_need' },
+        { value: 'medium', label: 'Medium Budget', nextQuestion: 'certification_need' },
+        { value: 'high', label: 'High Budget', nextQuestion: 'certification_need' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ CERTIFICATION
+    ====================== */
+    {
+      key: 'certification_need',
+      text: 'Do you need certification after training?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, certification is important', nextQuestion: 'placement_support' },
+        { value: 'no', label: 'No, skills matter more', nextQuestion: 'placement_support' },
+      ],
+    },
+
+    /* ======================
+       9️⃣ PLACEMENT / OUTCOME
+    ====================== */
+    {
+      key: 'placement_support',
+      text: 'What outcome do you expect from this training?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Job Placement Support' },
+        { value: 'portfolio', label: 'Portfolio / Project Guidance' },
+        { value: 'freelance', label: 'Freelancing Guidance' },
+        { value: 'knowledge', label: 'Skill Improvement Only' },
+      ],
+    },
+
+  ],
+},
+/*
+┌─────────────────────────┐
+│    irrigation Dream     │
+└─────────────────────────┘
+*/
+{
+  key: 'irrigation',
+  name: 'Irrigation Works',
+  icon: 'Droplets',
+  description: 'Irrigation systems and water management',
+  questions: [
+
+    {
+      key: 'irrigation_interest',
+      text: 'What is your interest in irrigation?',
+      type: 'single',
+      options: [
+        { value: 'install', label: 'Installing Irrigation System', nextQuestion: 'land_type' },
+        { value: 'improve', label: 'Improving Existing System', nextQuestion: 'current_problem' },
+        { value: 'career', label: 'Career in Irrigation Engineering', nextQuestion: 'education_bg' },
+      ],
+    },
+
+    {
+      key: 'land_type',
+      text: 'What type of land is this irrigation for?',
+      type: 'single',
+      options: [
+        { value: 'agricultural', label: 'Agricultural Land', nextQuestion: 'water_source' },
+        { value: 'garden', label: 'Garden / Landscaping', nextQuestion: 'water_source' },
+        { value: 'commercial', label: 'Commercial Property', nextQuestion: 'water_source' },
+      ],
+    },
+
+    {
+      key: 'water_source',
+      text: 'What is the main water source?',
+      type: 'single',
+      options: [
+        { value: 'rain', label: 'Rainwater', nextQuestion: 'irrigation_method' },
+        { value: 'borewell', label: 'Borewell', nextQuestion: 'irrigation_method' },
+        { value: 'canal', label: 'Canal', nextQuestion: 'irrigation_method' },
+        { value: 'tank', label: 'Water Tank / Reservoir', nextQuestion: 'irrigation_method' },
+      ],
+    },
+
+    {
+      key: 'irrigation_method',
+      text: 'Which irrigation method are you considering?',
+      type: 'single',
+      options: [
+        { value: 'drip', label: 'Drip Irrigation', nextQuestion: 'budget_range' },
+        { value: 'sprinkler', label: 'Sprinkler System', nextQuestion: 'budget_range' },
+        { value: 'flood', label: 'Flood Irrigation', nextQuestion: 'budget_range' },
+        { value: 'micro', label: 'Micro Irrigation', nextQuestion: 'budget_range' },
+      ],
+    },
+
+    {
+      key: 'budget_range',
+      text: 'What is your approximate budget?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Budget', nextQuestion: 'government_support' },
+        { value: 'medium', label: 'Medium Budget', nextQuestion: 'government_support' },
+        { value: 'high', label: 'High Budget', nextQuestion: 'government_support' },
+      ],
+    },
+
+    {
+      key: 'government_support',
+      text: 'Do you want information on government subsidies or schemes?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, subsidy details needed' },
+        { value: 'no', label: 'No, private setup' },
+      ],
+    },
+
+    {
+      key: 'current_problem',
+      text: 'What problem are you facing with your current irrigation system?',
+      type: 'single',
+      options: [
+        { value: 'water_waste', label: 'Water Wastage', nextQuestion: 'system_age' },
+        { value: 'uneven', label: 'Uneven Water Distribution', nextQuestion: 'system_age' },
+        { value: 'maintenance', label: 'High Maintenance Cost', nextQuestion: 'system_age' },
+        { value: 'pressure', label: 'Low Water Pressure', nextQuestion: 'system_age' },
+      ],
+    },
+
+    {
+      key: 'system_age',
+      text: 'How old is your current irrigation system?',
+      type: 'single',
+      options: [
+        { value: 'new', label: 'Less than 1 year', nextQuestion: 'improvement_goal' },
+        { value: 'medium', label: '1–5 years', nextQuestion: 'improvement_goal' },
+        { value: 'old', label: 'More than 5 years', nextQuestion: 'improvement_goal' },
+      ],
+    },
+
+    {
+      key: 'improvement_goal',
+      text: 'What improvement are you mainly looking for?',
+      type: 'single', // ✅ FIXED
+      options: [
+        { value: 'efficiency', label: 'Better Water Efficiency' },
+        { value: 'automation', label: 'Automation / Smart Irrigation' },
+        { value: 'cost', label: 'Reduced Operating Cost' },
+        { value: 'repair', label: 'Repair & Maintenance Guidance' },
+      ],
+    },
+
+    {
+      key: 'education_bg',
+      text: 'What is your educational background?',
+      type: 'single',
+      options: [
+        { value: 'engineering', label: 'Engineering', nextQuestion: 'career_goal' },
+        { value: 'agriculture', label: 'Agriculture', nextQuestion: 'career_goal' },
+        { value: 'diploma', label: 'Diploma / ITI', nextQuestion: 'career_goal' },
+        { value: 'other', label: 'Other', nextQuestion: 'career_goal' },
+      ],
+    },
+
+    {
+      key: 'career_goal',
+      text: 'What do you want to do in irrigation as a career?',
+      type: 'single',
+      options: [
+        { value: 'designer', label: 'Irrigation System Designer' },
+        { value: 'technician', label: 'Installation Technician' },
+        { value: 'consultant', label: 'Irrigation Consultant' },
+        { value: 'business', label: 'Start Irrigation Business' },
+      ],
+    },
+
+  ],
+},
 
 
+
+    /*
+┌─────────────────────────┐
+│   Horticulture dream    │
+└─────────────────────────┘
+*/
   {
-    key: 'irrigation',
-    name: 'Irrigation Works',
-    icon: 'Droplets',
-    description: 'Irrigation systems and water management',
-    questions: [
-      {
-        key: 'irrigation_interest',
-        text: 'What is your interest in irrigation?',
-        type: 'single',
-        options: [
-          { value: 'install', label: 'Installing Irrigation System', nextQuestion: 'land_type' },
-          { value: 'improve', label: 'Improving Existing System', nextQuestion: 'current_problem' },
-          { value: 'career', label: 'Career in Irrigation Engineering', nextQuestion: 'education_bg' },
-        ],
-      },
-      {
-        key: 'land_type',
-        text: 'What type of land?',
-        type: 'single',
-        options: [
-          { value: 'agricultural', label: 'Agricultural Land' },
-          { value: 'garden', label: 'Garden/Landscaping' },
-          { value: 'commercial', label: 'Commercial Property' },
-        ],
-      },
-      {
-        key: 'current_problem',
-        text: 'What is the current problem?',
-        type: 'text',
-      },
-      {
-        key: 'education_bg',
-        text: 'What is your educational background?',
-        type: 'single',
-        options: [
-          { value: 'engineering', label: 'Engineering' },
-          { value: 'agriculture', label: 'Agriculture' },
-          { value: 'other', label: 'Other' },
-        ],
-      },
-    ],
-  },
+  key: 'horticulture',
+  name: 'Horticulture',
+  icon: 'Flower',
+  description: 'Horticulture and gardening careers',
+  questions: [
+
+    {
+      key: 'horticulture_focus',
+      text: 'What aspect of horticulture interests you?',
+      type: 'single',
+      options: [
+        { value: 'commercial', label: 'Commercial Horticulture', nextQuestion: 'crop_type' },
+        { value: 'landscaping', label: 'Landscaping / Garden Design', nextQuestion: 'design_experience' },
+        { value: 'floriculture', label: 'Floriculture (Flower Cultivation)', nextQuestion: 'business_intent' },
+        { value: 'nursery', label: 'Plant Nursery Business', nextQuestion: 'business_intent' },
+      ],
+    },
+
+    /* 🌱 COMMERCIAL CROP PATH */
+    {
+      key: 'crop_type',
+      text: 'Which crops interest you most?',
+      type: 'single',
+      options: [
+        { value: 'fruits', label: 'Fruits', nextQuestion: 'land_size' },
+        { value: 'vegetables', label: 'Vegetables', nextQuestion: 'land_size' },
+        { value: 'flowers', label: 'Flowers', nextQuestion: 'land_size' },
+      ],
+    },
+
+    {
+      key: 'land_size',
+      text: 'How much land do you have for cultivation?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Less than 2 acres', nextQuestion: 'experience_level' },
+        { value: 'medium', label: '2–5 acres', nextQuestion: 'experience_level' },
+        { value: 'large', label: 'More than 5 acres', nextQuestion: 'experience_level' },
+      ],
+    },
+
+    /* 🎨 LANDSCAPING PATH */
+    {
+      key: 'design_experience',
+      text: 'Do you have prior design or gardening experience?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, some experience', nextQuestion: 'project_type' },
+        { value: 'no', label: 'No, need training', nextQuestion: 'training_need' },
+      ],
+    },
+
+    {
+      key: 'project_type',
+      text: 'What type of projects interest you?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home Gardens', nextQuestion: 'business_intent' },
+        { value: 'commercial', label: 'Commercial Landscaping', nextQuestion: 'business_intent' },
+        { value: 'public', label: 'Parks / Public Spaces', nextQuestion: 'business_intent' },
+      ],
+    },
+
+    /* 📘 TRAINING */
+    {
+      key: 'training_need',
+      text: 'What kind of training are you looking for?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Gardening Skills', nextQuestion: 'business_intent' },
+        { value: 'advanced', label: 'Advanced Horticulture', nextQuestion: 'business_intent' },
+        { value: 'certification', label: 'Certified Courses', nextQuestion: 'business_intent' },
+      ],
+    },
+
+    /* 💼 BUSINESS / CAREER INTENT */
+    {
+      key: 'business_intent',
+      text: 'What is your main goal?',
+      type: 'single',
+      options: [
+        { value: 'business', label: 'Start a Business' },
+        { value: 'job', label: 'Find a Job / Career' },
+        { value: 'hobby', label: 'Personal Interest / Hobby' },
+      ],
+    },
+
+  ],
+},
+
+  /*
+┌─────────────────────────┐
+│        AI dream         │
+└─────────────────────────┘
+*/
+ {
+  key: 'ai',
+  name: 'Artificial Intelligence',
+  icon: 'Brain',
+  description: 'AI, Machine Learning, and future AI careers',
+  questions: [
+
+    /* ======================
+       1️⃣ AI ROLE
+    ====================== */
+    {
+      key: 'ai_role',
+      text: 'What role interests you most in AI?',
+      type: 'single',
+      options: [
+        { value: 'ml_engineer', label: 'Machine Learning Engineer', nextQuestion: 'programming_skills' },
+        { value: 'data_scientist', label: 'Data Scientist', nextQuestion: 'programming_skills' },
+        { value: 'ai_researcher', label: 'AI Researcher', nextQuestion: 'programming_skills' },
+        { value: 'ai_developer', label: 'AI Application Developer', nextQuestion: 'programming_skills' },
+        { value: 'ai_consultant', label: 'AI Consultant / Implementation', nextQuestion: 'programming_skills' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ PROGRAMMING
+    ====================== */
+    {
+      key: 'programming_skills',
+      text: 'What is your programming skill level?',
+      type: 'single',
+      options: [
+        { value: 'advanced', label: 'Advanced (Python, ML frameworks)', nextQuestion: 'math_background' },
+        { value: 'intermediate', label: 'Intermediate (learning ML)', nextQuestion: 'math_background' },
+        { value: 'beginner', label: 'Beginner (need basics)', nextQuestion: 'math_background' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ MATHEMATICS
+    ====================== */
+    {
+      key: 'math_background',
+      text: 'How strong is your mathematics background?',
+      type: 'single',
+      options: [
+        { value: 'strong', label: 'Strong (Statistics, Linear Algebra)', nextQuestion: 'ai_domain' },
+        { value: 'moderate', label: 'Moderate, willing to learn', nextQuestion: 'ai_domain' },
+        { value: 'weak', label: 'Weak, need foundation', nextQuestion: 'ai_domain' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ AI DOMAIN
+    ====================== */
+    {
+      key: 'ai_domain',
+      text: 'Which AI domain interests you most?',
+      type: 'single',
+      options: [
+        { value: 'ml', label: 'Machine Learning', nextQuestion: 'ml_type' },
+        { value: 'dl', label: 'Deep Learning', nextQuestion: 'dl_focus' },
+        { value: 'nlp', label: 'Natural Language Processing (NLP)', nextQuestion: 'nlp_usecase' },
+        { value: 'cv', label: 'Computer Vision', nextQuestion: 'cv_usecase' },
+        { value: 'genai', label: 'Generative AI (ChatGPT, LLMs)', nextQuestion: 'genai_goal' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ MACHINE LEARNING
+    ====================== */
+    {
+      key: 'ml_type',
+      text: 'Which type of Machine Learning?',
+      type: 'single',
+      options: [
+        { value: 'supervised', label: 'Supervised Learning', nextQuestion: 'project_goal' },
+        { value: 'unsupervised', label: 'Unsupervised Learning', nextQuestion: 'project_goal' },
+        { value: 'reinforcement', label: 'Reinforcement Learning', nextQuestion: 'project_goal' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ DEEP LEARNING
+    ====================== */
+    {
+      key: 'dl_focus',
+      text: 'Which Deep Learning area?',
+      type: 'single',
+      options: [
+        { value: 'cnn', label: 'CNN (Images)', nextQuestion: 'project_goal' },
+        { value: 'rnn', label: 'RNN / LSTM', nextQuestion: 'project_goal' },
+        { value: 'transformers', label: 'Transformers', nextQuestion: 'project_goal' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ NLP
+    ====================== */
+    {
+      key: 'nlp_usecase',
+      text: 'What NLP use case interests you?',
+      type: 'single',
+      options: [
+        { value: 'chatbot', label: 'Chatbots', nextQuestion: 'project_goal' },
+        { value: 'translation', label: 'Language Translation', nextQuestion: 'project_goal' },
+        { value: 'sentiment', label: 'Sentiment Analysis', nextQuestion: 'project_goal' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ COMPUTER VISION
+    ====================== */
+    {
+      key: 'cv_usecase',
+      text: 'What Computer Vision use case?',
+      type: 'single',
+      options: [
+        { value: 'face', label: 'Face Recognition', nextQuestion: 'project_goal' },
+        { value: 'object', label: 'Object Detection', nextQuestion: 'project_goal' },
+        { value: 'medical', label: 'Medical Imaging', nextQuestion: 'project_goal' },
+      ],
+    },
+
+    /* ======================
+       9️⃣ GENERATIVE AI
+    ====================== */
+    {
+      key: 'genai_goal',
+      text: 'What do you want to build with Generative AI?',
+      type: 'single',
+      options: [
+        { value: 'chatgpt_apps', label: 'ChatGPT-like Apps', nextQuestion: 'deployment_goal' },
+        { value: 'image', label: 'Image Generation', nextQuestion: 'deployment_goal' },
+        { value: 'rag', label: 'RAG / AI Search Systems', nextQuestion: 'deployment_goal' },
+      ],
+    },
+
+    /* ======================
+       🔟 PROJECT GOAL
+    ====================== */
+    {
+      key: 'project_goal',
+      text: 'What is your main goal with AI?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Get a Job in AI', nextQuestion: 'learning_commitment' },
+        { value: 'startup', label: 'Build AI Startup', nextQuestion: 'learning_commitment' },
+        { value: 'research', label: 'Research & Innovation', nextQuestion: 'learning_commitment' },
+        { value: 'personal', label: 'Personal Learning', nextQuestion: 'learning_commitment' },
+      ],
+    },
+
+    /* ======================
+       1️⃣1️⃣ TIME COMMITMENT
+    ====================== */
+    {
+      key: 'learning_commitment',
+      text: 'How many hours per week can you dedicate?',
+      type: 'single',
+      options: [
+        { value: '5', label: '5–7 hours', nextQuestion: 'deployment_goal' },
+        { value: '10', label: '10–15 hours', nextQuestion: 'deployment_goal' },
+        { value: '20', label: '20+ hours', nextQuestion: 'deployment_goal' },
+      ],
+    },
+
+    /* ======================
+       1️⃣2️⃣ DEPLOYMENT
+    ====================== */
+    {
+      key: 'deployment_goal',
+      text: 'How do you want to deploy your AI work?',
+      type: 'single',
+      options: [
+        { value: 'web', label: 'Web Application' },
+        { value: 'mobile', label: 'Mobile App' },
+        { value: 'api', label: 'API / Backend Service' },
+        { value: 'research', label: 'Research Papers' },
+      ],
+    },
+
+  ],
+},
+
+
+    /*
+┌─────────────────────────┐
+│       Design dream      │
+└─────────────────────────┘
+*/
   {
-    key: 'horticulture',
-    name: 'Horticulture',
-    icon: 'Flower',
-    description: 'Horticulture and gardening careers',
-    questions: [
-      {
-        key: 'horticulture_focus',
-        text: 'What aspect of horticulture interests you?',
-        type: 'single',
-        options: [
-          { value: 'commercial', label: 'Commercial Horticulture', nextQuestion: 'crop_type' },
-          { value: 'landscaping', label: 'Landscaping/Garden Design', nextQuestion: 'design_experience' },
-          { value: 'floriculture', label: 'Floriculture (Flower Cultivation)', nextQuestion: 'business_intent' },
-          { value: 'nursery', label: 'Plant Nursery Business', nextQuestion: 'business_intent' },
-        ],
-      },
-      {
-        key: 'crop_type',
-        text: 'Which crops interest you?',
-        type: 'single',
-        options: [
-          { value: 'fruits', label: 'Fruits', nextQuestion: 'business_intent' },
-          { value: 'vegetables', label: 'Vegetables', nextQuestion: 'business_intent' },
-          { value: 'flowers', label: 'Flowers', nextQuestion: 'business_intent' },
-        ],
-      },
-      {
-        key: 'design_experience',
-        text: 'Do you have design experience?',
-        type: 'single',
-        options: [
-          { value: 'yes', label: 'Yes', nextQuestion: 'business_intent' },
-          { value: 'no', label: 'No, need training', nextQuestion: 'business_intent' },
-        ],
-      },
-      {
-        key: 'business_intent',
-        text: 'Are you planning this as a business?',
-        type: 'single',
-        options: [
-          { value: 'yes', label: 'Yes, business venture' },
-          { value: 'job', label: 'No, looking for job/career' },
-          { value: 'hobby', label: 'Hobby/Personal interest' },
-        ],
-      },
-    ],
-  },
+  key: 'design',
+  name: '2D, 3D & AI Design',
+  icon: 'Palette',
+  description: 'Digital design, creative roles, and AI-powered design tools',
+  questions: [
+
+    /* ======================
+       1️⃣ DESIGN DOMAIN
+    ====================== */
+    {
+      key: 'design_type',
+      text: 'Which design field interests you the most?',
+      type: 'single',
+      options: [
+        { value: '2d_graphic', label: '2D Graphic Design', nextQuestion: 'design_role' },
+        { value: 'ui_ux', label: 'UI / UX Design', nextQuestion: 'design_role' },
+        { value: '3d_modeling', label: '3D Modeling & Rendering', nextQuestion: 'design_role' },
+        { value: 'animation', label: 'Animation & Motion Graphics', nextQuestion: 'design_role' },
+        { value: 'game_design', label: 'Game Design', nextQuestion: 'design_role' },
+        { value: 'product_design', label: 'Product / Industrial Design', nextQuestion: 'design_role' },
+        { value: 'ar_vr', label: 'AR / VR / Metaverse Design', nextQuestion: 'design_role' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ DESIGN ROLE
+    ====================== */
+    {
+      key: 'design_role',
+      text: 'Which role do you want to pursue?',
+      type: 'single',
+      options: [
+        { value: 'visual_designer', label: 'Visual / Brand Designer', nextQuestion: 'experience_level' },
+        { value: 'ui_designer', label: 'UI Designer', nextQuestion: 'experience_level' },
+        { value: 'ux_designer', label: 'UX Researcher / Designer', nextQuestion: 'experience_level' },
+        { value: 'motion_designer', label: 'Motion Graphics Designer', nextQuestion: 'experience_level' },
+        { value: '3d_artist', label: '3D Artist', nextQuestion: 'experience_level' },
+        { value: 'game_artist', label: 'Game Artist / Level Designer', nextQuestion: 'experience_level' },
+        { value: 'product_designer', label: 'Product Designer', nextQuestion: 'experience_level' },
+        { value: 'creative_director', label: 'Creative Director', nextQuestion: 'experience_level' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ EXPERIENCE LEVEL
+    ====================== */
+    {
+      key: 'experience_level',
+      text: 'What is your experience level in design?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'design_tools' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'design_tools' },
+        { value: 'advanced', label: 'Advanced / Professional', nextQuestion: 'design_tools' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ DESIGN SOFTWARE
+    ====================== */
+    {
+      key: 'design_tools',
+      text: 'Which design tools are you familiar with?',
+      type: 'single',
+      options: [
+        { value: 'adobe', label: 'Adobe (Photoshop, Illustrator, After Effects)', nextQuestion: 'ai_tools_interest' },
+        { value: 'figma', label: 'Figma / Sketch / XD', nextQuestion: 'ai_tools_interest' },
+        { value: 'blender', label: 'Blender / Maya / 3ds Max', nextQuestion: 'ai_tools_interest' },
+        { value: 'multiple', label: 'Multiple Tools', nextQuestion: 'ai_tools_interest' },
+        { value: 'none', label: 'No tools yet', nextQuestion: 'ai_tools_interest' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ AI TOOLS INTEREST
+    ====================== */
+    {
+      key: 'ai_tools_interest',
+      text: 'Are you interested in using AI-powered design tools?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, definitely', nextQuestion: 'ai_design_tools' },
+        { value: 'maybe', label: 'Curious to learn', nextQuestion: 'ai_design_tools' },
+        { value: 'no', label: 'Prefer traditional tools', nextQuestion: 'career_goal' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ AI DESIGN TOOLS
+    ====================== */
+    {
+      key: 'ai_design_tools',
+      text: 'Which AI design tools do you want to learn?',
+      type: 'single',
+      options: [
+        { value: 'midjourney', label: 'Midjourney / DALL·E (AI Art)', nextQuestion: 'career_goal' },
+        { value: 'adobe_firefly', label: 'Adobe Firefly', nextQuestion: 'career_goal' },
+        { value: 'figma_ai', label: 'Figma AI / UX AI Tools', nextQuestion: 'career_goal' },
+        { value: 'runway', label: 'Runway ML (Video & Motion)', nextQuestion: 'career_goal' },
+        { value: 'stable_diffusion', label: 'Stable Diffusion', nextQuestion: 'career_goal' },
+        { value: 'multiple_ai', label: 'Multiple AI Tools', nextQuestion: 'career_goal' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ CAREER GOAL
+    ====================== */
+    {
+      key: 'career_goal',
+      text: 'What is your main career goal in design?',
+      type: 'single',
+      options: [
+        { value: 'freelance', label: 'Freelance Designer' },
+        { value: 'job', label: 'Full-time Job in Company' },
+        { value: 'startup', label: 'Design Startup / Studio' },
+        { value: 'content', label: 'Content Creator / YouTuber' },
+        { value: 'personal', label: 'Personal & Hobby Projects' },
+      ],
+    },
+
+  ],
+},
+
+
+    /*
+┌─────────────────────────┐
+│      Business dream     │
+└─────────────────────────┘
+*/
+ {
+  key: 'business',
+  name: 'Business & Entrepreneurship',
+  icon: 'Store',
+  description: 'Business ideas from small startups to large-scale enterprises',
+  questions: [
+
+    /* ======================
+       1️⃣ BUSINESS STAGE
+    ====================== */
+    {
+      key: 'business_stage',
+      text: 'What stage of business are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'idea', label: 'Just an Idea / Startup', nextQuestion: 'business_model' },
+        { value: 'small', label: 'Small Business (MSME)', nextQuestion: 'business_model' },
+        { value: 'growing', label: 'Growing / Scaling Business', nextQuestion: 'business_model' },
+        { value: 'large', label: 'Large / Enterprise Business', nextQuestion: 'business_model' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ BUSINESS MODEL
+    ====================== */
+    {
+      key: 'business_model',
+      text: 'Which business model interests you?',
+      type: 'single',
+      options: [
+        { value: 'startup', label: 'Startup (Innovative Idea)', nextQuestion: 'startup_type' },
+        { value: 'traditional', label: 'Traditional Business', nextQuestion: 'traditional_type' },
+        { value: 'online', label: 'Online / Digital Business', nextQuestion: 'online_type' },
+        { value: 'manufacturing', label: 'Manufacturing Business', nextQuestion: 'manufacturing_type' },
+        { value: 'service', label: 'Service-Based Business', nextQuestion: 'service_type' },
+        { value: 'franchise', label: 'Franchise Business', nextQuestion: 'franchise_type' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ STARTUP PATH
+    ====================== */
+    {
+      key: 'startup_type',
+      text: 'What type of startup are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'tech', label: 'Tech Startup (AI / SaaS / Apps)', nextQuestion: 'funding_plan' },
+        { value: 'agri', label: 'Agri / Food Startup', nextQuestion: 'funding_plan' },
+        { value: 'health', label: 'Health / Wellness Startup', nextQuestion: 'funding_plan' },
+        { value: 'edtech', label: 'EdTech / Training Startup', nextQuestion: 'funding_plan' },
+        { value: 'fintech', label: 'FinTech Startup', nextQuestion: 'funding_plan' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ TRADITIONAL BUSINESS
+    ====================== */
+    {
+      key: 'traditional_type',
+      text: 'Which traditional business interests you?',
+      type: 'single',
+      options: [
+        { value: 'retail', label: 'Retail Shop', nextQuestion: 'investment_range' },
+        { value: 'wholesale', label: 'Wholesale / Distribution', nextQuestion: 'investment_range' },
+        { value: 'trading', label: 'Import / Export Trading', nextQuestion: 'investment_range' },
+        { value: 'food', label: 'Hotel / Restaurant / Cloud Kitchen', nextQuestion: 'investment_range' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ ONLINE BUSINESS
+    ====================== */
+    {
+      key: 'online_type',
+      text: 'Which online business do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'ecommerce', label: 'E-commerce / D2C Brand', nextQuestion: 'investment_range' },
+        { value: 'content', label: 'YouTube / Blogging / Influencer', nextQuestion: 'investment_range' },
+        { value: 'freelance', label: 'Freelancing / Agency', nextQuestion: 'investment_range' },
+        { value: 'saas', label: 'SaaS / Subscription Product', nextQuestion: 'investment_range' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ MANUFACTURING
+    ====================== */
+    {
+      key: 'manufacturing_type',
+      text: 'Which manufacturing scale are you targeting?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Small-scale Manufacturing', nextQuestion: 'investment_range' },
+        { value: 'medium', label: 'Medium-scale Industry', nextQuestion: 'investment_range' },
+        { value: 'large', label: 'Large-scale Factory', nextQuestion: 'investment_range' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ SERVICE BUSINESS
+    ====================== */
+    {
+      key: 'service_type',
+      text: 'Which service business interests you?',
+      type: 'single',
+      options: [
+        { value: 'consulting', label: 'Consulting / Coaching', nextQuestion: 'investment_range' },
+        { value: 'it', label: 'IT Services / Software Company', nextQuestion: 'investment_range' },
+        { value: 'logistics', label: 'Logistics / Transport', nextQuestion: 'investment_range' },
+        { value: 'realestate', label: 'Real Estate / Construction', nextQuestion: 'investment_range' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ FRANCHISE
+    ====================== */
+    {
+      key: 'franchise_type',
+      text: 'What franchise type do you want?',
+      type: 'single',
+      options: [
+        { value: 'food', label: 'Food & Beverage Franchise', nextQuestion: 'investment_range' },
+        { value: 'retail', label: 'Retail Franchise', nextQuestion: 'investment_range' },
+        { value: 'education', label: 'Education / Training Franchise', nextQuestion: 'investment_range' },
+      ],
+    },
+
+    /* ======================
+       9️⃣ INVESTMENT RANGE
+    ====================== */
+    {
+      key: 'investment_range',
+      text: 'What is your investment capacity?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low (Below ₹50,000)', nextQuestion: 'growth_goal' },
+        { value: 'medium', label: 'Medium (₹50,000 – ₹5 Lakhs)', nextQuestion: 'growth_goal' },
+        { value: 'high', label: 'High (₹5 Lakhs – ₹50 Lakhs)', nextQuestion: 'growth_goal' },
+        { value: 'enterprise', label: 'Enterprise Level (₹50 Lakhs+)', nextQuestion: 'growth_goal' },
+      ],
+    },
+
+    /* ======================
+       🔟 GROWTH GOAL
+    ====================== */
+    {
+      key: 'growth_goal',
+      text: 'What is your long-term goal?',
+      type: 'single',
+      options: [
+        { value: 'local', label: 'Local Business' },
+        { value: 'state', label: 'State-Level Expansion' },
+        { value: 'national', label: 'National Brand' },
+        { value: 'global', label: 'Global / International Business' },
+      ],
+    },
+
+  ],
+},
+
+  /*
+┌─────────────────────────┐
+│   personal_dev dream    │
+└─────────────────────────┘
+*/
+
+ {
+  key: 'personal_dev',
+  name: 'Personal Development Programs',
+  icon: 'Target',
+  description: 'Self-improvement and personal growth',
+  questions: [
+
+    /* ======================
+       1️⃣ DEVELOPMENT AREA
+    ====================== */
+    {
+      key: 'development_area',
+      text: 'Which area do you want to develop?',
+      type: 'single',
+      options: [
+        { value: 'confidence', label: 'Self-Confidence', nextQuestion: 'current_level' },
+        { value: 'public_speaking', label: 'Public Speaking', nextQuestion: 'current_level' },
+        { value: 'personality', label: 'Personality Development', nextQuestion: 'current_level' },
+        { value: 'stress', label: 'Stress Management', nextQuestion: 'current_level' },
+        { value: 'relationships', label: 'Relationship & Social Skills', nextQuestion: 'current_level' },
+        { value: 'leadership', label: 'Leadership Skills', nextQuestion: 'current_level' },
+        { value: 'discipline', label: 'Self-Discipline & Focus', nextQuestion: 'current_level' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ CURRENT LEVEL
+    ====================== */
+    {
+      key: 'current_level',
+      text: 'What is your current level in this area?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner / Struggling', nextQuestion: 'learning_style' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'learning_style' },
+        { value: 'advanced', label: 'Advanced / Want mastery', nextQuestion: 'learning_style' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ LEARNING STYLE
+    ====================== */
+    {
+      key: 'learning_style',
+      text: 'How do you prefer to improve?',
+      type: 'single',
+      options: [
+        { value: 'coaching', label: '1-to-1 Coaching', nextQuestion: 'time_commitment' },
+        { value: 'course', label: 'Structured Course', nextQuestion: 'time_commitment' },
+        { value: 'practice', label: 'Daily Practice Tasks', nextQuestion: 'time_commitment' },
+        { value: 'community', label: 'Group / Community Learning', nextQuestion: 'time_commitment' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ TIME COMMITMENT
+    ====================== */
+    {
+      key: 'time_commitment',
+      text: 'How much time can you dedicate weekly?',
+      type: 'single',
+      options: [
+        { value: 'low', label: '1–2 hours', nextQuestion: 'goal_timeline' },
+        { value: 'medium', label: '3–5 hours', nextQuestion: 'goal_timeline' },
+        { value: 'high', label: '6+ hours', nextQuestion: 'goal_timeline' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ GOAL TIMELINE
+    ====================== */
+    {
+      key: 'goal_timeline',
+      text: 'When do you want to see results?',
+      type: 'single',
+      options: [
+        { value: 'short', label: 'Within 30 days' },
+        { value: 'medium', label: '2–3 months' },
+        { value: 'long', label: '6 months or more' },
+      ],
+    },
+
+  ],
+},
+  /*─────────────────────────┐
+  │    Dress Selection dream │
+  └─────────────────────────┘
+*/
   {
-    key: 'ai',
-    name: 'Artificial Intelligence',
-    icon: 'Brain',
-    description: 'AI and machine learning careers',
-    questions: [
-      {
-        key: 'ai_role',
-        text: 'What role interests you in AI?',
-        type: 'single',
-        options: [
-          { value: 'ml_engineer', label: 'Machine Learning Engineer', nextQuestion: 'programming_skills' },
-          { value: 'data_scientist', label: 'Data Scientist', nextQuestion: 'programming_skills' },
-          { value: 'ai_researcher', label: 'AI Researcher', nextQuestion: 'programming_skills' },
-          { value: 'ai_consultant', label: 'AI Consultant/Implementation', nextQuestion: 'programming_skills' },
-        ],
-      },
-      {
-        key: 'programming_skills',
-        text: 'What is your programming skill level?',
-        type: 'single',
-        options: [
-          { value: 'advanced', label: 'Advanced (Python, frameworks)', nextQuestion: 'math_background' },
-          { value: 'intermediate', label: 'Intermediate, learning AI/ML', nextQuestion: 'math_background' },
-          { value: 'beginner', label: 'Beginner, need to start', nextQuestion: 'math_background' },
-        ],
-      },
-      {
-        key: 'math_background',
-        text: 'How strong is your mathematics background?',
-        type: 'single',
-        options: [
-          { value: 'strong', label: 'Strong (Statistics, Linear Algebra)' },
-          { value: 'moderate', label: 'Moderate, willing to learn' },
-          { value: 'weak', label: 'Weak, need foundation' },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'design',
-    name: '2D & 3D Design',
-    icon: 'Palette',
-    description: 'Digital design and modeling',
-    questions: [
-      {
-        key: 'design_type',
-        text: 'Which design field interests you?',
-        type: 'single',
-        options: [
-          { value: '2d_graphic', label: '2D Graphic Design', nextQuestion: 'design_software' },
-          { value: '3d_modeling', label: '3D Modeling', nextQuestion: 'design_software' },
-          { value: 'animation', label: 'Animation', nextQuestion: 'design_software' },
-          { value: 'ui_ux', label: 'UI/UX Design', nextQuestion: 'design_software' },
-          { value: 'game_design', label: 'Game Design', nextQuestion: 'design_software' },
-        ],
-      },
-      {
-        key: 'design_software',
-        text: 'Do you have experience with design software?',
-        type: 'single',
-        options: [
-          { value: 'yes', label: 'Yes (Adobe/Blender/etc)', nextQuestion: 'career_goal' },
-          { value: 'learning', label: 'Currently learning', nextQuestion: 'career_goal' },
-          { value: 'no', label: 'No experience yet', nextQuestion: 'career_goal' },
-        ],
-      },
-      {
-        key: 'career_goal',
-        text: 'What is your career goal?',
-        type: 'single',
-        options: [
-          { value: 'freelance', label: 'Freelance Designer' },
-          { value: 'job', label: 'Full-time Job' },
-          { value: 'business', label: 'Design Studio/Business' },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'business',
-    name: 'Business',
-    icon: 'Store',
-    description: 'Entrepreneurship and business ventures',
-    questions: [
-      {
-        key: 'business_type',
-        text: 'What type of business interests you?',
-        type: 'single',
-        options: [
-          { value: 'home_based', label: 'Home-based Business', nextQuestion: 'home_business_idea' },
-          { value: 'network_marketing', label: 'Network Marketing', nextQuestion: 'sales_comfort' },
-          { value: 'sustainable', label: 'Sustainable/Social Enterprise', nextQuestion: 'sustainability_focus' },
-          { value: 'traditional', label: 'Traditional Business', nextQuestion: 'investment_range' },
-        ],
-      },
-      {
-        key: 'home_business_idea',
-        text: 'What home-based business idea interests you?',
-        type: 'single',
-        options: [
-          { value: 'online', label: 'Online Business (E-commerce/Services)', nextQuestion: 'investment_range' },
-          { value: 'food', label: 'Food Business', nextQuestion: 'investment_range' },
-          { value: 'crafts', label: 'Crafts/Handmade Products', nextQuestion: 'investment_range' },
-          { value: 'consulting', label: 'Consulting/Coaching', nextQuestion: 'investment_range' },
-        ],
-      },
-      {
-        key: 'sales_comfort',
-        text: 'Are you comfortable with sales and networking?',
-        type: 'single',
-        options: [
-          { value: 'yes', label: 'Yes, confident in sales', nextQuestion: 'investment_range' },
-          { value: 'learning', label: 'Willing to learn', nextQuestion: 'investment_range' },
-          { value: 'no', label: 'No, prefer other business models', nextQuestion: 'investment_range' },
-        ],
-      },
-      {
-        key: 'sustainability_focus',
-        text: 'What sustainability focus?',
-        type: 'single',
-        options: [
-          { value: 'environment', label: 'Environmental', nextQuestion: 'investment_range' },
-          { value: 'social', label: 'Social Impact', nextQuestion: 'investment_range' },
-          { value: 'both', label: 'Both', nextQuestion: 'investment_range' },
-        ],
-      },
-      {
-        key: 'investment_range',
-        text: 'What is your investment capacity?',
-        type: 'single',
-        options: [
-          { value: 'minimal', label: 'Minimal (under 50k)' },
-          { value: 'moderate', label: 'Moderate (50k - 5 lakhs)' },
-          { value: 'substantial', label: 'Substantial (above 5 lakhs)' },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'personal_dev',
-    name: 'Personal Development Programs',
-    icon: 'Target',
-    description: 'Self-improvement and personal growth',
-    questions: [
-      {
-        key: 'development_area',
-        text: 'Which area do you want to develop?',
-        type: 'single',
-        options: [
-          { value: 'confidence', label: 'Self-Confidence', nextQuestion: 'commitment_level' },
-          { value: 'public_speaking', label: 'Public Speaking', nextQuestion: 'commitment_level' },
-          { value: 'personality', label: 'Personality Development', nextQuestion: 'commitment_level' },
-          { value: 'stress', label: 'Stress Management', nextQuestion: 'commitment_level' },
-          { value: 'relationships', label: 'Relationship Skills', nextQuestion: 'commitment_level' },
-        ],
-      },
-      {
-        key: 'commitment_level',
-        text: 'How committed are you to this development?',
-        type: 'single',
-        options: [
-          { value: 'high', label: 'Highly committed' },
-          { value: 'moderate', label: 'Moderately committed' },
-          { value: 'exploring', label: 'Just exploring' },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'dress_selection',
-    name: 'Dress Selection',
-    icon: 'Shirt',
-    description: 'Fashion consulting and styling',
-    questions: [
-      {
-        key: 'interest_type',
-        text: 'What is your interest in dress selection?',
-        type: 'single',
-        options: [
-          { value: 'personal', label: 'Personal Styling Guidance', nextQuestion: 'occasion_type' },
-          { value: 'career', label: 'Career as Fashion Consultant', nextQuestion: 'fashion_background' },
-          { value: 'business', label: 'Fashion Business', nextQuestion: 'business_model' },
-        ],
-      },
-      {
-        key: 'occasion_type',
-        text: 'What type of occasions do you need help with?',
-        type: 'single',
-        options: [
-          { value: 'traditional', label: 'Traditional Events (Weddings/Festivals)' },
-          { value: 'professional', label: 'Professional/Corporate' },
-          { value: 'casual', label: 'Casual/Daily Wear' },
-          { value: 'all', label: 'All Occasions' },
-        ],
-      },
-      {
-        key: 'fashion_background',
-        text: 'Do you have fashion education or experience?',
-        type: 'single',
-        options: [
-          { value: 'yes', label: 'Yes, formal education/experience' },
-          { value: 'self_taught', label: 'Self-taught, passionate' },
-          { value: 'no', label: 'No, want to start' },
-        ],
-      },
-      {
-        key: 'business_model',
-        text: 'What business model interests you?',
-        type: 'single',
-        options: [
-          { value: 'boutique', label: 'Boutique/Store' },
-          { value: 'online', label: 'Online Fashion Store' },
-          { value: 'styling', label: 'Styling Services' },
-        ],
-      },
-    ],
-  },
+  key: 'dress_selection',
+  name: 'Dress Selection & Styling',
+  icon: 'Shirt',
+  description: 'Fashion consulting, styling, and fashion careers',
+  questions: [
+
+    /* ======================
+       1️⃣ INTEREST TYPE
+    ====================== */
+    {
+      key: 'interest_type',
+      text: 'What is your interest in dress selection?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Styling Guidance', nextQuestion: 'personal_style_need' },
+        { value: 'career', label: 'Career as Fashion Stylist', nextQuestion: 'fashion_background' },
+        { value: 'business', label: 'Fashion Business', nextQuestion: 'business_model' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ PERSONAL STYLING PATH
+    ====================== */
+    {
+      key: 'personal_style_need',
+      text: 'What do you need styling help for?',
+      type: 'single',
+      options: [
+        { value: 'daily', label: 'Daily Wear', nextQuestion: 'occasion_type' },
+        { value: 'office', label: 'Office / Corporate Wear', nextQuestion: 'occasion_type' },
+        { value: 'events', label: 'Weddings / Functions', nextQuestion: 'occasion_type' },
+        { value: 'body', label: 'Body Type & Color Matching', nextQuestion: 'occasion_type' },
+      ],
+    },
+
+    {
+      key: 'occasion_type',
+      text: 'For which occasions do you want styling?',
+      type: 'single',
+      options: [
+        { value: 'casual', label: 'Casual' },
+        { value: 'professional', label: 'Professional' },
+        { value: 'traditional', label: 'Traditional' },
+        { value: 'all', label: 'All Occasions' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ CAREER PATH
+    ====================== */
+    {
+      key: 'fashion_background',
+      text: 'Do you have fashion education or experience?',
+      type: 'single',
+      options: [
+        { value: 'degree', label: 'Fashion Degree / Course', nextQuestion: 'career_goal' },
+        { value: 'self_taught', label: 'Self-taught', nextQuestion: 'career_goal' },
+        { value: 'none', label: 'No experience, want to start', nextQuestion: 'career_goal' },
+      ],
+    },
+
+    {
+      key: 'career_goal',
+      text: 'What is your career goal in fashion?',
+      type: 'single',
+      options: [
+        { value: 'stylist', label: 'Personal Stylist' },
+        { value: 'celebrity', label: 'Celebrity / Influencer Stylist' },
+        { value: 'corporate', label: 'Corporate Fashion Consultant' },
+        { value: 'designer', label: 'Fashion Designer' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ BUSINESS PATH
+    ====================== */
+    {
+      key: 'business_model',
+      text: 'What fashion business model interests you?',
+      type: 'single',
+      options: [
+        { value: 'boutique', label: 'Boutique / Store', nextQuestion: 'budget_range' },
+        { value: 'online', label: 'Online Fashion Brand', nextQuestion: 'budget_range' },
+        { value: 'styling', label: 'Styling Services', nextQuestion: 'budget_range' },
+        { value: 'custom', label: 'Custom Designer Wear', nextQuestion: 'budget_range' },
+      ],
+    },
+
+    {
+      key: 'budget_range',
+      text: 'What is your budget range?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Budget' },
+        { value: 'medium', label: 'Medium Budget' },
+        { value: 'high', label: 'High / Premium' },
+      ],
+    },
+
+  ],
+},
+/*
+┌─────────────────────────┐
+│    Safety & Security    │
+└─────────────────────────┘
+*/
+{
+  key: 'safety',
+  name: 'Safety & Security',
+  icon: 'Shield',
+  description: 'Personal, workplace, public, and emergency safety requirements',
+  questions: [
+
+    /* ======================
+       1️⃣ SAFETY AREA
+    ====================== */
+    {
+      key: 'safety_area',
+      text: 'Which safety area do you want to focus on?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Safety', nextQuestion: 'personal_safety_type' },
+        { value: 'workplace', label: 'Workplace Safety', nextQuestion: 'workplace_safety_type' },
+        { value: 'public', label: 'Public Safety', nextQuestion: 'public_safety_type' },
+        { value: 'emergency', label: 'Emergency & Disaster Safety', nextQuestion: 'emergency_type' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ PERSONAL SAFETY
+    ====================== */
+    {
+      key: 'personal_safety_type',
+      text: 'Which personal safety requirement do you need?',
+      type: 'single',
+      options: [
+        { value: 'self_defense', label: 'Self-Defense Awareness', nextQuestion: 'safety_environment' },
+        { value: 'women', label: 'Women Safety', nextQuestion: 'safety_environment' },
+        { value: 'children', label: 'Child Safety', nextQuestion: 'safety_environment' },
+        { value: 'elderly', label: 'Elderly Safety', nextQuestion: 'safety_environment' },
+        { value: 'online', label: 'Online / Cyber Safety', nextQuestion: 'online_safety_focus' },
+      ],
+    },
+
+    {
+      key: 'online_safety_focus',
+      text: 'What type of online safety?',
+      type: 'single',
+      options: [
+        { value: 'fraud', label: 'Online Fraud & Scams' },
+        { value: 'privacy', label: 'Privacy Protection' },
+        { value: 'social', label: 'Social Media Safety' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ WORKPLACE SAFETY
+    ====================== */
+    {
+      key: 'workplace_safety_type',
+      text: 'Which workplace safety area applies to you?',
+      type: 'single',
+      options: [
+        { value: 'industrial', label: 'Industrial / Factory Safety', nextQuestion: 'workplace_role' },
+        { value: 'construction', label: 'Construction Site Safety', nextQuestion: 'workplace_role' },
+        { value: 'office', label: 'Office / IT Safety', nextQuestion: 'workplace_role' },
+        { value: 'healthcare', label: 'Hospital / Healthcare Safety', nextQuestion: 'workplace_role' },
+      ],
+    },
+
+    {
+      key: 'workplace_role',
+      text: 'What is your role at the workplace?',
+      type: 'single',
+      options: [
+        { value: 'worker', label: 'Worker / Employee' },
+        { value: 'supervisor', label: 'Supervisor / Manager' },
+        { value: 'owner', label: 'Owner / Employer' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ PUBLIC SAFETY
+    ====================== */
+    {
+      key: 'public_safety_type',
+      text: 'Which public safety topic do you need?',
+      type: 'single',
+      options: [
+        { value: 'road', label: 'Road & Traffic Safety', nextQuestion: 'road_user_type' },
+        { value: 'crowd', label: 'Crowd / Event Safety', nextQuestion: 'public_place_type' },
+        { value: 'transport', label: 'Public Transport Safety', nextQuestion: 'public_place_type' },
+      ],
+    },
+
+    {
+      key: 'road_user_type',
+      text: 'You mainly travel as?',
+      type: 'single',
+      options: [
+        { value: 'pedestrian', label: 'Pedestrian' },
+        { value: 'two_wheeler', label: 'Two-Wheeler Rider' },
+        { value: 'car', label: 'Car Driver' },
+        { value: 'commercial', label: 'Commercial Driver' },
+      ],
+    },
+
+    {
+      key: 'public_place_type',
+      text: 'Which public places concern you?',
+      type: 'single',
+      options: [
+        { value: 'stations', label: 'Bus/Train Stations' },
+        { value: 'markets', label: 'Markets & Malls' },
+        { value: 'schools', label: 'Schools & Colleges' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ EMERGENCY & DISASTER
+    ====================== */
+    {
+      key: 'emergency_type',
+      text: 'Which emergency safety do you want to learn?',
+      type: 'single',
+      options: [
+        { value: 'fire', label: 'Fire Safety', nextQuestion: 'fire_safety_focus' },
+        { value: 'medical', label: 'Medical Emergency / First Aid', nextQuestion: 'medical_safety_focus' },
+        { value: 'natural', label: 'Natural Disasters', nextQuestion: 'disaster_type' },
+      ],
+    },
+
+    {
+      key: 'fire_safety_focus',
+      text: 'Fire safety requirement?',
+      type: 'single',
+      options: [
+        { value: 'prevention', label: 'Fire Prevention' },
+        { value: 'evacuation', label: 'Evacuation Planning' },
+        { value: 'equipment', label: 'Fire Extinguisher Usage' },
+      ],
+    },
+
+    {
+      key: 'medical_safety_focus',
+      text: 'Medical emergency focus?',
+      type: 'single',
+      options: [
+        { value: 'first_aid', label: 'First Aid Basics' },
+        { value: 'cpr', label: 'CPR & Life Saving' },
+        { value: 'ambulance', label: 'Ambulance & Emergency Response' },
+      ],
+    },
+
+    {
+      key: 'disaster_type',
+      text: 'Which disaster safety?',
+      type: 'single',
+      options: [
+        { value: 'flood', label: 'Flood Safety' },
+        { value: 'earthquake', label: 'Earthquake Safety' },
+        { value: 'cyclone', label: 'Cyclone / Storm Safety' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ ENVIRONMENT
+    ====================== */
+    {
+      key: 'safety_environment',
+      text: 'Where do you need safety guidance?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home' },
+        { value: 'school', label: 'School / College' },
+        { value: 'workplace', label: 'Workplace' },
+        { value: 'outdoor', label: 'Outdoor / Travel' },
+      ],
+    },
+
+  ],
+},
+ /*
+┌─────────────────────────┐
+│ BLOOD (Donation / Medical Awareness)        │
+└─────────────────────────┘
+*/
+
+{
+  key: 'blood',
+  name: 'Blood Donation & Medical Awareness',
+  icon: 'Droplet',
+  description: 'Blood donation, transfusion awareness, and medical emergency support',
+  questions: [
+
+    /* ======================
+       1️⃣ PURPOSE
+    ====================== */
+    {
+      key: 'blood_interest',
+      text: 'What is your interest related to blood?',
+      type: 'single',
+      options: [
+        { value: 'donation', label: 'Blood Donation', nextQuestion: 'donor_status' },
+        { value: 'awareness', label: 'Medical Awareness', nextQuestion: 'awareness_topic' },
+        { value: 'emergency', label: 'Emergency Blood Support', nextQuestion: 'emergency_role' },
+        { value: 'career', label: 'Career in Blood & Medical Field', nextQuestion: 'medical_background' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ DONATION FLOW
+    ====================== */
+    {
+      key: 'donor_status',
+      text: 'What is your blood donation status?',
+      type: 'single',
+      options: [
+        { value: 'first_time', label: 'First-Time Donor', nextQuestion: 'blood_group_known' },
+        { value: 'regular', label: 'Regular Donor', nextQuestion: 'donation_frequency' },
+        { value: 'unable', label: 'Unable to Donate Currently', nextQuestion: 'donation_restriction' },
+      ],
+    },
+
+    {
+      key: 'blood_group_known',
+      text: 'Do you know your blood group?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes', nextQuestion: 'donation_location' },
+        { value: 'no', label: 'No, want to check', nextQuestion: 'donation_location' },
+      ],
+    },
+
+    {
+      key: 'donation_frequency',
+      text: 'How often do you donate blood?',
+      type: 'single',
+      options: [
+        { value: '3_months', label: 'Every 3 months' },
+        { value: '6_months', label: 'Every 6 months' },
+        { value: 'occasionally', label: 'Occasionally' },
+      ],
+    },
+
+    {
+      key: 'donation_restriction',
+      text: 'What is the reason you cannot donate?',
+      type: 'single',
+      options: [
+        { value: 'medical', label: 'Medical Condition' },
+        { value: 'age', label: 'Age / Weight Issues' },
+        { value: 'fear', label: 'Fear / Lack of Awareness' },
+      ],
+    },
+
+    {
+      key: 'donation_location',
+      text: 'Where would you prefer to donate blood?',
+      type: 'single',
+      options: [
+        { value: 'hospital', label: 'Hospital Blood Bank' },
+        { value: 'camp', label: 'Donation Camp' },
+        { value: 'ngo', label: 'NGO / Red Cross' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ AWARENESS FLOW
+    ====================== */
+    {
+      key: 'awareness_topic',
+      text: 'Which blood-related awareness do you want?',
+      type: 'single',
+      options: [
+        { value: 'blood_groups', label: 'Blood Groups & Compatibility' },
+        { value: 'transfusion', label: 'Blood Transfusion Process' },
+        { value: 'myths', label: 'Donation Myths & Facts' },
+        { value: 'diseases', label: 'Blood-Related Diseases' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ EMERGENCY FLOW
+    ====================== */
+    {
+      key: 'emergency_role',
+      text: 'How do you want to help in emergencies?',
+      type: 'single',
+      options: [
+        { value: 'donor', label: 'Emergency Donor' },
+        { value: 'coordinator', label: 'Blood Coordination Support' },
+        { value: 'volunteer', label: 'Hospital / NGO Volunteer' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ CAREER FLOW
+    ====================== */
+    {
+      key: 'medical_background',
+      text: 'Do you have a medical background?',
+      type: 'single',
+      options: [
+        { value: 'mbbs', label: 'MBBS / Medical Student', nextQuestion: 'career_interest' },
+        { value: 'paramedical', label: 'Paramedical / Nursing', nextQuestion: 'career_interest' },
+        { value: 'science', label: 'Science Graduate', nextQuestion: 'career_interest' },
+        { value: 'none', label: 'No Medical Background', nextQuestion: 'career_interest' },
+      ],
+    },
+
+    {
+      key: 'career_interest',
+      text: 'Which blood-related career interests you?',
+      type: 'single',
+      options: [
+        { value: 'pathology', label: 'Pathologist / Lab Specialist' },
+        { value: 'blood_bank', label: 'Blood Bank Officer' },
+        { value: 'research', label: 'Medical Research' },
+        { value: 'ngo', label: 'NGO / Social Service' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│       food Dreams       │
+└─────────────────────────┘
+*/
+
+{
+  key: 'food',
+  name: 'Food & Nutrition',
+  icon: 'Utensils',
+  description: 'Nutrition guidance, food safety, and food-related businesses',
+  questions: [
+
+    /* ======================
+       1️⃣ MAIN INTEREST
+    ====================== */
+    {
+      key: 'food_interest',
+      text: 'What is your main interest related to food?',
+      type: 'single',
+      options: [
+        { value: 'nutrition', label: 'Nutrition & Healthy Eating', nextQuestion: 'nutrition_goal' },
+        { value: 'safety', label: 'Food Safety & Hygiene', nextQuestion: 'safety_context' },
+        { value: 'business', label: 'Food Business', nextQuestion: 'business_type' },
+        { value: 'career', label: 'Career in Food Industry', nextQuestion: 'education_background' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ NUTRITION FLOW
+    ====================== */
+    {
+      key: 'nutrition_goal',
+      text: 'What is your nutrition goal?',
+      type: 'single',
+      options: [
+        { value: 'weight_loss', label: 'Weight Loss', nextQuestion: 'diet_preference' },
+        { value: 'weight_gain', label: 'Weight Gain', nextQuestion: 'diet_preference' },
+        { value: 'fitness', label: 'Fitness & Muscle Building', nextQuestion: 'diet_preference' },
+        { value: 'medical', label: 'Medical / Special Diet', nextQuestion: 'diet_preference' },
+      ],
+    },
+
+    {
+      key: 'diet_preference',
+      text: 'What is your diet preference?',
+      type: 'single',
+      options: [
+        { value: 'vegetarian', label: 'Vegetarian', nextQuestion: 'meal_plan_need' },
+        { value: 'non_veg', label: 'Non-Vegetarian', nextQuestion: 'meal_plan_need' },
+        { value: 'vegan', label: 'Vegan', nextQuestion: 'meal_plan_need' },
+        { value: 'mixed', label: 'Mixed Diet', nextQuestion: 'meal_plan_need' },
+      ],
+    },
+
+    {
+      key: 'meal_plan_need',
+      text: 'Do you need a structured meal plan?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, daily meal plan' },
+        { value: 'guidelines', label: 'Only nutrition guidelines' },
+        { value: 'no', label: 'No, general awareness' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ FOOD SAFETY FLOW
+    ====================== */
+    {
+      key: 'safety_context',
+      text: 'Where do you want food safety guidance?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home Kitchen', nextQuestion: 'safety_focus' },
+        { value: 'restaurant', label: 'Restaurant / Hotel', nextQuestion: 'safety_focus' },
+        { value: 'street_food', label: 'Street Food / Vendor', nextQuestion: 'safety_focus' },
+        { value: 'industry', label: 'Food Processing Industry', nextQuestion: 'safety_focus' },
+      ],
+    },
+
+    {
+      key: 'safety_focus',
+      text: 'What food safety area do you want to focus on?',
+      type: 'single',
+      options: [
+        { value: 'hygiene', label: 'Hygiene & Cleanliness' },
+        { value: 'storage', label: 'Food Storage & Preservation' },
+        { value: 'contamination', label: 'Preventing Contamination' },
+        { value: 'certification', label: 'Food Safety Certification (FSSAI)' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ FOOD BUSINESS FLOW
+    ====================== */
+    {
+      key: 'business_type',
+      text: 'What type of food business interests you?',
+      type: 'single',
+      options: [
+        { value: 'home_food', label: 'Home-based Food Business', nextQuestion: 'business_scale' },
+        { value: 'restaurant', label: 'Restaurant / Cafe', nextQuestion: 'business_scale' },
+        { value: 'street', label: 'Street Food Stall', nextQuestion: 'business_scale' },
+        { value: 'manufacturing', label: 'Food Manufacturing', nextQuestion: 'business_scale' },
+      ],
+    },
+
+    {
+      key: 'business_scale',
+      text: 'What scale of business are you planning?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Small / Local', nextQuestion: 'investment_capacity' },
+        { value: 'medium', label: 'City Level', nextQuestion: 'investment_capacity' },
+        { value: 'large', label: 'Large / Multiple Locations', nextQuestion: 'investment_capacity' },
+      ],
+    },
+
+    {
+      key: 'investment_capacity',
+      text: 'What is your investment capacity?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low (Under 1 lakh)' },
+        { value: 'medium', label: 'Medium (1–10 lakhs)' },
+        { value: 'high', label: 'High (Above 10 lakhs)' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ CAREER FLOW
+    ====================== */
+    {
+      key: 'education_background',
+      text: 'What is your educational background?',
+      type: 'single',
+      options: [
+        { value: 'nutrition', label: 'Nutrition / Dietetics', nextQuestion: 'career_interest' },
+        { value: 'hotel', label: 'Hotel Management / Culinary Arts', nextQuestion: 'career_interest' },
+        { value: 'science', label: 'Food Science / Biotechnology', nextQuestion: 'career_interest' },
+        { value: 'none', label: 'No related background', nextQuestion: 'career_interest' },
+      ],
+    },
+
+    {
+      key: 'career_interest',
+      text: 'Which food-related career interests you?',
+      type: 'single',
+      options: [
+        { value: 'dietitian', label: 'Dietitian / Nutritionist' },
+        { value: 'chef', label: 'Chef / Culinary Expert' },
+        { value: 'quality', label: 'Food Quality & Safety Officer' },
+        { value: 'entrepreneur', label: 'Food Entrepreneur' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│       Driver dream      │
+└─────────────────────────┘
+*/
+
+{
+  key: 'driver',
+  name: 'Driver & Driving Skills',
+  icon: 'Car',
+  description: 'Driving skills, license guidance, and professional driving careers',
+  questions: [
+
+    /* ======================
+       1️⃣ MAIN PURPOSE
+    ====================== */
+    {
+      key: 'driving_purpose',
+      text: 'Why do you want to learn or improve driving?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Driving', nextQuestion: 'vehicle_type' },
+        { value: 'license', label: 'Driving License (LL/DL)', nextQuestion: 'license_stage' },
+        { value: 'professional', label: 'Professional Driving Career', nextQuestion: 'professional_type' },
+        { value: 'skill_upgrade', label: 'Improve Driving Skills', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ PERSONAL DRIVING
+    ====================== */
+    {
+      key: 'vehicle_type',
+      text: 'Which vehicle do you want to drive?',
+      type: 'single',
+      options: [
+        { value: 'two_wheeler', label: 'Two-Wheeler (Bike/Scooter)', nextQuestion: 'transmission_type' },
+        { value: 'car', label: 'Car', nextQuestion: 'transmission_type' },
+        { value: 'auto', label: 'Auto Rickshaw', nextQuestion: 'transmission_type' },
+      ],
+    },
+
+    {
+      key: 'transmission_type',
+      text: 'Which transmission do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'manual', label: 'Manual', nextQuestion: 'driving_experience' },
+        { value: 'automatic', label: 'Automatic', nextQuestion: 'driving_experience' },
+      ],
+    },
+
+    {
+      key: 'driving_experience',
+      text: 'What is your driving experience?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner (No experience)', nextQuestion: 'training_mode' },
+        { value: 'basic', label: 'Basic driving knowledge', nextQuestion: 'training_mode' },
+        { value: 'experienced', label: 'Already driving, need polishing', nextQuestion: 'training_mode' },
+      ],
+    },
+
+    {
+      key: 'training_mode',
+      text: 'How do you want to learn?',
+      type: 'single',
+      options: [
+        { value: 'driving_school', label: 'Driving School' },
+        { value: 'personal_trainer', label: 'Personal Trainer' },
+        { value: 'self_practice', label: 'Self Practice with Guidance' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ LICENSE FLOW
+    ====================== */
+    {
+      key: 'license_stage',
+      text: 'What is your license status?',
+      type: 'single',
+      options: [
+        { value: 'no_license', label: 'No License', nextQuestion: 'license_type' },
+        { value: 'learner', label: 'Learner License (LL)', nextQuestion: 'license_test_help' },
+        { value: 'expired', label: 'Expired License', nextQuestion: 'renewal_need' },
+      ],
+    },
+
+    {
+      key: 'license_type',
+      text: 'Which license do you want to apply for?',
+      type: 'single',
+      options: [
+        { value: 'two_wheeler', label: 'Two-Wheeler License' },
+        { value: 'lmv', label: 'LMV (Car)' },
+        { value: 'both', label: 'Both Two-Wheeler & Car' },
+      ],
+    },
+
+    {
+      key: 'license_test_help',
+      text: 'Do you need help with the driving test?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, test preparation needed' },
+        { value: 'no', label: 'No, confident' },
+      ],
+    },
+
+    {
+      key: 'renewal_need',
+      text: 'What do you need help with?',
+      type: 'single',
+      options: [
+        { value: 'renew', label: 'License Renewal' },
+        { value: 'address_change', label: 'Address Update' },
+        { value: 'duplicate', label: 'Duplicate License' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ PROFESSIONAL DRIVING
+    ====================== */
+    {
+      key: 'professional_type',
+      text: 'What type of professional driving interests you?',
+      type: 'single',
+      options: [
+        { value: 'taxi', label: 'Taxi / Cab Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'truck', label: 'Truck / Lorry Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'bus', label: 'Bus Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'delivery', label: 'Delivery / Logistics Driver', nextQuestion: 'commercial_vehicle' },
+      ],
+    },
+
+    {
+      key: 'commercial_vehicle',
+      text: 'Do you have experience with commercial vehicles?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, experienced', nextQuestion: 'commercial_license' },
+        { value: 'no', label: 'No, need training', nextQuestion: 'commercial_license' },
+      ],
+    },
+
+    {
+      key: 'commercial_license',
+      text: 'Do you have a commercial driving license?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes' },
+        { value: 'no', label: 'No, need guidance' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ SKILL IMPROVEMENT
+    ====================== */
+    {
+      key: 'skill_level',
+      text: 'Which driving skill do you want to improve?',
+      type: 'single',
+      options: [
+        { value: 'confidence', label: 'Confidence & Road Awareness' },
+        { value: 'parking', label: 'Parking Skills' },
+        { value: 'highway', label: 'Highway Driving' },
+        { value: 'night', label: 'Night Driving' },
+        { value: 'defensive', label: 'Defensive & Safe Driving' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│    Ambulance Dream      │
+└─────────────────────────┘
+*/
+
+{
+  key: 'ambulance',
+  name: 'Ambulance & Emergency Medical Services',
+  icon: 'Ambulance',
+  description: 'Emergency response, ambulance services, and medical careers',
+  questions: [
+
+    /* ======================
+       1️⃣ MAIN PURPOSE
+    ====================== */
+    {
+      key: 'ambulance_purpose',
+      text: 'What is your purpose related to ambulance services?',
+      type: 'single',
+      options: [
+        { value: 'emergency_help', label: 'Emergency Help for Patient', nextQuestion: 'emergency_type' },
+        { value: 'driver', label: 'Ambulance Driver', nextQuestion: 'driver_experience' },
+        { value: 'medical_staff', label: 'Medical / Paramedic Career', nextQuestion: 'medical_role' },
+        { value: 'business', label: 'Start Ambulance Service Business', nextQuestion: 'business_scale' },
+        { value: 'awareness', label: 'Emergency Awareness & Training', nextQuestion: 'training_interest' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ EMERGENCY HELP PATH
+    ====================== */
+    {
+      key: 'emergency_type',
+      text: 'What type of emergency is it?',
+      type: 'single',
+      options: [
+        { value: 'accident', label: 'Road Accident', nextQuestion: 'patient_condition' },
+        { value: 'heart', label: 'Heart Attack / Chest Pain', nextQuestion: 'patient_condition' },
+        { value: 'pregnancy', label: 'Pregnancy / Delivery Emergency', nextQuestion: 'patient_condition' },
+        { value: 'breathing', label: 'Breathing Problem', nextQuestion: 'patient_condition' },
+        { value: 'other', label: 'Other Medical Emergency', nextQuestion: 'patient_condition' },
+      ],
+    },
+
+    {
+      key: 'patient_condition',
+      text: 'What is the patient condition?',
+      type: 'single',
+      options: [
+        { value: 'critical', label: 'Critical', nextQuestion: 'hospital_preference' },
+        { value: 'stable', label: 'Stable but needs transport', nextQuestion: 'hospital_preference' },
+        { value: 'unknown', label: 'Not sure', nextQuestion: 'hospital_preference' },
+      ],
+    },
+
+    {
+      key: 'hospital_preference',
+      text: 'Do you have a preferred hospital?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes' },
+        { value: 'no', label: 'Nearest Available Hospital' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ AMBULANCE DRIVER PATH
+    ====================== */
+    {
+      key: 'driver_experience',
+      text: 'What is your driving experience?',
+      type: 'single',
+      options: [
+        { value: 'experienced', label: 'Experienced Driver', nextQuestion: 'commercial_license' },
+        { value: 'basic', label: 'Basic Driving Experience', nextQuestion: 'driver_training' },
+        { value: 'none', label: 'No Experience', nextQuestion: 'driver_training' },
+      ],
+    },
+
+    {
+      key: 'driver_training',
+      text: 'Do you want ambulance driver training?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, training needed' },
+        { value: 'no', label: 'No, just guidance' },
+      ],
+    },
+
+    {
+      key: 'commercial_license',
+      text: 'Do you have a commercial driving license?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes' },
+        { value: 'no', label: 'No, need help to apply' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ MEDICAL / PARAMEDIC CAREER
+    ====================== */
+    {
+      key: 'medical_role',
+      text: 'Which medical role interests you?',
+      type: 'single',
+      options: [
+        { value: 'emt', label: 'EMT (Emergency Medical Technician)', nextQuestion: 'education_level' },
+        { value: 'paramedic', label: 'Paramedic', nextQuestion: 'education_level' },
+        { value: 'nurse', label: 'Emergency Nurse', nextQuestion: 'education_level' },
+        { value: 'first_aid', label: 'First Aid Responder', nextQuestion: 'education_level' },
+      ],
+    },
+
+    {
+      key: 'education_level',
+      text: 'What is your education background?',
+      type: 'single',
+      options: [
+        { value: '10th', label: '10th Pass' },
+        { value: '12th', label: '12th Pass (Biology preferred)' },
+        { value: 'graduate', label: 'Graduate / Medical Field' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ AMBULANCE BUSINESS
+    ====================== */
+    {
+      key: 'business_scale',
+      text: 'What scale of ambulance service do you want to start?',
+      type: 'single',
+      options: [
+        { value: 'single', label: 'Single Ambulance', nextQuestion: 'ambulance_type' },
+        { value: 'fleet', label: 'Fleet / Hospital Tie-up', nextQuestion: 'ambulance_type' },
+      ],
+    },
+
+    {
+      key: 'ambulance_type',
+      text: 'Which type of ambulance?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Life Support (BLS)', nextQuestion: 'business_support' },
+        { value: 'advanced', label: 'Advanced Life Support (ALS)', nextQuestion: 'business_support' },
+        { value: 'icu', label: 'ICU Ambulance', nextQuestion: 'business_support' },
+      ],
+    },
+
+    {
+      key: 'business_support',
+      text: 'What business support do you need?',
+      type: 'single',
+      options: [
+        { value: 'license', label: 'Licensing & Permissions' },
+        { value: 'equipment', label: 'Medical Equipment Setup' },
+        { value: 'staff', label: 'Staff Hiring & Training' },
+        { value: 'funding', label: 'Funding & Investment' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ AWARENESS & TRAINING
+    ====================== */
+    {
+      key: 'training_interest',
+      text: 'Which emergency training are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'first_aid', label: 'First Aid & CPR' },
+        { value: 'disaster', label: 'Disaster Management' },
+        { value: 'road_safety', label: 'Road Accident Response' },
+      ],
+    },
+
+  ],
+},
+/*
+┌─────────────────────────┐
+│     fire_services       │
+└─────────────────────────┘
+*/
+
+
+{
+  key: 'fire_services',
+  name: 'Fire Services',
+  icon: 'Flame',
+  description: 'Fire safety, firefighting, and emergency response services',
+  questions: [
+
+    /* ======================
+       1️⃣ MAIN INTENT
+    ====================== */
+    {
+      key: 'fire_purpose',
+      text: 'What is your purpose related to fire services?',
+      type: 'single',
+      options: [
+        { value: 'emergency', label: 'Fire Emergency Help', nextQuestion: 'fire_emergency_type' },
+        { value: 'career', label: 'Career in Fire Services', nextQuestion: 'fire_career_role' },
+        { value: 'safety', label: 'Fire Safety & Prevention', nextQuestion: 'safety_location' },
+        { value: 'business', label: 'Fire Safety Business', nextQuestion: 'business_type' },
+        { value: 'training', label: 'Fire Training & Awareness', nextQuestion: 'training_type' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ FIRE EMERGENCY PATH
+    ====================== */
+    {
+      key: 'fire_emergency_type',
+      text: 'What type of fire emergency is it?',
+      type: 'single',
+      options: [
+        { value: 'house', label: 'House / Apartment Fire', nextQuestion: 'fire_severity' },
+        { value: 'factory', label: 'Factory / Industrial Fire', nextQuestion: 'fire_severity' },
+        { value: 'vehicle', label: 'Vehicle Fire', nextQuestion: 'fire_severity' },
+        { value: 'forest', label: 'Forest / Wildfire', nextQuestion: 'fire_severity' },
+        { value: 'electrical', label: 'Electrical Fire', nextQuestion: 'fire_severity' },
+      ],
+    },
+
+    {
+      key: 'fire_severity',
+      text: 'How severe is the fire?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Small / Controllable', nextQuestion: 'rescue_needed' },
+        { value: 'medium', label: 'Medium', nextQuestion: 'rescue_needed' },
+        { value: 'major', label: 'Major / Out of Control', nextQuestion: 'rescue_needed' },
+      ],
+    },
+
+    {
+      key: 'rescue_needed',
+      text: 'Is rescue required?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, people trapped' },
+        { value: 'no', label: 'No, only fire control' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ FIRE SERVICE CAREER
+    ====================== */
+    {
+      key: 'fire_career_role',
+      text: 'Which fire service role interests you?',
+      type: 'single',
+      options: [
+        { value: 'firefighter', label: 'Firefighter', nextQuestion: 'education_level' },
+        { value: 'fire_officer', label: 'Fire Officer', nextQuestion: 'education_level' },
+        { value: 'fire_engineer', label: 'Fire Safety Engineer', nextQuestion: 'education_level' },
+        { value: 'rescue', label: 'Rescue Operations Specialist', nextQuestion: 'education_level' },
+      ],
+    },
+
+    {
+      key: 'education_level',
+      text: 'What is your educational qualification?',
+      type: 'single',
+      options: [
+        { value: '10th', label: '10th Pass' },
+        { value: '12th', label: '12th Pass' },
+        { value: 'graduate', label: 'Graduate / Engineering' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ FIRE SAFETY & PREVENTION
+    ====================== */
+    {
+      key: 'safety_location',
+      text: 'Where do you need fire safety?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home / Apartment', nextQuestion: 'safety_requirement' },
+        { value: 'office', label: 'Office / Commercial Building', nextQuestion: 'safety_requirement' },
+        { value: 'industry', label: 'Factory / Industry', nextQuestion: 'safety_requirement' },
+        { value: 'public', label: 'Public Places', nextQuestion: 'safety_requirement' },
+      ],
+    },
+
+    {
+      key: 'safety_requirement',
+      text: 'What fire safety support do you need?',
+      type: 'single',
+      options: [
+        { value: 'inspection', label: 'Fire Safety Inspection' },
+        { value: 'equipment', label: 'Fire Extinguishers & Alarms' },
+        { value: 'evacuation', label: 'Evacuation Planning' },
+        { value: 'compliance', label: 'Fire NOC & Compliance' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ FIRE SAFETY BUSINESS
+    ====================== */
+    {
+      key: 'business_type',
+      text: 'Which fire-related business interests you?',
+      type: 'single',
+      options: [
+        { value: 'equipment', label: 'Fire Safety Equipment Supply', nextQuestion: 'business_support' },
+        { value: 'inspection', label: 'Fire Safety Inspection Services', nextQuestion: 'business_support' },
+        { value: 'training', label: 'Fire Safety Training Institute', nextQuestion: 'business_support' },
+        { value: 'maintenance', label: 'Fire Equipment Maintenance', nextQuestion: 'business_support' },
+      ],
+    },
+
+    {
+      key: 'business_support',
+      text: 'What business support do you need?',
+      type: 'single',
+      options: [
+        { value: 'license', label: 'Licensing & Certification' },
+        { value: 'training', label: 'Technical Training' },
+        { value: 'funding', label: 'Funding & Investment' },
+        { value: 'marketing', label: 'Marketing & Client Acquisition' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ FIRE TRAINING & AWARENESS
+    ====================== */
+    {
+      key: 'training_type',
+      text: 'Which fire training are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Fire Safety Awareness' },
+        { value: 'advanced', label: 'Advanced Firefighting Skills' },
+        { value: 'disaster', label: 'Disaster & Emergency Management' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│   Internship Dreams     │
+└─────────────────────────┘
+*/
+
+
+{
+  key: 'leadership',
+  name: 'Leadership',
+  icon: 'Crown',
+  description: 'Leadership roles, responsibilities, and development',
+  questions: [
+
+    /* ======================
+       1️⃣ LEADERSHIP CONTEXT
+    ====================== */
+    {
+      key: 'leadership_domain',
+      text: 'In which area do you want to take a leadership role?',
+      type: 'single',
+      options: [
+        { value: 'corporate', label: 'Corporate / Company', nextQuestion: 'corporate_role' },
+        { value: 'startup', label: 'Startup / Entrepreneurship', nextQuestion: 'startup_role' },
+        { value: 'education', label: 'Education / Student Leadership', nextQuestion: 'education_role' },
+        { value: 'government', label: 'Government / Politics', nextQuestion: 'government_role' },
+        { value: 'ngo', label: 'NGO / Social Leadership', nextQuestion: 'ngo_role' },
+        { value: 'community', label: 'Community / Local Leadership', nextQuestion: 'community_role' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ CORPORATE LEADERSHIP
+    ====================== */
+    {
+      key: 'corporate_role',
+      text: 'Which corporate leadership role interests you?',
+      type: 'single',
+      options: [
+        { value: 'ceo', label: 'CEO – Vision, Strategy, Company Growth', nextQuestion: 'leadership_focus' },
+        { value: 'cto', label: 'CTO – Technology & Innovation', nextQuestion: 'leadership_focus' },
+        { value: 'cfo', label: 'CFO – Finance & Risk Management', nextQuestion: 'leadership_focus' },
+        { value: 'manager', label: 'Manager – Team & Performance Management', nextQuestion: 'leadership_focus' },
+        { value: 'team_lead', label: 'Team Lead – Task Execution & Mentoring', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ STARTUP LEADERSHIP
+    ====================== */
+    {
+      key: 'startup_role',
+      text: 'Which startup leadership role suits you?',
+      type: 'single',
+      options: [
+        { value: 'founder', label: 'Founder – Idea, Vision, Fundraising', nextQuestion: 'leadership_focus' },
+        { value: 'cofounder', label: 'Co-Founder – Operations & Scaling', nextQuestion: 'leadership_focus' },
+        { value: 'product_head', label: 'Product Head – Product Strategy', nextQuestion: 'leadership_focus' },
+        { value: 'growth_lead', label: 'Growth Lead – Marketing & Expansion', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ EDUCATIONAL LEADERSHIP
+    ====================== */
+    {
+      key: 'education_role',
+      text: 'Which education leadership role interests you?',
+      type: 'single',
+      options: [
+        { value: 'principal', label: 'Principal – Academic & Administration', nextQuestion: 'leadership_focus' },
+        { value: 'teacher_lead', label: 'Senior Teacher – Mentoring Faculty', nextQuestion: 'leadership_focus' },
+        { value: 'student_leader', label: 'Student Leader – Representation & Events', nextQuestion: 'leadership_focus' },
+        { value: 'trainer', label: 'Trainer – Skill & Knowledge Development', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ GOVERNMENT / POLITICAL LEADERSHIP
+    ====================== */
+    {
+      key: 'government_role',
+      text: 'Which government or political leadership role interests you?',
+      type: 'single',
+      options: [
+        { value: 'politician', label: 'Politician – Policy Making & Public Service', nextQuestion: 'leadership_focus' },
+        { value: 'bureaucrat', label: 'Bureaucrat – Policy Implementation', nextQuestion: 'leadership_focus' },
+        { value: 'administrator', label: 'Administrator – Governance & Planning', nextQuestion: 'leadership_focus' },
+        { value: 'public_leader', label: 'Public Leader – Community Representation', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ NGO / SOCIAL LEADERSHIP
+    ====================== */
+    {
+      key: 'ngo_role',
+      text: 'Which NGO leadership role attracts you?',
+      type: 'single',
+      options: [
+        { value: 'ngo_director', label: 'NGO Director – Vision & Impact', nextQuestion: 'leadership_focus' },
+        { value: 'project_head', label: 'Project Head – Program Execution', nextQuestion: 'leadership_focus' },
+        { value: 'fundraising_lead', label: 'Fundraising Lead – Donor Relations', nextQuestion: 'leadership_focus' },
+        { value: 'volunteer_lead', label: 'Volunteer Lead – Team Coordination', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ COMMUNITY LEADERSHIP
+    ====================== */
+    {
+      key: 'community_role',
+      text: 'Which community leadership role fits you?',
+      type: 'single',
+      options: [
+        { value: 'local_head', label: 'Local Head – Issue Resolution', nextQuestion: 'leadership_focus' },
+        { value: 'youth_leader', label: 'Youth Leader – Awareness & Motivation', nextQuestion: 'leadership_focus' },
+        { value: 'event_coordinator', label: 'Event Coordinator – Planning & Execution', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ RESPONSIBILITY FOCUS
+    ====================== */
+    {
+      key: 'leadership_focus',
+      text: 'Which leadership responsibility do you want to strengthen?',
+      type: 'single',
+      options: [
+        { value: 'decision', label: 'Decision Making & Problem Solving' },
+        { value: 'communication', label: 'Communication & Influence' },
+        { value: 'team', label: 'Team Building & Motivation' },
+        { value: 'strategy', label: 'Vision, Strategy & Planning' },
+        { value: 'ethics', label: 'Ethics & Accountability' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│      Drawing Dream      │
+└─────────────────────────┘
+*/
+
+
+{
+  key: 'drawing',
+  name: 'Drawing & Art Skills',
+  icon: 'Pencil',
+  description: 'Drawing, sketching, illustration, and visual art careers',
+  questions: [
+
+    /* ======================
+       1️⃣ DRAWING INTEREST
+    ====================== */
+    {
+      key: 'drawing_interest',
+      text: 'What is your main interest in drawing?',
+      type: 'single',
+      options: [
+        { value: 'hobby', label: 'Hobby / Personal Interest', nextQuestion: 'drawing_type' },
+        { value: 'career', label: 'Professional Career', nextQuestion: 'drawing_type' },
+        { value: 'business', label: 'Art Business / Freelancing', nextQuestion: 'drawing_type' },
+        { value: 'learning', label: 'Learning from Basics', nextQuestion: 'drawing_type' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ DRAWING TYPES
+    ====================== */
+    {
+      key: 'drawing_type',
+      text: 'Which type of drawing interests you?',
+      type: 'single',
+      options: [
+        { value: 'sketching', label: 'Pencil Sketching', nextQuestion: 'skill_level' },
+        { value: 'realistic', label: 'Realistic Drawing', nextQuestion: 'skill_level' },
+        { value: 'portrait', label: 'Portrait Drawing', nextQuestion: 'skill_level' },
+        { value: 'cartoon', label: 'Cartoon / Caricature', nextQuestion: 'skill_level' },
+        { value: 'anime', label: 'Anime / Manga Art', nextQuestion: 'skill_level' },
+        { value: 'illustration', label: 'Illustration / Book Art', nextQuestion: 'skill_level' },
+        { value: 'digital', label: 'Digital Drawing / Tablet Art', nextQuestion: 'skill_level' },
+        { value: 'painting', label: 'Painting (Watercolor/Acrylic/Oil)', nextQuestion: 'skill_level' },
+        { value: 'calligraphy', label: 'Calligraphy / Lettering', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ SKILL LEVEL
+    ====================== */
+    {
+      key: 'skill_level',
+      text: 'What is your current drawing skill level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner (Basics)', nextQuestion: 'learning_goal' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'learning_goal' },
+        { value: 'advanced', label: 'Advanced / Professional', nextQuestion: 'learning_goal' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ LEARNING GOAL
+    ====================== */
+    {
+      key: 'learning_goal',
+      text: 'What do you want to improve most?',
+      type: 'single',
+      options: [
+        { value: 'basics', label: 'Shapes, Lines & Shading', nextQuestion: 'tools_used' },
+        { value: 'anatomy', label: 'Human Anatomy & Proportions', nextQuestion: 'tools_used' },
+        { value: 'perspective', label: 'Perspective & Depth', nextQuestion: 'tools_used' },
+        { value: 'color', label: 'Color Theory & Blending', nextQuestion: 'tools_used' },
+        { value: 'speed', label: 'Speed & Accuracy', nextQuestion: 'tools_used' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ TOOLS & MEDIUM
+    ====================== */
+    {
+      key: 'tools_used',
+      text: 'Which tools do you prefer for drawing?',
+      type: 'single',
+      options: [
+        { value: 'pencil', label: 'Pencil & Paper', nextQuestion: 'career_path' },
+        { value: 'charcoal', label: 'Charcoal / Pastels', nextQuestion: 'career_path' },
+        { value: 'paint', label: 'Paints & Brushes', nextQuestion: 'career_path' },
+        { value: 'tablet', label: 'Tablet & Stylus', nextQuestion: 'career_path' },
+        { value: 'mixed', label: 'Mixed Medium', nextQuestion: 'career_path' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ CAREER / USAGE PATH
+    ====================== */
+    {
+      key: 'career_path',
+      text: 'How do you want to use your drawing skills?',
+      type: 'single',
+      options: [
+        { value: 'freelance', label: 'Freelance Artist / Illustrator' },
+        { value: 'job', label: 'Job (Designer / Animator / Game Artist)' },
+        { value: 'teaching', label: 'Teaching / Art Trainer' },
+        { value: 'content', label: 'Content Creation (YouTube / Instagram)' },
+        { value: 'business', label: 'Art Business (Commissions / Store)' },
+        { value: 'personal', label: 'Personal Growth & Expression' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│   story_writing Dream   │
+└─────────────────────────┘
+*/
+
+{
+  key: 'story_writing',
+  name: 'Story & Novel Writing',
+  icon: 'PenTool',
+  description: 'Creative writing, storytelling, and author careers',
+  questions: [
+
+    /* ======================
+       1️⃣ WRITING PURPOSE
+    ====================== */
+    {
+      key: 'writing_purpose',
+      text: 'Why do you want to write?',
+      type: 'single',
+      options: [
+        { value: 'hobby', label: 'Hobby / Self-Expression', nextQuestion: 'writing_format' },
+        { value: 'career', label: 'Professional Writer / Author', nextQuestion: 'writing_format' },
+        { value: 'business', label: 'Writing for Income', nextQuestion: 'writing_format' },
+        { value: 'learning', label: 'Learn Writing from Basics', nextQuestion: 'writing_format' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ WRITING FORMAT
+    ====================== */
+    {
+      key: 'writing_format',
+      text: 'What do you want to write?',
+      type: 'single',
+      options: [
+        { value: 'short_story', label: 'Short Stories', nextQuestion: 'genre' },
+        { value: 'novel', label: 'Novel', nextQuestion: 'genre' },
+        { value: 'novella', label: 'Novella', nextQuestion: 'genre' },
+        { value: 'screenplay', label: 'Screenplay / Script', nextQuestion: 'genre' },
+        { value: 'poetry', label: 'Poetry', nextQuestion: 'genre' },
+        { value: 'web_series', label: 'Web Stories / Blogs', nextQuestion: 'genre' },
+        { value: 'fanfiction', label: 'Fan Fiction', nextQuestion: 'genre' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ GENRE SELECTION
+    ====================== */
+    {
+      key: 'genre',
+      text: 'Which genre do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'romance', label: 'Romance', nextQuestion: 'language' },
+        { value: 'thriller', label: 'Thriller / Mystery', nextQuestion: 'language' },
+        { value: 'fantasy', label: 'Fantasy / Mythology', nextQuestion: 'language' },
+        { value: 'sci_fi', label: 'Science Fiction', nextQuestion: 'language' },
+        { value: 'horror', label: 'Horror', nextQuestion: 'language' },
+        { value: 'drama', label: 'Drama / Slice of Life', nextQuestion: 'language' },
+        { value: 'historical', label: 'Historical Fiction', nextQuestion: 'language' },
+        { value: 'inspirational', label: 'Inspirational / Motivational', nextQuestion: 'language' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ LANGUAGE & STYLE
+    ====================== */
+    {
+      key: 'language',
+      text: 'Which language will you write in?',
+      type: 'single',
+      options: [
+        { value: 'english', label: 'English', nextQuestion: 'skill_level' },
+        { value: 'telugu', label: 'Telugu', nextQuestion: 'skill_level' },
+        { value: 'hindi', label: 'Hindi', nextQuestion: 'skill_level' },
+        { value: 'bilingual', label: 'Bilingual / Mixed', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ SKILL LEVEL
+    ====================== */
+    {
+      key: 'skill_level',
+      text: 'What is your writing level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner (Ideas but no structure)', nextQuestion: 'focus_area' },
+        { value: 'intermediate', label: 'Intermediate (Some writing experience)', nextQuestion: 'focus_area' },
+        { value: 'advanced', label: 'Advanced / Published Writer', nextQuestion: 'focus_area' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ IMPROVEMENT FOCUS
+    ====================== */
+    {
+      key: 'focus_area',
+      text: 'What do you want to improve most?',
+      type: 'single',
+      options: [
+        { value: 'plot', label: 'Story Plot & Structure', nextQuestion: 'writing_habit' },
+        { value: 'characters', label: 'Character Development', nextQuestion: 'writing_habit' },
+        { value: 'dialogue', label: 'Dialogue Writing', nextQuestion: 'writing_habit' },
+        { value: 'world', label: 'World-Building', nextQuestion: 'writing_habit' },
+        { value: 'editing', label: 'Editing & Polishing', nextQuestion: 'writing_habit' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ WRITING HABIT
+    ====================== */
+    {
+      key: 'writing_habit',
+      text: 'How often can you write?',
+      type: 'single',
+      options: [
+        { value: 'daily', label: 'Daily', nextQuestion: 'publishing_goal' },
+        { value: 'weekly', label: 'Weekly', nextQuestion: 'publishing_goal' },
+        { value: 'flexible', label: 'Flexible Schedule', nextQuestion: 'publishing_goal' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ PUBLISHING GOAL
+    ====================== */
+    {
+      key: 'publishing_goal',
+      text: 'What is your publishing goal?',
+      type: 'single',
+      options: [
+        { value: 'self', label: 'Self-Publishing (Amazon, Kindle, etc.)' },
+        { value: 'traditional', label: 'Traditional Publisher' },
+        { value: 'online', label: 'Online Platforms (Wattpad, Medium)' },
+        { value: 'film', label: 'Adaptation for Film / Series' },
+        { value: 'personal', label: 'Personal Satisfaction Only' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│     Research dream      │
+└─────────────────────────┘
+*/
+
+{
+  key: 'research',
+  name: 'Research & Analysis',
+  icon: 'Microscope',
+  description: 'Academic, scientific, business, and applied research',
+  questions: [
+
+    /* ======================
+       1️⃣ PURPOSE OF RESEARCH
+    ====================== */
+    {
+      key: 'research_purpose',
+      text: 'Why do you want to do research?',
+      type: 'single',
+      options: [
+        { value: 'academic', label: 'Academic / Education', nextQuestion: 'research_domain' },
+        { value: 'career', label: 'Research Career', nextQuestion: 'research_domain' },
+        { value: 'business', label: 'Business / Market Research', nextQuestion: 'research_domain' },
+        { value: 'innovation', label: 'Innovation / Product Development', nextQuestion: 'research_domain' },
+        { value: 'personal', label: 'Personal / Independent Research', nextQuestion: 'research_domain' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ DOMAIN SELECTION
+    ====================== */
+    {
+      key: 'research_domain',
+      text: 'Which research domain interests you?',
+      type: 'single',
+      options: [
+        { value: 'science', label: 'Science & Technology', nextQuestion: 'research_type' },
+        { value: 'medical', label: 'Medical & Health Research', nextQuestion: 'research_type' },
+        { value: 'social', label: 'Social Sciences', nextQuestion: 'research_type' },
+        { value: 'business', label: 'Business / Management', nextQuestion: 'research_type' },
+        { value: 'ai', label: 'AI / Data / Machine Learning', nextQuestion: 'research_type' },
+        { value: 'legal', label: 'Legal / Policy Research', nextQuestion: 'research_type' },
+        { value: 'design', label: 'UX / Design Research', nextQuestion: 'research_type' },
+        { value: 'environment', label: 'Environmental Research', nextQuestion: 'research_type' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ RESEARCH TYPE
+    ====================== */
+    {
+      key: 'research_type',
+      text: 'What type of research do you want to conduct?',
+      type: 'single',
+      options: [
+        { value: 'qualitative', label: 'Qualitative Research', nextQuestion: 'research_method' },
+        { value: 'quantitative', label: 'Quantitative Research', nextQuestion: 'research_method' },
+        { value: 'mixed', label: 'Mixed Methods', nextQuestion: 'research_method' },
+        { value: 'theoretical', label: 'Theoretical / Literature-Based', nextQuestion: 'research_method' },
+        { value: 'experimental', label: 'Experimental / Lab Research', nextQuestion: 'research_method' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ RESEARCH METHOD
+    ====================== */
+    {
+      key: 'research_method',
+      text: 'Which research method will you use?',
+      type: 'single',
+      options: [
+        { value: 'survey', label: 'Surveys & Questionnaires', nextQuestion: 'data_source' },
+        { value: 'interview', label: 'Interviews / Focus Groups', nextQuestion: 'data_source' },
+        { value: 'case_study', label: 'Case Studies', nextQuestion: 'data_source' },
+        { value: 'experiment', label: 'Experiments / Simulations', nextQuestion: 'data_source' },
+        { value: 'secondary', label: 'Secondary Data Analysis', nextQuestion: 'data_source' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ DATA SOURCE
+    ====================== */
+    {
+      key: 'data_source',
+      text: 'What will be your primary data source?',
+      type: 'single',
+      options: [
+        { value: 'primary', label: 'Primary Data (Field / Lab)', nextQuestion: 'tools' },
+        { value: 'secondary', label: 'Secondary Data (Reports / Papers)', nextQuestion: 'tools' },
+        { value: 'both', label: 'Both Primary & Secondary', nextQuestion: 'tools' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ TOOLS & TECHNOLOGY
+    ====================== */
+    {
+      key: 'tools',
+      text: 'Which tools do you plan to use?',
+      type: 'single',
+      options: [
+        { value: 'manual', label: 'Manual / Traditional Methods', nextQuestion: 'skill_level' },
+        { value: 'software', label: 'Statistical / Research Software', nextQuestion: 'skill_level' },
+        { value: 'ai_tools', label: 'AI Tools (ChatGPT, SPSS, Python)', nextQuestion: 'skill_level' },
+        { value: 'lab', label: 'Laboratory Equipment', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ SKILL LEVEL
+    ====================== */
+    {
+      key: 'skill_level',
+      text: 'What is your current research skill level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner (Need full guidance)', nextQuestion: 'output_goal' },
+        { value: 'intermediate', label: 'Intermediate (Some experience)', nextQuestion: 'output_goal' },
+        { value: 'advanced', label: 'Advanced / Researcher', nextQuestion: 'output_goal' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ OUTPUT GOAL
+    ====================== */
+    {
+      key: 'output_goal',
+      text: 'What is the expected outcome of your research?',
+      type: 'single',
+      options: [
+        { value: 'paper', label: 'Research Paper / Journal' },
+        { value: 'thesis', label: 'Thesis / Dissertation' },
+        { value: 'product', label: 'Product / Innovation' },
+        { value: 'report', label: 'Business / Market Report' },
+        { value: 'policy', label: 'Policy Recommendation' },
+      ],
+    },
+
+  ],
+},
+
+
+/*
+┌─────────────────────────┐
+│    Strategy Dream       │
+└─────────────────────────┘
+*/
+
+{
+  key: 'strategy',
+  name: 'Strategy & Strategic Thinking',
+  icon: 'Chess',
+  description: 'Planning, decision-making, and long-term success strategies',
+  questions: [
+
+    /* ======================
+       1️⃣ STRATEGY PURPOSE
+    ====================== */
+    {
+      key: 'strategy_purpose',
+      text: 'Why do you want to build a strategy?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Life Strategy', nextQuestion: 'strategy_domain' },
+        { value: 'career', label: 'Career Growth Strategy', nextQuestion: 'strategy_domain' },
+        { value: 'business', label: 'Business / Startup Strategy', nextQuestion: 'strategy_domain' },
+        { value: 'leadership', label: 'Leadership & Team Strategy', nextQuestion: 'strategy_domain' },
+        { value: 'competition', label: 'Competitive / Game / Sports Strategy', nextQuestion: 'strategy_domain' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ STRATEGY DOMAIN
+    ====================== */
+    {
+      key: 'strategy_domain',
+      text: 'Which domain does your strategy belong to?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Growth & Discipline', nextQuestion: 'strategy_type' },
+        { value: 'career', label: 'Job / Skill / Promotion Strategy', nextQuestion: 'strategy_type' },
+        { value: 'startup', label: 'Startup & Entrepreneurship', nextQuestion: 'strategy_type' },
+        { value: 'business', label: 'Large Business / Corporate', nextQuestion: 'strategy_type' },
+        { value: 'marketing', label: 'Marketing & Branding', nextQuestion: 'strategy_type' },
+        { value: 'military', label: 'Defense / Military Thinking', nextQuestion: 'strategy_type' },
+        { value: 'sports', label: 'Sports / Competitive Games', nextQuestion: 'strategy_type' },
+        { value: 'ai', label: 'AI / Technology Strategy', nextQuestion: 'strategy_type' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ STRATEGY TYPE
+    ====================== */
+    {
+      key: 'strategy_type',
+      text: 'What type of strategy do you want to build?',
+      type: 'single',
+      options: [
+        { value: 'long_term', label: 'Long-Term Vision Strategy', nextQuestion: 'risk_level' },
+        { value: 'short_term', label: 'Short-Term Execution Strategy', nextQuestion: 'risk_level' },
+        { value: 'growth', label: 'Growth & Expansion Strategy', nextQuestion: 'risk_level' },
+        { value: 'defensive', label: 'Risk Control / Defensive Strategy', nextQuestion: 'risk_level' },
+        { value: 'competitive', label: 'Competitive / Opponent-Based Strategy', nextQuestion: 'risk_level' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ RISK APPETITE
+    ====================== */
+    {
+      key: 'risk_level',
+      text: 'What level of risk are you comfortable with?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Risk – Stability First', nextQuestion: 'decision_style' },
+        { value: 'medium', label: 'Medium Risk – Balanced', nextQuestion: 'decision_style' },
+        { value: 'high', label: 'High Risk – Aggressive Growth', nextQuestion: 'decision_style' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ DECISION STYLE
+    ====================== */
+    {
+      key: 'decision_style',
+      text: 'How do you prefer to make strategic decisions?',
+      type: 'single',
+      options: [
+        { value: 'data', label: 'Data & Analysis Based', nextQuestion: 'resources' },
+        { value: 'intuition', label: 'Experience & Intuition', nextQuestion: 'resources' },
+        { value: 'hybrid', label: 'Combination of Both', nextQuestion: 'resources' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ AVAILABLE RESOURCES
+    ====================== */
+    {
+      key: 'resources',
+      text: 'What resources do you currently have?',
+      type: 'single',
+      options: [
+        { value: 'limited', label: 'Limited Resources', nextQuestion: 'time_horizon' },
+        { value: 'moderate', label: 'Moderate Resources', nextQuestion: 'time_horizon' },
+        { value: 'strong', label: 'Strong Resources (Team/Money)', nextQuestion: 'time_horizon' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ TIME HORIZON
+    ====================== */
+    {
+      key: 'time_horizon',
+      text: 'What is your strategy time horizon?',
+      type: 'single',
+      options: [
+        { value: 'weeks', label: 'Weeks (Immediate Action)', nextQuestion: 'execution_focus' },
+        { value: 'months', label: 'Months (Mid-Term)', nextQuestion: 'execution_focus' },
+        { value: 'years', label: 'Years (Long-Term Vision)', nextQuestion: 'execution_focus' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ EXECUTION FOCUS
+    ====================== */
+    {
+      key: 'execution_focus',
+      text: 'What should your strategy focus on most?',
+      type: 'single',
+      options: [
+        { value: 'speed', label: 'Speed & Quick Wins', nextQuestion: 'success_metric' },
+        { value: 'quality', label: 'Quality & Sustainability', nextQuestion: 'success_metric' },
+        { value: 'scale', label: 'Scaling & Expansion', nextQuestion: 'success_metric' },
+        { value: 'control', label: 'Control & Risk Management', nextQuestion: 'success_metric' },
+      ],
+    },
+
+    /* ======================
+       9️⃣ SUCCESS METRIC
+    ====================== */
+    {
+      key: 'success_metric',
+      text: 'How will you measure success?',
+      type: 'single',
+      options: [
+        { value: 'money', label: 'Financial Growth' },
+        { value: 'position', label: 'Position / Authority / Rank' },
+        { value: 'impact', label: 'Impact & Influence' },
+        { value: 'stability', label: 'Stability & Security' },
+        { value: 'mastery', label: 'Skill & Mastery' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│       Target Dream      │
+└─────────────────────────┘
+*/
+
+{
+  key: 'target',
+  name: 'Target & Goal Setting',
+  icon: 'Target',
+  description: 'Setting clear targets and achieving measurable goals',
+  questions: [
+
+    /* ======================
+       1️⃣ TARGET PURPOSE
+    ====================== */
+    {
+      key: 'target_purpose',
+      text: 'Why are you setting this target?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Life Goal', nextQuestion: 'target_area' },
+        { value: 'career', label: 'Career / Job Goal', nextQuestion: 'target_area' },
+        { value: 'business', label: 'Business / Startup Goal', nextQuestion: 'target_area' },
+        { value: 'education', label: 'Education / Learning Goal', nextQuestion: 'target_area' },
+        { value: 'health', label: 'Health / Fitness Goal', nextQuestion: 'target_area' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ TARGET AREA
+    ====================== */
+    {
+      key: 'target_area',
+      text: 'Which area does your target belong to?',
+      type: 'single',
+      options: [
+        { value: 'finance', label: 'Money / Income', nextQuestion: 'target_type' },
+        { value: 'skill', label: 'Skill Development', nextQuestion: 'target_type' },
+        { value: 'position', label: 'Position / Rank', nextQuestion: 'target_type' },
+        { value: 'performance', label: 'Performance / Results', nextQuestion: 'target_type' },
+        { value: 'impact', label: 'Impact / Influence', nextQuestion: 'target_type' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ TARGET TYPE
+    ====================== */
+    {
+      key: 'target_type',
+      text: 'What kind of target is this?',
+      type: 'single',
+      options: [
+        { value: 'short_term', label: 'Short-Term Target', nextQuestion: 'time_frame' },
+        { value: 'mid_term', label: 'Mid-Term Target', nextQuestion: 'time_frame' },
+        { value: 'long_term', label: 'Long-Term Target', nextQuestion: 'time_frame' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ TIME FRAME
+    ====================== */
+    {
+      key: 'time_frame',
+      text: 'What is the time frame for this target?',
+      type: 'single',
+      options: [
+        { value: 'days', label: 'Days', nextQuestion: 'measurement_type' },
+        { value: 'weeks', label: 'Weeks', nextQuestion: 'measurement_type' },
+        { value: 'months', label: 'Months', nextQuestion: 'measurement_type' },
+        { value: 'years', label: 'Years', nextQuestion: 'measurement_type' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ MEASUREMENT TYPE
+    ====================== */
+    {
+      key: 'measurement_type',
+      text: 'How will this target be measured?',
+      type: 'single',
+      options: [
+        { value: 'numeric', label: 'Numbers (marks, money, count)', nextQuestion: 'target_value' },
+        { value: 'milestone', label: 'Milestones / Steps', nextQuestion: 'target_value' },
+        { value: 'habit', label: 'Habit / Consistency', nextQuestion: 'target_value' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ TARGET VALUE
+    ====================== */
+    {
+      key: 'target_value',
+      text: 'Enter your target value or description',
+      type: 'text',
+      nextQuestion: 'difficulty_level',
+    },
+
+    /* ======================
+       7️⃣ DIFFICULTY LEVEL
+    ====================== */
+    {
+      key: 'difficulty_level',
+      text: 'How difficult is this target for you?',
+      type: 'single',
+      options: [
+        { value: 'easy', label: 'Easy & Comfortable', nextQuestion: 'commitment_level' },
+        { value: 'medium', label: 'Challenging but Achievable', nextQuestion: 'commitment_level' },
+        { value: 'hard', label: 'Very Challenging', nextQuestion: 'commitment_level' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ COMMITMENT LEVEL
+    ====================== */
+    {
+      key: 'commitment_level',
+      text: 'How committed are you to achieving this target?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Commitment' },
+        { value: 'medium', label: 'Moderate Commitment' },
+        { value: 'high', label: 'Full Commitment (No Excuses)' },
+      ],
+    },
+
+  ],
+},
+
+/*
+┌─────────────────────────┐
+│     Planning Dream      │
+└─────────────────────────┘
+*/
+
+{
+  key: 'planning',
+  name: 'Planning',
+  icon: 'Calendar',
+  description: 'Structured planning for goals, projects, and success',
+  questions: [
+
+    /* ======================
+       1️⃣ PLANNING PURPOSE
+    ====================== */
+    {
+      key: 'planning_purpose',
+      text: 'What do you want to plan for?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Life', nextQuestion: 'planning_area' },
+        { value: 'career', label: 'Career / Job', nextQuestion: 'planning_area' },
+        { value: 'business', label: 'Business / Startup', nextQuestion: 'planning_area' },
+        { value: 'education', label: 'Education / Study', nextQuestion: 'planning_area' },
+        { value: 'project', label: 'Project / Task', nextQuestion: 'planning_area' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ PLANNING AREA
+    ====================== */
+    {
+      key: 'planning_area',
+      text: 'Which area do you want to plan?',
+      type: 'single',
+      options: [
+        { value: 'time', label: 'Time Management', nextQuestion: 'time_horizon' },
+        { value: 'goals', label: 'Goals & Milestones', nextQuestion: 'time_horizon' },
+        { value: 'resources', label: 'Resources & Budget', nextQuestion: 'time_horizon' },
+        { value: 'execution', label: 'Execution Strategy', nextQuestion: 'time_horizon' },
+        { value: 'growth', label: 'Growth & Improvement', nextQuestion: 'time_horizon' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ TIME HORIZON
+    ====================== */
+    {
+      key: 'time_horizon',
+      text: 'What is the planning duration?',
+      type: 'single',
+      options: [
+        { value: 'daily', label: 'Daily Plan', nextQuestion: 'planning_depth' },
+        { value: 'weekly', label: 'Weekly Plan', nextQuestion: 'planning_depth' },
+        { value: 'monthly', label: 'Monthly Plan', nextQuestion: 'planning_depth' },
+        { value: 'yearly', label: 'Yearly Plan', nextQuestion: 'planning_depth' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ PLANNING DEPTH
+    ====================== */
+    {
+      key: 'planning_depth',
+      text: 'How detailed should the plan be?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Outline', nextQuestion: 'flexibility_level' },
+        { value: 'detailed', label: 'Detailed Step-by-Step', nextQuestion: 'flexibility_level' },
+        { value: 'advanced', label: 'Advanced with Tracking', nextQuestion: 'flexibility_level' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ FLEXIBILITY LEVEL
+    ====================== */
+    {
+      key: 'flexibility_level',
+      text: 'How flexible should this plan be?',
+      type: 'single',
+      options: [
+        { value: 'strict', label: 'Strict (No Deviations)', nextQuestion: 'risk_factors' },
+        { value: 'balanced', label: 'Balanced & Adjustable', nextQuestion: 'risk_factors' },
+        { value: 'flexible', label: 'Very Flexible', nextQuestion: 'risk_factors' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ RISK FACTORS
+    ====================== */
+    {
+      key: 'risk_factors',
+      text: 'What are the biggest challenges you expect?',
+      type: 'single',
+      options: [
+        { value: 'time', label: 'Lack of Time', nextQuestion: 'support_needed' },
+        { value: 'discipline', label: 'Lack of Discipline', nextQuestion: 'support_needed' },
+        { value: 'resources', label: 'Limited Resources', nextQuestion: 'support_needed' },
+        { value: 'motivation', label: 'Low Motivation', nextQuestion: 'support_needed' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ SUPPORT NEEDED
+    ====================== */
+    {
+      key: 'support_needed',
+      text: 'What kind of support would help you?',
+      type: 'single',
+      options: [
+        { value: 'schedule', label: 'Daily Schedule / Planner' },
+        { value: 'roadmap', label: 'Clear Roadmap' },
+        { value: 'tracking', label: 'Progress Tracking System' },
+        { value: 'mentor', label: 'Mentor / Guidance' },
+      ],
+    },
+
+  ],
+},
+
+
+
+
 ];
 
 export function getDreamCategory(key: string): DreamCategory | undefined {
