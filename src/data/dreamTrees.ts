@@ -2542,45 +2542,112 @@ export const dreamCategories: DreamCategory[] = [
 └─────────────────────────┘
 */
 
-  {
-    key: 'music',
-    name: 'Musical Instruments Training',
-    icon: 'Music',
-    description: 'Learning and teaching musical instruments',
-    questions: [
-      {
-        key: 'instrument_type',
-        text: 'Which instrument interests you?',
-        type: 'single',
-        options: [
-          { value: 'guitar', label: 'Guitar', nextQuestion: 'music_goal' },
-          { value: 'piano', label: 'Piano/Keyboard', nextQuestion: 'music_goal' },
-          { value: 'violin', label: 'Violin', nextQuestion: 'music_goal' },
-          { value: 'flute', label: 'Flute', nextQuestion: 'music_goal' },
-          { value: 'drums', label: 'Drums', nextQuestion: 'music_goal' },
-          { value: 'tabla', label: 'Tabla', nextQuestion: 'music_goal' },
-          { value: 'harmonium', label: 'Harmonium', nextQuestion: 'music_goal' },
-          { value: 'other', label: 'Other Instrument', nextQuestion: 'music_goal' },
-        ],
-      },
-      {
-        key: 'music_goal',
-        text: 'What is your goal?',
-        type: 'single',
-        options: [
-          { value: 'hobby', label: 'Learn as Hobby', nextQuestion: 'practice_commitment' },
-          { value: 'professional', label: 'Professional Musician', nextQuestion: 'practice_commitment' },
-          { value: 'teacher', label: 'Teach Music', nextQuestion: 'practice_commitment' },
-        ],
-      },
-      {
-        key: 'practice_commitment',
-        text: 'How many hours can you practice daily?',
-        type: 'number',
-        validation: { min: 0.5, max: 8 },
-      },
-    ],
-  },
+{
+  key: 'music',
+  name: 'Musical Instruments Training',
+  icon: 'Music',
+  description: 'Learning and teaching musical instruments',
+  questions: [
+
+    // 🎼 INSTRUMENT
+    {
+      key: 'instrument_type',
+      text: 'Which instrument interests you?',
+      type: 'single',
+      options: [
+        { value: 'guitar', label: 'Guitar', nextQuestion: 'music_level' },
+        { value: 'piano', label: 'Piano / Keyboard', nextQuestion: 'music_level' },
+        { value: 'violin', label: 'Violin', nextQuestion: 'music_level' },
+        { value: 'flute', label: 'Flute', nextQuestion: 'music_level' },
+        { value: 'drums', label: 'Drums', nextQuestion: 'music_level' },
+        { value: 'tabla', label: 'Tabla', nextQuestion: 'music_level' },
+        { value: 'harmonium', label: 'Harmonium', nextQuestion: 'music_level' },
+        { value: 'other', label: 'Other Instrument', nextQuestion: 'music_level' },
+      ],
+    },
+
+    // 🎓 LEVEL
+    {
+      key: 'music_level',
+      text: 'What is your current skill level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'music_goal' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'music_goal' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'music_goal' },
+      ],
+    },
+
+    // 🎯 GOAL
+    {
+      key: 'music_goal',
+      text: 'What is your goal with music?',
+      type: 'single',
+      options: [
+        { value: 'hobby', label: 'Learn as a Hobby', nextQuestion: 'music_genre' },
+        { value: 'professional', label: 'Become a Professional Musician', nextQuestion: 'music_genre' },
+        { value: 'teacher', label: 'Teach Music', nextQuestion: 'music_genre' },
+        { value: 'performance', label: 'Stage / Live Performance', nextQuestion: 'music_genre' },
+      ],
+    },
+
+    // 🎵 GENRE
+    {
+      key: 'music_genre',
+      text: 'Which music style interests you most?',
+      type: 'single',
+      options: [
+        { value: 'classical', label: 'Classical', nextQuestion: 'practice_commitment' },
+        { value: 'film', label: 'Film / Movie Songs', nextQuestion: 'practice_commitment' },
+        { value: 'western', label: 'Western / Pop / Rock', nextQuestion: 'practice_commitment' },
+        { value: 'folk', label: 'Folk / Traditional', nextQuestion: 'practice_commitment' },
+        { value: 'devotional', label: 'Devotional / Bhajans', nextQuestion: 'practice_commitment' },
+      ],
+    },
+
+    // ⏱ PRACTICE TIME
+    {
+      key: 'practice_commitment',
+      text: 'How much time can you practice daily?',
+      type: 'single',
+      options: [
+        { value: '15', label: '15–30 minutes', nextQuestion: 'learning_mode' },
+        { value: '30', label: '30–60 minutes', nextQuestion: 'learning_mode' },
+        { value: '60', label: '1–2 hours', nextQuestion: 'learning_mode' },
+        { value: '120', label: 'More than 2 hours', nextQuestion: 'learning_mode' },
+      ],
+    },
+
+    // 📚 LEARNING MODE
+    {
+      key: 'learning_mode',
+      text: 'How do you want to learn?',
+      type: 'single',
+      options: [
+        { value: 'online', label: 'Online Courses / Videos', nextQuestion: 'timeline' },
+        { value: 'offline', label: 'Offline Classes / Guru', nextQuestion: 'timeline' },
+        { value: 'self', label: 'Self Practice', nextQuestion: 'timeline' },
+      ],
+    },
+
+    // 🕒 TIMELINE
+    {
+      key: 'timeline',
+      text: 'When do you want to see noticeable improvement?',
+      type: 'single',
+      options: [
+        { value: '1_month', label: 'Within 1 month' },
+        { value: '3_months', label: 'Within 3 months' },
+        { value: '6_months', label: 'Within 6 months' },
+        { value: '1_year', label: 'Within 1 year' },
+      ],
+    },
+
+  ],
+},
+
+
+
   {
     key: 'opportunity',
     name: 'Opportunity Discovery',
@@ -2692,6 +2759,8 @@ export const dreamCategories: DreamCategory[] = [
       },
     ],
   },
+
+
   {
     key: 'irrigation',
     name: 'Irrigation Works',
