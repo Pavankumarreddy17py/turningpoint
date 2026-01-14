@@ -31,7 +31,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-4 pt-16 pb-12 text-center">
         <header className="mb-12">
           <img src={logoImg} alt="HJR Logo" className="w-32 h-32 mx-auto mb-6 drop-shadow-xl" />
-          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">HJR – Happy Joshful Resources</h1>
+          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">HJR  </h1>
           <h2 className="text-3xl font-bold text-blue-100 mb-6 drop-shadow-sm">Turning Confusion into Clear Dream Paths</h2>
           <Button 
     size="lg" 
@@ -193,7 +193,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
 
         <footer className="pt-10 border-t border-white/20">
           <img src={logoImg} alt="HJR Logo" className="h-10 mx-auto mb-4 grayscale brightness-200 opacity-50" />
-          <p className="text-sm text-white/70">© 2026 Turning Point • HJR - Happy Joshful Resources</p>
+          <p className="text-sm text-white/70">© 2026 Turning Point • HJR</p>
           <div className="flex justify-center gap-6 mt-4 text-[10px] text-white/40 uppercase font-black tracking-widest">
             <button onClick={() => setAppState('faq')}>Privacy</button>
             <button onClick={() => setAppState('faq')}>Terms</button>
