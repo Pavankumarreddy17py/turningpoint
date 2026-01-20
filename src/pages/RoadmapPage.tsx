@@ -31,6 +31,7 @@ interface RoadmapPageProps {
   loading: boolean;
   onStartNew: () => void;
   dreamKey: string;
+  responses: Record<string, string>;
 }
 
 /* ---------------- COMPONENT ---------------- */
@@ -40,6 +41,7 @@ export function RoadmapPage({
   loading,
   onStartNew,
   dreamKey,
+  responses = {},
 }: RoadmapPageProps) {
   /* ---------------- LOADING ---------------- */
   if (loading) {
@@ -69,7 +71,7 @@ export function RoadmapPage({
   const handleWhatsApp = () => {
     const phone = '917259771515';
     const text = encodeURIComponent(
-      `Hi HJR! I completed my roadmap for ${roadmap.confirmed_dream}. I want mentor guidance.`
+      `Hi J#₹! I completed my roadmap for ${roadmap.confirmed_dream}. I want mentor guidance.`
     );
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };

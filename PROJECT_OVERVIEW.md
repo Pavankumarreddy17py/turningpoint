@@ -193,7 +193,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## Credits
 
-**Project Name**: HJR 
+**Project Name**: J#₹ 
 **Purpose**: Helping Indian students transform dreams into achievable goals
 **Target Audience**: Students from Class 7 to B.Tech
 **Approach**: Decision tree methodology with patient, step-by-step guidance

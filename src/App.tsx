@@ -145,7 +145,7 @@ function App() {
             <img src={logoImg} alt="Turning Point" className="h-10 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="text-lg font-bold text-black leading-tight">Turning Point</span>
-              <span className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">HJR Platform</span>
+              <span className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">J#₹ Platform</span>
             </div>
           </div>
           
@@ -236,6 +236,7 @@ function App() {
             loading={loading} 
             onStartNew={handleStartNew} 
             dreamKey={sessionData.dreamKey || ''}
+            responses={sessionData.responses || {}}
           />
         )}
       </main>
@@ -245,7 +246,7 @@ function App() {
 
 // --- DATABASE FUNCTIONS ---
 async function createOrGetStudent() {
-  const sessionKey = 'hjr_student_id';
+  const sessionKey = 'J#₹_student_id';
   let studentId = localStorage.getItem(sessionKey);
   if (studentId) {
     const { data: existing } = await supabase.from('students').select('*').eq('id', studentId).maybeSingle();

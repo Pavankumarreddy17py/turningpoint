@@ -5724,6 +5724,145 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
+
+{
+  key: 'entrance_exams',
+  name: 'Entrance Exams & Education Path',
+  icon: 'GraduationCap',
+  description: 'All entrance exams mapped from 10th to higher education and jobs',
+  questions: [
+
+    /* ======================
+       1️⃣ CURRENT EDUCATION
+    ====================== */
+    {
+      key: 'current_level',
+      text: 'What is your current education level?',
+      type: 'single',
+      options: [
+        { value: 'below_10', label: 'Below 10th Class', nextQuestion: 'school_exams' },
+        { value: '10th', label: '10th Passed', nextQuestion: 'after_10th' },
+        { value: 'inter', label: 'Intermediate / 12th', nextQuestion: 'after_inter' },
+        { value: 'polytechnic', label: 'Polytechnic / Diploma', nextQuestion: 'after_polytechnic' },
+        { value: 'degree', label: 'Degree / UG', nextQuestion: 'after_degree' },
+        { value: 'pg', label: 'Post Graduation', nextQuestion: 'after_pg' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ SCHOOL LEVEL
+    ====================== */
+    {
+      key: 'school_exams',
+      text: 'Which school-level exam path are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'foundation', label: 'Foundation / Olympiads', nextQuestion: 'exam_goal' },
+        { value: 'navodaya', label: 'Navodaya Vidyalaya', nextQuestion: 'exam_goal' },
+        { value: 'sainik', label: 'Sainik School', nextQuestion: 'exam_goal' },
+        { value: 'scholarship', label: 'Scholarship Exams', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ AFTER 10TH
+    ====================== */
+    {
+      key: 'after_10th',
+      text: 'What do you want to pursue after 10th?',
+      type: 'single',
+      options: [
+        { value: 'intermediate', label: 'Intermediate (MPC / BiPC / Arts)', nextQuestion: 'after_inter' },
+        { value: 'poly_cet', label: 'POLYCET (Polytechnic)', nextQuestion: 'after_polytechnic' },
+        { value: 'iti', label: 'ITI / Skill Courses', nextQuestion: 'exam_goal' },
+        { value: 'paramedical', label: 'Paramedical Courses', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ AFTER INTERMEDIATE
+    ====================== */
+    {
+      key: 'after_inter',
+      text: 'Which entrance exam after Intermediate?',
+      type: 'single',
+      options: [
+        { value: 'eamcet', label: 'EAMCET / State CETs', nextQuestion: 'exam_goal' },
+        { value: 'jee', label: 'JEE Main / Advanced', nextQuestion: 'exam_goal' },
+        { value: 'neet', label: 'NEET UG', nextQuestion: 'exam_goal' },
+        { value: 'cuet', label: 'CUET', nextQuestion: 'exam_goal' },
+        { value: 'clat', label: 'CLAT (Law)', nextQuestion: 'exam_goal' },
+        { value: 'nift', label: 'NIFT / NID (Design)', nextQuestion: 'exam_goal' },
+        { value: 'nda', label: 'Defence (NDA)', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ AFTER POLYTECHNIC
+    ====================== */
+    {
+      key: 'after_polytechnic',
+      text: 'What is your plan after Polytechnic / Diploma?',
+      type: 'single',
+      options: [
+        { value: 'ecet', label: 'ECET (Lateral Entry BTech)', nextQuestion: 'exam_goal' },
+        { value: 'leee', label: 'Other Lateral Entry Exams', nextQuestion: 'exam_goal' },
+        { value: 'govt_jobs', label: 'Government Jobs (Diploma)', nextQuestion: 'exam_goal' },
+        { value: 'private_jobs', label: 'Private Jobs / Industry', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ AFTER DEGREE
+    ====================== */
+    {
+      key: 'after_degree',
+      text: 'Which exam do you want after Degree?',
+      type: 'single',
+      options: [
+        { value: 'gate', label: 'GATE (MTech / PSU)', nextQuestion: 'exam_goal' },
+        { value: 'upsc', label: 'UPSC (IAS / IPS)', nextQuestion: 'exam_goal' },
+        { value: 'cat', label: 'CAT / XAT (MBA)', nextQuestion: 'exam_goal' },
+        { value: 'ssc', label: 'SSC / Banking Exams', nextQuestion: 'exam_goal' },
+        { value: 'gre', label: 'GRE / GMAT (Abroad)', nextQuestion: 'exam_goal' },
+        { value: 'defence_grad', label: 'Defence (CDS / AFCAT)', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ AFTER POST GRADUATION
+    ====================== */
+    {
+      key: 'after_pg',
+      text: 'What do you want after Post Graduation?',
+      type: 'single',
+      options: [
+        { value: 'phd', label: 'PhD / Research Entrance', nextQuestion: 'exam_goal' },
+        { value: 'ugc_net', label: 'UGC NET / JRF', nextQuestion: 'exam_goal' },
+        { value: 'faculty', label: 'Teaching / Professor', nextQuestion: 'exam_goal' },
+        { value: 'industry', label: 'Industry / Corporate Roles', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ FINAL GOAL
+    ====================== */
+    {
+      key: 'exam_goal',
+      text: 'What is your main goal?',
+      type: 'single',
+      options: [
+        { value: 'higher_study', label: 'Higher Education' },
+        { value: 'govt_job', label: 'Government Job' },
+        { value: 'private_job', label: 'Private Job' },
+        { value: 'research', label: 'Research / Academia' },
+        { value: 'abroad', label: 'Study Abroad' },
+      ],
+    },
+
+  ],
+},
+
 /*
 ┌─────────────────────────┐
 │     Planning Dream      │
@@ -5842,7 +5981,10 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+    
+
   ],
+  
 },
 
 
