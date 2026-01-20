@@ -32,6 +32,125 @@ export const dreamCategories: DreamCategory[] = [
 │        Education      │
 └─────────────────────────┘
 */
+{
+  key: 'emergency_services',
+  name: 'Emergency Services & Helplines',
+  icon: 'PhoneCall',
+  description: 'Emergency help and helpline numbers across India',
+  questions: [
+
+    /* ======================
+       1️⃣ EMERGENCY TYPE
+    ====================== */
+    {
+      key: 'emergency_type',
+      text: 'What kind of emergency help do you need?',
+      type: 'single',
+      options: [
+        { value: 'police', label: 'Police Emergency', nextQuestion: 'police_numbers' },
+        { value: 'medical', label: 'Medical / Ambulance', nextQuestion: 'medical_numbers' },
+        { value: 'fire', label: 'Fire Emergency', nextQuestion: 'fire_numbers' },
+        { value: 'women', label: 'Women Safety', nextQuestion: 'women_numbers' },
+        { value: 'child', label: 'Child Safety', nextQuestion: 'child_numbers' },
+        { value: 'mental', label: 'Mental Health Support', nextQuestion: 'mental_numbers' },
+        { value: 'disaster', label: 'Disaster Management', nextQuestion: 'disaster_numbers' },
+      ],
+    },
+
+    /* ======================
+       POLICE
+    ====================== */
+    {
+      key: 'police_numbers',
+      text: 'Police Emergency Numbers (All India)',
+      type: 'single',
+      options: [
+        { value: '112', label: '📞 112 – National Emergency Number' },
+        { value: '100', label: '📞 100 – Police Control Room' },
+      ],
+    },
+
+    /* ======================
+       MEDICAL
+    ====================== */
+    {
+      key: 'medical_numbers',
+      text: 'Medical / Ambulance Emergency Numbers',
+      type: 'single',
+      options: [
+        { value: '108', label: '🚑 108 – Ambulance (All India)' },
+        { value: '112', label: '📞 112 – Emergency Support' },
+      ],
+    },
+
+    /* ======================
+       FIRE
+    ====================== */
+    {
+      key: 'fire_numbers',
+      text: 'Fire Emergency Numbers',
+      type: 'single',
+      options: [
+        { value: '101', label: '🔥 101 – Fire Services' },
+        { value: '112', label: '📞 112 – Emergency Support' },
+      ],
+    },
+
+    /* ======================
+       WOMEN SAFETY
+    ====================== */
+    {
+      key: 'women_numbers',
+      text: 'Women Safety Helplines',
+      type: 'single',
+      options: [
+        { value: '181', label: '👩 181 – Women Helpline' },
+        { value: '1091', label: '🚔 1091 – Women Police' },
+        { value: '112', label: '📞 112 – Emergency' },
+      ],
+    },
+
+    /* ======================
+       CHILD SAFETY
+    ====================== */
+    {
+      key: 'child_numbers',
+      text: 'Child Safety & Protection',
+      type: 'single',
+      options: [
+        { value: '1098', label: '🧒 1098 – Child Helpline' },
+        { value: '112', label: '📞 112 – Emergency' },
+      ],
+    },
+
+    /* ======================
+       MENTAL HEALTH
+    ====================== */
+    {
+      key: 'mental_numbers',
+      text: 'Mental Health Support',
+      type: 'single',
+      options: [
+        { value: 'tele_manas', label: '🧠 Tele MANAS – 14416 / 1-800-891-4416' },
+      ],
+    },
+
+    /* ======================
+       DISASTER
+    ====================== */
+    {
+      key: 'disaster_numbers',
+      text: 'Disaster Management & Relief',
+      type: 'single',
+      options: [
+        { value: 'ndma', label: '🌊 NDMA – 1078' },
+        { value: '112', label: '📞 112 – Emergency Support' },
+      ],
+    },
+
+  ],
+},
+
 
 {
   key: 'education',
@@ -5986,6 +6105,1015 @@ export const dreamCategories: DreamCategory[] = [
   ],
   
 },
+
+{
+  key: 'energy_saving',
+  name: 'Energy & Power Saving',
+  icon: 'Zap',
+  description: 'Energy efficiency, power saving techniques, and cost reduction',
+  questions: [
+
+    /* ======================
+       1️⃣ PURPOSE
+    ====================== */
+    {
+      key: 'energy_purpose',
+      text: 'Why do you want to focus on energy saving?',
+      type: 'single',
+      options: [
+        { value: 'cost', label: 'Reduce Electricity Bills', nextQuestion: 'usage_area' },
+        { value: 'environment', label: 'Environmental Protection', nextQuestion: 'usage_area' },
+        { value: 'industry', label: 'Industrial Power Optimization', nextQuestion: 'usage_area' },
+        { value: 'business', label: 'Energy Consulting / Business', nextQuestion: 'usage_area' },
+      ],
+    },
+
+    /* ======================
+       2️⃣ USAGE AREA
+    ====================== */
+    {
+      key: 'usage_area',
+      text: 'Where do you want to apply energy saving?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home / Residential', nextQuestion: 'power_source' },
+        { value: 'office', label: 'Office / Corporate', nextQuestion: 'power_source' },
+        { value: 'industry', label: 'Factory / Industry', nextQuestion: 'power_source' },
+        { value: 'commercial', label: 'Commercial Buildings', nextQuestion: 'power_source' },
+      ],
+    },
+
+    /* ======================
+       3️⃣ POWER SOURCE
+    ====================== */
+    {
+      key: 'power_source',
+      text: 'What is the primary power source?',
+      type: 'single',
+      options: [
+        { value: 'grid', label: 'Electric Grid', nextQuestion: 'energy_problem' },
+        { value: 'solar', label: 'Solar Power', nextQuestion: 'energy_problem' },
+        { value: 'diesel', label: 'Generator / Diesel', nextQuestion: 'energy_problem' },
+        { value: 'hybrid', label: 'Hybrid (Grid + Solar)', nextQuestion: 'energy_problem' },
+      ],
+    },
+
+    /* ======================
+       4️⃣ CURRENT PROBLEM
+    ====================== */
+    {
+      key: 'energy_problem',
+      text: 'What is the biggest power-related issue?',
+      type: 'single',
+      options: [
+        { value: 'high_bill', label: 'High Electricity Bills', nextQuestion: 'saving_focus' },
+        { value: 'wastage', label: 'Energy Wastage', nextQuestion: 'saving_focus' },
+        { value: 'inefficiency', label: 'Low Efficiency Equipment', nextQuestion: 'saving_focus' },
+        { value: 'power_loss', label: 'Power Loss / Downtime', nextQuestion: 'saving_focus' },
+      ],
+    },
+
+    /* ======================
+       5️⃣ SAVING FOCUS
+    ====================== */
+    {
+      key: 'saving_focus',
+      text: 'Which area should be optimized?',
+      type: 'single',
+      options: [
+        { value: 'lighting', label: 'Lighting Systems', nextQuestion: 'automation_level' },
+        { value: 'machinery', label: 'Machinery & Motors', nextQuestion: 'automation_level' },
+        { value: 'hvac', label: 'HVAC / Cooling Systems', nextQuestion: 'automation_level' },
+        { value: 'behavior', label: 'Human Usage Behavior', nextQuestion: 'automation_level' },
+      ],
+    },
+
+    /* ======================
+       6️⃣ AUTOMATION
+    ====================== */
+    {
+      key: 'automation_level',
+      text: 'Do you want automation in power saving?',
+      type: 'single',
+      options: [
+        { value: 'none', label: 'Manual Control', nextQuestion: 'investment_level' },
+        { value: 'partial', label: 'Partial Automation (Sensors)', nextQuestion: 'investment_level' },
+        { value: 'full', label: 'Full Smart Automation (IoT)', nextQuestion: 'investment_level' },
+      ],
+    },
+
+    /* ======================
+       7️⃣ INVESTMENT
+    ====================== */
+    {
+      key: 'investment_level',
+      text: 'What is your investment capacity?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low / No Investment', nextQuestion: 'time_frame' },
+        { value: 'medium', label: 'Medium Investment', nextQuestion: 'time_frame' },
+        { value: 'high', label: 'High (Industrial Scale)', nextQuestion: 'time_frame' },
+      ],
+    },
+
+    /* ======================
+       8️⃣ RESULTS EXPECTATION
+    ====================== */
+    {
+      key: 'time_frame',
+      text: 'When do you want results?',
+      type: 'single',
+      options: [
+        { value: 'immediate', label: 'Immediate Savings' },
+        { value: 'short', label: 'Within 3–6 Months' },
+        { value: 'long', label: 'Long-Term Savings' },
+      ],
+    },
+
+  ],
+},
+
+{
+  key: 'usable_tips',
+  name: 'Usable Tips',
+  icon: 'Lightbulb',
+  description: 'Daily life improvement, smart habits, productivity, savings, and healthy living tips',
+  questions: [
+    {
+      key: 'tips_goal',
+      text: 'What type of daily improvement are you looking for?',
+      type: 'single',
+      options: [
+        { value: 'time', label: 'Time Management', nextQuestion: 'life_area' },
+        { value: 'money', label: 'Money Saving', nextQuestion: 'life_area' },
+        { value: 'health', label: 'Health & Hygiene', nextQuestion: 'life_area' },
+        { value: 'food', label: 'Food & Nutrition', nextQuestion: 'life_area' },
+        { value: 'energy', label: 'Energy & Power Saving', nextQuestion: 'life_area' },
+        { value: 'mental', label: 'Mental Peace & Focus', nextQuestion: 'life_area' },
+        { value: 'technology', label: 'Smart Use of Technology', nextQuestion: 'life_area' },
+      ],
+    },
+
+    {
+      key: 'life_area',
+      text: 'Where do you want to apply these tips?',
+      type: 'single',
+      options: [
+        { value: 'home', label: 'Home', nextQuestion: 'daily_habits' },
+        { value: 'work', label: 'Office / Workplace', nextQuestion: 'daily_habits' },
+        { value: 'college', label: 'College / School', nextQuestion: 'daily_habits' },
+        { value: 'travel', label: 'Travel / Outdoor', nextQuestion: 'daily_habits' },
+        { value: 'digital', label: 'Digital Life', nextQuestion: 'daily_habits' },
+      ],
+    },
+
+    {
+      key: 'daily_habits',
+      text: 'Which daily habit do you want to improve most?',
+      type: 'single',
+      options: [
+        { value: 'morning', label: 'Morning Routine', nextQuestion: 'smart_skills' },
+        { value: 'sleep', label: 'Sleep Quality', nextQuestion: 'smart_skills' },
+        { value: 'focus', label: 'Focus & Concentration', nextQuestion: 'smart_skills' },
+        { value: 'discipline', label: 'Self-Discipline', nextQuestion: 'smart_skills' },
+        { value: 'screen', label: 'Screen Time Control', nextQuestion: 'smart_skills' },
+      ],
+    },
+
+    {
+      key: 'smart_skills',
+      text: 'Which smart living skill do you want to learn?',
+      type: 'single',
+      options: [
+        { value: 'budgeting', label: 'Budget Planning', nextQuestion: 'health_lifestyle' },
+        { value: 'decision', label: 'Smart Decision Making', nextQuestion: 'health_lifestyle' },
+        { value: 'minimal', label: 'Minimal Living', nextQuestion: 'health_lifestyle' },
+        { value: 'automation', label: 'Automating Daily Tasks', nextQuestion: 'health_lifestyle' },
+        { value: 'problem', label: 'Problem Solving in Daily Life', nextQuestion: 'health_lifestyle' },
+      ],
+    },
+
+    {
+      key: 'health_lifestyle',
+      text: 'Which lifestyle area matters most to you?',
+      type: 'single',
+      options: [
+        { value: 'diet', label: 'Healthy Diet', nextQuestion: 'safety_awareness' },
+        { value: 'exercise', label: 'Basic Exercise & Movement', nextQuestion: 'safety_awareness' },
+        { value: 'posture', label: 'Posture & Body Care', nextQuestion: 'safety_awareness' },
+        { value: 'stress', label: 'Stress Reduction', nextQuestion: 'safety_awareness' },
+      ],
+    },
+
+    {
+      key: 'safety_awareness',
+      text: 'Which safety area do you want tips for?',
+      type: 'single',
+      options: [
+        { value: 'home_safety', label: 'Home Safety', nextQuestion: 'financial_awareness' },
+        { value: 'digital_safety', label: 'Digital & Online Safety', nextQuestion: 'financial_awareness' },
+        { value: 'travel_safety', label: 'Travel Safety', nextQuestion: 'financial_awareness' },
+        { value: 'emergency', label: 'Emergency Preparedness', nextQuestion: 'financial_awareness' },
+      ],
+    },
+
+    {
+      key: 'financial_awareness',
+      text: 'Which financial tip do you want?',
+      type: 'single',
+      options: [
+        { value: 'saving', label: 'Daily Expense Saving', nextQuestion: 'personal_growth' },
+        { value: 'spending', label: 'Smart Spending', nextQuestion: 'personal_growth' },
+        { value: 'planning', label: 'Monthly Planning', nextQuestion: 'personal_growth' },
+        { value: 'avoid_debt', label: 'Avoiding Unnecessary Debt', nextQuestion: 'personal_growth' },
+      ],
+    },
+
+    {
+      key: 'personal_growth',
+      text: 'Which personal growth area do you want to improve?',
+      type: 'single',
+      options: [
+        { value: 'confidence', label: 'Self-Confidence', nextQuestion: 'final_outcome' },
+        { value: 'communication', label: 'Daily Communication Skills', nextQuestion: 'final_outcome' },
+        { value: 'learning', label: 'Continuous Learning Habit', nextQuestion: 'final_outcome' },
+        { value: 'mindset', label: 'Positive Mindset', nextQuestion: 'final_outcome' },
+      ],
+    },
+
+    {
+      key: 'final_outcome',
+      text: 'What outcome do you expect?',
+      type: 'single',
+      options: [
+        { value: 'better_life', label: 'Better Daily Life' },
+        { value: 'smart_living', label: 'Smart & Efficient Living' },
+        { value: 'healthy_balance', label: 'Healthy Work-Life Balance' },
+        { value: 'all', label: 'All of the Above' },
+      ],
+    },
+  ],
+},
+
+
+{
+  key: 'corporate_contacts',
+  name: 'Corporate Contacts',
+  icon: 'Briefcase',
+  description: 'Building, managing, and leveraging professional and corporate relationships',
+  questions: [
+    {
+      key: 'contact_purpose',
+      text: 'Why do you want to build corporate contacts?',
+      type: 'single',
+      options: [
+        { value: 'job', label: 'Job / Career Opportunities', nextQuestion: 'industry_focus' },
+        { value: 'business', label: 'Business Growth / Clients', nextQuestion: 'industry_focus' },
+        { value: 'partnership', label: 'Partnerships / Collaborations', nextQuestion: 'industry_focus' },
+        { value: 'investment', label: 'Investors / Funding', nextQuestion: 'industry_focus' },
+        { value: 'knowledge', label: 'Learning & Mentorship', nextQuestion: 'industry_focus' },
+      ],
+    },
+
+    {
+      key: 'industry_focus',
+      text: 'Which industry do you want corporate contacts in?',
+      type: 'single',
+      options: [
+        { value: 'it', label: 'IT / Software / AI', nextQuestion: 'contact_level' },
+        { value: 'manufacturing', label: 'Manufacturing / Industry', nextQuestion: 'contact_level' },
+        { value: 'finance', label: 'Finance / Banking', nextQuestion: 'contact_level' },
+        { value: 'healthcare', label: 'Healthcare / Pharma', nextQuestion: 'contact_level' },
+        { value: 'education', label: 'Education / Training', nextQuestion: 'contact_level' },
+        { value: 'construction', label: 'Construction / Infrastructure', nextQuestion: 'contact_level' },
+        { value: 'logistics', label: 'Logistics / Supply Chain', nextQuestion: 'contact_level' },
+        { value: 'startup', label: 'Startups / Entrepreneurs', nextQuestion: 'contact_level' },
+      ],
+    },
+
+    {
+      key: 'contact_level',
+      text: 'What level of professionals do you want to connect with?',
+      type: 'single',
+      options: [
+        { value: 'entry', label: 'Entry-Level Professionals', nextQuestion: 'contact_roles' },
+        { value: 'mid', label: 'Mid-Level Managers', nextQuestion: 'contact_roles' },
+        { value: 'senior', label: 'Senior Management', nextQuestion: 'contact_roles' },
+        { value: 'cxos', label: 'CXOs (CEO, CTO, CFO, etc.)', nextQuestion: 'contact_roles' },
+        { value: 'founders', label: 'Founders / Co-founders', nextQuestion: 'contact_roles' },
+      ],
+    },
+
+    {
+      key: 'contact_roles',
+      text: 'Which role is most important for you?',
+      type: 'single',
+      options: [
+        { value: 'hr', label: 'HR / Talent Acquisition', nextQuestion: 'contact_channel' },
+        { value: 'sales', label: 'Sales / Business Development', nextQuestion: 'contact_channel' },
+        { value: 'tech', label: 'Technical Leads / Architects', nextQuestion: 'contact_channel' },
+        { value: 'procurement', label: 'Procurement / Vendors', nextQuestion: 'contact_channel' },
+        { value: 'legal', label: 'Legal / Compliance', nextQuestion: 'contact_channel' },
+        { value: 'marketing', label: 'Marketing / Branding', nextQuestion: 'contact_channel' },
+      ],
+    },
+
+    {
+      key: 'contact_channel',
+      text: 'How do you want to build corporate contacts?',
+      type: 'single',
+      options: [
+        { value: 'linkedin', label: 'LinkedIn', nextQuestion: 'communication_skill' },
+        { value: 'email', label: 'Professional Emails', nextQuestion: 'communication_skill' },
+        { value: 'events', label: 'Conferences / Networking Events', nextQuestion: 'communication_skill' },
+        { value: 'referrals', label: 'Referrals', nextQuestion: 'communication_skill' },
+        { value: 'cold_calls', label: 'Cold Calls / Outreach', nextQuestion: 'communication_skill' },
+      ],
+    },
+
+    {
+      key: 'communication_skill',
+      text: 'Which communication skill do you want to improve?',
+      type: 'single',
+      options: [
+        { value: 'pitching', label: 'Pitching Yourself / Business', nextQuestion: 'tools_usage' },
+        { value: 'negotiation', label: 'Negotiation Skills', nextQuestion: 'tools_usage' },
+        { value: 'followup', label: 'Follow-ups & Relationship Building', nextQuestion: 'tools_usage' },
+        { value: 'presentation', label: 'Presentation & Public Speaking', nextQuestion: 'tools_usage' },
+      ],
+    },
+
+    {
+      key: 'tools_usage',
+      text: 'How do you want to manage corporate contacts?',
+      type: 'single',
+      options: [
+        { value: 'crm', label: 'CRM Tools (Zoho, HubSpot, etc.)', nextQuestion: 'ethics_compliance' },
+        { value: 'spreadsheets', label: 'Excel / Google Sheets', nextQuestion: 'ethics_compliance' },
+        { value: 'manual', label: 'Manual Tracking', nextQuestion: 'ethics_compliance' },
+      ],
+    },
+
+    {
+      key: 'ethics_compliance',
+      text: 'Do you want guidance on corporate ethics and professional conduct?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, very important', nextQuestion: 'final_goal' },
+        { value: 'basic', label: 'Basic understanding', nextQuestion: 'final_goal' },
+        { value: 'no', label: 'Not required', nextQuestion: 'final_goal' },
+      ],
+    },
+
+    {
+      key: 'final_goal',
+      text: 'What is your ultimate goal with corporate contacts?',
+      type: 'single',
+      options: [
+        { value: 'career_growth', label: 'Career Growth' },
+        { value: 'business_expansion', label: 'Business Expansion' },
+        { value: 'long_term_network', label: 'Strong Long-Term Network' },
+        { value: 'multiple', label: 'All of the Above' },
+      ],
+    },
+  ],
+},
+
+{
+  key: 'manpower_handling',
+  name: 'Manpower Handling & Savings',
+  icon: 'Users',
+  description: 'Effective workforce management, productivity improvement, and manpower cost optimization across industries',
+  questions: [
+    {
+      key: 'manpower_goal',
+      text: 'What is your main objective in manpower handling?',
+      type: 'single',
+      options: [
+        { value: 'productivity', label: 'Increase Employee Productivity', nextQuestion: 'workplace_type' },
+        { value: 'cost_reduction', label: 'Reduce Manpower Cost', nextQuestion: 'workplace_type' },
+        { value: 'optimization', label: 'Optimize Workforce Utilization', nextQuestion: 'workplace_type' },
+        { value: 'scaling', label: 'Manage Growth & Scaling Teams', nextQuestion: 'workplace_type' },
+      ],
+    },
+
+    {
+      key: 'workplace_type',
+      text: 'What type of workplace do you want to manage manpower for?',
+      type: 'single',
+      options: [
+        { value: 'factory', label: 'Factory / Manufacturing Unit', nextQuestion: 'manpower_size' },
+        { value: 'office', label: 'Office / Corporate', nextQuestion: 'manpower_size' },
+        { value: 'construction', label: 'Construction / Site Work', nextQuestion: 'manpower_size' },
+        { value: 'hospital', label: 'Hospital / Healthcare', nextQuestion: 'manpower_size' },
+        { value: 'service', label: 'Service Industry / Operations', nextQuestion: 'manpower_size' },
+      ],
+    },
+
+    {
+      key: 'manpower_size',
+      text: 'How large is the workforce you are handling?',
+      type: 'single',
+      options: [
+        { value: 'small', label: '1 – 20 Employees', nextQuestion: 'skill_level' },
+        { value: 'medium', label: '21 – 100 Employees', nextQuestion: 'skill_level' },
+        { value: 'large', label: '100+ Employees', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    {
+      key: 'skill_level',
+      text: 'What is the general skill level of your manpower?',
+      type: 'single',
+      options: [
+        { value: 'unskilled', label: 'Unskilled / Helper Level', nextQuestion: 'key_challenges' },
+        { value: 'semi_skilled', label: 'Semi-Skilled Workers', nextQuestion: 'key_challenges' },
+        { value: 'skilled', label: 'Skilled / Technical Staff', nextQuestion: 'key_challenges' },
+        { value: 'professional', label: 'Professional / Management Level', nextQuestion: 'key_challenges' },
+      ],
+    },
+
+    {
+      key: 'key_challenges',
+      text: 'What is the biggest challenge you are facing?',
+      type: 'single',
+      options: [
+        { value: 'absenteeism', label: 'Absenteeism / Late Coming', nextQuestion: 'work_allocation' },
+        { value: 'low_productivity', label: 'Low Productivity', nextQuestion: 'work_allocation' },
+        { value: 'high_cost', label: 'High Salary or Wage Cost', nextQuestion: 'work_allocation' },
+        { value: 'attrition', label: 'High Employee Turnover', nextQuestion: 'work_allocation' },
+        { value: 'discipline', label: 'Discipline & Behavior Issues', nextQuestion: 'work_allocation' },
+        { value: 'skill_gap', label: 'Skill Gaps & Training Needs', nextQuestion: 'work_allocation' },
+      ],
+    },
+
+    {
+      key: 'work_allocation',
+      text: 'How is work currently allocated to employees?',
+      type: 'single',
+      options: [
+        { value: 'manual', label: 'Manual Allocation by Supervisor', nextQuestion: 'shift_management' },
+        { value: 'fixed', label: 'Fixed Roles & Shifts', nextQuestion: 'shift_management' },
+        { value: 'dynamic', label: 'Dynamic / Flexible Allocation', nextQuestion: 'shift_management' },
+        { value: 'automated', label: 'Software / ERP Based Allocation', nextQuestion: 'shift_management' },
+      ],
+    },
+
+    {
+      key: 'shift_management',
+      text: 'Do you use shift-based manpower management?',
+      type: 'single',
+      options: [
+        { value: 'single', label: 'Single Shift', nextQuestion: 'cost_saving_methods' },
+        { value: 'double', label: 'Double Shift', nextQuestion: 'cost_saving_methods' },
+        { value: 'triple', label: 'Three Shifts / 24x7', nextQuestion: 'cost_saving_methods' },
+        { value: 'flexible', label: 'Flexible / Rotational Shifts', nextQuestion: 'cost_saving_methods' },
+      ],
+    },
+
+    {
+      key: 'cost_saving_methods',
+      text: 'Which manpower cost-saving approach do you want to focus on?',
+      type: 'single',
+      options: [
+        { value: 'multi_skilling', label: 'Multi-Skilling Employees', nextQuestion: 'training_interest' },
+        { value: 'automation', label: 'Automation / Machines', nextQuestion: 'training_interest' },
+        { value: 'outsourcing', label: 'Outsourcing / Contract Staffing', nextQuestion: 'training_interest' },
+        { value: 'performance_pay', label: 'Performance-Based Pay', nextQuestion: 'training_interest' },
+        { value: 'lean', label: 'Lean Workforce Planning', nextQuestion: 'training_interest' },
+      ],
+    },
+
+    {
+      key: 'training_interest',
+      text: 'Do you want to invest in training & skill development?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, Regular Training Programs', nextQuestion: 'monitoring_tools' },
+        { value: 'need_based', label: 'Only Need-Based Training', nextQuestion: 'monitoring_tools' },
+        { value: 'no', label: 'No Training Planned', nextQuestion: 'monitoring_tools' },
+      ],
+    },
+
+    {
+      key: 'monitoring_tools',
+      text: 'How do you want to monitor manpower performance?',
+      type: 'single',
+      options: [
+        { value: 'attendance', label: 'Attendance & Time Tracking', nextQuestion: 'compliance' },
+        { value: 'kpi', label: 'KPIs & Productivity Metrics', nextQuestion: 'compliance' },
+        { value: 'supervisor', label: 'Supervisor Reports', nextQuestion: 'compliance' },
+        { value: 'software', label: 'HR / ERP Software', nextQuestion: 'compliance' },
+      ],
+    },
+
+    {
+      key: 'compliance',
+      text: 'Do you need guidance on labor laws and compliance?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, Full Legal & Compliance Support', nextQuestion: 'final_expectation' },
+        { value: 'basic', label: 'Basic Awareness Only', nextQuestion: 'final_expectation' },
+        { value: 'no', label: 'No Compliance Help Needed', nextQuestion: 'final_expectation' },
+      ],
+    },
+
+    {
+      key: 'final_expectation',
+      text: 'What is your primary expected result?',
+      type: 'single',
+      options: [
+        { value: 'lower_cost', label: 'Reduced Labor Cost' },
+        { value: 'higher_output', label: 'Higher Output & Efficiency' },
+        { value: 'stability', label: 'Stable & Disciplined Workforce' },
+        { value: 'growth', label: 'Scalable Workforce for Growth' },
+      ],
+    },
+  ],
+},
+
+
+{
+  key: 'story_novel',
+  name: 'Story / Novel Writing',
+  icon: 'BookOpen',
+  description: 'Creative writing skills for stories, novels, and fiction writing',
+  questions: [
+
+    {
+      key: 'writing_goal',
+      text: 'Why do you want to write a story or novel?',
+      type: 'single',
+      options: [
+        { value: 'passion', label: 'Personal Passion', nextQuestion: 'writing_format' },
+        { value: 'career', label: 'Career as Writer', nextQuestion: 'writing_format' },
+        { value: 'publish', label: 'Publish a Book', nextQuestion: 'writing_format' },
+        { value: 'expression', label: 'Self Expression', nextQuestion: 'writing_format' },
+      ],
+    },
+
+    {
+      key: 'writing_format',
+      text: 'What format do you want to write?',
+      type: 'single',
+      options: [
+        { value: 'short_story', label: 'Short Story', nextQuestion: 'genre' },
+        { value: 'novel', label: 'Novel', nextQuestion: 'genre' },
+        { value: 'series', label: 'Story Series', nextQuestion: 'genre' },
+        { value: 'script', label: 'Script / Screenplay', nextQuestion: 'genre' },
+      ],
+    },
+
+    {
+      key: 'genre',
+      text: 'Which genre interests you most?',
+      type: 'single',
+      options: [
+        { value: 'romance', label: 'Romance', nextQuestion: 'audience' },
+        { value: 'thriller', label: 'Thriller / Mystery', nextQuestion: 'audience' },
+        { value: 'fantasy', label: 'Fantasy', nextQuestion: 'audience' },
+        { value: 'scifi', label: 'Science Fiction', nextQuestion: 'audience' },
+        { value: 'horror', label: 'Horror', nextQuestion: 'audience' },
+        { value: 'drama', label: 'Drama / Life Story', nextQuestion: 'audience' },
+      ],
+    },
+
+    {
+      key: 'audience',
+      text: 'Who is your target audience?',
+      type: 'single',
+      options: [
+        { value: 'children', label: 'Children', nextQuestion: 'language' },
+        { value: 'teen', label: 'Teenagers', nextQuestion: 'language' },
+        { value: 'adult', label: 'Adults', nextQuestion: 'language' },
+        { value: 'all', label: 'All Age Groups', nextQuestion: 'language' },
+      ],
+    },
+
+    {
+      key: 'language',
+      text: 'Which language will you write in?',
+      type: 'single',
+      options: [
+        { value: 'english', label: 'English', nextQuestion: 'experience' },
+        { value: 'telugu', label: 'Telugu', nextQuestion: 'experience' },
+        { value: 'hindi', label: 'Hindi', nextQuestion: 'experience' },
+        { value: 'mixed', label: 'Mixed Language', nextQuestion: 'experience' },
+      ],
+    },
+
+    {
+      key: 'experience',
+      text: 'What is your writing experience level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'writing_style' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'writing_style' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'writing_style' },
+      ],
+    },
+
+    {
+      key: 'writing_style',
+      text: 'What writing style do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'simple', label: 'Simple & Easy Language', nextQuestion: 'inspiration' },
+        { value: 'descriptive', label: 'Detailed & Descriptive', nextQuestion: 'inspiration' },
+        { value: 'dialogue', label: 'Dialogue Driven', nextQuestion: 'inspiration' },
+        { value: 'poetic', label: 'Poetic / Artistic', nextQuestion: 'inspiration' },
+      ],
+    },
+
+    {
+      key: 'inspiration',
+      text: 'Where do you get inspiration from?',
+      type: 'single',
+      options: [
+        { value: 'real_life', label: 'Real Life Events', nextQuestion: 'publishing_goal' },
+        { value: 'imagination', label: 'Pure Imagination', nextQuestion: 'publishing_goal' },
+        { value: 'movies', label: 'Movies / Series', nextQuestion: 'publishing_goal' },
+        { value: 'books', label: 'Books / Novels', nextQuestion: 'publishing_goal' },
+      ],
+    },
+
+    {
+      key: 'publishing_goal',
+      text: 'What do you plan to do after writing?',
+      type: 'single',
+      options: [
+        { value: 'self_publish', label: 'Self Publish Online' },
+        { value: 'publisher', label: 'Approach Publisher' },
+        { value: 'platforms', label: 'Post on Writing Platforms' },
+        { value: 'personal', label: 'Keep it Personal' },
+      ],
+    },
+
+  ],
+},
+
+{
+  key: 'ladies_caring',
+  name: "Lady's Caring",
+  icon: 'Heart',
+  description: 'Personal care, health, safety, emotional well-being, and life management for women at every stage',
+  questions: [
+
+    {
+      key: 'care_focus',
+      text: 'What is your main focus in ladies caring?',
+      type: 'single',
+      options: [
+        { value: 'self_care', label: 'Self Care & Personal Well-being', nextQuestion: 'age_group' },
+        { value: 'family', label: 'Family & Home Care', nextQuestion: 'age_group' },
+        { value: 'health', label: 'Health & Physical Care', nextQuestion: 'age_group' },
+        { value: 'emotional', label: 'Emotional & Mental Care', nextQuestion: 'age_group' },
+      ],
+    },
+
+    {
+      key: 'age_group',
+      text: 'Which age group does this caring focus on?',
+      type: 'single',
+      options: [
+        { value: 'teen', label: 'Teenage Girls', nextQuestion: 'daily_care' },
+        { value: 'young', label: 'Young Women', nextQuestion: 'daily_care' },
+        { value: 'adult', label: 'Adult Women', nextQuestion: 'daily_care' },
+        { value: 'senior', label: 'Senior Women', nextQuestion: 'daily_care' },
+      ],
+    },
+
+    {
+      key: 'daily_care',
+      text: 'Which daily care area do you want help with?',
+      type: 'single',
+      options: [
+        { value: 'hygiene', label: 'Personal Hygiene', nextQuestion: 'health_topics' },
+        { value: 'diet', label: 'Diet & Nutrition', nextQuestion: 'health_topics' },
+        { value: 'fitness', label: 'Fitness & Exercise', nextQuestion: 'health_topics' },
+        { value: 'sleep', label: 'Sleep & Routine', nextQuestion: 'health_topics' },
+      ],
+    },
+
+    {
+      key: 'health_topics',
+      text: 'Which health-related area do you need guidance on?',
+      type: 'single',
+      options: [
+        { value: 'periods', label: 'Menstrual Health', nextQuestion: 'mental_care' },
+        { value: 'hormonal', label: 'Hormonal Balance', nextQuestion: 'mental_care' },
+        { value: 'pregnancy', label: 'Pregnancy & Motherhood', nextQuestion: 'mental_care' },
+        { value: 'general', label: 'General Health & Immunity', nextQuestion: 'mental_care' },
+      ],
+    },
+
+    {
+      key: 'mental_care',
+      text: 'What kind of mental or emotional care do you want?',
+      type: 'single',
+      options: [
+        { value: 'stress', label: 'Stress Management', nextQuestion: 'safety' },
+        { value: 'confidence', label: 'Confidence & Self-esteem', nextQuestion: 'safety' },
+        { value: 'relationships', label: 'Relationship Handling', nextQuestion: 'safety' },
+        { value: 'peace', label: 'Mental Peace & Balance', nextQuestion: 'safety' },
+      ],
+    },
+
+    {
+      key: 'safety',
+      text: 'Which safety-related guidance do you need?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Safety Awareness', nextQuestion: 'career_life' },
+        { value: 'workplace', label: 'Workplace Safety', nextQuestion: 'career_life' },
+        { value: 'travel', label: 'Travel Safety', nextQuestion: 'career_life' },
+        { value: 'digital', label: 'Online / Digital Safety', nextQuestion: 'career_life' },
+      ],
+    },
+
+    {
+      key: 'career_life',
+      text: 'Do you want guidance related to career or life balance?',
+      type: 'single',
+      options: [
+        { value: 'career_growth', label: 'Career Growth', nextQuestion: 'financial_care' },
+        { value: 'work_life', label: 'Work–Life Balance', nextQuestion: 'financial_care' },
+        { value: 'skills', label: 'Skill Development', nextQuestion: 'financial_care' },
+        { value: 'not_now', label: 'Not Required Now', nextQuestion: 'financial_care' },
+      ],
+    },
+
+    {
+      key: 'financial_care',
+      text: 'Do you want help with financial awareness?',
+      type: 'single',
+      options: [
+        { value: 'saving', label: 'Savings & Budgeting' },
+        { value: 'independent', label: 'Financial Independence' },
+        { value: 'planning', label: 'Future Planning' },
+        { value: 'no', label: 'No Financial Guidance Needed' },
+      ],
+    },
+
+  ],
+},
+
+
+
+{
+  key: 'interior_design',
+  name: 'Interior Design',
+  icon: 'Home',
+  description: 'Designing, planning, and improving interior spaces for homes, offices, and commercial environments',
+  questions: [
+
+    {
+      key: 'design_purpose',
+      text: 'What is your purpose for interior design?',
+      type: 'single',
+      options: [
+        { value: 'new_home', label: 'New Home Interior', nextQuestion: 'space_type' },
+        { value: 'renovation', label: 'Renovation / Remodeling', nextQuestion: 'space_type' },
+        { value: 'office', label: 'Office / Workspace Design', nextQuestion: 'space_type' },
+        { value: 'commercial', label: 'Shop / Commercial Space', nextQuestion: 'space_type' },
+      ],
+    },
+
+    {
+      key: 'space_type',
+      text: 'Which space do you want to design?',
+      type: 'single',
+      options: [
+        { value: 'living', label: 'Living Room', nextQuestion: 'design_style' },
+        { value: 'bedroom', label: 'Bedroom', nextQuestion: 'design_style' },
+        { value: 'kitchen', label: 'Kitchen', nextQuestion: 'design_style' },
+        { value: 'bathroom', label: 'Bathroom', nextQuestion: 'design_style' },
+        { value: 'full_home', label: 'Complete Home', nextQuestion: 'design_style' },
+      ],
+    },
+
+    {
+      key: 'design_style',
+      text: 'Which interior design style do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'modern', label: 'Modern', nextQuestion: 'budget_range' },
+        { value: 'minimal', label: 'Minimal', nextQuestion: 'budget_range' },
+        { value: 'traditional', label: 'Traditional', nextQuestion: 'budget_range' },
+        { value: 'luxury', label: 'Luxury', nextQuestion: 'budget_range' },
+      ],
+    },
+
+    {
+      key: 'budget_range',
+      text: 'What is your approximate budget range?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Budget', nextQuestion: 'material_choice' },
+        { value: 'medium', label: 'Medium Budget', nextQuestion: 'material_choice' },
+        { value: 'high', label: 'High Budget', nextQuestion: 'material_choice' },
+        { value: 'flexible', label: 'Flexible Budget', nextQuestion: 'material_choice' },
+      ],
+    },
+
+    {
+      key: 'material_choice',
+      text: 'What type of materials do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'wood', label: 'Wood-Based Materials', nextQuestion: 'color_theme' },
+        { value: 'ply', label: 'Plywood / MDF', nextQuestion: 'color_theme' },
+        { value: 'metal', label: 'Metal & Glass', nextQuestion: 'color_theme' },
+        { value: 'mixed', label: 'Mixed Materials', nextQuestion: 'color_theme' },
+      ],
+    },
+
+    {
+      key: 'color_theme',
+      text: 'Which color theme do you like?',
+      type: 'single',
+      options: [
+        { value: 'light', label: 'Light & Neutral Colors', nextQuestion: 'lighting_plan' },
+        { value: 'dark', label: 'Dark & Bold Colors', nextQuestion: 'lighting_plan' },
+        { value: 'warm', label: 'Warm Tones', nextQuestion: 'lighting_plan' },
+        { value: 'custom', label: 'Custom Color Theme', nextQuestion: 'lighting_plan' },
+      ],
+    },
+
+    {
+      key: 'lighting_plan',
+      text: 'What type of lighting do you want?',
+      type: 'single',
+      options: [
+        { value: 'natural', label: 'Maximum Natural Light', nextQuestion: 'storage_needs' },
+        { value: 'ambient', label: 'Ambient & Soft Lighting', nextQuestion: 'storage_needs' },
+        { value: 'focused', label: 'Focused / Task Lighting', nextQuestion: 'storage_needs' },
+        { value: 'decorative', label: 'Decorative Lighting', nextQuestion: 'storage_needs' },
+      ],
+    },
+
+    {
+      key: 'storage_needs',
+      text: 'What are your storage requirements?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Storage', nextQuestion: 'timeline' },
+        { value: 'moderate', label: 'Moderate Storage', nextQuestion: 'timeline' },
+        { value: 'maximum', label: 'Maximum Storage', nextQuestion: 'timeline' },
+        { value: 'hidden', label: 'Hidden / Smart Storage', nextQuestion: 'timeline' },
+      ],
+    },
+
+    {
+      key: 'timeline',
+      text: 'What is your expected completion timeline?',
+      type: 'single',
+      options: [
+        { value: 'immediate', label: 'Immediate', nextQuestion: 'final_expectation' },
+        { value: 'month', label: 'Within 1 Month', nextQuestion: 'final_expectation' },
+        { value: 'three_months', label: '1–3 Months', nextQuestion: 'final_expectation' },
+        { value: 'flexible', label: 'Flexible Timeline', nextQuestion: 'final_expectation' },
+      ],
+    },
+
+    {
+      key: 'final_expectation',
+      text: 'What is your final expectation from interior design?',
+      type: 'single',
+      options: [
+        { value: 'comfort', label: 'Comfort & Functionality' },
+        { value: 'aesthetic', label: 'Beautiful & Stylish Look' },
+        { value: 'space', label: 'Better Space Utilization' },
+        { value: 'all', label: 'All of the Above' },
+      ],
+    },
+
+  ],
+},
+
+
+{
+  key: 'poetry',
+  name: 'Poetry',
+  icon: 'Feather',
+  description: 'Writing, understanding, and expressing thoughts, emotions, and stories through poetry',
+  questions: [
+
+    {
+      key: 'poetry_interest',
+      text: 'Why are you interested in poetry?',
+      type: 'single',
+      options: [
+        { value: 'expression', label: 'Self-Expression & Emotions', nextQuestion: 'poetry_type' },
+        { value: 'storytelling', label: 'Storytelling Through Words', nextQuestion: 'poetry_type' },
+        { value: 'art', label: 'Artistic Creativity', nextQuestion: 'poetry_type' },
+        { value: 'career', label: 'Career / Publishing', nextQuestion: 'poetry_type' },
+      ],
+    },
+
+    {
+      key: 'poetry_type',
+      text: 'What type of poetry do you like or want to write?',
+      type: 'single',
+      options: [
+        { value: 'free_verse', label: 'Free Verse', nextQuestion: 'poetry_theme' },
+        { value: 'rhyming', label: 'Rhyming Poetry', nextQuestion: 'poetry_theme' },
+        { value: 'haiku', label: 'Haiku / Short Poems', nextQuestion: 'poetry_theme' },
+        { value: 'narrative', label: 'Narrative Poetry', nextQuestion: 'poetry_theme' },
+      ],
+    },
+
+    {
+      key: 'poetry_theme',
+      text: 'Which theme do you want to focus on?',
+      type: 'single',
+      options: [
+        { value: 'love', label: 'Love & Relationships', nextQuestion: 'language_choice' },
+        { value: 'nature', label: 'Nature & Life', nextQuestion: 'language_choice' },
+        { value: 'pain', label: 'Pain, Struggle & Healing', nextQuestion: 'language_choice' },
+        { value: 'motivation', label: 'Motivation & Hope', nextQuestion: 'language_choice' },
+      ],
+    },
+
+    {
+      key: 'language_choice',
+      text: 'In which language do you want to write poetry?',
+      type: 'single',
+      options: [
+        { value: 'english', label: 'English', nextQuestion: 'experience_level' },
+        { value: 'telugu', label: 'Telugu', nextQuestion: 'experience_level' },
+        { value: 'hindi', label: 'Hindi', nextQuestion: 'experience_level' },
+        { value: 'mixed', label: 'Mixed Languages', nextQuestion: 'experience_level' },
+      ],
+    },
+
+    {
+      key: 'experience_level',
+      text: 'What is your experience level in poetry?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'writing_style' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'writing_style' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'writing_style' },
+        { value: 'exploring', label: 'Just Exploring', nextQuestion: 'writing_style' },
+      ],
+    },
+
+    {
+      key: 'writing_style',
+      text: 'Which writing style do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'simple', label: 'Simple & Clear', nextQuestion: 'learning_goal' },
+        { value: 'deep', label: 'Deep & Emotional', nextQuestion: 'learning_goal' },
+        { value: 'symbolic', label: 'Symbolic & Metaphorical', nextQuestion: 'learning_goal' },
+        { value: 'experimental', label: 'Experimental Style', nextQuestion: 'learning_goal' },
+      ],
+    },
+
+    {
+      key: 'learning_goal',
+      text: 'What do you want to learn in poetry?',
+      type: 'single',
+      options: [
+        { value: 'vocabulary', label: 'Improve Vocabulary', nextQuestion: 'sharing_platform' },
+        { value: 'imagery', label: 'Imagery & Metaphors', nextQuestion: 'sharing_platform' },
+        { value: 'rhythm', label: 'Rhythm & Flow', nextQuestion: 'sharing_platform' },
+        { value: 'emotion', label: 'Expressing Emotions Better', nextQuestion: 'sharing_platform' },
+      ],
+    },
+
+    {
+      key: 'sharing_platform',
+      text: 'Do you want to share your poetry?',
+      type: 'single',
+      options: [
+        { value: 'personal', label: 'Personal Journal Only', nextQuestion: 'final_expectation' },
+        { value: 'social', label: 'Social Media', nextQuestion: 'final_expectation' },
+        { value: 'stage', label: 'Open Mic / Stage', nextQuestion: 'final_expectation' },
+        { value: 'publish', label: 'Books / Online Publishing', nextQuestion: 'final_expectation' },
+      ],
+    },
+
+    {
+      key: 'final_expectation',
+      text: 'What do you expect from poetry?',
+      type: 'single',
+      options: [
+        { value: 'peace', label: 'Mental Peace' },
+        { value: 'expression', label: 'Emotional Expression' },
+        { value: 'identity', label: 'Creative Identity' },
+        { value: 'all', label: 'All of the Above' },
+      ],
+    },
+
+  ],
+}
+
+
+
+
+
 
 
 

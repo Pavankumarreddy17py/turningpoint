@@ -12,6 +12,8 @@ import {
   MessageCircle,
   RotateCcw,
   ShieldCheck,
+  ClipboardCheck,
+  ArrowRight
 } from 'lucide-react';
 
 /* ---------------- TYPES ---------------- */
@@ -68,13 +70,30 @@ export function RoadmapPage({
 
   /* ---------------- HELPERS ---------------- */
 
-  const handleWhatsApp = () => {
-    const phone = '917259771515';
-    const text = encodeURIComponent(
-      `Hi J#₹! I completed my roadmap for ${roadmap.confirmed_dream}. I want mentor guidance.`
-    );
-    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-  };
+const handleWhatsApp = (): void => {
+  if (typeof window === 'undefined') return;
+
+  const phone: string = '917259771515';
+
+  const mainDream: string = (dreamKey || 'Selected Dream')
+    .replace(/-/g, ' ')
+    .toUpperCase();
+
+  const lines: string[] = [];
+
+  lines.push(`DREAM:- ${mainDream}`);
+
+  Object.entries(responses).forEach(([question, answer]) => {
+    const q = question.replace(/_/g, ' ').toUpperCase();
+    const a = answer.replace(/_/g, ' ').toUpperCase();
+    lines.push(`${q}:- ${a}`);
+  });
+
+  const message: string = encodeURIComponent(lines.join('\n'));
+
+  window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+};
+
 
   /** ✅ FIXED YOUTUBE EMBED LINKS */
   const getDreamVideo = (key: string) => {
@@ -92,6 +111,66 @@ export function RoadmapPage({
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-12">
       <div className="max-w-5xl mx-auto px-4">
+
+        {/* --- ADDED: SELECTION DETAILS AT TOP --- */}
+{/* --- IMPROVED SELECTION SUMMARY --- */}
+{/* --- NEO-BRUTALIST SELECTION SUMMARY --- */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-8 w-2 bg-blue-600 rounded-full"></div>
+            <h3 className="text-2xl font-black uppercase italic tracking-tighter text-slate-900">
+              Verified Selection
+            </h3>
+          </div>
+
+          <div className="bg-slate-900 rounded-[2.5rem] p-8 shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] border-4 border-black relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none" 
+                 style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+
+            <div className="relative z-10">
+              {/* Main Dream Heading */}
+              <div className="mb-10">
+                <p className="text-blue-400 text-xs font-black uppercase tracking-[0.3em] mb-2">Confirmed Goal</p>
+                <h2 className="text-5xl font-black text-white uppercase italic leading-none tracking-tighter">
+                  {dreamKey.replace(/-/g, ' ')}
+                </h2>
+              </div>
+
+              {/* Selection Badges Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {Object.entries(responses).map(([question, answer]) => (
+                  <div 
+                    key={question} 
+                    className="bg-white/5 border-2 border-white/10 rounded-2xl p-5 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-blue-600/20 rounded-lg group-hover:bg-blue-600 transition-colors">
+                        <ClipboardCheck size={16} className="text-blue-400 group-hover:text-white" />
+                      </div>
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none">
+                        {question.replace(/_/g, ' ')}
+                      </p>
+                    </div>
+                    <p className="text-xl font-black text-white uppercase tracking-tight leading-tight">
+                      {answer.replace(/_/g, ' ')}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Verification Badge */}
+          <div className="mt-6 flex justify-center">
+            <div className="flex items-center gap-2 px-6 py-2 bg-white border-2 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-600">
+                Selections Logged for Mentor Discussion
+              </span>
+            </div>
+          </div>
+        </div>
 
         {/* ---------- HEADER ---------- */}
         <div className="text-center mb-12">

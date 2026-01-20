@@ -83,6 +83,13 @@ function App() {
   };
 
   const handleConfirmRoadmap = async () => {
+    // 1. Check if this is the Emergency Services category
+    if (sessionData.dreamKey === 'emergency_services') {
+      setAppState('roadmap'); // Move to the summary page immediately
+      return; // Stop the function here so no AI roadmap is generated
+    }
+
+    // 2. Otherwise, proceed with normal AI generation for other dreams
     setLoading(true); 
     setAppState('roadmap');
     try {
@@ -92,6 +99,7 @@ function App() {
         dreamCategory?.name || 'Your Dream', 
         sessionData.responses
       );
+      
       if (sessionData.sessionId) {
         await saveRoadmap(sessionData.sessionId, roadmap);
         await updateSessionComplete(sessionData.sessionId);
