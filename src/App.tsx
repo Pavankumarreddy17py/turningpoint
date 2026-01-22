@@ -12,6 +12,7 @@ import { AiGuidancePage } from './pages/AiGuidance';
 import { FAQsPage } from './pages/FAQs';
 import { SignupPage } from './pages/SignupPage'; 
 import { LoginPage } from './pages/LoginPage'; 
+import { ChatbotPage } from './pages/ChatbotPage';
 import { Menu, X, Star, Send } from 'lucide-react'; 
 
 import { supabase } from './lib/supabase';
@@ -21,7 +22,7 @@ import logoImg from './assets/main logo of tp.png';
 // 1. UPDATED APP STATE TYPE
 type AppState = 'landing' | 'selection' | 'questions' | 'confirmation' | 'roadmap' | 
                 'how-it-works' | 'parents' | 'ai-guidance' | 'faq' | 'roadmap-info' |
-                'signup' | 'login' | 'feedback';
+                'signup' | 'login' | 'feedback' | 'chatbot';
 
 interface SessionData {
   studentId: string | null;
@@ -205,6 +206,7 @@ function App() {
         {appState === 'parents' && <ForParentsPage onBack={handleBackToLanding} />}
         {appState === 'ai-guidance' && <AiGuidancePage onBack={handleBackToLanding} />}
         {appState === 'faq' && <FAQsPage onBack={handleBackToLanding} />}
+        {appState === 'chatbot' && <ChatbotPage onBack={() => setAppState('landing')} />}
         
         {/* FEEDBACK PAGE UI */}
         {appState === 'feedback' && (
