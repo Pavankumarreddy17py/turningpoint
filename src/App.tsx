@@ -10,19 +10,19 @@ import { HowItWorksPage } from './pages/HowItWorks';
 import { ForParentsPage } from './pages/ForParents';
 import { AiGuidancePage } from './pages/AiGuidance';
 import { FAQsPage } from './pages/FAQs';
-import { SignupPage } from './pages/SignupPage'; 
-import { LoginPage } from './pages/LoginPage'; 
 import { ChatbotPage } from './pages/ChatbotPage';
 import { Menu, X, Star, Send } from 'lucide-react'; 
-
 import { supabase } from './lib/supabase';
 import { getDreamCategory } from './data/dreamTrees';
 import logoImg from './assets/main logo of tp.png';
 
+// import { SignupPage } from './pages/SignupPage'; 
+// import { LoginPage } from './pages/LoginPage'; 
+
 // 1. UPDATED APP STATE TYPE
 type AppState = 'landing' | 'selection' | 'questions' | 'confirmation' | 'roadmap' | 
                 'how-it-works' | 'parents' | 'ai-guidance' | 'faq' | 'roadmap-info' |
-                'signup' | 'login' | 'feedback' | 'chatbot';
+                 'feedback' | 'chatbot';
 
 interface SessionData {
   studentId: string | null;
@@ -168,12 +168,12 @@ function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button 
+            {/* <button 
               onClick={() => navigateTo('login')} 
               className="hidden sm:block text-xs font-bold text-gray-500 hover:text-black uppercase"
             >
               Login / Signup
-            </button>
+            </button> */}
             
             <Button onClick={handleGetStarted} variant="primary" size="sm" className="bg-black text-white px-4 py-2 rounded-full text-xs font-bold uppercase shadow-md">
               Start
@@ -192,14 +192,14 @@ function App() {
             <button onClick={() => navigateTo('selection')} className="text-left border-b pb-2">Categories</button>
             <button onClick={() => navigateTo('feedback')} className="text-left border-b pb-2">Feedback</button>
             <button onClick={() => navigateTo('faq')} className="text-left border-b pb-2">FAQs</button>
-            <button onClick={() => navigateTo('login')} className="text-left text-blue-600">Login / Signup</button>
+            {/* <button onClick={() => navigateTo('login')} className="text-left text-blue-600">Login / Signup</button> */}
           </div>
         )}
       </nav>
 
       <main>
-        {appState === 'signup' && <SignupPage onSwitch={() => setAppState('login')} onSignupSuccess={() => setAppState('login')} />}
-        {appState === 'login' && <LoginPage onSwitch={() => setAppState('signup')} onLoginSuccess={() => setAppState('landing')} />}
+        {/* {appState === 'signup' && <SignupPage onSwitch={() => setAppState('login')} onSignupSuccess={() => setAppState('login')} />}
+        {appState === 'login' && <LoginPage onSwitch={() => setAppState('signup')} onLoginSuccess={() => setAppState('landing')} />} */}
         {appState === 'landing' && <LandingPage onGetStarted={handleGetStarted} setAppState={setAppState} />}
         {appState === 'roadmap-info' && <RoadmapInfoPage onBack={handleBackToLanding} onStart={handleGetStarted} />}
         {appState === 'how-it-works' && <HowItWorksPage onBack={handleBackToLanding} onStart={handleGetStarted} />}

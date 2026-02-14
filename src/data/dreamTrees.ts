@@ -151,7 +151,6 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
-
 {
   key: 'education',
   name: 'Education',
@@ -197,6 +196,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'college_abroad', label: 'Study Abroad' },
         { value: 'job_or_skill', label: 'Skill-based Job' },
       ],
+      nextQuestion: 'study_hours',
     },
 
     /* ================================================== */
@@ -230,105 +230,117 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* CSE */
     {
-      key: 'cse_specialization',
-      text: 'Which CSE specialization excites you most?',
+      key: 'cyber_goal',
+      text: 'Which cyber security path do you prefer?',
       type: 'single',
       options: [
-        { value: 'full_stack', label: 'Full Stack Development' },
-        { value: 'software', label: 'Software Engineering' },
-        { value: 'cloud', label: 'Cloud & DevOps' },
-        { value: 'blockchain', label: 'Blockchain & Web3' },
-        { value: 'game_dev', label: 'Game Development' },
+        { value: 'ethical_hacking', label: 'Ethical Hacking' },
+        { value: 'security_analyst', label: 'Security Analyst' },
+        { value: 'forensics', label: 'Digital Forensics' },
       ],
-    },
-
-    /* AI / ML */
-    {
-      key: 'ai_goal',
-      text: 'What do you want to do with AI?',
-      type: 'single',
-      options: [
-        { value: 'research', label: 'AI Research' },
-        { value: 'industry', label: 'Industry Jobs (ML Engineer)' },
-        { value: 'startups', label: 'AI Startups' },
-      ],
-    },
-
-    /* DATA */
-    {
-      key: 'data_goal',
-      text: 'Which data role do you prefer?',
-      type: 'single',
-      options: [
-        { value: 'data_analyst', label: 'Data Analyst' },
-        { value: 'data_scientist', label: 'Data Scientist' },
-        { value: 'business_analytics', label: 'Business Analytics' },
-      ],
-    },
-
-    /* ---------- DEGREE ---------- */
-    {
-      key: 'degree_stream',
-      text: 'Which degree stream are you considering?',
-      type: 'single',
-      options: [
-        { value: 'bsc', label: 'B.Sc', nextQuestion: 'bsc_subject' },
-        { value: 'bcom', label: 'B.Com', nextQuestion: 'bcom_specialization' },
-        { value: 'ba', label: 'B.A', nextQuestion: 'ba_subject' },
-      ],
+      nextQuestion: 'study_hours',
     },
 
     {
-      key: 'bsc_subject',
-      text: 'Which B.Sc subject?',
+      key: 'ece_interest',
+      text: 'Which ECE area interests you most?',
       type: 'single',
       options: [
-        { value: 'computer_science', label: 'Computer Science' },
-        { value: 'maths', label: 'Mathematics' },
-        { value: 'physics', label: 'Physics' },
-        { value: 'statistics', label: 'Statistics' },
-        { value: 'biotech', label: 'Biotechnology' },
+        { value: 'embedded', label: 'Embedded Systems' },
+        { value: 'vlsi', label: 'VLSI Design' },
+        { value: 'telecom', label: 'Telecommunications' },
       ],
+      nextQuestion: 'study_hours',
     },
 
     {
-      key: 'bcom_specialization',
-      text: 'Which B.Com specialization?',
+      key: 'mechanical_interest',
+      text: 'Which mechanical domain do you prefer?',
       type: 'single',
       options: [
-        { value: 'general', label: 'General Commerce' },
-        { value: 'finance', label: 'Finance' },
-        { value: 'accounting', label: 'Accounting' },
-        { value: 'business_analytics', label: 'Business Analytics' },
+        { value: 'automobile', label: 'Automobile Engineering' },
+        { value: 'robotics', label: 'Robotics' },
+        { value: 'thermal', label: 'Thermal Engineering' },
       ],
+      nextQuestion: 'study_hours',
     },
 
     {
-      key: 'ba_subject',
-      text: 'Which BA subject?',
+      key: 'civil_interest',
+      text: 'Which civil engineering field attracts you?',
       type: 'single',
       options: [
-        { value: 'economics', label: 'Economics' },
-        { value: 'psychology', label: 'Psychology' },
-        { value: 'political_science', label: 'Political Science' },
-        { value: 'sociology', label: 'Sociology' },
+        { value: 'construction', label: 'Construction Management' },
+        { value: 'structural', label: 'Structural Engineering' },
+        { value: 'environmental', label: 'Environmental Engineering' },
       ],
+      nextQuestion: 'study_hours',
     },
 
-    /* ---------- PROFESSIONAL ---------- */
     {
-      key: 'professional_course',
-      text: 'Which professional course are you interested in?',
+      key: 'biotech_goal',
+      text: 'What is your biotech career goal?',
       type: 'single',
       options: [
-        { value: 'ca', label: 'CA' },
-        { value: 'cs', label: 'CS' },
-        { value: 'cma', label: 'CMA' },
-        { value: 'law', label: 'Law (LLB)' },
-        { value: 'design', label: 'Design (UI/UX, Fashion)' },
+        { value: 'research', label: 'Biotech Research' },
+        { value: 'pharma', label: 'Pharmaceutical Industry' },
+        { value: 'genetics', label: 'Genetics & Genomics' },
       ],
+      nextQuestion: 'study_hours',
+    },
+
+    /* ---------- POSTGRADUATE ---------- */
+    {
+      key: 'pg_goal',
+      text: 'Why do you want to pursue postgraduate studies?',
+      type: 'single',
+      options: [
+        { value: 'higher_salary', label: 'Higher Salary' },
+        { value: 'specialization', label: 'Deep Specialization' },
+        { value: 'career_shift', label: 'Career Shift' },
+        { value: 'research', label: 'Research Interest' },
+      ],
+      nextQuestion: 'pg_field',
+    },
+
+    {
+      key: 'pg_field',
+      text: 'Which field for postgraduate?',
+      type: 'single',
+      options: [
+        { value: 'mtech', label: 'M.Tech' },
+        { value: 'mba', label: 'MBA' },
+        { value: 'msc', label: 'M.Sc' },
+        { value: 'abroad_masters', label: 'Masters Abroad' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+
+    /* ---------- RESEARCH ---------- */
+    {
+      key: 'research_interest',
+      text: 'Which research domain excites you?',
+      type: 'single',
+      options: [
+        { value: 'ai_research', label: 'AI Research' },
+        { value: 'space', label: 'Space & Aerospace' },
+        { value: 'biotech_research', label: 'Biotechnology Research' },
+        { value: 'social_science', label: 'Social Science Research' },
+      ],
+      nextQuestion: 'research_commitment',
+    },
+
+    {
+      key: 'research_commitment',
+      text: 'Are you ready for 4–6 years of deep research work?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, fully committed' },
+        { value: 'maybe', label: 'Not sure yet' },
+        { value: 'no', label: 'Not ready for long-term research' },
+      ],
+      nextQuestion: 'study_hours',
     },
 
     /* ================================================== */
@@ -351,10 +363,23 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'moderate', label: 'Need affordable options' },
         { value: 'high', label: 'Need scholarships / free education' },
       ],
+      nextQuestion: 'confidence_level',
+    },
+
+    {
+      key: 'confidence_level',
+      text: 'How confident are you about this education path?',
+      type: 'single',
+      options: [
+        { value: 'very_confident', label: 'Very Confident' },
+        { value: 'somewhat', label: 'Somewhat Confident' },
+        { value: 'confused', label: 'Still Confused' },
+      ],
     },
 
   ],
 },
+
 
 /*
 ┌─────────────────────────┐
@@ -404,6 +429,13 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'archery', label: 'Archery', nextQuestion: 'archery_type' },
         { value: 'cycling', label: 'Cycling', nextQuestion: 'cycling_discipline' },
         { value: 'swimming', label: 'Swimming', nextQuestion: 'swimming_style' },
+        { value: 'kho_kho', label: 'Kho Kho', nextQuestion: 'kho_kho_role' },
+        { value: 'gilli_danda', label: 'Gilli Danda', nextQuestion: 'gilli_skill' },
+        { value: 'mallakhamb', label: 'Mallakhamb', nextQuestion: 'mallakhamb_type' },
+        { value: 'polo', label: 'Polo', nextQuestion: 'polo_role' },
+        { value: 'shooting', label: 'Shooting', nextQuestion: 'shooting_type' },
+        { value: 'badminton', label: 'Badminton', nextQuestion: 'badminton_type' },
+
       ],
     },
     {
@@ -547,6 +579,110 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
+    {
+      key: 'kho_kho_role',
+      text: 'Your role in Kho Kho?',
+      type: 'single',
+      options: [
+        { value: 'chaser', label: 'Chaser', nextQuestion: 'kho_kho_strength' },
+        { value: 'runner', label: 'Runner', nextQuestion: 'kho_kho_strength' },
+      ],
+    },
+    {
+      key: 'kho_kho_strength',
+      text: 'Your strongest ability?',
+      type: 'single',
+      options: [
+        { value: 'speed', label: 'Speed', nextQuestion: 'competition_level' },
+        { value: 'agility', label: 'Agility', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+      key: 'gilli_skill',
+      text: 'Your strength in Gilli Danda?',
+      type: 'single',
+      options: [
+        { value: 'power', label: 'Power Hitting', nextQuestion: 'competition_level' },
+        { value: 'accuracy', label: 'Accuracy', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+      key: 'mallakhamb_type',
+      text: 'Mallakhamb type?',
+      type: 'single',
+      options: [
+        { value: 'rope', label: 'Rope Mallakhamb', nextQuestion: 'competition_level' },
+        { value: 'pole', label: 'Pole Mallakhamb', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+      key: 'polo_role',
+      text: 'Your role in Polo?',
+      type: 'single',
+      options: [
+        { value: 'attacker', label: 'Attacker', nextQuestion: 'competition_level' },
+        { value: 'defender', label: 'Defender', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+      key: 'shooting_type',
+      text: 'Shooting category?',
+      type: 'single',
+      options: [
+        { value: 'rifle', label: 'Rifle', nextQuestion: 'competition_level' },
+        { value: 'pistol', label: 'Pistol', nextQuestion: 'competition_level' },
+        { value: 'shotgun', label: 'Shotgun', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+  key: 'badminton_type',
+  text: 'Which type of badminton do you want to play?',
+  type: 'single',
+  options: [
+    { value: 'singles', label: 'Singles', nextQuestion: 'badminton_hand' },
+    { value: 'doubles', label: 'Doubles', nextQuestion: 'badminton_hand' },
+    { value: 'mixed_doubles', label: 'Mixed Doubles', nextQuestion: 'badminton_hand' },
+  ],
+},
+
+{
+  key: 'badminton_hand',
+  text: 'Your playing hand?',
+  type: 'single',
+  options: [
+    { value: 'right', label: 'Right-handed', nextQuestion: 'badminton_style' },
+    { value: 'left', label: 'Left-handed', nextQuestion: 'badminton_style' },
+  ],
+},
+
+{
+  key: 'badminton_style',
+  text: 'Your playing style?',
+  type: 'single',
+  options: [
+    { value: 'attacking', label: 'Attacking (Smash-Oriented)', nextQuestion: 'badminton_strength' },
+    { value: 'defensive', label: 'Defensive (Control & Rally)', nextQuestion: 'badminton_strength' },
+    { value: 'balanced', label: 'Balanced', nextQuestion: 'badminton_strength' },
+  ],
+},
+
+{
+  key: 'badminton_strength',
+  text: 'Your strongest area?',
+  type: 'single',
+  options: [
+    { value: 'smash', label: 'Power Smash', nextQuestion: 'competition_level' },
+    { value: 'net_play', label: 'Net Play', nextQuestion: 'competition_level' },
+    { value: 'footwork', label: 'Footwork', nextQuestion: 'competition_level' },
+    { value: 'stamina', label: 'Stamina', nextQuestion: 'competition_level' },
+  ],
+},
+
 
     
     
@@ -572,6 +708,16 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'snooker', label: 'Snooker / Billiards', nextQuestion: 'snooker_format' },
         { value: 'esports', label: 'Esports', nextQuestion: 'esports_game' },
         { value: 'yoga', label: 'Yoga (Competitive)', nextQuestion: 'yoga_style' },
+
+        { value: 'carrom', label: 'Carrom', nextQuestion: 'carrom_style' },
+        { value: 'kalaripayattu', label: 'Kalaripayattu', nextQuestion: 'kalaripayattu_level' },
+        { value: 'silambam', label: 'Silambam', nextQuestion: 'silambam_type' },
+        { value: 'lawn_bowls', label: 'Lawn Bowls', nextQuestion: 'lawn_bowls_format' },
+        { value: 'pocket_billiards', label: 'Pocket Billiards', nextQuestion: 'pocket_billiards_game' },
+        { value: 'roller_skating', label: 'Roller Skating', nextQuestion: 'roller_skating_discipline' },
+        { value: 'fencing', label: 'Fencing', nextQuestion: 'fencing_weapon' },
+        { value: 'judo', label: 'Judo', nextQuestion: 'judo_weight' },
+        { value: 'taekwondo', label: 'Taekwondo', nextQuestion: 'taekwondo_belt' },
 
       ],
     },
@@ -1016,6 +1162,199 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
+{
+      key: 'carrom_style',
+      text: 'Carrom playing style?',
+      type: 'single',
+      options: [
+        { value: 'offensive', label: 'Offensive', nextQuestion: 'competition_level' },
+        { value: 'defensive', label: 'Defensive', nextQuestion: 'competition_level' },
+      ],
+    },
+
+   {
+      key: 'kalaripayattu_level',
+      text: 'Training level?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic', nextQuestion: 'competition_level' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    {
+      key: 'silambam_type',
+      text: 'Silambam specialization?',
+      type: 'single',
+      options: [
+        { value: 'stick', label: 'Single Stick', nextQuestion: 'competition_level' },
+        { value: 'double', label: 'Double Stick', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    // =========================
+    // COMMON CAREER QUESTIONS
+    // =========================
+    {
+      key: 'competition_level',
+      text: 'Highest competition level?',
+      type: 'single',
+      options: [
+        { value: 'school', label: 'School', nextQuestion: 'practice_hours' },
+        { value: 'district', label: 'District', nextQuestion: 'practice_hours' },
+        { value: 'state', label: 'State', nextQuestion: 'practice_hours' },
+        { value: 'national', label: 'National', nextQuestion: 'practice_hours' },
+        { value: 'international', label: 'International', nextQuestion: 'practice_hours' },
+        { value: 'none', label: 'None yet', nextQuestion: 'practice_hours' },
+      ],
+    },
+
+    {
+      key: 'practice_hours',
+      text: 'Daily practice hours?',
+      type: 'number',
+      validation: { min: 1, max: 12 },
+      nextQuestion: 'career_goal',
+    },
+
+    {
+      key: 'career_goal',
+      text: 'Your long-term sports goal?',
+      type: 'single',
+      options: [
+        { value: 'professional', label: 'Professional Athlete' },
+        { value: 'college', label: 'College Sports Quota' },
+        { value: 'coach', label: 'Coach / Trainer' },
+        { value: 'fitness', label: 'Fitness Career' },
+      ],
+    },
+
+    {
+  key: 'lawn_bowls_format',
+  text: 'Which Lawn Bowls format do you prefer?',
+  type: 'single',
+  options: [
+    { value: 'singles', label: 'Singles', nextQuestion: 'lawn_bowls_position' },
+    { value: 'pairs', label: 'Pairs', nextQuestion: 'lawn_bowls_position' },
+    { value: 'fours', label: 'Fours', nextQuestion: 'lawn_bowls_position' },
+  ],
+},
+{
+  key: 'lawn_bowls_position',
+  text: 'Your playing role?',
+  type: 'single',
+  options: [
+    { value: 'lead', label: 'Lead', nextQuestion: 'competition_level' },
+    { value: 'skip', label: 'Skip', nextQuestion: 'competition_level' },
+    { value: 'middle', label: 'Middle Player', nextQuestion: 'competition_level' },
+  ],
+},
+
+{
+  key: 'pocket_billiards_game',
+  text: 'Which pocket billiards game?',
+  type: 'single',
+  options: [
+    { value: 'eight_ball', label: '8-Ball', nextQuestion: 'pocket_billiards_skill' },
+    { value: 'nine_ball', label: '9-Ball', nextQuestion: 'pocket_billiards_skill' },
+    { value: 'ten_ball', label: '10-Ball', nextQuestion: 'pocket_billiards_skill' },
+  ],
+},
+{
+  key: 'pocket_billiards_skill',
+  text: 'Your strongest skill?',
+  type: 'single',
+  options: [
+    { value: 'potting', label: 'Potting Accuracy', nextQuestion: 'competition_level' },
+    { value: 'cue_control', label: 'Cue Ball Control', nextQuestion: 'competition_level' },
+    { value: 'strategy', label: 'Strategic Play', nextQuestion: 'competition_level' },
+  ],
+},
+
+{
+  key: 'roller_skating_discipline',
+  text: 'Which skating discipline?',
+  type: 'single',
+  options: [
+    { value: 'speed', label: 'Speed Skating', nextQuestion: 'roller_skating_surface' },
+    { value: 'artistic', label: 'Artistic Skating', nextQuestion: 'roller_skating_surface' },
+    { value: 'rink_hockey', label: 'Rink Hockey', nextQuestion: 'roller_skating_surface' },
+  ],
+},
+{
+  key: 'roller_skating_surface',
+  text: 'Preferred skating surface?',
+  type: 'single',
+  options: [
+    { value: 'indoor', label: 'Indoor Rink', nextQuestion: 'competition_level' },
+    { value: 'outdoor', label: 'Outdoor Track', nextQuestion: 'competition_level' },
+  ],
+},
+
+{
+  key: 'fencing_weapon',
+  text: 'Which fencing weapon?',
+  type: 'single',
+  options: [
+    { value: 'foil', label: 'Foil', nextQuestion: 'fencing_style' },
+    { value: 'epee', label: 'Epee', nextQuestion: 'fencing_style' },
+    { value: 'sabre', label: 'Sabre', nextQuestion: 'fencing_style' },
+  ],
+},
+{
+  key: 'fencing_style',
+  text: 'Your fencing style?',
+  type: 'single',
+  options: [
+    { value: 'offensive', label: 'Offensive', nextQuestion: 'competition_level' },
+    { value: 'defensive', label: 'Defensive', nextQuestion: 'competition_level' },
+    { value: 'counter_attack', label: 'Counter-Attack', nextQuestion: 'competition_level' },
+  ],
+},
+
+{
+  key: 'judo_weight',
+  text: 'Your weight category?',
+  type: 'single',
+  options: [
+    { value: 'lightweight', label: 'Lightweight', nextQuestion: 'judo_style' },
+    { value: 'middleweight', label: 'Middleweight', nextQuestion: 'judo_style' },
+    { value: 'heavyweight', label: 'Heavyweight', nextQuestion: 'judo_style' },
+  ],
+},
+{
+  key: 'judo_style',
+  text: 'Your strongest area?',
+  type: 'single',
+  options: [
+    { value: 'throwing', label: 'Throwing Techniques', nextQuestion: 'competition_level' },
+    { value: 'ground', label: 'Ground Fighting', nextQuestion: 'competition_level' },
+  ],
+},
+
+{
+  key: 'taekwondo_belt',
+  text: 'Your current belt level?',
+  type: 'single',
+  options: [
+    { value: 'white', label: 'White Belt', nextQuestion: 'taekwondo_focus' },
+    { value: 'blue', label: 'Blue Belt', nextQuestion: 'taekwondo_focus' },
+    { value: 'black', label: 'Black Belt', nextQuestion: 'taekwondo_focus' },
+  ],
+},
+{
+  key: 'taekwondo_focus',
+  text: 'What is your main strength?',
+  type: 'single',
+  options: [
+    { value: 'kicking', label: 'Kicking Power', nextQuestion: 'competition_level' },
+    { value: 'speed', label: 'Speed & Agility', nextQuestion: 'competition_level' },
+    { value: 'sparring', label: 'Sparring Skills', nextQuestion: 'competition_level' },
+  ],
+},
+
+
+
 
   ],
 },
@@ -1049,6 +1388,12 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'nutrition', label: 'Nutrition / Dietetics', nextQuestion: 'nutrition_focus' },
         { value: 'alternative', label: 'Alternative Medicine', nextQuestion: 'alternative_type' },
         { value: 'fitness', label: 'Fitness & Wellness', nextQuestion: 'fitness_role' },
+
+        { value: 'dentist', label: 'Dentistry (BDS/MDS)', nextQuestion: 'dentistry_specialization' },
+        { value: 'psychology', label: 'Psychology / Mental Health', nextQuestion: 'psychology_type' },
+        { value: 'medical_lab', label: 'Medical Lab Technology', nextQuestion: 'mlt_role' },
+        { value: 'public_health', label: 'Public Health', nextQuestion: 'public_health_focus' },
+        { value: 'radiology', label: 'Radiology / Imaging', nextQuestion: 'radiology_type' },
       ],
     },
 
@@ -1191,6 +1536,108 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+     {
+      key: 'dentistry_specialization',
+      text: 'Preferred dentistry specialization?',
+      type: 'single',
+      options: [
+        { value: 'general_dentist', label: 'General Dentist', nextQuestion: 'dentistry_environment' },
+        { value: 'orthodontics', label: 'Orthodontics', nextQuestion: 'dentistry_environment' },
+        { value: 'oral_surgery', label: 'Oral Surgery', nextQuestion: 'dentistry_environment' },
+      ],
+    },
+    {
+      key: 'dentistry_environment',
+      text: 'Where do you want to practice?',
+      type: 'single',
+      options: [
+        { value: 'private_clinic', label: 'Private Clinic', nextQuestion: 'study_commitment' },
+        { value: 'hospital', label: 'Hospital', nextQuestion: 'study_commitment' },
+        { value: 'abroad', label: 'Abroad Practice', nextQuestion: 'study_commitment' },
+      ],
+    },
+
+    // =========================
+    // 🔥 PSYCHOLOGY
+    // =========================
+    {
+      key: 'psychology_type',
+      text: 'Which psychology field interests you?',
+      type: 'single',
+      options: [
+        { value: 'clinical', label: 'Clinical Psychologist', nextQuestion: 'psychology_environment' },
+        { value: 'counseling', label: 'Counseling Psychologist', nextQuestion: 'psychology_environment' },
+        { value: 'organizational', label: 'Organizational Psychology', nextQuestion: 'psychology_environment' },
+      ],
+    },
+    {
+      key: 'psychology_environment',
+      text: 'Preferred work environment?',
+      type: 'single',
+      options: [
+        { value: 'hospital', label: 'Hospital', nextQuestion: 'study_commitment' },
+        { value: 'private_practice', label: 'Private Practice', nextQuestion: 'study_commitment' },
+        { value: 'corporate', label: 'Corporate Sector', nextQuestion: 'study_commitment' },
+      ],
+    },
+
+    // =========================
+    // 🔥 MEDICAL LAB TECHNOLOGY
+    // =========================
+    {
+      key: 'mlt_role',
+      text: 'Which lab field attracts you?',
+      type: 'single',
+      options: [
+        { value: 'pathology', label: 'Pathology Lab', nextQuestion: 'study_commitment' },
+        { value: 'microbiology', label: 'Microbiology Lab', nextQuestion: 'study_commitment' },
+        { value: 'biochemistry', label: 'Biochemistry Lab', nextQuestion: 'study_commitment' },
+      ],
+    },
+
+    // =========================
+    // 🔥 PUBLIC HEALTH
+    // =========================
+    {
+      key: 'public_health_focus',
+      text: 'Public health focus area?',
+      type: 'single',
+      options: [
+        { value: 'epidemiology', label: 'Epidemiology', nextQuestion: 'study_commitment' },
+        { value: 'health_policy', label: 'Health Policy', nextQuestion: 'study_commitment' },
+        { value: 'community_health', label: 'Community Health', nextQuestion: 'study_commitment' },
+      ],
+    },
+
+    // =========================
+    // 🔥 RADIOLOGY
+    // =========================
+    {
+      key: 'radiology_type',
+      text: 'Radiology specialization?',
+      type: 'single',
+      options: [
+        { value: 'xray', label: 'X-Ray Technician', nextQuestion: 'study_commitment' },
+        { value: 'mri', label: 'MRI Specialist', nextQuestion: 'study_commitment' },
+        { value: 'ct_scan', label: 'CT Scan Specialist', nextQuestion: 'study_commitment' },
+      ],
+    },
+
+    // =========================
+    // 9️⃣ COMMON COMMITMENT
+    // =========================
+    {
+      key: 'study_commitment',
+      text: 'Are you ready for intensive study and training?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, fully committed' },
+        { value: 'unsure', label: 'Unsure, need guidance' },
+        { value: 'short_term', label: 'Prefer shorter courses' },
+      ],
+    },
+
+
   ],
 },
 
@@ -1219,6 +1666,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'therapy', label: 'Yoga Therapy', nextQuestion: 'therapy_focus' },
         { value: 'personal', label: 'Personal Practice & Wellness', nextQuestion: 'practice_level' },
         { value: 'spiritual', label: 'Spiritual & Meditative Path', nextQuestion: 'spiritual_focus' },
+
+        { value: 'competition', label: 'Competitive Yoga', nextQuestion: 'competition_category' },
+        { value: 'research', label: 'Yoga Research & Philosophy', nextQuestion: 'research_area' },
       ],
     },
 
@@ -1333,6 +1783,51 @@ export const dreamCategories: DreamCategory[] = [
       type: 'number',
       validation: { min: 1, max: 8 },
     },
+   {
+      key: 'competition_category',
+      text: 'Which competitive yoga category?',
+      type: 'single',
+      options: [
+        { value: 'asana', label: 'Asana Performance', nextQuestion: 'competition_goal' },
+        { value: 'artistic', label: 'Artistic Yoga', nextQuestion: 'competition_goal' },
+        { value: 'rhythmic', label: 'Rhythmic Yoga', nextQuestion: 'competition_goal' },
+      ],
+    },
+    {
+      key: 'competition_goal',
+      text: 'Your competitive goal?',
+      type: 'single',
+      options: [
+        { value: 'state', label: 'State Level', nextQuestion: 'practice_level' },
+        { value: 'national', label: 'National Level', nextQuestion: 'practice_level' },
+        { value: 'international', label: 'International Level', nextQuestion: 'practice_level' },
+      ],
+    },
+
+    // =========================
+    // 🔥 YOGA RESEARCH
+    // =========================
+    {
+      key: 'research_area',
+      text: 'Which research area interests you?',
+      type: 'single',
+      options: [
+        { value: 'ancient_texts', label: 'Ancient Texts & Philosophy', nextQuestion: 'research_environment' },
+        { value: 'scientific', label: 'Scientific Yoga Research', nextQuestion: 'research_environment' },
+        { value: 'therapy_research', label: 'Yoga Therapy Research', nextQuestion: 'research_environment' },
+      ],
+    },
+    {
+      key: 'research_environment',
+      text: 'Where would you like to work?',
+      type: 'single',
+      options: [
+        { value: 'ashram', label: 'Ashram / Spiritual Center', nextQuestion: 'practice_level' },
+        { value: 'university', label: 'University / Institution', nextQuestion: 'practice_level' },
+        { value: 'research_center', label: 'Yoga Research Center', nextQuestion: 'practice_level' },
+      ],
+    },
+
 
   ],
 },
@@ -1363,6 +1858,16 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'time_management', label: 'Time Management', nextQuestion: 'time_management_issue' },
         { value: 'emotional', label: 'Emotional Intelligence', nextQuestion: 'emotional_focus' },
         { value: 'financial', label: 'Financial Literacy', nextQuestion: 'financial_focus' },
+
+        { value: 'competition', label: 'Competitive Yoga', nextQuestion: 'competition_category' },
+        { value: 'research', label: 'Yoga Research & Philosophy', nextQuestion: 'research_area' },
+
+        { value: 'critical_thinking', label: 'Critical Thinking', nextQuestion: 'critical_focus' },
+        { value: 'problem_solving', label: 'Problem Solving', nextQuestion: 'problem_focus' },
+        { value: 'decision_making', label: 'Decision Making', nextQuestion: 'decision_style' },
+        { value: 'creativity', label: 'Creativity & Innovation', nextQuestion: 'creativity_type' },
+        { value: 'digital_literacy', label: 'Digital Literacy', nextQuestion: 'digital_focus' },
+        { value: 'confidence', label: 'Confidence Building', nextQuestion: 'confidence_area' },
       ],
     },
 
@@ -1507,6 +2012,147 @@ export const dreamCategories: DreamCategory[] = [
       type: 'number',
       validation: { min: 1, max: 6 },
     },
+ {
+      key: 'critical_focus',
+      text: 'What aspect of critical thinking?',
+      type: 'single',
+      options: [
+        { value: 'analysis', label: 'Analytical Thinking', nextQuestion: 'critical_application' },
+        { value: 'logic', label: 'Logical Reasoning', nextQuestion: 'critical_application' },
+        { value: 'evaluation', label: 'Evaluation Skills', nextQuestion: 'critical_application' },
+      ],
+    },
+    {
+      key: 'critical_application',
+      text: 'Where will you apply this skill?',
+      type: 'single',
+      options: [
+        { value: 'academics', label: 'Academics', nextQuestion: 'goal_type' },
+        { value: 'career', label: 'Career Growth', nextQuestion: 'goal_type' },
+        { value: 'daily_life', label: 'Daily Life Decisions', nextQuestion: 'goal_type' },
+      ],
+    },
+
+    // =========================
+    // 🔥 PROBLEM SOLVING
+    // =========================
+    {
+      key: 'problem_focus',
+      text: 'Which problem-solving area?',
+      type: 'single',
+      options: [
+        { value: 'academic', label: 'Academic Problems', nextQuestion: 'problem_method' },
+        { value: 'business', label: 'Business Problems', nextQuestion: 'problem_method' },
+        { value: 'life', label: 'Life Challenges', nextQuestion: 'problem_method' },
+      ],
+    },
+    {
+      key: 'problem_method',
+      text: 'Preferred problem-solving approach?',
+      type: 'single',
+      options: [
+        { value: 'step_by_step', label: 'Step-by-Step Analysis', nextQuestion: 'goal_type' },
+        { value: 'creative', label: 'Creative Thinking', nextQuestion: 'goal_type' },
+        { value: 'team_based', label: 'Team-Based Solutions', nextQuestion: 'goal_type' },
+      ],
+    },
+
+    // =========================
+    // 🔥 DECISION MAKING
+    // =========================
+    {
+      key: 'decision_style',
+      text: 'Your decision-making style?',
+      type: 'single',
+      options: [
+        { value: 'data_driven', label: 'Data-Driven', nextQuestion: 'decision_pressure' },
+        { value: 'intuitive', label: 'Intuitive', nextQuestion: 'decision_pressure' },
+        { value: 'collaborative', label: 'Collaborative', nextQuestion: 'decision_pressure' },
+      ],
+    },
+    {
+      key: 'decision_pressure',
+      text: 'How do you handle pressure while making decisions?',
+      type: 'single',
+      options: [
+        { value: 'calm', label: 'Stay Calm', nextQuestion: 'goal_type' },
+        { value: 'rush', label: 'Decide Quickly', nextQuestion: 'goal_type' },
+        { value: 'delay', label: 'Delay Until Clear', nextQuestion: 'goal_type' },
+      ],
+    },
+
+    // =========================
+    // 🔥 CREATIVITY
+    // =========================
+    {
+      key: 'creativity_type',
+      text: 'What type of creativity?',
+      type: 'single',
+      options: [
+        { value: 'artistic', label: 'Artistic Creativity', nextQuestion: 'creativity_platform' },
+        { value: 'innovation', label: 'Innovation & Ideas', nextQuestion: 'creativity_platform' },
+        { value: 'design', label: 'Design Thinking', nextQuestion: 'creativity_platform' },
+      ],
+    },
+    {
+      key: 'creativity_platform',
+      text: 'Where will you express creativity?',
+      type: 'single',
+      options: [
+        { value: 'content', label: 'Content Creation', nextQuestion: 'goal_type' },
+        { value: 'business', label: 'Business / Startup', nextQuestion: 'goal_type' },
+        { value: 'personal', label: 'Personal Projects', nextQuestion: 'goal_type' },
+      ],
+    },
+
+    // =========================
+    // 🔥 DIGITAL LITERACY
+    // =========================
+    {
+      key: 'digital_focus',
+      text: 'Which digital skill?',
+      type: 'single',
+      options: [
+        { value: 'basic_computer', label: 'Basic Computer Skills', nextQuestion: 'digital_level' },
+        { value: 'online_safety', label: 'Online Safety & Security', nextQuestion: 'digital_level' },
+        { value: 'social_media', label: 'Social Media Skills', nextQuestion: 'digital_level' },
+      ],
+    },
+    {
+      key: 'digital_level',
+      text: 'Your current digital level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'goal_type' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'goal_type' },
+        { value: 'advanced', label: 'Advanced', nextQuestion: 'goal_type' },
+      ],
+    },
+
+    // =========================
+    // 🔥 CONFIDENCE BUILDING
+    // =========================
+    {
+      key: 'confidence_area',
+      text: 'Which confidence area?',
+      type: 'single',
+      options: [
+        { value: 'stage', label: 'Stage Confidence', nextQuestion: 'confidence_block' },
+        { value: 'social', label: 'Social Confidence', nextQuestion: 'confidence_block' },
+        { value: 'career', label: 'Career Confidence', nextQuestion: 'confidence_block' },
+      ],
+    },
+    {
+      key: 'confidence_block',
+      text: 'What holds you back the most?',
+      type: 'single',
+      options: [
+        { value: 'fear', label: 'Fear of Failure', nextQuestion: 'goal_type' },
+        { value: 'criticism', label: 'Fear of Criticism', nextQuestion: 'goal_type' },
+        { value: 'self_doubt', label: 'Self-Doubt', nextQuestion: 'goal_type' },
+      ],
+    },
+    
 
   ],
 },
@@ -1536,6 +2182,11 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'underwriter', label: 'Underwriter', nextQuestion: 'underwriting_focus' },
         { value: 'claims', label: 'Claims Processing', nextQuestion: 'claims_focus' },
         { value: 'actuary', label: 'Actuary', nextQuestion: 'math_background' },
+
+        
+        { value: 'broker', label: 'Insurance Broker', nextQuestion: 'broker_client_type' },
+        { value: 'risk_manager', label: 'Risk Manager', nextQuestion: 'risk_focus' },
+        { value: 'insurance_marketing', label: 'Insurance Marketing', nextQuestion: 'marketing_channel' },
       ],
     },
 
@@ -1549,7 +2200,77 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: 'life', label: 'Life Insurance', nextQuestion: 'sales_experience' },
         { value: 'health', label: 'Health Insurance', nextQuestion: 'sales_experience' },
+        { value: 'motor', label: 'Motor Insurance', nextQuestion: 'sales_experience' },      // 🔥 added
+        { value: 'general', label: 'General Insurance', nextQuestion: 'sales_experience' }, 
         { value: 'both', label: 'Both Life & Health', nextQuestion: 'sales_experience' },
+      ],
+    },
+
+    {
+      key: 'broker_client_type',
+      text: 'Which clients do you want to serve as a broker?',
+      type: 'single',
+      options: [
+        { value: 'retail', label: 'Retail Customers', nextQuestion: 'broker_specialization' },
+        { value: 'corporate', label: 'Corporate Clients', nextQuestion: 'broker_specialization' },
+      ],
+    },
+    {
+      key: 'broker_specialization',
+      text: 'Broker specialization?',
+      type: 'single',
+      options: [
+        { value: 'life', label: 'Life Insurance', nextQuestion: 'income_goal' },
+        { value: 'health', label: 'Health Insurance', nextQuestion: 'income_goal' },
+        { value: 'general', label: 'General Insurance', nextQuestion: 'income_goal' },
+      ],
+    },
+
+    // =========================
+    // 🔥 RISK MANAGER
+    // =========================
+    {
+      key: 'risk_focus',
+      text: 'Risk management focus area?',
+      type: 'single',
+      options: [
+        { value: 'corporate', label: 'Corporate Risk', nextQuestion: 'risk_environment' },
+        { value: 'insurance', label: 'Insurance Risk Analysis', nextQuestion: 'risk_environment' },
+        { value: 'financial', label: 'Financial Risk', nextQuestion: 'risk_environment' },
+      ],
+    },
+    {
+      key: 'risk_environment',
+      text: 'Preferred work environment?',
+      type: 'single',
+      options: [
+        { value: 'mnc', label: 'MNC / Large Company', nextQuestion: 'time_commitment' },
+        { value: 'insurance_company', label: 'Insurance Company', nextQuestion: 'time_commitment' },
+        { value: 'consulting', label: 'Risk Consulting Firm', nextQuestion: 'time_commitment' },
+      ],
+    },
+
+    // =========================
+    // 🔥 INSURANCE MARKETING
+    // =========================
+    {
+      key: 'marketing_channel',
+      text: 'Preferred marketing channel?',
+      type: 'single',
+      options: [
+        { value: 'digital', label: 'Digital Marketing', nextQuestion: 'marketing_target' },
+        { value: 'field', label: 'Field Marketing', nextQuestion: 'marketing_target' },
+        { value: 'corporate', label: 'Corporate Tie-Ups', nextQuestion: 'marketing_target' },
+      ],
+    },
+    {
+      key: 'marketing_target',
+      text: 'Target audience?',
+      type: 'single',
+      options: [
+        { value: 'young', label: 'Young Professionals', nextQuestion: 'income_goal' },
+        { value: 'families', label: 'Families', nextQuestion: 'income_goal' },
+        { value: 'business', label: 'Business Owners', nextQuestion: 'income_goal' },
       ],
     },
 
@@ -1618,6 +2339,7 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: 'health_claims', label: 'Health Claims', nextQuestion: 'work_style' },
         { value: 'life_claims', label: 'Life Claims', nextQuestion: 'work_style' },
+        { value: 'motor_claims', label: 'Motor Claims', nextQuestion: 'work_style' }, 
         { value: 'investigation', label: 'Claims Investigation', nextQuestion: 'work_style' },
       ],
     },
@@ -1688,6 +2410,8 @@ export const dreamCategories: DreamCategory[] = [
       validation: { min: 2, max: 10 },
     },
 
+    
+
   ],
 },
 
@@ -1732,6 +2456,190 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'banking', label: 'Banking (IBPS / SBI / RBI)', nextQuestion: 'banking_role' },
         { value: 'defense', label: 'Defense (Army / Navy / Air Force)', nextQuestion: 'defense_role' },
         { value: 'teaching', label: 'Government Teaching', nextQuestion: 'teaching_level' },
+        { value: 'railway', label: 'Railway Jobs (RRB)', nextQuestion: 'railway_role' },
+        { value: 'police', label: 'Police / Paramilitary', nextQuestion: 'police_role' },
+        { value: 'judiciary', label: 'Judiciary / Law', nextQuestion: 'law_background' },
+        { value: 'engineering_services', label: 'Engineering Services (IES)', nextQuestion: 'technical_background' },
+      
+        // 🔥 NEW FULL PUBLIC SECTOR CATEGORIES
+        { value: 'paramilitary', label: 'Paramilitary Forces (CRPF / BSF / CISF)', nextQuestion: 'physical_fitness' },
+        { value: 'forest', label: 'Forest Services (IFS / Forest Guard)', nextQuestion: 'exam_prep' },
+        { value: 'postal', label: 'Postal Department', nextQuestion: 'exam_prep' },
+        { value: 'income_tax', label: 'Income Tax / GST / Customs', nextQuestion: 'exam_prep' },
+        { value: 'railway_protection', label: 'Railway Protection Force (RPF)', nextQuestion: 'physical_fitness' },
+        { value: 'public_health', label: 'Government Health Department', nextQuestion: 'education_level' },
+        { value: 'municipal', label: 'Municipal / Local Body Jobs', nextQuestion: 'education_level' },
+        { value: 'election', label: 'Election Commission Jobs', nextQuestion: 'exam_prep' },
+        { value: 'intelligence', label: 'Intelligence Bureau / RAW', nextQuestion: 'exam_prep' },
+      ],
+    },
+
+{
+  key: 'police_role',
+  text: 'Which police role?',
+  type: 'single',
+  options: [
+    { value: 'constable', label: 'Constable', nextQuestion: 'physical_fitness' },
+    { value: 'si', label: 'Sub Inspector (SI)', nextQuestion: 'physical_fitness' },
+    { value: 'ips', label: 'IPS Officer (UPSC)', nextQuestion: 'exam_prep' },
+    { value: 'state_psc', label: 'State Police (PSC)', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'law_background',
+  text: 'Do you have LLB qualification?',
+  type: 'single',
+  options: [
+    { value: 'yes', label: 'Yes', nextQuestion: 'judiciary_role' },
+    { value: 'no', label: 'No', nextQuestion: 'education_level' },
+  ],
+},
+{
+  key: 'judiciary_role',
+  text: 'Which judiciary role?',
+  type: 'single',
+  options: [
+    { value: 'judge', label: 'Civil Judge / Magistrate', nextQuestion: 'exam_prep' },
+    { value: 'public_prosecutor', label: 'Public Prosecutor', nextQuestion: 'exam_prep' },
+    { value: 'legal_advisor', label: 'Government Legal Advisor', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'engineering_branch',
+  text: 'Which engineering branch?',
+  type: 'single',
+  options: [
+    { value: 'civil', label: 'Civil Engineering', nextQuestion: 'exam_prep' },
+    { value: 'mechanical', label: 'Mechanical Engineering', nextQuestion: 'exam_prep' },
+    { value: 'electrical', label: 'Electrical Engineering', nextQuestion: 'exam_prep' },
+    { value: 'electronics', label: 'Electronics Engineering', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'paramilitary_force',
+  text: 'Which paramilitary force?',
+  type: 'single',
+  options: [
+    { value: 'crpf', label: 'CRPF', nextQuestion: 'physical_fitness' },
+    { value: 'bsf', label: 'BSF', nextQuestion: 'physical_fitness' },
+    { value: 'cisf', label: 'CISF', nextQuestion: 'physical_fitness' },
+    { value: 'itbp', label: 'ITBP', nextQuestion: 'physical_fitness' },
+  ],
+},
+
+{
+  key: 'forest_role',
+  text: 'Which forest role?',
+  type: 'single',
+  options: [
+    { value: 'ifs', label: 'Indian Forest Service (IFS)', nextQuestion: 'exam_prep' },
+    { value: 'forest_guard', label: 'Forest Guard', nextQuestion: 'physical_fitness' },
+    { value: 'range_officer', label: 'Range Officer', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'postal_role',
+  text: 'Which postal role?',
+  type: 'single',
+  options: [
+    { value: 'postman', label: 'Postman / Mail Guard', nextQuestion: 'exam_prep' },
+    { value: 'gds', label: 'Gramin Dak Sevak (GDS)', nextQuestion: 'education_level' },
+    { value: 'postal_assistant', label: 'Postal Assistant', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'tax_role',
+  text: 'Which tax department role?',
+  type: 'single',
+  options: [
+    { value: 'inspector', label: 'Income Tax Inspector', nextQuestion: 'exam_prep' },
+    { value: 'gst_officer', label: 'GST Officer', nextQuestion: 'exam_prep' },
+    { value: 'customs', label: 'Customs Officer', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'rpf_role',
+  text: 'Which RPF role?',
+  type: 'single',
+  options: [
+    { value: 'rpf_constable', label: 'RPF Constable', nextQuestion: 'physical_fitness' },
+    { value: 'rpf_si', label: 'RPF Sub Inspector', nextQuestion: 'physical_fitness' },
+  ],
+},
+
+{
+  key: 'public_health_role',
+  text: 'Which public health role?',
+  type: 'single',
+  options: [
+    { value: 'health_inspector', label: 'Health Inspector', nextQuestion: 'education_level' },
+    { value: 'lab_technician', label: 'Government Lab Technician', nextQuestion: 'education_level' },
+    { value: 'health_officer', label: 'Health Officer', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'municipal_role',
+  text: 'Which municipal role?',
+  type: 'single',
+  options: [
+    { value: 'junior_assistant', label: 'Junior Assistant', nextQuestion: 'exam_prep' },
+    { value: 'sanitary_inspector', label: 'Sanitary Inspector', nextQuestion: 'education_level' },
+    { value: 'municipal_engineer', label: 'Municipal Engineer', nextQuestion: 'technical_background' },
+  ],
+},
+
+{
+  key: 'election_role',
+  text: 'Election Commission role?',
+  type: 'single',
+  options: [
+    { value: 'election_officer', label: 'Election Officer', nextQuestion: 'exam_prep' },
+    { value: 'data_entry', label: 'Data Entry / Clerk', nextQuestion: 'exam_prep' },
+  ],
+},
+
+{
+  key: 'intelligence_role',
+  text: 'Which intelligence role?',
+  type: 'single',
+  options: [
+    { value: 'ib_acio', label: 'IB ACIO', nextQuestion: 'exam_prep' },
+    { value: 'raw_analyst', label: 'RAW Analyst', nextQuestion: 'exam_prep' },
+    { value: 'intelligence_officer', label: 'Intelligence Officer', nextQuestion: 'exam_prep' },
+  ],
+},
+
+
+    
+
+
+{
+  key: 'railway_role',
+  text: 'Which railway category?',
+  type: 'single',
+  options: [
+    { value: 'technical', label: 'Technical (JE / SSE)', nextQuestion: 'technical_background' },
+    { value: 'ntpc', label: 'NTPC (Clerk / Station Master)', nextQuestion: 'exam_prep' },
+    { value: 'group_d', label: 'Group D', nextQuestion: 'exam_prep' },
+    { value: 'alp', label: 'Assistant Loco Pilot (ALP)', nextQuestion: 'technical_background' },
+  ],
+},
+
+
+    {
+      key: 'law_background',
+      text: 'Do you have a law background (LLB)?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes', nextQuestion: 'exam_prep' },
+        { value: 'no', label: 'No', nextQuestion: 'education_level' },
       ],
     },
 
@@ -1741,41 +2649,51 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'ias', label: 'IAS / IPS / IFS', nextQuestion: 'exam_prep' },
-        { value: 'ssc', label: 'SSC / Group B & C', nextQuestion: 'exam_prep' },
+        { value: 'ssc', label: 'SSC / CGL / CHSL', nextQuestion: 'exam_prep' },
         { value: 'clerk', label: 'Clerical Jobs', nextQuestion: 'exam_prep' },
+        { value: 'audit', label: 'Audit & Accounts (CAG)', nextQuestion: 'exam_prep' },
+        { value: 'assistant_section', label: 'Assistant Section Officer', nextQuestion: 'exam_prep' },
       ],
     },
 
-    {
-      key: 'banking_role',
-      text: 'Preferred banking role?',
-      type: 'single',
-      options: [
-        { value: 'po', label: 'Probationary Officer (PO)', nextQuestion: 'exam_prep' },
-        { value: 'clerk', label: 'Clerk', nextQuestion: 'exam_prep' },
-        { value: 'so', label: 'Specialist Officer (SO)', nextQuestion: 'technical_background' },
-      ],
-    },
+
+{
+  key: 'banking_role',
+  text: 'Preferred banking role?',
+  type: 'single',
+  options: [
+    { value: 'po', label: 'Probationary Officer (PO)', nextQuestion: 'exam_prep' },
+    { value: 'clerk', label: 'Clerk', nextQuestion: 'exam_prep' },
+    { value: 'so', label: 'Specialist Officer (SO)', nextQuestion: 'technical_background' },
+    { value: 'rbi_grade_b', label: 'RBI Grade B', nextQuestion: 'exam_prep' },
+    { value: 'nabard', label: 'NABARD Officer', nextQuestion: 'exam_prep' },
+  ],
+},
+
 
     {
-      key: 'defense_role',
-      text: 'Which defense role interests you?',
-      type: 'single',
-      options: [
-        { value: 'officer', label: 'Officer', nextQuestion: 'physical_fitness' },
-        { value: 'soldier', label: 'Soldier / Tradesman', nextQuestion: 'physical_fitness' },
-      ],
+    key: 'defense_role',
+    text: 'Which defense role interests you?',
+    type: 'single',
+    options: [
+      { value: 'officer', label: 'Officer (NDA / CDS)', nextQuestion: 'physical_fitness' },
+      { value: 'soldier', label: 'Soldier / Tradesman', nextQuestion: 'physical_fitness' },
+      { value: 'technical_entry', label: 'Technical Entry', nextQuestion: 'technical_background' },
+    ],
     },
 
-    {
-      key: 'teaching_level',
-      text: 'Which teaching level?',
-      type: 'single',
-      options: [
-        { value: 'school', label: 'School Teacher (TET)', nextQuestion: 'education_level' },
-        { value: 'college', label: 'College / Lecturer (NET)', nextQuestion: 'education_level' },
-      ],
-    },
+
+{
+  key: 'teaching_level',
+  text: 'Which teaching level?',
+  type: 'single',
+  options: [
+    { value: 'school', label: 'School Teacher (TET)', nextQuestion: 'education_level' },
+    { value: 'college', label: 'College / Lecturer (NET)', nextQuestion: 'education_level' },
+    { value: 'professor', label: 'Professor (PhD Required)', nextQuestion: 'education_level' },
+  ],
+},
+
 
     // =========================
     // 3️⃣ PRIVATE SECTOR JOBS
@@ -1793,6 +2711,67 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'healthcare', label: 'Healthcare Jobs', nextQuestion: 'healthcare_role' },
         { value: 'media', label: 'Media / Content / Design', nextQuestion: 'media_role' },
         { value: 'logistics', label: 'Logistics / Supply Chain', nextQuestion: 'work_style' },
+
+        { value: 'real_estate', label: 'Real Estate', nextQuestion: 'real_estate_role' },
+        { value: 'hospitality', label: 'Hospitality / Hotel Management', nextQuestion: 'hospitality_role' },
+        { value: 'aviation', label: 'Aviation', nextQuestion: 'aviation_role' },
+        { value: 'startup', label: 'Startup / Entrepreneurship Jobs', nextQuestion: 'startup_role' },
+        { value: 'retail', label: 'Retail Industry', nextQuestion: 'retail_role' },
+      ],
+    },
+
+     {
+      key: 'real_estate_role',
+      text: 'Real estate role?',
+      type: 'single',
+      options: [
+        { value: 'agent', label: 'Property Agent', nextQuestion: 'work_style' },
+        { value: 'marketing', label: 'Real Estate Marketing', nextQuestion: 'work_style' },
+        { value: 'management', label: 'Property Management', nextQuestion: 'education_level' },
+      ],
+    },
+
+    {
+      key: 'hospitality_role',
+      text: 'Hospitality role?',
+      type: 'single',
+      options: [
+        { value: 'hotel_management', label: 'Hotel Management', nextQuestion: 'education_level' },
+        { value: 'chef', label: 'Chef / Culinary', nextQuestion: 'education_level' },
+        { value: 'front_office', label: 'Front Office', nextQuestion: 'work_style' },
+      ],
+    },
+
+    {
+      key: 'aviation_role',
+      text: 'Aviation role?',
+      type: 'single',
+      options: [
+        { value: 'pilot', label: 'Pilot', nextQuestion: 'education_level' },
+        { value: 'cabin_crew', label: 'Cabin Crew', nextQuestion: 'physical_fitness' },
+        { value: 'ground_staff', label: 'Ground Staff', nextQuestion: 'work_style' },
+      ],
+    },
+
+    {
+      key: 'startup_role',
+      text: 'Startup role?',
+      type: 'single',
+      options: [
+        { value: 'product', label: 'Product Management', nextQuestion: 'technical_skills' },
+        { value: 'operations', label: 'Operations', nextQuestion: 'work_style' },
+        { value: 'growth', label: 'Growth / Marketing', nextQuestion: 'technical_skills' },
+      ],
+    },
+
+    {
+      key: 'retail_role',
+      text: 'Retail industry role?',
+      type: 'single',
+      options: [
+        { value: 'store_manager', label: 'Store Manager', nextQuestion: 'work_style' },
+        { value: 'sales_exec', label: 'Sales Executive', nextQuestion: 'work_style' },
+        { value: 'inventory', label: 'Inventory Manager', nextQuestion: 'education_level' },
       ],
     },
 
@@ -1963,22 +2942,118 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which HR specialization interests you?',
       type: 'single',
       options: [
-        { value: 'recruitment', label: 'Recruitment / Talent Acquisition', nextQuestion: 'hr_work_environment' },
-        { value: 'training', label: 'Training & Development (L&D)', nextQuestion: 'hr_work_environment' },
-        { value: 'compensation', label: 'Compensation & Benefits', nextQuestion: 'hr_work_environment' },
-        { value: 'relations', label: 'Employee Relations', nextQuestion: 'hr_work_environment' },
+        { value: 'recruitment', label: 'Recruitment / Talent Acquisition', nextQuestion: 'recruitment_focus' },
+        { value: 'training', label: 'Training & Development (L&D)', nextQuestion: 'training_focus' },
+        { value: 'compensation', label: 'Compensation & Benefits', nextQuestion: 'compensation_focus' },
+        { value: 'relations', label: 'Employee Relations', nextQuestion: 'relations_focus' },
         { value: 'generalist', label: 'HR Generalist', nextQuestion: 'hr_work_environment' },
+
+        { value: 'hr_analytics', label: 'HR Analytics', nextQuestion: 'analytics_tools' },
+        { value: 'hr_operations', label: 'HR Operations', nextQuestion: 'operations_focus' },
+        { value: 'talent_management', label: 'Talent Management', nextQuestion: 'talent_focus' },
       ],
     },
 
+     {
+      key: 'recruitment_focus',
+      text: 'Which recruitment area interests you?',
+      type: 'single',
+      options: [
+        { value: 'it_hiring', label: 'IT Hiring', nextQuestion: 'hr_work_environment' },
+        { value: 'non_it', label: 'Non-IT Hiring', nextQuestion: 'hr_work_environment' },
+        { value: 'executive', label: 'Executive / Leadership Hiring', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+      {
+      key: 'training_focus',
+      text: 'Training focus area?',
+      type: 'single',
+      options: [
+        { value: 'technical', label: 'Technical Training', nextQuestion: 'hr_work_environment' },
+        { value: 'soft_skills', label: 'Soft Skills Training', nextQuestion: 'hr_work_environment' },
+        { value: 'leadership_dev', label: 'Leadership Development', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+      {
+      key: 'compensation_focus',
+      text: 'Compensation focus?',
+      type: 'single',
+      options: [
+        { value: 'payroll', label: 'Payroll Management', nextQuestion: 'hr_work_environment' },
+        { value: 'benefits', label: 'Benefits & Insurance', nextQuestion: 'hr_work_environment' },
+        { value: 'salary_structure', label: 'Salary Structuring', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+    {
+      key: 'relations_focus',
+      text: 'Employee relations focus?',
+      type: 'single',
+      options: [
+        { value: 'conflict', label: 'Conflict Resolution', nextQuestion: 'hr_work_environment' },
+        { value: 'engagement', label: 'Employee Engagement', nextQuestion: 'hr_work_environment' },
+        { value: 'compliance', label: 'Labor Law Compliance', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+      {
+      key: 'analytics_tools',
+      text: 'Which HR analytics tools interest you?',
+      type: 'single',
+      options: [
+        { value: 'excel', label: 'Advanced Excel', nextQuestion: 'hr_work_environment' },
+        { value: 'powerbi', label: 'Power BI / Tableau', nextQuestion: 'hr_work_environment' },
+        { value: 'sap', label: 'SAP HR / Workday', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+    {
+      key: 'operations_focus',
+      text: 'HR operations focus?',
+      type: 'single',
+      options: [
+        { value: 'attendance', label: 'Attendance & Leave Management', nextQuestion: 'hr_work_environment' },
+        { value: 'documentation', label: 'Employee Documentation', nextQuestion: 'hr_work_environment' },
+        { value: 'policy', label: 'Policy Implementation', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+     {
+      key: 'talent_focus',
+      text: 'Talent management focus?',
+      type: 'single',
+      options: [
+        { value: 'performance', label: 'Performance Management', nextQuestion: 'hr_work_environment' },
+        { value: 'succession', label: 'Succession Planning', nextQuestion: 'hr_work_environment' },
+        { value: 'career_pathing', label: 'Career Development Planning', nextQuestion: 'hr_work_environment' },
+      ],
+    },
+
+
+    // =========================
     {
       key: 'hr_work_environment',
       text: 'Which work environment do you prefer?',
       type: 'single',
       options: [
-        { value: 'corporate', label: 'Corporate / MNC', nextQuestion: 'hr_experience' },
-        { value: 'startup', label: 'Startup / Growing Company', nextQuestion: 'hr_experience' },
-        { value: 'consulting', label: 'HR Consulting Firm', nextQuestion: 'hr_experience' },
+        { value: 'corporate', label: 'Corporate / MNC', nextQuestion: 'industry_preference' },
+        { value: 'startup', label: 'Startup / Growing Company', nextQuestion: 'industry_preference' },
+        { value: 'consulting', label: 'HR Consulting Firm', nextQuestion: 'industry_preference' },
+      ],
+    },
+
+    // 🔥 NEW INDUSTRY PREFERENCE
+    {
+      key: 'industry_preference',
+      text: 'Preferred industry?',
+      type: 'single',
+      options: [
+        { value: 'it', label: 'IT / Software', nextQuestion: 'hr_experience' },
+        { value: 'manufacturing', label: 'Manufacturing', nextQuestion: 'hr_experience' },
+        { value: 'healthcare', label: 'Healthcare', nextQuestion: 'hr_experience' },
+        { value: 'banking', label: 'Banking & Finance', nextQuestion: 'hr_experience' },
       ],
     },
 
@@ -2009,9 +3084,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your strongest HR skill?',
       type: 'single',
       options: [
-        { value: 'people', label: 'People communication & empathy', nextQuestion: 'hr_salary_expectation' },
-        { value: 'policy', label: 'Policies, compliance & structure', nextQuestion: 'hr_salary_expectation' },
-        { value: 'analysis', label: 'HR analytics & data', nextQuestion: 'hr_salary_expectation' },
+        { value: 'people', label: 'People communication & empathy', nextQuestion: 'hr_career_goal' },
+        { value: 'policy', label: 'Policies, compliance & structure', nextQuestion: 'hr_career_goal' },
+        { value: 'analysis', label: 'HR analytics & data', nextQuestion: 'hr_career_goal' },
+      ],
+    },
+
+    // 🔥 NEW CAREER GOAL
+    {
+      key: 'hr_career_goal',
+      text: 'Your long-term HR goal?',
+      type: 'single',
+      options: [
+        { value: 'hr_manager', label: 'HR Manager', nextQuestion: 'hr_salary_expectation' },
+        { value: 'hr_director', label: 'HR Director', nextQuestion: 'hr_salary_expectation' },
+        { value: 'hrbp', label: 'HR Business Partner (HRBP)', nextQuestion: 'hr_salary_expectation' },
+        { value: 'consultant', label: 'Independent HR Consultant', nextQuestion: 'hr_salary_expectation' },
       ],
     },
 
@@ -2043,19 +3131,164 @@ export const dreamCategories: DreamCategory[] = [
   description: 'Professional consulting and advisory services',
   questions: [
 
-    {
+  {
       key: 'consulting_field',
       text: 'Which consulting area interests you?',
       type: 'single',
       options: [
-        { value: 'management', label: 'Management Consulting', nextQuestion: 'consulting_mode' },
-        { value: 'financial', label: 'Financial Advisory', nextQuestion: 'consulting_mode' },
-        { value: 'it', label: 'IT / Technology Consulting', nextQuestion: 'consulting_mode' },
-        { value: 'education', label: 'Education Consulting', nextQuestion: 'consulting_mode' },
-        { value: 'career', label: 'Career Counseling', nextQuestion: 'consulting_mode' },
-        { value: 'strategy', label: 'Business / Strategy Consulting', nextQuestion: 'consulting_mode' },
+        { value: 'management', label: 'Management Consulting', nextQuestion: 'management_focus' },
+        { value: 'financial', label: 'Financial Advisory', nextQuestion: 'financial_focus' },
+        { value: 'it', label: 'IT / Technology Consulting', nextQuestion: 'it_focus' },
+        { value: 'education', label: 'Education Consulting', nextQuestion: 'education_focus' },
+        { value: 'career', label: 'Career Counseling', nextQuestion: 'career_focus' },
+        { value: 'strategy', label: 'Business / Strategy Consulting', nextQuestion: 'strategy_focus' },
+
+        // 🔥 NEW ADDED FIELDS
+        { value: 'legal', label: 'Legal Consulting', nextQuestion: 'legal_focus' },
+        { value: 'hr', label: 'HR Consulting', nextQuestion: 'hr_focus' },
+        { value: 'startup', label: 'Startup / Entrepreneurship Consulting', nextQuestion: 'startup_focus' },
+        { value: 'digital_marketing', label: 'Digital Marketing Consulting', nextQuestion: 'marketing_focus' },
       ],
     },
+
+    {
+      key: 'management_focus',
+      text: 'Which management consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'operations', label: 'Operations Improvement', nextQuestion: 'consulting_mode' },
+        { value: 'organizational', label: 'Organizational Restructuring', nextQuestion: 'consulting_mode' },
+        { value: 'performance', label: 'Performance Optimization', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // FINANCIAL
+    // =========================
+    {
+      key: 'financial_focus',
+      text: 'Which financial advisory area?',
+      type: 'single',
+      options: [
+        { value: 'investment', label: 'Investment Advisory', nextQuestion: 'consulting_mode' },
+        { value: 'tax', label: 'Tax Planning', nextQuestion: 'consulting_mode' },
+        { value: 'wealth', label: 'Wealth Management', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // IT CONSULTING
+    // =========================
+    {
+      key: 'it_focus',
+      text: 'Which IT consulting area?',
+      type: 'single',
+      options: [
+        { value: 'cloud', label: 'Cloud Transformation', nextQuestion: 'consulting_mode' },
+        { value: 'cyber', label: 'Cyber Security Advisory', nextQuestion: 'consulting_mode' },
+        { value: 'data', label: 'Data & AI Consulting', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // EDUCATION CONSULTING
+    // =========================
+    {
+      key: 'education_focus',
+      text: 'Education consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'study_abroad', label: 'Study Abroad Guidance', nextQuestion: 'consulting_mode' },
+        { value: 'curriculum', label: 'Curriculum Design', nextQuestion: 'consulting_mode' },
+        { value: 'institutional', label: 'Institutional Advisory', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // CAREER CONSULTING
+    // =========================
+    {
+      key: 'career_focus',
+      text: 'Career consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'resume', label: 'Resume & Interview Coaching', nextQuestion: 'consulting_mode' },
+        { value: 'career_switch', label: 'Career Transition Guidance', nextQuestion: 'consulting_mode' },
+        { value: 'student', label: 'Student Career Planning', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // STRATEGY
+    // =========================
+    {
+      key: 'strategy_focus',
+      text: 'Strategy consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'market_entry', label: 'Market Entry Strategy', nextQuestion: 'consulting_mode' },
+        { value: 'growth', label: 'Growth Strategy', nextQuestion: 'consulting_mode' },
+        { value: 'digital_transformation', label: 'Digital Transformation', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // LEGAL CONSULTING
+    // =========================
+    {
+      key: 'legal_focus',
+      text: 'Legal consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'corporate_law', label: 'Corporate Law Advisory', nextQuestion: 'consulting_mode' },
+        { value: 'compliance', label: 'Regulatory Compliance', nextQuestion: 'consulting_mode' },
+        { value: 'contract', label: 'Contract Advisory', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // HR CONSULTING
+    // =========================
+    {
+      key: 'hr_focus',
+      text: 'HR consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'talent', label: 'Talent Strategy', nextQuestion: 'consulting_mode' },
+        { value: 'policy', label: 'HR Policy Advisory', nextQuestion: 'consulting_mode' },
+        { value: 'analytics', label: 'HR Analytics Advisory', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // STARTUP CONSULTING
+    // =========================
+    {
+      key: 'startup_focus',
+      text: 'Startup consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'funding', label: 'Fundraising Support', nextQuestion: 'consulting_mode' },
+        { value: 'business_model', label: 'Business Model Design', nextQuestion: 'consulting_mode' },
+        { value: 'scaling', label: 'Scaling Strategy', nextQuestion: 'consulting_mode' },
+      ],
+    },
+
+    // =========================
+    // MARKETING CONSULTING
+    // =========================
+    {
+      key: 'marketing_focus',
+      text: 'Digital marketing consulting focus?',
+      type: 'single',
+      options: [
+        { value: 'seo', label: 'SEO Strategy', nextQuestion: 'consulting_mode' },
+        { value: 'ads', label: 'Paid Ads Strategy', nextQuestion: 'consulting_mode' },
+        { value: 'branding', label: 'Brand Positioning', nextQuestion: 'consulting_mode' },
+      ],
+    },
+    //
+
 
     {
       key: 'consulting_mode',
@@ -2065,6 +3298,16 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'firm', label: 'Consulting Firm / Company', nextQuestion: 'expertise_level' },
         { value: 'independent', label: 'Independent / Freelance Consultant', nextQuestion: 'expertise_level' },
         { value: 'hybrid', label: 'Both (Firm + Freelance)', nextQuestion: 'expertise_level' },
+      ],
+    },
+        {
+      key: 'revenue_model',
+      text: 'Preferred revenue model?',
+      type: 'single',
+      options: [
+        { value: 'hourly', label: 'Hourly Billing', nextQuestion: 'expertise_level' },
+        { value: 'project', label: 'Project-Based Fees', nextQuestion: 'expertise_level' },
+        { value: 'retainer', label: 'Monthly Retainer Model', nextQuestion: 'expertise_level' },
       ],
     },
 
@@ -2145,11 +3388,27 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'modern', label: 'Modern / Contemporary', nextQuestion: 'modern_style' },
         { value: 'gymnastics', label: 'Gymnastics / Acro Dance', nextQuestion: 'gymnastics_type' },
         { value: 'zumba', label: 'Zumba / Fitness Dance', nextQuestion: 'dance_goal' },
+        { value: 'other', label: 'Other Dance Forms', nextQuestion: 'dance_goal' },
+        { value: 'folk', label: 'Folk Dance', nextQuestion: 'folk_style' },
+        { value: 'international', label: 'International Dance Styles', nextQuestion: 'international_style' },
+        { value: 'choreography', label: 'Choreography & Direction', nextQuestion: 'choreography_focus' },
+
+        { value: 'ballroom', label: 'Ballroom / Latin Dance', nextQuestion: 'dance_goal' },
+        { value: 'folk', label: 'Folk / Cultural Dance', nextQuestion: 'dance_goal' },
+        { value: 'aerial', label: 'Aerial / Circus Arts', nextQuestion: 'dance_goal' },
+        { value: 'salsa', label: 'Salsa / Latin Dance', nextQuestion: 'dance_goal' },
+        { value: 'contemporary', label: 'Contemporary / Lyrical', nextQuestion: 'dance_goal' },
+        { value: 'hiphop', label: 'Hip-hop / Street Dance', nextQuestion: 'dance_goal' },
+
+
+
+  
+
       ],
     },
 
     // 🎭 CLASSICAL
-    {
+   {
       key: 'classical_form',
       text: 'Which classical dance form?',
       type: 'single',
@@ -2158,6 +3417,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'kathak', label: 'Kathak', nextQuestion: 'dance_experience' },
         { value: 'kuchipudi', label: 'Kuchipudi', nextQuestion: 'dance_experience' },
         { value: 'odissi', label: 'Odissi', nextQuestion: 'dance_experience' },
+        { value: 'mohiniyattam', label: 'Mohiniyattam', nextQuestion: 'dance_experience' },
+        { value: 'kathakali', label: 'Kathakali', nextQuestion: 'dance_experience' },
         { value: 'other', label: 'Other Classical Form', nextQuestion: 'dance_experience' },
       ],
     },
@@ -2172,8 +3433,11 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'hiphop', label: 'Hip-hop', nextQuestion: 'dance_experience' },
         { value: 'bollywood', label: 'Bollywood', nextQuestion: 'dance_experience' },
         { value: 'jazz', label: 'Jazz', nextQuestion: 'dance_experience' },
+        { value: 'locking', label: 'Locking & Popping', nextQuestion: 'dance_experience' },
+        { value: 'krump', label: 'Krump', nextQuestion: 'dance_experience' },
       ],
     },
+
 
     // 🤸 GYMNASTICS
     {
@@ -2187,6 +3451,59 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+        {
+      key: 'dance_goal',
+      text: 'What is your main goal?',
+      type: 'single',
+      options: [
+        { value: 'performer', label: 'Professional Performer', nextQuestion: 'performance_platform' },
+        { value: 'instructor', label: 'Dance Instructor', nextQuestion: 'certification_interest' },
+        { value: 'academy', label: 'Start Dance Academy', nextQuestion: 'academy_setup' },
+        { value: 'fitness', label: 'Fitness / Wellness', nextQuestion: 'practice_time' },
+        { value: 'hobby', label: 'Hobby / Passion', nextQuestion: 'practice_time' },
+      ],
+    },
+
+     {
+      key: 'folk_style',
+      text: 'Which folk dance style?',
+      type: 'single',
+      options: [
+        { value: 'bhangra', label: 'Bhangra', nextQuestion: 'dance_experience' },
+        { value: 'garba', label: 'Garba / Dandiya', nextQuestion: 'dance_experience' },
+        { value: 'lavani', label: 'Lavani', nextQuestion: 'dance_experience' },
+        { value: 'ghoomar', label: 'Ghoomar', nextQuestion: 'dance_experience' },
+        { value: 'other', label: 'Other Folk Style', nextQuestion: 'dance_experience' },
+      ],
+    },
+
+    // 🌍 INTERNATIONAL
+    {
+      key: 'international_style',
+      text: 'Which international style?',
+      type: 'single',
+      options: [
+        { value: 'ballet', label: 'Ballet', nextQuestion: 'dance_experience' },
+        { value: 'salsa', label: 'Salsa', nextQuestion: 'dance_experience' },
+        { value: 'tango', label: 'Tango', nextQuestion: 'dance_experience' },
+        { value: 'ballroom', label: 'Ballroom', nextQuestion: 'dance_experience' },
+      ],
+    },
+
+    // 🎬 CHOREOGRAPHY
+    {
+      key: 'choreography_focus',
+      text: 'Choreography focus?',
+      type: 'single',
+      options: [
+        { value: 'film', label: 'Film / Music Video Choreography', nextQuestion: 'dance_experience' },
+        { value: 'stage', label: 'Stage Productions', nextQuestion: 'dance_experience' },
+        { value: 'wedding', label: 'Wedding Choreography', nextQuestion: 'dance_experience' },
+        { value: 'competition', label: 'Competition Choreography', nextQuestion: 'dance_experience' },
+      ],
+    },
+
+
     // 📈 EXPERIENCE
     {
       key: 'dance_experience',
@@ -2199,18 +3516,29 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    // 🎯 GOAL
-    {
-      key: 'dance_goal',
-      text: 'What is your main goal?',
+       {
+      key: 'academy_setup',
+      text: 'How do you want to start your academy?',
       type: 'single',
       options: [
-        { value: 'performer', label: 'Professional Performer', nextQuestion: 'performance_platform' },
-        { value: 'instructor', label: 'Dance Instructor', nextQuestion: 'certification_interest' },
-        { value: 'fitness', label: 'Fitness / Wellness', nextQuestion: 'practice_time' },
-        { value: 'hobby', label: 'Hobby / Passion', nextQuestion: 'practice_time' },
+        { value: 'offline', label: 'Physical Studio', nextQuestion: 'income_model' },
+        { value: 'online', label: 'Online Classes', nextQuestion: 'income_model' },
+        { value: 'hybrid', label: 'Hybrid Model', nextQuestion: 'income_model' },
       ],
     },
+
+    // 💰 INCOME MODEL
+    {
+      key: 'income_model',
+      text: 'Preferred income model?',
+      type: 'single',
+      options: [
+        { value: 'monthly', label: 'Monthly Student Fees', nextQuestion: 'practice_time' },
+        { value: 'events', label: 'Event-Based Earnings', nextQuestion: 'practice_time' },
+        { value: 'digital', label: 'YouTube / Online Monetization', nextQuestion: 'practice_time' },
+      ],
+    },
+
 
     // 🎤 PLATFORM
     {
@@ -2283,6 +3611,12 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'lifestyle', label: 'Lifestyle-related Issue', nextQuestion: 'issue_duration' },
         { value: 'mental', label: 'Mental Health Concern', nextQuestion: 'issue_duration' },
         { value: 'nutrition', label: 'Nutrition / Diet Related', nextQuestion: 'issue_duration' },
+        
+        // 🔥 NEW ADDED TYPES
+        { value: 'hormonal', label: 'Hormonal Imbalance', nextQuestion: 'issue_duration' },
+        { value: 'digestive', label: 'Digestive Problems', nextQuestion: 'issue_duration' },
+        { value: 'skin', label: 'Skin / Hair Issues', nextQuestion: 'issue_duration' },
+        { value: 'pain', label: 'Joint / Muscle Pain', nextQuestion: 'issue_duration' },
       ],
     },
 
@@ -2309,6 +3643,18 @@ export const dreamCategories: DreamCategory[] = [
     },
 
     {
+      key: 'symptom_pattern',
+      text: 'When do symptoms usually occur?',
+      type: 'single',
+      options: [
+        { value: 'morning', label: 'Morning', nextQuestion: 'medical_support' },
+        { value: 'night', label: 'Night', nextQuestion: 'medical_support' },
+        { value: 'after_food', label: 'After Meals', nextQuestion: 'medical_support' },
+        { value: 'stress_trigger', label: 'During Stress', nextQuestion: 'medical_support' },
+      ],
+    },
+
+    {
       key: 'medical_support',
       text: 'Have you consulted a doctor or professional?',
       type: 'single',
@@ -2330,6 +3676,28 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'none', label: 'No treatment yet', nextQuestion: 'lifestyle_focus' },
       ],
     },
+      {
+      key: 'test_history',
+      text: 'Have you done any medical tests recently?',
+      type: 'single',
+      options: [
+        { value: 'blood', label: 'Blood Tests', nextQuestion: 'lifestyle_focus' },
+        { value: 'scan', label: 'Scan / Imaging', nextQuestion: 'lifestyle_focus' },
+        { value: 'multiple', label: 'Multiple Tests', nextQuestion: 'lifestyle_focus' },
+        { value: 'none', label: 'No Tests Done', nextQuestion: 'lifestyle_focus' },
+      ],
+    },
+      {
+      key: 'test_history',
+      text: 'Have you done any medical tests recently?',
+      type: 'single',
+      options: [
+        { value: 'blood', label: 'Blood Tests', nextQuestion: 'lifestyle_focus' },
+        { value: 'scan', label: 'Scan / Imaging', nextQuestion: 'lifestyle_focus' },
+        { value: 'multiple', label: 'Multiple Tests', nextQuestion: 'lifestyle_focus' },
+        { value: 'none', label: 'No Tests Done', nextQuestion: 'lifestyle_focus' },
+      ],
+    },
 
     {
       key: 'lifestyle_focus',
@@ -2342,6 +3710,30 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'exercise', label: 'Physical activity', nextQuestion: 'roadmap_goal' },
       ],
     },
+
+ {
+      key: 'water_intake',
+      text: 'Daily water intake?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Less than 1.5L', nextQuestion: 'activity_level' },
+        { value: 'moderate', label: '1.5–2.5L', nextQuestion: 'activity_level' },
+        { value: 'high', label: 'More than 2.5L', nextQuestion: 'activity_level' },
+      ],
+    },
+
+    // 🔥 NEW ACTIVITY LEVEL
+    {
+      key: 'activity_level',
+      text: 'How active are you physically?',
+      type: 'single',
+      options: [
+        { value: 'sedentary', label: 'Mostly Sitting', nextQuestion: 'roadmap_goal' },
+        { value: 'moderate', label: 'Light Exercise 2–3 days/week', nextQuestion: 'roadmap_goal' },
+        { value: 'active', label: 'Active 4–6 days/week', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
 
     // ✅ THIS QUESTION TRIGGERS ROADMAP (VERY IMPORTANT)
     {
@@ -2395,6 +3787,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'meditation', label: 'Meditation / Mindfulness', nextQuestion: 'habit_time' },
         { value: 'sleep', label: 'Better Sleep Schedule', nextQuestion: 'habit_time' },
         { value: 'learning', label: 'Learning a New Skill', nextQuestion: 'habit_time' },
+        { value: 'journaling', label: 'Daily Journaling', nextQuestion: 'habit_time' },
+        { value: 'hydration', label: 'Drinking Enough Water', nextQuestion: 'habit_time' },
+        { value: 'discipline', label: 'Self-Discipline Routine', nextQuestion: 'habit_time' },
         { value: 'other', label: 'Other Good Habit', nextQuestion: 'habit_time' },
       ],
     },
@@ -2409,6 +3804,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'sleep', label: 'Irregular Sleep', nextQuestion: 'habit_trigger' },
         { value: 'junk_food', label: 'Junk Food / Overeating', nextQuestion: 'habit_trigger' },
         { value: 'smoking', label: 'Smoking / Nicotine', nextQuestion: 'habit_trigger' },
+        { value: 'alcohol', label: 'Alcohol Overuse', nextQuestion: 'habit_trigger' },
+        { value: 'gaming', label: 'Excessive Gaming', nextQuestion: 'habit_trigger' },
+        { value: 'anger', label: 'Anger / Emotional Reactions', nextQuestion: 'habit_trigger' },
         { value: 'other', label: 'Other Bad Habit', nextQuestion: 'habit_trigger' },
       ],
     },
@@ -2426,6 +3824,17 @@ export const dreamCategories: DreamCategory[] = [
     },
 
     {
+      key: 'habit_environment',
+      text: 'Does your environment support this habit?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, fully supportive', nextQuestion: 'accountability_type' },
+        { value: 'partial', label: 'Partially supportive', nextQuestion: 'accountability_type' },
+        { value: 'no', label: 'No, environment is distracting', nextQuestion: 'accountability_type' },
+      ],
+    },
+
+    {
       key: 'habit_trigger',
       text: 'When does this habit usually happen most?',
       type: 'single',
@@ -2435,6 +3844,30 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'night', label: 'Late night', nextQuestion: 'commitment_level' },
         { value: 'social', label: 'Social situations', nextQuestion: 'commitment_level' },
         { value: 'routine', label: 'Part of daily routine', nextQuestion: 'commitment_level' },
+      ],
+    },
+
+     {
+      key: 'trigger_frequency',
+      text: 'How often does this habit occur?',
+      type: 'single',
+      options: [
+        { value: 'daily', label: 'Daily', nextQuestion: 'accountability_type' },
+        { value: 'weekly', label: 'Few times a week', nextQuestion: 'accountability_type' },
+        { value: 'occasionally', label: 'Occasionally', nextQuestion: 'accountability_type' },
+      ],
+    },
+
+    // 🔥 NEW ACCOUNTABILITY SYSTEM
+    {
+      key: 'accountability_type',
+      text: 'How do you prefer to stay accountable?',
+      type: 'single',
+      options: [
+        { value: 'self_tracking', label: 'Self Tracking (Journal / App)', nextQuestion: 'commitment_level' },
+        { value: 'partner', label: 'Accountability Partner', nextQuestion: 'commitment_level' },
+        { value: 'coach', label: 'Coach / Mentor Support', nextQuestion: 'commitment_level' },
+        { value: 'none', label: 'No accountability system', nextQuestion: 'commitment_level' },
       ],
     },
 
@@ -2486,6 +3919,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'problem', label: 'Solve Agricultural Problems', nextQuestion: 'problem_area' },
         { value: 'farming', label: 'Start or Improve Farming', nextQuestion: 'farming_type' },
         { value: 'business', label: 'Agribusiness / Startup', nextQuestion: 'business_area' },
+
+        { value: 'livestock', label: 'Dairy / Poultry / Animal Farming', nextQuestion: 'livestock_type' },
+        { value: 'horticulture', label: 'Fruits / Vegetables / Floriculture', nextQuestion: 'horticulture_type' },
       ],
     },
 
@@ -2499,6 +3935,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'soil', label: 'Soil Issues', nextQuestion: 'soil_problem' },
         { value: 'water', label: 'Water Issues', nextQuestion: 'water_problem' },
         { value: 'market', label: 'Market Issues', nextQuestion: 'roadmap_goal' },
+
+        { value: 'climate', label: 'Climate Change / Extreme Weather', nextQuestion: 'climate_support' },
+        { value: 'storage', label: 'Storage / Post-Harvest Loss', nextQuestion: 'storage_support' },
       ],
     },
 
@@ -2638,6 +4077,110 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+     {
+      key: 'market_problem_detail',
+      text: 'What market problem are you facing?',
+      type: 'single',
+      options: [
+        { value: 'low_price', label: 'Low Market Price', nextQuestion: 'roadmap_goal' },
+        { value: 'middlemen', label: 'Dependence on Middlemen', nextQuestion: 'roadmap_goal' },
+        { value: 'export', label: 'Export Difficulty', nextQuestion: 'export_support' },
+      ],
+    },
+
+    {
+      key: 'export_support',
+      text: 'What export support do you need?',
+      type: 'single',
+      options: [
+        { value: 'certification', label: 'Export Certification Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'buyers', label: 'Finding International Buyers', nextQuestion: 'roadmap_goal' },
+        { value: 'logistics', label: 'Export Logistics Support', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    {
+      key: 'climate_support',
+      text: 'What climate-related help do you need?',
+      type: 'single',
+      options: [
+        { value: 'resistant', label: 'Climate-Resistant Crops', nextQuestion: 'roadmap_goal' },
+        { value: 'insurance', label: 'Crop Insurance Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'forecast', label: 'Weather Forecast Planning', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    {
+      key: 'storage_support',
+      text: 'What storage solution do you want?',
+      type: 'single',
+      options: [
+        { value: 'cold_storage', label: 'Cold Storage Setup', nextQuestion: 'roadmap_goal' },
+        { value: 'warehouse', label: 'Warehouse Planning', nextQuestion: 'roadmap_goal' },
+        { value: 'processing', label: 'Value Addition / Processing', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    /* ===== LIVESTOCK PATH (NEW) ===== */
+    {
+      key: 'livestock_type',
+      text: 'Which livestock farming interests you?',
+      type: 'single',
+      options: [
+        { value: 'dairy', label: 'Dairy Farming', nextQuestion: 'livestock_scale' },
+        { value: 'poultry', label: 'Poultry Farming', nextQuestion: 'livestock_scale' },
+        { value: 'goat', label: 'Goat / Sheep Farming', nextQuestion: 'livestock_scale' },
+        { value: 'fishery', label: 'Fish Farming (Aquaculture)', nextQuestion: 'livestock_scale' },
+      ],
+    },
+
+    {
+      key: 'livestock_scale',
+      text: 'What scale do you plan?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Small Scale', nextQuestion: 'livestock_support' },
+        { value: 'medium', label: 'Medium Scale', nextQuestion: 'livestock_support' },
+        { value: 'commercial', label: 'Commercial Large Scale', nextQuestion: 'livestock_support' },
+      ],
+    },
+
+    {
+      key: 'livestock_support',
+      text: 'What support do you need?',
+      type: 'single',
+      options: [
+        { value: 'training', label: 'Training & Veterinary Support', nextQuestion: 'roadmap_goal' },
+        { value: 'loan', label: 'Loan / Subsidy Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'marketing', label: 'Milk / Meat Marketing Support', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    /* ===== HORTICULTURE PATH (NEW) ===== */
+    {
+      key: 'horticulture_type',
+      text: 'Which horticulture area?',
+      type: 'single',
+      options: [
+        { value: 'fruits', label: 'Fruit Farming', nextQuestion: 'horticulture_support' },
+        { value: 'vegetables', label: 'Vegetable Farming', nextQuestion: 'horticulture_support' },
+        { value: 'flowers', label: 'Floriculture', nextQuestion: 'horticulture_support' },
+        { value: 'greenhouse', label: 'Greenhouse Farming', nextQuestion: 'horticulture_support' },
+      ],
+    },
+
+    {
+      key: 'horticulture_support',
+      text: 'What support do you want?',
+      type: 'single',
+      options: [
+        { value: 'subsidy', label: 'Government Subsidy Guidance', nextQuestion: 'roadmap_goal' },
+        { value: 'modern', label: 'Modern Cultivation Techniques', nextQuestion: 'roadmap_goal' },
+        { value: 'market_link', label: 'Market Linkage Support', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+
     /* ✅ FINAL ROADMAP QUESTION */
     {
       key: 'roadmap_goal',
@@ -2668,20 +4211,31 @@ export const dreamCategories: DreamCategory[] = [
   description: 'Learning and teaching musical instruments',
   questions: [
 
-    // 🎼 INSTRUMENT
-    {
+        {
       key: 'instrument_type',
       text: 'Which instrument interests you?',
       type: 'single',
       options: [
-        { value: 'guitar', label: 'Guitar', nextQuestion: 'music_level' },
-        { value: 'piano', label: 'Piano / Keyboard', nextQuestion: 'music_level' },
-        { value: 'violin', label: 'Violin', nextQuestion: 'music_level' },
-        { value: 'flute', label: 'Flute', nextQuestion: 'music_level' },
-        { value: 'drums', label: 'Drums', nextQuestion: 'music_level' },
-        { value: 'tabla', label: 'Tabla', nextQuestion: 'music_level' },
-        { value: 'harmonium', label: 'Harmonium', nextQuestion: 'music_level' },
-        { value: 'other', label: 'Other Instrument', nextQuestion: 'music_level' },
+        { value: 'guitar', label: 'Guitar', nextQuestion: 'instrument_specialization' },
+        { value: 'piano', label: 'Piano / Keyboard', nextQuestion: 'instrument_specialization' },
+        { value: 'violin', label: 'Violin', nextQuestion: 'instrument_specialization' },
+        { value: 'flute', label: 'Flute', nextQuestion: 'instrument_specialization' },
+        { value: 'drums', label: 'Drums', nextQuestion: 'instrument_specialization' },
+        { value: 'tabla', label: 'Tabla', nextQuestion: 'instrument_specialization' },
+        { value: 'harmonium', label: 'Harmonium', nextQuestion: 'instrument_specialization' },
+        { value: 'other', label: 'Other Instrument', nextQuestion: 'instrument_specialization' },
+      ],
+    },
+
+    {
+      key: 'instrument_specialization',
+      text: 'What style of playing interests you?',
+      type: 'single',
+      options: [
+        { value: 'solo', label: 'Solo Performance', nextQuestion: 'music_level' },
+        { value: 'band', label: 'Band / Group Performance', nextQuestion: 'music_level' },
+        { value: 'accompaniment', label: 'Accompaniment / Background Music', nextQuestion: 'music_level' },
+        { value: 'composition', label: 'Music Composition / Creation', nextQuestion: 'music_level' },
       ],
     },
 
@@ -2704,23 +4258,69 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'hobby', label: 'Learn as a Hobby', nextQuestion: 'music_genre' },
-        { value: 'professional', label: 'Become a Professional Musician', nextQuestion: 'music_genre' },
-        { value: 'teacher', label: 'Teach Music', nextQuestion: 'music_genre' },
-        { value: 'performance', label: 'Stage / Live Performance', nextQuestion: 'music_genre' },
+        { value: 'professional', label: 'Become a Professional Musician', nextQuestion: 'career_path' },
+        { value: 'teacher', label: 'Teach Music', nextQuestion: 'teaching_mode' },
+        { value: 'performance', label: 'Stage / Live Performance', nextQuestion: 'performance_platform' },
       ],
     },
 
+      {
+      key: 'career_path',
+      text: 'Which music career path interests you?',
+      type: 'single',
+      options: [
+        { value: 'recording', label: 'Studio Recording Artist', nextQuestion: 'music_genre' },
+        { value: 'live_artist', label: 'Live Concert Artist', nextQuestion: 'music_genre' },
+        { value: 'composer', label: 'Composer / Music Director', nextQuestion: 'music_genre' },
+        { value: 'session_player', label: 'Session Musician', nextQuestion: 'music_genre' },
+      ],
+    },
+
+    // 🔥 NEW — TEACHING MODE
+    {
+      key: 'teaching_mode',
+      text: 'How do you want to teach music?',
+      type: 'single',
+      options: [
+        { value: 'academy', label: 'Music Academy', nextQuestion: 'certification_interest' },
+        { value: 'online', label: 'Online Classes / YouTube', nextQuestion: 'certification_interest' },
+        { value: 'private', label: 'Private Home Tuition', nextQuestion: 'certification_interest' },
+      ],
+    },
+
+    // 🔥 NEW — PERFORMANCE PLATFORM
+    {
+      key: 'performance_platform',
+      text: 'Where do you want to perform?',
+      type: 'single',
+      options: [
+        { value: 'stage', label: 'Stage Shows / Events', nextQuestion: 'music_genre' },
+        { value: 'tv', label: 'TV / Reality Shows', nextQuestion: 'music_genre' },
+        { value: 'social', label: 'YouTube / Instagram', nextQuestion: 'music_genre' },
+        { value: 'worship', label: 'Religious / Devotional Events', nextQuestion: 'music_genre' },
+      ],
+    },
     // 🎵 GENRE
     {
       key: 'music_genre',
       text: 'Which music style interests you most?',
       type: 'single',
       options: [
-        { value: 'classical', label: 'Classical', nextQuestion: 'practice_commitment' },
-        { value: 'film', label: 'Film / Movie Songs', nextQuestion: 'practice_commitment' },
-        { value: 'western', label: 'Western / Pop / Rock', nextQuestion: 'practice_commitment' },
-        { value: 'folk', label: 'Folk / Traditional', nextQuestion: 'practice_commitment' },
-        { value: 'devotional', label: 'Devotional / Bhajans', nextQuestion: 'practice_commitment' },
+        { value: 'classical', label: 'Classical', nextQuestion: 'music_theory_level' },
+        { value: 'film', label: 'Film / Movie Songs', nextQuestion: 'music_theory_level' },
+        { value: 'western', label: 'Western / Pop / Rock', nextQuestion: 'music_theory_level' },
+        { value: 'folk', label: 'Folk / Traditional', nextQuestion: 'music_theory_level' },
+        { value: 'devotional', label: 'Devotional / Bhajans', nextQuestion: 'music_theory_level' },
+      ],
+    },
+     {
+      key: 'music_theory_level',
+      text: 'How strong is your music theory knowledge?',
+      type: 'single',
+      options: [
+        { value: 'none', label: 'No theory knowledge', nextQuestion: 'practice_commitment' },
+        { value: 'basic', label: 'Basic understanding', nextQuestion: 'practice_commitment' },
+        { value: 'advanced', label: 'Advanced theory knowledge', nextQuestion: 'practice_commitment' },
       ],
     },
 
@@ -2743,9 +4343,20 @@ export const dreamCategories: DreamCategory[] = [
       text: 'How do you want to learn?',
       type: 'single',
       options: [
-        { value: 'online', label: 'Online Courses / Videos', nextQuestion: 'timeline' },
-        { value: 'offline', label: 'Offline Classes / Guru', nextQuestion: 'timeline' },
-        { value: 'self', label: 'Self Practice', nextQuestion: 'timeline' },
+        { value: 'online', label: 'Online Courses / Videos', nextQuestion: 'investment_capacity' },
+        { value: 'offline', label: 'Offline Classes / Guru', nextQuestion: 'investment_capacity' },
+        { value: 'self', label: 'Self Practice', nextQuestion: 'investment_capacity' },
+      ],
+    },
+
+    {
+      key: 'investment_capacity',
+      text: 'Are you willing to invest in instruments & training?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Budget', nextQuestion: 'timeline' },
+        { value: 'medium', label: 'Moderate Budget', nextQuestion: 'timeline' },
+        { value: 'high', label: 'High Investment for Career Growth', nextQuestion: 'timeline' },
       ],
     },
 
@@ -2817,9 +4428,43 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your experience level?',
       type: 'single',
       options: [
-        { value: 'fresher', label: 'Fresher' },
-        { value: 'mid', label: '1–5 Years Experience' },
-        { value: 'senior', label: '5+ Years Experience' },
+        { value: 'fresher', label: 'Fresher', nextQuestion: 'career_location' },
+        { value: 'mid', label: '1–5 Years Experience', nextQuestion: 'career_location' },
+        { value: 'senior', label: '5+ Years Experience', nextQuestion: 'career_location' },
+      ],
+    },
+
+    {
+      key: 'career_location',
+      text: 'Where are you looking for opportunities?',
+      type: 'single',
+      options: [
+        { value: 'local', label: 'Local / Nearby City', nextQuestion: 'career_salary_expectation' },
+        { value: 'national', label: 'Anywhere in India', nextQuestion: 'career_salary_expectation' },
+        { value: 'international', label: 'Abroad Opportunities', nextQuestion: 'career_salary_expectation' },
+        { value: 'remote', label: 'Remote / Work From Home', nextQuestion: 'career_salary_expectation' },
+      ],
+    },
+
+        {
+      key: 'career_salary_expectation',
+      text: 'What is your expected salary range?',
+      type: 'single',
+      options: [
+        { value: 'entry', label: 'Entry-Level Salary', nextQuestion: 'career_competition' },
+        { value: 'mid', label: 'Mid-Level Package', nextQuestion: 'career_competition' },
+        { value: 'high', label: 'High / Premium Package', nextQuestion: 'career_competition' },
+      ],
+    },
+
+        {
+      key: 'career_competition',
+      text: 'Are you ready to compete in a high-competition market?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, fully prepared', nextQuestion: 'roadmap_trigger' },
+        { value: 'learning', label: 'Preparing gradually', nextQuestion: 'roadmap_trigger' },
+        { value: 'unsure', label: 'Need guidance first', nextQuestion: 'roadmap_trigger' },
       ],
     },
 
@@ -2847,15 +4492,36 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'high', label: 'High risk', nextQuestion: 'business_mode' },
       ],
     },
-
     {
       key: 'business_mode',
       text: 'What type of business do you prefer?',
       type: 'single',
       options: [
-        { value: 'online', label: 'Online Business' },
-        { value: 'offline', label: 'Offline / Physical Business' },
-        { value: 'hybrid', label: 'Hybrid Model' },
+        { value: 'online', label: 'Online Business', nextQuestion: 'business_goal' },
+        { value: 'offline', label: 'Offline / Physical Business', nextQuestion: 'business_goal' },
+        { value: 'hybrid', label: 'Hybrid Model', nextQuestion: 'business_goal' },
+      ],
+    },
+
+    {
+      key: 'business_goal',
+      text: 'What is your business goal?',
+      type: 'single',
+      options: [
+        { value: 'income', label: 'Generate Steady Income', nextQuestion: 'business_timeline' },
+        { value: 'scalable', label: 'Build Scalable Startup', nextQuestion: 'business_timeline' },
+        { value: 'passive', label: 'Create Passive Income', nextQuestion: 'business_timeline' },
+      ],
+    },
+
+        {
+      key: 'business_timeline',
+      text: 'When do you want to start earning?',
+      type: 'single',
+      options: [
+        { value: 'immediate', label: 'Immediately (0–3 months)', nextQuestion: 'roadmap_trigger' },
+        { value: 'mid', label: '3–6 months', nextQuestion: 'roadmap_trigger' },
+        { value: 'long', label: '6+ months planning', nextQuestion: 'roadmap_trigger' },
       ],
     },
 
@@ -2889,11 +4555,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Preferred learning mode?',
       type: 'single',
       options: [
-        { value: 'online', label: 'Online' },
-        { value: 'offline', label: 'Offline / Campus' },
-        { value: 'hybrid', label: 'Hybrid' },
+        { value: 'online', label: 'Online', nextQuestion: 'education_budget' },
+        { value: 'offline', label: 'Offline / Campus', nextQuestion: 'education_budget' },
+        { value: 'hybrid', label: 'Hybrid', nextQuestion: 'education_budget' },
       ],
     },
+
+        {
+      key: 'education_budget',
+      text: 'What is your education budget range?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Budget / Scholarships', nextQuestion: 'roadmap_trigger' },
+        { value: 'medium', label: 'Moderate Budget', nextQuestion: 'roadmap_trigger' },
+        { value: 'high', label: 'Premium Institutions', nextQuestion: 'roadmap_trigger' },
+      ],
+    },
+
+
 
     /* ======================
        🧠 SKILL PATH
@@ -2921,14 +4600,40 @@ export const dreamCategories: DreamCategory[] = [
       text: 'How much time can you dedicate weekly?',
       type: 'single',
       options: [
-        { value: 'low', label: '1–3 hours' },
-        { value: 'medium', label: '4–7 hours' },
-        { value: 'high', label: '8+ hours' },
+        { value: 'low', label: '1–3 hours', nextQuestion: 'skill_market_demand' },
+        { value: 'medium', label: '4–7 hours', nextQuestion: 'skill_market_demand' },
+        { value: 'high', label: '8+ hours', nextQuestion: 'skill_market_demand' },
       ],
     },
 
+  {
+      key: 'skill_market_demand',
+      text: 'Do you want to learn a high-demand market skill?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, high-income skill', nextQuestion: 'roadmap_trigger' },
+        { value: 'balanced', label: 'Balanced demand & passion', nextQuestion: 'roadmap_trigger' },
+        { value: 'passion', label: 'Passion over market demand', nextQuestion: 'roadmap_trigger' },
+      ],
+    },
+
+    {
+      key: 'roadmap_trigger',
+      text: 'What do you want to generate now?',
+      type: 'single',
+      options: [
+        { value: 'analysis', label: 'Opportunity Analysis Report' },
+        { value: 'roadmap', label: 'Step-by-Step Action Roadmap' },
+        { value: 'comparison', label: 'Compare Multiple Opportunities' },
+        { value: 'best_match', label: 'Find Best Opportunity for Me' },
+      ],
+    },
+
+
   ],
 },
+
+
 /*
 ┌─────────────────────────┐
 │        Film Dream       │
@@ -2941,31 +4646,81 @@ export const dreamCategories: DreamCategory[] = [
     icon: 'Film',
     description: 'Careers in film and entertainment',
     questions: [
-      {
-        key: 'film_role',
-        text: 'Which role interests you in film industry?',
-        type: 'single',
-        options: [
-          { value: 'acting', label: 'Acting', nextQuestion: 'experience_level' },
-          { value: 'direction', label: 'Direction', nextQuestion: 'experience_level' },
-          { value: 'cinematography', label: 'Cinematography', nextQuestion: 'experience_level' },
-          { value: 'editing', label: 'Editing', nextQuestion: 'experience_level' },
-          { value: 'production', label: 'Production', nextQuestion: 'experience_level' },
-          { value: 'writing', label: 'Screenplay Writing', nextQuestion: 'experience_level' },
-        ],
-      },
-      {
-        key: 'experience_level',
-        text: 'What is your experience level?',
-        type: 'single',
-        options: [
-          { value: 'none', label: 'No experience, complete beginner' },
-          { value: 'some', label: 'Some experience or training' },
-          { value: 'experienced', label: 'Experienced, looking to advance' },
-        ],
-      },
-    ],
-  },
+    {
+      key: 'film_role',
+      text: 'Which role interests you in film industry?',
+      type: 'single',
+      options: [
+        { value: 'acting', label: 'Acting', nextQuestion: 'film_experience_level' },
+        { value: 'direction', label: 'Direction', nextQuestion: 'film_experience_level' },
+        { value: 'cinematography', label: 'Cinematography', nextQuestion: 'film_experience_level' },
+        { value: 'editing', label: 'Editing', nextQuestion: 'film_experience_level' },
+        { value: 'production', label: 'Production', nextQuestion: 'film_experience_level' },
+        { value: 'writing', label: 'Screenplay Writing', nextQuestion: 'film_experience_level' },
+        { value: 'music', label: 'Music / Background Score', nextQuestion: 'film_experience_level' },
+        { value: 'vfx', label: 'VFX / Animation', nextQuestion: 'film_experience_level' },
+      ],
+    },
+    {
+      key: 'film_experience_level',
+      text: 'What is your experience level?',
+      type: 'single',
+      options: [
+        { value: 'none', label: 'No experience, complete beginner', nextQuestion: 'film_training_interest' },
+        { value: 'some', label: 'Some experience or training', nextQuestion: 'film_training_interest' },
+        { value: 'experienced', label: 'Experienced, looking to advance', nextQuestion: 'film_network_strength' },
+      ],
+    },
+
+    {
+      key: 'film_training_interest',
+      text: 'Are you willing to undergo professional training?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, formal training', nextQuestion: 'film_platform' },
+        { value: 'self', label: 'Self-learning & practice', nextQuestion: 'film_platform' },
+        { value: 'unsure', label: 'Not sure yet', nextQuestion: 'film_platform' },
+      ],
+    },
+
+    {
+      key: 'film_network_strength',
+      text: 'Do you have industry contacts or network?',
+      type: 'single',
+      options: [
+        { value: 'strong', label: 'Strong network', nextQuestion: 'film_platform' },
+        { value: 'building', label: 'Building network', nextQuestion: 'film_platform' },
+        { value: 'none', label: 'No connections yet', nextQuestion: 'film_platform' },
+      ],
+    },
+
+    {
+      key: 'film_platform',
+      text: 'Where do you want to work?',
+      type: 'single',
+      options: [
+        { value: 'regional', label: 'Regional Cinema', nextQuestion: 'film_income_goal' },
+        { value: 'bollywood', label: 'Bollywood', nextQuestion: 'film_income_goal' },
+        { value: 'ott', label: 'OTT Platforms', nextQuestion: 'film_income_goal' },
+        { value: 'independent', label: 'Independent / Short Films', nextQuestion: 'film_income_goal' },
+      ],
+    },
+
+    {
+      key: 'film_income_goal',
+      text: 'What is your goal in film career?',
+      type: 'single',
+      options: [
+        { value: 'fame', label: 'Recognition & Fame' },
+        { value: 'income', label: 'Stable Income' },
+        { value: 'creative', label: 'Creative Satisfaction' },
+        { value: 'international', label: 'International Exposure' },
+      ],
+    },
+
+  ],
+},
+
   {
   key: 'training',
   name: 'Training & Skill Development',
@@ -2985,6 +4740,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'soft_skills', label: 'Soft Skills (Communication / Leadership)', nextQuestion: 'specific_skill' },
         { value: 'vocational', label: 'Vocational Skills (Electrician, Mechanic, etc.)', nextQuestion: 'specific_skill' },
         { value: 'creative', label: 'Creative Skills (Design / Arts)', nextQuestion: 'specific_skill' },
+        { value: 'business', label: 'Business / Entrepreneurship', nextQuestion: 'specific_skill' },
       ],
     },
 
@@ -2995,14 +4751,11 @@ export const dreamCategories: DreamCategory[] = [
       key: 'specific_skill',
       text: 'Please specify the skill you want to develop',
       type: 'text',
-      nextQuestion: 'experience_level',
+      nextQuestion: 'training_experience_level',
     },
 
-    /* ======================
-       3️⃣ EXPERIENCE LEVEL
-    ====================== */
     {
-      key: 'experience_level',
+      key: 'training_experience_level',
       text: 'What is your current level in this skill?',
       type: 'single',
       options: [
@@ -3023,13 +4776,11 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'job', label: 'Get a Job', nextQuestion: 'learning_commitment' },
         { value: 'promotion', label: 'Career Growth / Promotion', nextQuestion: 'learning_commitment' },
         { value: 'freelance', label: 'Freelancing / Side Income', nextQuestion: 'learning_commitment' },
+        { value: 'business', label: 'Start Own Business', nextQuestion: 'learning_commitment' },
         { value: 'interest', label: 'Personal Interest', nextQuestion: 'learning_commitment' },
       ],
     },
 
-    /* ======================
-       5️⃣ TIME COMMITMENT
-    ====================== */
     {
       key: 'learning_commitment',
       text: 'How many hours per week can you dedicate?',
@@ -3037,6 +4788,7 @@ export const dreamCategories: DreamCategory[] = [
       validation: { min: 1, max: 40 },
       nextQuestion: 'learning_mode',
     },
+
 
     /* ======================
        6️⃣ LEARNING MODE
@@ -3052,9 +4804,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       7️⃣ BUDGET
-    ====================== */
     {
       key: 'budget_range',
       text: 'What is your budget for training?',
@@ -3075,14 +4824,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Do you need certification after training?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes, certification is important', nextQuestion: 'placement_support' },
-        { value: 'no', label: 'No, skills matter more', nextQuestion: 'placement_support' },
+        { value: 'yes', label: 'Yes, certification is important', nextQuestion: 'industry_alignment' },
+        { value: 'no', label: 'No, skills matter more', nextQuestion: 'industry_alignment' },
       ],
     },
-
     /* ======================
        9️⃣ PLACEMENT / OUTCOME
     ====================== */
+ {
+      key: 'industry_alignment',
+      text: 'Is this skill aligned with current market demand?',
+      type: 'single',
+      options: [
+        { value: 'high', label: 'High-demand skill', nextQuestion: 'placement_support' },
+        { value: 'moderate', label: 'Moderate demand', nextQuestion: 'placement_support' },
+        { value: 'unsure', label: 'Not sure', nextQuestion: 'placement_support' },
+      ],
+    },
+
     {
       key: 'placement_support',
       text: 'What outcome do you expect from this training?',
@@ -3097,11 +4856,13 @@ export const dreamCategories: DreamCategory[] = [
 
   ],
 },
+
 /*
 ┌─────────────────────────┐
 │    irrigation Dream     │
 └─────────────────────────┘
 */
+
 {
   key: 'irrigation',
   name: 'Irrigation Works',
@@ -3119,27 +4880,50 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'career', label: 'Career in Irrigation Engineering', nextQuestion: 'education_bg' },
       ],
     },
-
     {
       key: 'land_type',
       text: 'What type of land is this irrigation for?',
       type: 'single',
       options: [
-        { value: 'agricultural', label: 'Agricultural Land', nextQuestion: 'water_source' },
-        { value: 'garden', label: 'Garden / Landscaping', nextQuestion: 'water_source' },
-        { value: 'commercial', label: 'Commercial Property', nextQuestion: 'water_source' },
+        { value: 'agricultural', label: 'Agricultural Land', nextQuestion: 'land_size' },
+        { value: 'garden', label: 'Garden / Landscaping', nextQuestion: 'land_size' },
+        { value: 'commercial', label: 'Commercial Property', nextQuestion: 'land_size' },
       ],
     },
+
+    {
+      key: 'land_size',
+      text: 'What is the size of the land?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Less than 2 acres', nextQuestion: 'water_source' },
+        { value: 'medium', label: '2–10 acres', nextQuestion: 'water_source' },
+        { value: 'large', label: 'More than 10 acres', nextQuestion: 'water_source' },
+      ],
+    },
+
+
 
     {
       key: 'water_source',
       text: 'What is the main water source?',
       type: 'single',
       options: [
-        { value: 'rain', label: 'Rainwater', nextQuestion: 'irrigation_method' },
-        { value: 'borewell', label: 'Borewell', nextQuestion: 'irrigation_method' },
-        { value: 'canal', label: 'Canal', nextQuestion: 'irrigation_method' },
-        { value: 'tank', label: 'Water Tank / Reservoir', nextQuestion: 'irrigation_method' },
+        { value: 'rain', label: 'Rainwater', nextQuestion: 'water_availability' },
+        { value: 'borewell', label: 'Borewell', nextQuestion: 'water_availability' },
+        { value: 'canal', label: 'Canal', nextQuestion: 'water_availability' },
+        { value: 'tank', label: 'Water Tank / Reservoir', nextQuestion: 'water_availability' },
+      ],
+    },
+
+    {
+      key: 'water_availability',
+      text: 'Is water supply consistent throughout the year?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, consistent', nextQuestion: 'irrigation_method' },
+        { value: 'seasonal', label: 'Seasonal only', nextQuestion: 'irrigation_method' },
+        { value: 'limited', label: 'Very limited supply', nextQuestion: 'irrigation_method' },
       ],
     },
 
@@ -3148,10 +4932,21 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which irrigation method are you considering?',
       type: 'single',
       options: [
-        { value: 'drip', label: 'Drip Irrigation', nextQuestion: 'budget_range' },
-        { value: 'sprinkler', label: 'Sprinkler System', nextQuestion: 'budget_range' },
-        { value: 'flood', label: 'Flood Irrigation', nextQuestion: 'budget_range' },
-        { value: 'micro', label: 'Micro Irrigation', nextQuestion: 'budget_range' },
+        { value: 'drip', label: 'Drip Irrigation', nextQuestion: 'automation_interest' },
+        { value: 'sprinkler', label: 'Sprinkler System', nextQuestion: 'automation_interest' },
+        { value: 'flood', label: 'Flood Irrigation', nextQuestion: 'automation_interest' },
+        { value: 'micro', label: 'Micro Irrigation', nextQuestion: 'automation_interest' },
+      ],
+    },
+
+    {
+      key: 'automation_interest',
+      text: 'Are you interested in smart / automated irrigation systems?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, fully automated', nextQuestion: 'budget_range' },
+        { value: 'partial', label: 'Partially automated', nextQuestion: 'budget_range' },
+        { value: 'no', label: 'Manual system is fine', nextQuestion: 'budget_range' },
       ],
     },
 
@@ -3216,10 +5011,33 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your educational background?',
       type: 'single',
       options: [
-        { value: 'engineering', label: 'Engineering', nextQuestion: 'career_goal' },
-        { value: 'agriculture', label: 'Agriculture', nextQuestion: 'career_goal' },
-        { value: 'diploma', label: 'Diploma / ITI', nextQuestion: 'career_goal' },
-        { value: 'other', label: 'Other', nextQuestion: 'career_goal' },
+        { value: 'engineering', label: 'Engineering', nextQuestion: 'career_specialization' },
+        { value: 'agriculture', label: 'Agriculture', nextQuestion: 'career_specialization' },
+        { value: 'diploma', label: 'Diploma / ITI', nextQuestion: 'career_specialization' },
+        { value: 'other', label: 'Other', nextQuestion: 'career_specialization' },
+      ],
+    },
+    {
+      key: 'career_specialization',
+      text: 'Which irrigation specialization interests you?',
+      type: 'single',
+      options: [
+        { value: 'design', label: 'System Design & Planning', nextQuestion: 'career_goal' },
+        { value: 'installation', label: 'Installation & Field Work', nextQuestion: 'career_goal' },
+        { value: 'consulting', label: 'Consulting & Advisory', nextQuestion: 'career_goal' },
+        { value: 'research', label: 'Water Management Research', nextQuestion: 'career_goal' },
+      ],
+    },
+
+     {
+      key: 'career_specialization',
+      text: 'Which irrigation specialization interests you?',
+      type: 'single',
+      options: [
+        { value: 'design', label: 'System Design & Planning', nextQuestion: 'career_goal' },
+        { value: 'installation', label: 'Installation & Field Work', nextQuestion: 'career_goal' },
+        { value: 'consulting', label: 'Consulting & Advisory', nextQuestion: 'career_goal' },
+        { value: 'research', label: 'Water Management Research', nextQuestion: 'career_goal' },
       ],
     },
 
@@ -3228,10 +5046,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What do you want to do in irrigation as a career?',
       type: 'single',
       options: [
-        { value: 'designer', label: 'Irrigation System Designer' },
-        { value: 'technician', label: 'Installation Technician' },
-        { value: 'consultant', label: 'Irrigation Consultant' },
-        { value: 'business', label: 'Start Irrigation Business' },
+        { value: 'designer', label: 'Irrigation System Designer', nextQuestion: 'roadmap_goal' },
+        { value: 'technician', label: 'Installation Technician', nextQuestion: 'roadmap_goal' },
+        { value: 'consultant', label: 'Irrigation Consultant', nextQuestion: 'roadmap_goal' },
+        { value: 'business', label: 'Start Irrigation Business', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    /* ================= FINAL ROADMAP ================= */
+
+    {
+      key: 'roadmap_goal',
+      text: 'What do you want to generate now?',
+      type: 'single',
+      options: [
+        { value: 'installation_plan', label: 'Step-by-Step Installation Plan' },
+        { value: 'improvement_plan', label: 'Irrigation Improvement Roadmap' },
+        { value: 'career_plan', label: 'Irrigation Career Roadmap' },
+        { value: 'complete', label: 'Complete Water Management Strategy' },
       ],
     },
 
@@ -3270,13 +5102,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which crops interest you most?',
       type: 'single',
       options: [
-        { value: 'fruits', label: 'Fruits', nextQuestion: 'land_size' },
-        { value: 'vegetables', label: 'Vegetables', nextQuestion: 'land_size' },
-        { value: 'flowers', label: 'Flowers', nextQuestion: 'land_size' },
+        { value: 'fruits', label: 'Fruits', nextQuestion: 'cultivation_method' },
+        { value: 'vegetables', label: 'Vegetables', nextQuestion: 'cultivation_method' },
+        { value: 'flowers', label: 'Flowers', nextQuestion: 'cultivation_method' },
       ],
     },
 
     {
+      key: 'cultivation_method',
+      text: 'Which cultivation method are you considering?',
+      type: 'single',
+      options: [
+        { value: 'open', label: 'Open Field Cultivation', nextQuestion: 'land_size' },
+        { value: 'greenhouse', label: 'Greenhouse / Polyhouse', nextQuestion: 'land_size' },
+        { value: 'organic', label: 'Organic Farming', nextQuestion: 'land_size' },
+      ],
+    },
+    
+     {
       key: 'land_size',
       text: 'How much land do you have for cultivation?',
       type: 'single',
@@ -3286,6 +5129,30 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'large', label: 'More than 5 acres', nextQuestion: 'experience_level' },
       ],
     },
+
+    {
+      key: 'experience_level',
+      text: 'What is your horticulture experience level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'market_focus' },
+        { value: 'intermediate', label: 'Some Experience', nextQuestion: 'market_focus' },
+        { value: 'advanced', label: 'Experienced Farmer', nextQuestion: 'market_focus' },
+      ],
+    },
+
+    {
+      key: 'market_focus',
+      text: 'Where do you plan to sell your produce?',
+      type: 'single',
+      options: [
+        { value: 'local', label: 'Local Market', nextQuestion: 'business_intent' },
+        { value: 'wholesale', label: 'Wholesale / Mandis', nextQuestion: 'business_intent' },
+        { value: 'export', label: 'Export Market', nextQuestion: 'business_intent' },
+        { value: 'direct', label: 'Direct-to-Consumer / Online', nextQuestion: 'business_intent' },
+      ],
+    },
+
 
     /* 🎨 LANDSCAPING PATH */
     {
@@ -3327,9 +5194,46 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your main goal?',
       type: 'single',
       options: [
-        { value: 'business', label: 'Start a Business' },
-        { value: 'job', label: 'Find a Job / Career' },
-        { value: 'hobby', label: 'Personal Interest / Hobby' },
+        { value: 'business', label: 'Start a Business', nextQuestion: 'investment_capacity' },
+        { value: 'job', label: 'Find a Job / Career', nextQuestion: 'job_role' },
+        { value: 'hobby', label: 'Personal Interest / Hobby', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+        {
+      key: 'investment_capacity',
+      text: 'What is your investment capacity?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Investment', nextQuestion: 'roadmap_goal' },
+        { value: 'medium', label: 'Medium Investment', nextQuestion: 'roadmap_goal' },
+        { value: 'high', label: 'High Investment', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    {
+      key: 'job_role',
+      text: 'Which horticulture job role interests you?',
+      type: 'single',
+      options: [
+        { value: 'supervisor', label: 'Farm Supervisor', nextQuestion: 'roadmap_goal' },
+        { value: 'consultant', label: 'Horticulture Consultant', nextQuestion: 'roadmap_goal' },
+        { value: 'research', label: 'Research / Scientist', nextQuestion: 'roadmap_goal' },
+        { value: 'govt', label: 'Government Agriculture Officer', nextQuestion: 'roadmap_goal' },
+      ],
+    },
+
+    /* ✅ FINAL ROADMAP */
+
+    {
+      key: 'roadmap_goal',
+      text: 'What do you want to generate now?',
+      type: 'single',
+      options: [
+        { value: 'business_plan', label: 'Horticulture Business Plan' },
+        { value: 'cultivation_plan', label: 'Step-by-Step Cultivation Guide' },
+        { value: 'career_plan', label: 'Horticulture Career Roadmap' },
+        { value: 'complete', label: 'Complete Horticulture Growth Plan' },
       ],
     },
 
@@ -3341,6 +5245,7 @@ export const dreamCategories: DreamCategory[] = [
 │        AI dream         │
 └─────────────────────────┘
 */
+
  {
   key: 'ai',
   name: 'Artificial Intelligence',
@@ -3361,6 +5266,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'ai_researcher', label: 'AI Researcher', nextQuestion: 'programming_skills' },
         { value: 'ai_developer', label: 'AI Application Developer', nextQuestion: 'programming_skills' },
         { value: 'ai_consultant', label: 'AI Consultant / Implementation', nextQuestion: 'programming_skills' },
+        { value: 'mlops', label: 'MLOps Engineer', nextQuestion: 'programming_skills' },
       ],
     },
 
@@ -3405,9 +5311,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'nlp', label: 'Natural Language Processing (NLP)', nextQuestion: 'nlp_usecase' },
         { value: 'cv', label: 'Computer Vision', nextQuestion: 'cv_usecase' },
         { value: 'genai', label: 'Generative AI (ChatGPT, LLMs)', nextQuestion: 'genai_goal' },
+        { value: 'ai_ethics', label: 'AI Ethics & Responsible AI', nextQuestion: 'ethics_focus' },
       ],
     },
-
     /* ======================
        5️⃣ MACHINE LEARNING
     ====================== */
@@ -3433,6 +5339,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'cnn', label: 'CNN (Images)', nextQuestion: 'project_goal' },
         { value: 'rnn', label: 'RNN / LSTM', nextQuestion: 'project_goal' },
         { value: 'transformers', label: 'Transformers', nextQuestion: 'project_goal' },
+        { value: 'gan', label: 'GANs', nextQuestion: 'project_goal' },
       ],
     },
 
@@ -3447,9 +5354,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'chatbot', label: 'Chatbots', nextQuestion: 'project_goal' },
         { value: 'translation', label: 'Language Translation', nextQuestion: 'project_goal' },
         { value: 'sentiment', label: 'Sentiment Analysis', nextQuestion: 'project_goal' },
+        { value: 'rag', label: 'RAG Systems', nextQuestion: 'project_goal' },
       ],
     },
-
     /* ======================
        8️⃣ COMPUTER VISION
     ====================== */
@@ -3472,30 +5379,58 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What do you want to build with Generative AI?',
       type: 'single',
       options: [
-        { value: 'chatgpt_apps', label: 'ChatGPT-like Apps', nextQuestion: 'deployment_goal' },
-        { value: 'image', label: 'Image Generation', nextQuestion: 'deployment_goal' },
-        { value: 'rag', label: 'RAG / AI Search Systems', nextQuestion: 'deployment_goal' },
+        { value: 'chatgpt_apps', label: 'ChatGPT-like Apps', nextQuestion: 'ai_tools' },
+        { value: 'image', label: 'Image Generation', nextQuestion: 'ai_tools' },
+        { value: 'rag', label: 'RAG / AI Search Systems', nextQuestion: 'ai_tools' },
       ],
     },
 
-    /* ======================
-       🔟 PROJECT GOAL
-    ====================== */
+    {
+      key: 'ai_tools',
+      text: 'Which AI tools or frameworks do you want to focus on?',
+      type: 'single',
+      options: [
+        { value: 'pytorch', label: 'PyTorch', nextQuestion: 'project_goal' },
+        { value: 'tensorflow', label: 'TensorFlow', nextQuestion: 'project_goal' },
+        { value: 'openai', label: 'OpenAI APIs', nextQuestion: 'project_goal' },
+        { value: 'huggingface', label: 'HuggingFace', nextQuestion: 'project_goal' },
+      ],
+    },
+
+        {
+      key: 'ethics_focus',
+      text: 'Which responsible AI area interests you?',
+      type: 'single',
+      options: [
+        { value: 'bias', label: 'Bias & Fairness', nextQuestion: 'project_goal' },
+        { value: 'privacy', label: 'AI Privacy & Security', nextQuestion: 'project_goal' },
+        { value: 'policy', label: 'AI Policy & Governance', nextQuestion: 'project_goal' },
+      ],
+    },
+
     {
       key: 'project_goal',
       text: 'What is your main goal with AI?',
       type: 'single',
       options: [
-        { value: 'job', label: 'Get a Job in AI', nextQuestion: 'learning_commitment' },
-        { value: 'startup', label: 'Build AI Startup', nextQuestion: 'learning_commitment' },
-        { value: 'research', label: 'Research & Innovation', nextQuestion: 'learning_commitment' },
-        { value: 'personal', label: 'Personal Learning', nextQuestion: 'learning_commitment' },
+        { value: 'job', label: 'Get a Job in AI', nextQuestion: 'portfolio_status' },
+        { value: 'startup', label: 'Build AI Startup', nextQuestion: 'portfolio_status' },
+        { value: 'research', label: 'Research & Innovation', nextQuestion: 'portfolio_status' },
+        { value: 'personal', label: 'Personal Learning', nextQuestion: 'portfolio_status' },
       ],
     },
 
-    /* ======================
-       1️⃣1️⃣ TIME COMMITMENT
-    ====================== */
+    {
+      key: 'portfolio_status',
+      text: 'Do you have AI projects or portfolio?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, multiple projects', nextQuestion: 'learning_commitment' },
+        { value: 'basic', label: 'Basic projects', nextQuestion: 'learning_commitment' },
+        { value: 'no', label: 'No, need to build', nextQuestion: 'learning_commitment' },
+      ],
+    },
+
     {
       key: 'learning_commitment',
       text: 'How many hours per week can you dedicate?',
@@ -3519,6 +5454,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'mobile', label: 'Mobile App' },
         { value: 'api', label: 'API / Backend Service' },
         { value: 'research', label: 'Research Papers' },
+        { value: 'product', label: 'Full SaaS Product' },
       ],
     },
 
@@ -3531,6 +5467,7 @@ export const dreamCategories: DreamCategory[] = [
 │       Design dream      │
 └─────────────────────────┘
 */
+
   {
   key: 'design',
   name: '2D, 3D & AI Design',
@@ -3546,19 +5483,95 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which design field interests you the most?',
       type: 'single',
       options: [
-        { value: '2d_graphic', label: '2D Graphic Design', nextQuestion: 'design_role' },
-        { value: 'ui_ux', label: 'UI / UX Design', nextQuestion: 'design_role' },
-        { value: '3d_modeling', label: '3D Modeling & Rendering', nextQuestion: 'design_role' },
-        { value: 'animation', label: 'Animation & Motion Graphics', nextQuestion: 'design_role' },
-        { value: 'game_design', label: 'Game Design', nextQuestion: 'design_role' },
-        { value: 'product_design', label: 'Product / Industrial Design', nextQuestion: 'design_role' },
-        { value: 'ar_vr', label: 'AR / VR / Metaverse Design', nextQuestion: 'design_role' },
+        { value: '2d_graphic', label: '2D Graphic Design', nextQuestion: 'design_specialization_2d' },
+        { value: 'ui_ux', label: 'UI / UX Design', nextQuestion: 'design_specialization_uiux' },
+        { value: '3d_modeling', label: '3D Modeling & Rendering', nextQuestion: 'design_specialization_3d' },
+        { value: 'animation', label: 'Animation & Motion Graphics', nextQuestion: 'design_specialization_animation' },
+        { value: 'game_design', label: 'Game Design', nextQuestion: 'design_specialization_game' },
+        { value: 'product_design', label: 'Product / Industrial Design', nextQuestion: 'design_specialization_product' },
+        { value: 'ar_vr', label: 'AR / VR / Metaverse Design', nextQuestion: 'design_specialization_arvr' },
       ],
     },
 
-    /* ======================
-       2️⃣ DESIGN ROLE
-    ====================== */
+     {
+      key: 'design_specialization_2d',
+      text: 'Which 2D design area interests you?',
+      type: 'single',
+      options: [
+        { value: 'branding', label: 'Branding & Logo Design', nextQuestion: 'design_role' },
+        { value: 'social_media', label: 'Social Media Design', nextQuestion: 'design_role' },
+        { value: 'print', label: 'Print & Packaging', nextQuestion: 'design_role' },
+      ],
+    },
+
+    
+    {
+      key: 'design_specialization_uiux',
+      text: 'Which UI/UX focus area?',
+      type: 'single',
+      options: [
+        { value: 'mobile_apps', label: 'Mobile App Design', nextQuestion: 'design_role' },
+        { value: 'web_apps', label: 'Web App Design', nextQuestion: 'design_role' },
+        { value: 'ux_research', label: 'UX Research & Testing', nextQuestion: 'design_role' },
+      ],
+    },
+    
+    {
+      key: 'design_specialization_3d',
+      text: 'Which 3D specialization?',
+      type: 'single',
+      options: [
+        { value: 'architectural', label: 'Architectural Visualization', nextQuestion: 'design_role' },
+        { value: 'product_render', label: 'Product Rendering', nextQuestion: 'design_role' },
+        { value: 'character', label: 'Character Modeling', nextQuestion: 'design_role' },
+      ],
+    },
+
+    {
+      key: 'design_specialization_animation',
+      text: 'Which animation field?',
+      type: 'single',
+      options: [
+        { value: '2d_anim', label: '2D Animation', nextQuestion: 'design_role' },
+        { value: '3d_anim', label: '3D Animation', nextQuestion: 'design_role' },
+        { value: 'motion_graphics', label: 'Motion Graphics', nextQuestion: 'design_role' },
+      ],
+    },
+
+    {
+      key: 'design_specialization_game',
+      text: 'Which game design area?',
+      type: 'single',
+      options: [
+        { value: 'level_design', label: 'Level Design', nextQuestion: 'design_role' },
+        { value: 'game_ui', label: 'Game UI', nextQuestion: 'design_role' },
+        { value: 'environment', label: 'Environment Design', nextQuestion: 'design_role' },
+      ],
+    },
+
+    {
+      key: 'design_specialization_product',
+      text: 'Which product design focus?',
+      type: 'single',
+      options: [
+        { value: 'industrial', label: 'Industrial Design', nextQuestion: 'design_role' },
+        { value: 'consumer', label: 'Consumer Product Design', nextQuestion: 'design_role' },
+        { value: 'prototype', label: 'Prototyping & CAD', nextQuestion: 'design_role' },
+      ],
+    },
+
+    {
+      key: 'design_specialization_arvr',
+      text: 'Which AR/VR focus?',
+      type: 'single',
+      options: [
+        { value: 'metaverse', label: 'Metaverse Environments', nextQuestion: 'design_role' },
+        { value: 'vr_training', label: 'VR Training Simulations', nextQuestion: 'design_role' },
+        { value: 'immersive_ui', label: 'Immersive UI Design', nextQuestion: 'design_role' },
+      ],
+    },
+
+
     {
       key: 'design_role',
       text: 'Which role do you want to pursue?',
@@ -3583,15 +5596,23 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your experience level in design?',
       type: 'single',
       options: [
-        { value: 'beginner', label: 'Beginner', nextQuestion: 'design_tools' },
-        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'design_tools' },
-        { value: 'advanced', label: 'Advanced / Professional', nextQuestion: 'design_tools' },
+        { value: 'beginner', label: 'Beginner', nextQuestion: 'portfolio_status' },
+        { value: 'intermediate', label: 'Intermediate', nextQuestion: 'portfolio_status' },
+        { value: 'advanced', label: 'Advanced / Professional', nextQuestion: 'portfolio_status' },
       ],
     },
 
-    /* ======================
-       4️⃣ DESIGN SOFTWARE
-    ====================== */
+        {
+      key: 'portfolio_status',
+      text: 'Do you have a design portfolio?',
+      type: 'single',
+      options: [
+        { value: 'strong', label: 'Strong Portfolio', nextQuestion: 'design_tools' },
+        { value: 'basic', label: 'Basic Portfolio', nextQuestion: 'design_tools' },
+        { value: 'none', label: 'No Portfolio Yet', nextQuestion: 'design_tools' },
+      ],
+    },
+
     {
       key: 'design_tools',
       text: 'Which design tools are you familiar with?',
@@ -3605,62 +5626,51 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       5️⃣ AI TOOLS INTEREST
-    ====================== */
     {
       key: 'ai_tools_interest',
-      text: 'Are you interested in using AI-powered design tools?',
+      text: 'Are you interested in AI-powered design tools?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes, definitely', nextQuestion: 'ai_design_tools' },
-        { value: 'maybe', label: 'Curious to learn', nextQuestion: 'ai_design_tools' },
-        { value: 'no', label: 'Prefer traditional tools', nextQuestion: 'career_goal' },
+        { value: 'yes', label: 'Yes', nextQuestion: 'ai_design_tools' },
+        { value: 'maybe', label: 'Curious', nextQuestion: 'ai_design_tools' },
+        { value: 'no', label: 'Prefer traditional tools', nextQuestion: 'income_goal' },
       ],
     },
 
-    /* ======================
-       6️⃣ AI DESIGN TOOLS
-    ====================== */
     {
       key: 'ai_design_tools',
       text: 'Which AI design tools do you want to learn?',
       type: 'single',
       options: [
-        { value: 'midjourney', label: 'Midjourney / DALL·E (AI Art)', nextQuestion: 'career_goal' },
-        { value: 'adobe_firefly', label: 'Adobe Firefly', nextQuestion: 'career_goal' },
-        { value: 'figma_ai', label: 'Figma AI / UX AI Tools', nextQuestion: 'career_goal' },
-        { value: 'runway', label: 'Runway ML (Video & Motion)', nextQuestion: 'career_goal' },
-        { value: 'stable_diffusion', label: 'Stable Diffusion', nextQuestion: 'career_goal' },
-        { value: 'multiple_ai', label: 'Multiple AI Tools', nextQuestion: 'career_goal' },
+        { value: 'midjourney', label: 'Midjourney / DALL·E', nextQuestion: 'income_goal' },
+        { value: 'firefly', label: 'Adobe Firefly', nextQuestion: 'income_goal' },
+        { value: 'runway', label: 'Runway ML', nextQuestion: 'income_goal' },
+        { value: 'stable', label: 'Stable Diffusion', nextQuestion: 'income_goal' },
       ],
     },
 
-    /* ======================
-       7️⃣ CAREER GOAL
-    ====================== */
     {
-      key: 'career_goal',
-      text: 'What is your main career goal in design?',
+      key: 'income_goal',
+      text: 'How do you plan to earn from design?',
       type: 'single',
       options: [
-        { value: 'freelance', label: 'Freelance Designer' },
-        { value: 'job', label: 'Full-time Job in Company' },
-        { value: 'startup', label: 'Design Startup / Studio' },
-        { value: 'content', label: 'Content Creator / YouTuber' },
-        { value: 'personal', label: 'Personal & Hobby Projects' },
+        { value: 'freelance', label: 'Freelancing' },
+        { value: 'job', label: 'Full-time Job' },
+        { value: 'agency', label: 'Start Design Agency' },
+        { value: 'content', label: 'YouTube / Instagram Content' },
+        { value: 'hobby', label: 'Personal Projects Only' },
       ],
     },
 
   ],
 },
 
-
-    /*
+/*
 ┌─────────────────────────┐
 │      Business dream     │
 └─────────────────────────┘
 */
+
  {
   key: 'business',
   name: 'Business & Entrepreneurship',
@@ -3668,9 +5678,6 @@ export const dreamCategories: DreamCategory[] = [
   description: 'Business ideas from small startups to large-scale enterprises',
   questions: [
 
-    /* ======================
-       1️⃣ BUSINESS STAGE
-    ====================== */
     {
       key: 'business_stage',
       text: 'What stage of business are you interested in?',
@@ -3683,9 +5690,7 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       2️⃣ BUSINESS MODEL
-    ====================== */
+  
     {
       key: 'business_model',
       text: 'Which business model interests you?',
@@ -3700,9 +5705,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       3️⃣ STARTUP PATH
-    ====================== */
     {
       key: 'startup_type',
       text: 'What type of startup are you interested in?',
@@ -3716,9 +5718,19 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       4️⃣ TRADITIONAL BUSINESS
-    ====================== */
+    {
+      key: 'funding_plan',
+      text: 'How do you plan to fund your startup?',
+      type: 'single',
+      options: [
+        { value: 'self', label: 'Self-Funding / Bootstrapping', nextQuestion: 'risk_level' },
+        { value: 'loan', label: 'Bank Loan / MSME Scheme', nextQuestion: 'risk_level' },
+        { value: 'investor', label: 'Angel / VC Funding', nextQuestion: 'risk_level' },
+        { value: 'grant', label: 'Government Grants', nextQuestion: 'risk_level' },
+      ],
+    },
+
+
     {
       key: 'traditional_type',
       text: 'Which traditional business interests you?',
@@ -3730,10 +5742,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'food', label: 'Hotel / Restaurant / Cloud Kitchen', nextQuestion: 'investment_range' },
       ],
     },
-
-    /* ======================
-       5️⃣ ONLINE BUSINESS
-    ====================== */
+    
     {
       key: 'online_type',
       text: 'Which online business do you prefer?',
@@ -3746,9 +5755,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       6️⃣ MANUFACTURING
-    ====================== */
     {
       key: 'manufacturing_type',
       text: 'Which manufacturing scale are you targeting?',
@@ -3760,9 +5766,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       7️⃣ SERVICE BUSINESS
-    ====================== */
     {
       key: 'service_type',
       text: 'Which service business interests you?',
@@ -3775,9 +5778,6 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       8️⃣ FRANCHISE
-    ====================== */
     {
       key: 'franchise_type',
       text: 'What franchise type do you want?',
@@ -3789,24 +5789,52 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    /* ======================
-       9️⃣ INVESTMENT RANGE
-    ====================== */
+
     {
       key: 'investment_range',
       text: 'What is your investment capacity?',
       type: 'single',
       options: [
-        { value: 'low', label: 'Low (Below ₹50,000)', nextQuestion: 'growth_goal' },
-        { value: 'medium', label: 'Medium (₹50,000 – ₹5 Lakhs)', nextQuestion: 'growth_goal' },
-        { value: 'high', label: 'High (₹5 Lakhs – ₹50 Lakhs)', nextQuestion: 'growth_goal' },
-        { value: 'enterprise', label: 'Enterprise Level (₹50 Lakhs+)', nextQuestion: 'growth_goal' },
+        { value: 'low', label: 'Low (Below ₹50,000)', nextQuestion: 'risk_level' },
+        { value: 'medium', label: 'Medium (₹50,000 – ₹5 Lakhs)', nextQuestion: 'risk_level' },
+        { value: 'high', label: 'High (₹5 Lakhs – ₹50 Lakhs)', nextQuestion: 'risk_level' },
+        { value: 'enterprise', label: 'Enterprise Level (₹50 Lakhs+)', nextQuestion: 'risk_level' },
       ],
     },
 
-    /* ======================
-       🔟 GROWTH GOAL
-    ====================== */
+        {
+      key: 'risk_level',
+      text: 'How much business risk can you handle?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Low Risk Preference', nextQuestion: 'team_plan' },
+        { value: 'medium', label: 'Moderate Risk', nextQuestion: 'team_plan' },
+        { value: 'high', label: 'High Risk / High Reward', nextQuestion: 'team_plan' },
+      ],
+    },
+
+     {
+      key: 'team_plan',
+      text: 'Will you start alone or with a team?',
+      type: 'single',
+      options: [
+        { value: 'solo', label: 'Solo Founder', nextQuestion: 'timeline_goal' },
+        { value: 'team', label: 'With Co-founders / Team', nextQuestion: 'timeline_goal' },
+      ],
+    },
+
+    {
+      key: 'timeline_goal',
+      text: 'When do you want to launch?',
+      type: 'single',
+      options: [
+        { value: '1_month', label: 'Within 1 Month', nextQuestion: 'growth_goal' },
+        { value: '3_months', label: 'Within 3 Months', nextQuestion: 'growth_goal' },
+        { value: '6_months', label: 'Within 6 Months', nextQuestion: 'growth_goal' },
+        { value: '1_year', label: 'Within 1 Year', nextQuestion: 'growth_goal' },
+      ],
+    },
+
     {
       key: 'growth_goal',
       text: 'What is your long-term goal?',
@@ -3904,15 +5932,41 @@ export const dreamCategories: DreamCategory[] = [
       text: 'When do you want to see results?',
       type: 'single',
       options: [
-        { value: 'short', label: 'Within 30 days' },
-        { value: 'medium', label: '2–3 months' },
-        { value: 'long', label: '6 months or more' },
+        { value: 'short', label: 'Within 30 days', nextQuestion: 'accountability_level' },
+        { value: 'medium', label: '2–3 months', nextQuestion: 'accountability_level' },
+        { value: 'long', label: '6 months or more', nextQuestion: 'accountability_level' },
+      ],
+    },
+
+    {
+      key: 'accountability_level',
+      text: 'Do you need accountability support?',
+      type: 'single',
+      options: [
+        { value: 'mentor', label: 'Yes, need mentor guidance', nextQuestion: 'improvement_goal' },
+        { value: 'group', label: 'Group accountability', nextQuestion: 'improvement_goal' },
+        { value: 'self', label: 'Self-driven', nextQuestion: 'improvement_goal' },
+      ],
+    },
+
+    {
+      key: 'improvement_goal',
+      text: 'What transformation do you want?',
+      type: 'single',
+      options: [
+        { value: 'confidence_boost', label: 'Become confident & fearless' },
+        { value: 'career_growth', label: 'Improve career & opportunities' },
+        { value: 'mental_peace', label: 'Gain mental clarity & balance' },
+        { value: 'leadership_mastery', label: 'Master leadership presence' },
       ],
     },
 
   ],
 },
-  /*─────────────────────────┐
+
+  
+/*
+   ─────────────────────────┐
   │    Dress Selection dream │
   └─────────────────────────┘
 */
@@ -3952,17 +6006,31 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+
     {
       key: 'occasion_type',
       text: 'For which occasions do you want styling?',
       type: 'single',
       options: [
-        { value: 'casual', label: 'Casual' },
-        { value: 'professional', label: 'Professional' },
-        { value: 'traditional', label: 'Traditional' },
-        { value: 'all', label: 'All Occasions' },
+        { value: 'casual', label: 'Casual', nextQuestion: 'style_preference' },
+        { value: 'professional', label: 'Professional', nextQuestion: 'style_preference' },
+        { value: 'traditional', label: 'Traditional', nextQuestion: 'style_preference' },
+        { value: 'all', label: 'All Occasions', nextQuestion: 'style_preference' },
       ],
     },
+
+        {
+      key: 'style_preference',
+      text: 'What style do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'minimal', label: 'Minimal & Elegant' },
+        { value: 'bold', label: 'Bold & Trendy' },
+        { value: 'classic', label: 'Classic & Timeless' },
+        { value: 'modern', label: 'Modern & Experimental' },
+      ],
+    },
+
 
     /* ======================
        3️⃣ CAREER PATH
@@ -4018,11 +6086,13 @@ export const dreamCategories: DreamCategory[] = [
 
   ],
 },
+
 /*
 ┌─────────────────────────┐
 │    Safety & Security    │
 └─────────────────────────┘
 */
+
 {
   key: 'safety',
   name: 'Safety & Security',
@@ -4053,11 +6123,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which personal safety requirement do you need?',
       type: 'single',
       options: [
-        { value: 'self_defense', label: 'Self-Defense Awareness', nextQuestion: 'safety_environment' },
+        { value: 'self_defense', label: 'Self-Defense Awareness', nextQuestion: 'self_defense_level' },
         { value: 'women', label: 'Women Safety', nextQuestion: 'safety_environment' },
         { value: 'children', label: 'Child Safety', nextQuestion: 'safety_environment' },
         { value: 'elderly', label: 'Elderly Safety', nextQuestion: 'safety_environment' },
         { value: 'online', label: 'Online / Cyber Safety', nextQuestion: 'online_safety_focus' },
+      ],
+    },
+
+     {
+      key: 'self_defense_level',
+      text: 'What level of self-defense training do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'basic', label: 'Basic Awareness & Techniques', nextQuestion: 'safety_environment' },
+        { value: 'intermediate', label: 'Intermediate Practical Training', nextQuestion: 'safety_environment' },
+        { value: 'advanced', label: 'Advanced Combat Training', nextQuestion: 'safety_environment' },
       ],
     },
 
@@ -4066,12 +6147,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What type of online safety?',
       type: 'single',
       options: [
-        { value: 'fraud', label: 'Online Fraud & Scams' },
-        { value: 'privacy', label: 'Privacy Protection' },
-        { value: 'social', label: 'Social Media Safety' },
+        { value: 'fraud', label: 'Online Fraud & Scams', nextQuestion: 'cyber_protection_level' },
+        { value: 'privacy', label: 'Privacy Protection', nextQuestion: 'cyber_protection_level' },
+        { value: 'social', label: 'Social Media Safety', nextQuestion: 'cyber_protection_level' },
       ],
     },
 
+    {
+      key: 'cyber_protection_level',
+      text: 'Do you use strong security practices?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, 2FA & Secure Passwords', nextQuestion: 'safety_environment' },
+        { value: 'basic', label: 'Basic Security Only', nextQuestion: 'safety_environment' },
+        { value: 'no', label: 'No, need guidance', nextQuestion: 'safety_environment' },
+      ],
+    },
     /* ======================
        3️⃣ WORKPLACE SAFETY
     ====================== */
@@ -4086,15 +6177,25 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'healthcare', label: 'Hospital / Healthcare Safety', nextQuestion: 'workplace_role' },
       ],
     },
-
     {
       key: 'workplace_role',
       text: 'What is your role at the workplace?',
       type: 'single',
       options: [
-        { value: 'worker', label: 'Worker / Employee' },
-        { value: 'supervisor', label: 'Supervisor / Manager' },
-        { value: 'owner', label: 'Owner / Employer' },
+        { value: 'worker', label: 'Worker / Employee', nextQuestion: 'safety_training_need' },
+        { value: 'supervisor', label: 'Supervisor / Manager', nextQuestion: 'safety_training_need' },
+        { value: 'owner', label: 'Owner / Employer', nextQuestion: 'safety_training_need' },
+      ],
+    },
+
+    {
+      key: 'safety_training_need',
+      text: 'Do you need safety certification or compliance training?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, Certification Required' },
+        { value: 'awareness', label: 'Awareness Training Only' },
+        { value: 'audit', label: 'Safety Audit & Compliance Setup' },
       ],
     },
 
@@ -4199,6 +6300,7 @@ export const dreamCategories: DreamCategory[] = [
 
   ],
 },
+
  /*
 ┌─────────────────────────┐
 │ BLOOD (Donation / Medical Awareness)        │
@@ -4235,23 +6337,30 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your blood donation status?',
       type: 'single',
       options: [
-        { value: 'first_time', label: 'First-Time Donor', nextQuestion: 'blood_group_known' },
-        { value: 'regular', label: 'Regular Donor', nextQuestion: 'donation_frequency' },
+        { value: 'first_time', label: 'First-Time Donor', nextQuestion: 'blood_group' },
+        { value: 'regular', label: 'Regular Donor', nextQuestion: 'blood_group' },
         { value: 'unable', label: 'Unable to Donate Currently', nextQuestion: 'donation_restriction' },
       ],
     },
 
     {
-      key: 'blood_group_known',
-      text: 'Do you know your blood group?',
+      key: 'blood_group',
+      text: 'What is your blood group?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes', nextQuestion: 'donation_location' },
-        { value: 'no', label: 'No, want to check', nextQuestion: 'donation_location' },
+        { value: 'a_positive', label: 'A+' },
+        { value: 'a_negative', label: 'A-' },
+        { value: 'b_positive', label: 'B+' },
+        { value: 'b_negative', label: 'B-' },
+        { value: 'ab_positive', label: 'AB+' },
+        { value: 'ab_negative', label: 'AB-' },
+        { value: 'o_positive', label: 'O+' },
+        { value: 'o_negative', label: 'O-' },
+        { value: 'unknown', label: 'I don’t know' },
       ],
     },
 
-    {
+        {
       key: 'donation_frequency',
       text: 'How often do you donate blood?',
       type: 'single',
@@ -4284,6 +6393,8 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+
+
     /* ======================
        3️⃣ AWARENESS FLOW
     ====================== */
@@ -4303,13 +6414,42 @@ export const dreamCategories: DreamCategory[] = [
        4️⃣ EMERGENCY FLOW
     ====================== */
     {
-      key: 'emergency_role',
-      text: 'How do you want to help in emergencies?',
+      key: 'emergency_need_type',
+      text: 'What emergency blood support do you need?',
       type: 'single',
       options: [
-        { value: 'donor', label: 'Emergency Donor' },
-        { value: 'coordinator', label: 'Blood Coordination Support' },
-        { value: 'volunteer', label: 'Hospital / NGO Volunteer' },
+        { value: 'need_blood', label: 'Need Blood Urgently', nextQuestion: 'required_blood_group' },
+        { value: 'be_donor', label: 'Become Emergency Blood Donor', nextQuestion: 'blood_group' },
+        { value: 'coordination', label: 'Help in Blood Coordination', nextQuestion: 'support_mode' },
+      ],
+    },
+
+  
+    {
+      key: 'required_blood_group',
+      text: 'Which blood group is required?',
+      type: 'single',
+      options: [
+        { value: 'a_positive', label: 'A+' },
+        { value: 'a_negative', label: 'A-' },
+        { value: 'b_positive', label: 'B+' },
+        { value: 'b_negative', label: 'B-' },
+        { value: 'ab_positive', label: 'AB+' },
+        { value: 'ab_negative', label: 'AB-' },
+        { value: 'o_positive', label: 'O+' },
+        { value: 'o_negative', label: 'O-' },
+        { value: 'unknown', label: 'Not Sure' },
+      ],
+    },
+
+    {
+      key: 'support_mode',
+      text: 'How would you like to support during emergencies?',
+      type: 'single',
+      options: [
+        { value: 'contact_network', label: 'Connect Donors & Patients' },
+        { value: 'social_share', label: 'Share Emergency Requests' },
+        { value: 'hospital_help', label: 'Coordinate with Hospitals' },
       ],
     },
 
@@ -4379,24 +6519,75 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your nutrition goal?',
       type: 'single',
       options: [
-        { value: 'weight_loss', label: 'Weight Loss', nextQuestion: 'diet_preference' },
-        { value: 'weight_gain', label: 'Weight Gain', nextQuestion: 'diet_preference' },
-        { value: 'fitness', label: 'Fitness & Muscle Building', nextQuestion: 'diet_preference' },
-        { value: 'medical', label: 'Medical / Special Diet', nextQuestion: 'diet_preference' },
+        { value: 'weight_loss', label: 'Weight Loss', nextQuestion: 'body_weight' },
+        { value: 'weight_gain', label: 'Weight Gain', nextQuestion: 'body_weight' },
+        { value: 'fitness', label: 'Fitness & Muscle Building', nextQuestion: 'body_weight' },
+        { value: 'medical', label: 'Medical / Special Diet', nextQuestion: 'body_weight' },
       ],
     },
 
+    {
+      key: 'body_weight',
+      text: 'What is your current body weight (kg)?',
+      type: 'number',
+      validation: { min: 20, max: 250 },
+      nextQuestion: 'body_height',
+    },
+
+    {
+      key: 'body_height',
+      text: 'What is your height (cm)?',
+      type: 'number',
+      validation: { min: 100, max: 250 },
+      nextQuestion: 'activity_level',
+    },
+    {
+      key: 'activity_level',
+      text: 'What is your daily activity level?',
+      type: 'single',
+      options: [
+        { value: 'low', label: 'Sedentary (Little Exercise)', nextQuestion: 'diet_preference' },
+        { value: 'moderate', label: 'Moderate (3–5 days workout)', nextQuestion: 'diet_preference' },
+        { value: 'high', label: 'High (Daily intense training)', nextQuestion: 'diet_preference' },
+      ],
+    },
+    
     {
       key: 'diet_preference',
       text: 'What is your diet preference?',
       type: 'single',
       options: [
-        { value: 'vegetarian', label: 'Vegetarian', nextQuestion: 'meal_plan_need' },
-        { value: 'non_veg', label: 'Non-Vegetarian', nextQuestion: 'meal_plan_need' },
-        { value: 'vegan', label: 'Vegan', nextQuestion: 'meal_plan_need' },
-        { value: 'mixed', label: 'Mixed Diet', nextQuestion: 'meal_plan_need' },
+        { value: 'vegetarian', label: 'Vegetarian', nextQuestion: 'calorie_target' },
+        { value: 'non_veg', label: 'Non-Vegetarian', nextQuestion: 'calorie_target' },
+        { value: 'vegan', label: 'Vegan', nextQuestion: 'calorie_target' },
+        { value: 'mixed', label: 'Mixed Diet', nextQuestion: 'calorie_target' },
       ],
     },
+
+       {
+      key: 'calorie_target',
+      text: 'Do you want a calorie-based meal plan?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, calculate my calories', nextQuestion: 'macro_focus' },
+        { value: 'guidelines', label: 'General nutrition guidelines', nextQuestion: 'macro_focus' },
+        { value: 'no', label: 'Simple healthy eating plan', nextQuestion: 'meal_plan_need' },
+      ],
+    },
+
+    /* 🔥 NEW — MACRO TRACKING */
+    {
+      key: 'macro_focus',
+      text: 'Which nutrition focus do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'high_protein', label: 'High Protein Plan', nextQuestion: 'meal_plan_need' },
+        { value: 'balanced', label: 'Balanced Macros (Carbs + Protein + Fats)', nextQuestion: 'meal_plan_need' },
+        { value: 'low_carb', label: 'Low Carb / Keto Style', nextQuestion: 'meal_plan_need' },
+        { value: 'medical', label: 'Medical Condition-Based Diet', nextQuestion: 'meal_plan_need' },
+      ],
+    },
+
 
     {
       key: 'meal_plan_need',
@@ -4404,8 +6595,9 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'yes', label: 'Yes, daily meal plan' },
+        { value: 'weekly', label: 'Weekly meal schedule' },
         { value: 'guidelines', label: 'Only nutrition guidelines' },
-        { value: 'no', label: 'No, general awareness' },
+        { value: 'no', label: 'General awareness only' },
       ],
     },
 
@@ -4526,22 +6718,60 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: 'personal', label: 'Personal Driving', nextQuestion: 'vehicle_type' },
         { value: 'license', label: 'Driving License (LL/DL)', nextQuestion: 'license_stage' },
-        { value: 'professional', label: 'Professional Driving Career', nextQuestion: 'professional_type' },
+        { value: 'professional', label: 'Professional Driving Career', nextQuestion: 'sector_interest' },
         { value: 'skill_upgrade', label: 'Improve Driving Skills', nextQuestion: 'skill_level' },
+      ],
+    },
+
+    {
+      key: 'sector_interest',
+      text: 'Which sector are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'private', label: 'Private Sector Driving', nextQuestion: 'professional_type' },
+        { value: 'government', label: 'Government / Public Sector Driving', nextQuestion: 'government_role' },
+      ],
+    },
+
+    {
+      key: 'private_role',
+      text: 'Which private driving job interests you?',
+      type: 'single',
+      options: [
+        { value: 'cab', label: 'Taxi / Cab Driver (Ola / Uber)', nextQuestion: 'commercial_vehicle' },
+        { value: 'delivery', label: 'Delivery Driver (Amazon / Flipkart / Swiggy)', nextQuestion: 'commercial_vehicle' },
+        { value: 'truck', label: 'Truck / Lorry Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'bus_private', label: 'Private Bus Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'school_bus', label: 'School Bus Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'ambulance_private', label: 'Private Hospital Ambulance Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'corporate', label: 'Corporate / Company Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'luxury', label: 'Luxury Car / Chauffeur Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'tourist', label: 'Tourist Vehicle Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'tanker', label: 'Oil / Water Tanker Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'crane', label: 'Crane / Heavy Equipment Driver', nextQuestion: 'commercial_vehicle' },
       ],
     },
 
     /* ======================
        2️⃣ PERSONAL DRIVING
     ====================== */
-    {
+  {
       key: 'vehicle_type',
       text: 'Which vehicle do you want to drive?',
       type: 'single',
       options: [
-        { value: 'two_wheeler', label: 'Two-Wheeler (Bike/Scooter)', nextQuestion: 'transmission_type' },
-        { value: 'car', label: 'Car', nextQuestion: 'transmission_type' },
+        { value: 'bike', label: 'Motorcycle (Gear)', nextQuestion: 'transmission_type' },
+        { value: 'scooter', label: 'Scooter (Non-Gear)', nextQuestion: 'transmission_type' },
+        { value: 'electric_2w', label: 'Electric Two-Wheeler', nextQuestion: 'transmission_type' },
+
+        { value: 'hatchback', label: 'Hatchback Car', nextQuestion: 'transmission_type' },
+        { value: 'sedan', label: 'Sedan Car', nextQuestion: 'transmission_type' },
+        { value: 'suv', label: 'SUV / MUV', nextQuestion: 'transmission_type' },
+        { value: 'electric_car', label: 'Electric Car', nextQuestion: 'transmission_type' },
+
         { value: 'auto', label: 'Auto Rickshaw', nextQuestion: 'transmission_type' },
+        { value: 'tempo', label: 'Tempo / Goods Carrier', nextQuestion: 'transmission_type' },
+        { value: 'tractor', label: 'Tractor', nextQuestion: 'transmission_type' },
       ],
     },
 
@@ -4596,9 +6826,10 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which license do you want to apply for?',
       type: 'single',
       options: [
-        { value: 'two_wheeler', label: 'Two-Wheeler License' },
+        { value: 'mcwg', label: 'Motorcycle with Gear (MCWG)' },
         { value: 'lmv', label: 'LMV (Car)' },
-        { value: 'both', label: 'Both Two-Wheeler & Car' },
+        { value: 'transport', label: 'Transport / Commercial License' },
+        { value: 'hmv', label: 'Heavy Motor Vehicle (HMV)' },
       ],
     },
 
@@ -4623,28 +6854,57 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+    {
+      key: 'sector_interest',
+      text: 'Which sector are you interested in?',
+      type: 'single',
+      options: [
+        { value: 'private', label: 'Private Sector Driving', nextQuestion: 'professional_type' },
+        { value: 'government', label: 'Government / Public Sector Driving', nextQuestion: 'government_role' },
+      ],
+    },
+
     /* ======================
        4️⃣ PROFESSIONAL DRIVING
     ====================== */
     {
       key: 'professional_type',
-      text: 'What type of professional driving interests you?',
+      text: 'What private driving role interests you?',
       type: 'single',
       options: [
-        { value: 'taxi', label: 'Taxi / Cab Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'taxi', label: 'Taxi / Cab Driver (Ola/Uber)', nextQuestion: 'commercial_vehicle' },
+        { value: 'delivery', label: 'Delivery Driver (Amazon/Flipkart/Swiggy)', nextQuestion: 'commercial_vehicle' },
         { value: 'truck', label: 'Truck / Lorry Driver', nextQuestion: 'commercial_vehicle' },
-        { value: 'bus', label: 'Bus Driver', nextQuestion: 'commercial_vehicle' },
-        { value: 'delivery', label: 'Delivery / Logistics Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'bus_private', label: 'Private Bus Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'corporate', label: 'Corporate / Company Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'ambulance', label: 'Ambulance Driver', nextQuestion: 'commercial_vehicle' },
       ],
     },
 
-    {
-      key: 'commercial_vehicle',
-      text: 'Do you have experience with commercial vehicles?',
+  {
+      key: 'government_role',
+      text: 'Which government driving job interests you?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes, experienced', nextQuestion: 'commercial_license' },
-        { value: 'no', label: 'No, need training', nextQuestion: 'commercial_license' },
+        { value: 'rtc', label: 'RTC / State Transport Bus Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'police', label: 'Police Vehicle Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'army', label: 'Army / Defence Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'municipal', label: 'Municipal Corporation Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'fire', label: 'Fire Engine Driver', nextQuestion: 'commercial_vehicle' },
+        { value: 'gov_ambulance', label: 'Government Ambulance Driver (108/102)', nextQuestion: 'commercial_vehicle' },
+        { value: 'government_office', label: 'Government Office Staff Driver', nextQuestion: 'commercial_vehicle' },
+      ],
+    },
+
+
+    {
+      key: 'commercial_vehicle',
+      text: 'Which commercial vehicle type?',
+      type: 'single',
+      options: [
+        { value: 'light', label: 'Light Commercial Vehicle (LCV)', nextQuestion: 'commercial_license' },
+        { value: 'medium', label: 'Medium Commercial Vehicle (MCV)', nextQuestion: 'commercial_license' },
+        { value: 'heavy', label: 'Heavy Commercial Vehicle (HCV/HMV)', nextQuestion: 'commercial_license' },
       ],
     },
 
@@ -4671,6 +6931,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'highway', label: 'Highway Driving' },
         { value: 'night', label: 'Night Driving' },
         { value: 'defensive', label: 'Defensive & Safe Driving' },
+        { value: 'hill', label: 'Hill / Ghat Road Driving' },
+        { value: 'traffic', label: 'Heavy Traffic Handling' },
       ],
     },
 
@@ -4718,10 +6980,10 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'heart', label: 'Heart Attack / Chest Pain', nextQuestion: 'patient_condition' },
         { value: 'pregnancy', label: 'Pregnancy / Delivery Emergency', nextQuestion: 'patient_condition' },
         { value: 'breathing', label: 'Breathing Problem', nextQuestion: 'patient_condition' },
+        { value: 'stroke', label: 'Stroke / Brain Emergency', nextQuestion: 'patient_condition' },
         { value: 'other', label: 'Other Medical Emergency', nextQuestion: 'patient_condition' },
       ],
     },
-
     {
       key: 'patient_condition',
       text: 'What is the patient condition?',
@@ -4743,6 +7005,16 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+    {
+      key: 'driver_sector',
+      text: 'Which sector do you want to work in?',
+      type: 'single',
+      options: [
+        { value: 'private', label: 'Private Hospital / Private Ambulance', nextQuestion: 'driver_experience' },
+        { value: 'government', label: 'Government Ambulance (108 / 102 Services)', nextQuestion: 'driver_experience' },
+      ],
+    },
+
     /* ======================
        3️⃣ AMBULANCE DRIVER PATH
     ====================== */
@@ -4756,17 +7028,15 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'none', label: 'No Experience', nextQuestion: 'driver_training' },
       ],
     },
-
     {
       key: 'driver_training',
-      text: 'Do you want ambulance driver training?',
+      text: 'Do you want ambulance driver emergency response training?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes, training needed' },
-        { value: 'no', label: 'No, just guidance' },
+        { value: 'yes', label: 'Yes, emergency driving + CPR training needed', nextQuestion: 'commercial_license' },
+        { value: 'no', label: 'No, only licensing guidance', nextQuestion: 'commercial_license' },
       ],
     },
-
     {
       key: 'commercial_license',
       text: 'Do you have a commercial driving license?',
@@ -4789,6 +7059,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'paramedic', label: 'Paramedic', nextQuestion: 'education_level' },
         { value: 'nurse', label: 'Emergency Nurse', nextQuestion: 'education_level' },
         { value: 'first_aid', label: 'First Aid Responder', nextQuestion: 'education_level' },
+        { value: 'dispatcher', label: 'Emergency Call Center Dispatcher', nextQuestion: 'education_level' },
       ],
     },
 
@@ -4799,6 +7070,7 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: '10th', label: '10th Pass' },
         { value: '12th', label: '12th Pass (Biology preferred)' },
+        { value: 'diploma', label: 'Diploma in Paramedical / EMT' },
         { value: 'graduate', label: 'Graduate / Medical Field' },
       ],
     },
@@ -4813,6 +7085,7 @@ export const dreamCategories: DreamCategory[] = [
       options: [
         { value: 'single', label: 'Single Ambulance', nextQuestion: 'ambulance_type' },
         { value: 'fleet', label: 'Fleet / Hospital Tie-up', nextQuestion: 'ambulance_type' },
+        { value: 'public_private', label: 'Government Contract / PPP Model', nextQuestion: 'ambulance_type' },
       ],
     },
 
@@ -4824,6 +7097,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'basic', label: 'Basic Life Support (BLS)', nextQuestion: 'business_support' },
         { value: 'advanced', label: 'Advanced Life Support (ALS)', nextQuestion: 'business_support' },
         { value: 'icu', label: 'ICU Ambulance', nextQuestion: 'business_support' },
+        { value: 'neonatal', label: 'Neonatal / Baby Ambulance', nextQuestion: 'business_support' },
       ],
     },
 
@@ -4836,6 +7110,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'equipment', label: 'Medical Equipment Setup' },
         { value: 'staff', label: 'Staff Hiring & Training' },
         { value: 'funding', label: 'Funding & Investment' },
+        { value: 'gov_contract', label: 'Government Tender Guidance' },
       ],
     },
 
@@ -4848,6 +7123,8 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'first_aid', label: 'First Aid & CPR' },
+        { value: 'bls', label: 'Basic Life Support (BLS)' },
+        { value: 'als', label: 'Advanced Life Support (ALS)' },
         { value: 'disaster', label: 'Disaster Management' },
         { value: 'road_safety', label: 'Road Accident Response' },
       ],
@@ -4855,6 +7132,7 @@ export const dreamCategories: DreamCategory[] = [
 
   ],
 },
+
 /*
 ┌─────────────────────────┐
 │     fire_services       │
@@ -5021,7 +7299,7 @@ export const dreamCategories: DreamCategory[] = [
 
 /*
 ┌─────────────────────────┐
-│   Internship Dreams     │
+│   leadership Dreams     │
 └─────────────────────────┘
 */
 
@@ -5036,7 +7314,7 @@ export const dreamCategories: DreamCategory[] = [
     /* ======================
        1️⃣ LEADERSHIP CONTEXT
     ====================== */
-    {
+  {
       key: 'leadership_domain',
       text: 'In which area do you want to take a leadership role?',
       type: 'single',
@@ -5047,6 +7325,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'government', label: 'Government / Politics', nextQuestion: 'government_role' },
         { value: 'ngo', label: 'NGO / Social Leadership', nextQuestion: 'ngo_role' },
         { value: 'community', label: 'Community / Local Leadership', nextQuestion: 'community_role' },
+        { value: 'military', label: 'Defence / Military Leadership', nextQuestion: 'military_role' },
       ],
     },
 
@@ -5063,6 +7342,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'cfo', label: 'CFO – Finance & Risk Management', nextQuestion: 'leadership_focus' },
         { value: 'manager', label: 'Manager – Team & Performance Management', nextQuestion: 'leadership_focus' },
         { value: 'team_lead', label: 'Team Lead – Task Execution & Mentoring', nextQuestion: 'leadership_focus' },
+        { value: 'hr_head', label: 'HR Head – People & Culture Leadership', nextQuestion: 'leadership_focus' },
       ],
     },
 
@@ -5078,6 +7358,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'cofounder', label: 'Co-Founder – Operations & Scaling', nextQuestion: 'leadership_focus' },
         { value: 'product_head', label: 'Product Head – Product Strategy', nextQuestion: 'leadership_focus' },
         { value: 'growth_lead', label: 'Growth Lead – Marketing & Expansion', nextQuestion: 'leadership_focus' },
+        { value: 'operations_head', label: 'Operations Head – Process & Systems', nextQuestion: 'leadership_focus' },
       ],
     },
 
@@ -5093,8 +7374,10 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'teacher_lead', label: 'Senior Teacher – Mentoring Faculty', nextQuestion: 'leadership_focus' },
         { value: 'student_leader', label: 'Student Leader – Representation & Events', nextQuestion: 'leadership_focus' },
         { value: 'trainer', label: 'Trainer – Skill & Knowledge Development', nextQuestion: 'leadership_focus' },
+        { value: 'education_admin', label: 'Education Administrator – Policy & Planning', nextQuestion: 'leadership_focus' },
       ],
     },
+
 
     /* ======================
        5️⃣ GOVERNMENT / POLITICAL LEADERSHIP
@@ -5105,9 +7388,10 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'politician', label: 'Politician – Policy Making & Public Service', nextQuestion: 'leadership_focus' },
-        { value: 'bureaucrat', label: 'Bureaucrat – Policy Implementation', nextQuestion: 'leadership_focus' },
+        { value: 'bureaucrat', label: 'Bureaucrat – Policy Implementation (IAS/IPS)', nextQuestion: 'leadership_focus' },
         { value: 'administrator', label: 'Administrator – Governance & Planning', nextQuestion: 'leadership_focus' },
         { value: 'public_leader', label: 'Public Leader – Community Representation', nextQuestion: 'leadership_focus' },
+        { value: 'policy_advisor', label: 'Policy Advisor – Research & Strategy', nextQuestion: 'leadership_focus' },
       ],
     },
 
@@ -5123,6 +7407,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'project_head', label: 'Project Head – Program Execution', nextQuestion: 'leadership_focus' },
         { value: 'fundraising_lead', label: 'Fundraising Lead – Donor Relations', nextQuestion: 'leadership_focus' },
         { value: 'volunteer_lead', label: 'Volunteer Lead – Team Coordination', nextQuestion: 'leadership_focus' },
+        { value: 'impact_manager', label: 'Impact Manager – Social Outcome Measurement', nextQuestion: 'leadership_focus' },
       ],
     },
 
@@ -5137,6 +7422,19 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'local_head', label: 'Local Head – Issue Resolution', nextQuestion: 'leadership_focus' },
         { value: 'youth_leader', label: 'Youth Leader – Awareness & Motivation', nextQuestion: 'leadership_focus' },
         { value: 'event_coordinator', label: 'Event Coordinator – Planning & Execution', nextQuestion: 'leadership_focus' },
+        { value: 'resident_welfare', label: 'Resident Welfare Association Leader', nextQuestion: 'leadership_focus' },
+      ],
+    },
+
+        {
+      key: 'military_role',
+      text: 'Which defence leadership role interests you?',
+      type: 'single',
+      options: [
+        { value: 'army_officer', label: 'Army Officer', nextQuestion: 'leadership_focus' },
+        { value: 'navy_officer', label: 'Navy Officer', nextQuestion: 'leadership_focus' },
+        { value: 'airforce_officer', label: 'Air Force Officer', nextQuestion: 'leadership_focus' },
+        { value: 'paramilitary', label: 'Paramilitary Command Role', nextQuestion: 'leadership_focus' },
       ],
     },
 
@@ -5148,11 +7446,23 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which leadership responsibility do you want to strengthen?',
       type: 'single',
       options: [
-        { value: 'decision', label: 'Decision Making & Problem Solving' },
-        { value: 'communication', label: 'Communication & Influence' },
-        { value: 'team', label: 'Team Building & Motivation' },
-        { value: 'strategy', label: 'Vision, Strategy & Planning' },
-        { value: 'ethics', label: 'Ethics & Accountability' },
+        { value: 'decision', label: 'Decision Making & Problem Solving', nextQuestion: 'leadership_level' },
+        { value: 'communication', label: 'Communication & Influence', nextQuestion: 'leadership_level' },
+        { value: 'team', label: 'Team Building & Motivation', nextQuestion: 'leadership_level' },
+        { value: 'strategy', label: 'Vision, Strategy & Planning', nextQuestion: 'leadership_level' },
+        { value: 'ethics', label: 'Ethics & Accountability', nextQuestion: 'leadership_level' },
+        { value: 'crisis', label: 'Crisis Management', nextQuestion: 'leadership_level' },
+      ],
+    },
+
+    {
+      key: 'leadership_level',
+      text: 'What is your current leadership level?',
+      type: 'single',
+      options: [
+        { value: 'aspiring', label: 'Aspiring Leader' },
+        { value: 'mid_level', label: 'Mid-Level Leader' },
+        { value: 'senior', label: 'Senior Leader / Executive' },
       ],
     },
 
@@ -5205,6 +7515,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'digital', label: 'Digital Drawing / Tablet Art', nextQuestion: 'skill_level' },
         { value: 'painting', label: 'Painting (Watercolor/Acrylic/Oil)', nextQuestion: 'skill_level' },
         { value: 'calligraphy', label: 'Calligraphy / Lettering', nextQuestion: 'skill_level' },
+        { value: 'concept_art', label: 'Concept Art / Game Art', nextQuestion: 'skill_level' },
+        { value: 'tattoo', label: 'Tattoo Design', nextQuestion: 'skill_level' },
       ],
     },
 
@@ -5230,11 +7542,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What do you want to improve most?',
       type: 'single',
       options: [
-        { value: 'basics', label: 'Shapes, Lines & Shading', nextQuestion: 'tools_used' },
-        { value: 'anatomy', label: 'Human Anatomy & Proportions', nextQuestion: 'tools_used' },
-        { value: 'perspective', label: 'Perspective & Depth', nextQuestion: 'tools_used' },
-        { value: 'color', label: 'Color Theory & Blending', nextQuestion: 'tools_used' },
-        { value: 'speed', label: 'Speed & Accuracy', nextQuestion: 'tools_used' },
+        { value: 'basics', label: 'Shapes, Lines & Shading', nextQuestion: 'practice_time' },
+        { value: 'anatomy', label: 'Human Anatomy & Proportions', nextQuestion: 'practice_time' },
+        { value: 'perspective', label: 'Perspective & Depth', nextQuestion: 'practice_time' },
+        { value: 'color', label: 'Color Theory & Blending', nextQuestion: 'practice_time' },
+        { value: 'speed', label: 'Speed & Accuracy', nextQuestion: 'practice_time' },
+        { value: 'composition', label: 'Composition & Storytelling', nextQuestion: 'practice_time' },
+      ],
+    },
+
+    {
+      key: 'practice_time',
+      text: 'How much time can you practice daily?',
+      type: 'single',
+      options: [
+        { value: '15', label: '15–30 Minutes', nextQuestion: 'tools_used' },
+        { value: '30', label: '30–60 Minutes', nextQuestion: 'tools_used' },
+        { value: '60', label: '1–2 Hours', nextQuestion: 'tools_used' },
+        { value: '120', label: 'More than 2 Hours', nextQuestion: 'tools_used' },
       ],
     },
 
@@ -5246,11 +7571,34 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which tools do you prefer for drawing?',
       type: 'single',
       options: [
-        { value: 'pencil', label: 'Pencil & Paper', nextQuestion: 'career_path' },
-        { value: 'charcoal', label: 'Charcoal / Pastels', nextQuestion: 'career_path' },
-        { value: 'paint', label: 'Paints & Brushes', nextQuestion: 'career_path' },
-        { value: 'tablet', label: 'Tablet & Stylus', nextQuestion: 'career_path' },
-        { value: 'mixed', label: 'Mixed Medium', nextQuestion: 'career_path' },
+        { value: 'pencil', label: 'Pencil & Paper', nextQuestion: 'learning_mode' },
+        { value: 'charcoal', label: 'Charcoal / Pastels', nextQuestion: 'learning_mode' },
+        { value: 'paint', label: 'Paints & Brushes', nextQuestion: 'learning_mode' },
+        { value: 'tablet', label: 'Tablet & Stylus', nextQuestion: 'learning_mode' },
+        { value: 'mixed', label: 'Mixed Medium', nextQuestion: 'learning_mode' },
+      ],
+    },
+
+    {
+      key: 'learning_mode',
+      text: 'How do you want to learn drawing?',
+      type: 'single',
+      options: [
+        { value: 'self', label: 'Self Practice (YouTube / Books)', nextQuestion: 'portfolio_status' },
+        { value: 'online_course', label: 'Online Course', nextQuestion: 'portfolio_status' },
+        { value: 'offline_class', label: 'Offline Art Classes', nextQuestion: 'portfolio_status' },
+        { value: 'mentor', label: 'Personal Mentor / Art Coach', nextQuestion: 'portfolio_status' },
+      ],
+    },
+
+    {
+      key: 'portfolio_status',
+      text: 'Do you have an art portfolio?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, strong portfolio', nextQuestion: 'career_path' },
+        { value: 'basic', label: 'Basic portfolio', nextQuestion: 'career_path' },
+        { value: 'no', label: 'No, need to build one', nextQuestion: 'career_path' },
       ],
     },
 
@@ -5267,6 +7615,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'teaching', label: 'Teaching / Art Trainer' },
         { value: 'content', label: 'Content Creation (YouTube / Instagram)' },
         { value: 'business', label: 'Art Business (Commissions / Store)' },
+        { value: 'exhibition', label: 'Art Exhibitions / Galleries' },
         { value: 'personal', label: 'Personal Growth & Expression' },
       ],
     },
@@ -5320,6 +7669,7 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+    
     /* ======================
        3️⃣ GENRE SELECTION
     ====================== */
@@ -5336,8 +7686,11 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'drama', label: 'Drama / Slice of Life', nextQuestion: 'language' },
         { value: 'historical', label: 'Historical Fiction', nextQuestion: 'language' },
         { value: 'inspirational', label: 'Inspirational / Motivational', nextQuestion: 'language' },
+        { value: 'crime', label: 'Crime / Detective', nextQuestion: 'language' },
+        { value: 'adventure', label: 'Adventure', nextQuestion: 'language' },
       ],
     },
+
 
     /* ======================
        4️⃣ LANGUAGE & STYLE
@@ -5376,11 +7729,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What do you want to improve most?',
       type: 'single',
       options: [
-        { value: 'plot', label: 'Story Plot & Structure', nextQuestion: 'writing_habit' },
-        { value: 'characters', label: 'Character Development', nextQuestion: 'writing_habit' },
-        { value: 'dialogue', label: 'Dialogue Writing', nextQuestion: 'writing_habit' },
-        { value: 'world', label: 'World-Building', nextQuestion: 'writing_habit' },
-        { value: 'editing', label: 'Editing & Polishing', nextQuestion: 'writing_habit' },
+        { value: 'plot', label: 'Story Plot & Structure', nextQuestion: 'writing_style' },
+        { value: 'characters', label: 'Character Development', nextQuestion: 'writing_style' },
+        { value: 'dialogue', label: 'Dialogue Writing', nextQuestion: 'writing_style' },
+        { value: 'world', label: 'World-Building', nextQuestion: 'writing_style' },
+        { value: 'editing', label: 'Editing & Polishing', nextQuestion: 'writing_style' },
+        { value: 'pacing', label: 'Story Pacing & Suspense', nextQuestion: 'writing_style' },
+      ],
+    },
+
+    {
+      key: 'writing_style',
+      text: 'Which writing style describes you best?',
+      type: 'single',
+      options: [
+        { value: 'descriptive', label: 'Descriptive & Detailed', nextQuestion: 'writing_habit' },
+        { value: 'minimal', label: 'Simple & Direct', nextQuestion: 'writing_habit' },
+        { value: 'emotional', label: 'Emotion-Driven', nextQuestion: 'writing_habit' },
+        { value: 'fast_paced', label: 'Fast-Paced & Plot-Driven', nextQuestion: 'writing_habit' },
       ],
     },
 
@@ -5392,9 +7758,21 @@ export const dreamCategories: DreamCategory[] = [
       text: 'How often can you write?',
       type: 'single',
       options: [
-        { value: 'daily', label: 'Daily', nextQuestion: 'publishing_goal' },
-        { value: 'weekly', label: 'Weekly', nextQuestion: 'publishing_goal' },
-        { value: 'flexible', label: 'Flexible Schedule', nextQuestion: 'publishing_goal' },
+        { value: 'daily', label: 'Daily', nextQuestion: 'word_target' },
+        { value: 'weekly', label: 'Weekly', nextQuestion: 'word_target' },
+        { value: 'flexible', label: 'Flexible Schedule', nextQuestion: 'word_target' },
+      ],
+    },
+
+    {
+      key: 'word_target',
+      text: 'Do you set a word-count goal?',
+      type: 'single',
+      options: [
+        { value: '500', label: '500 words per session', nextQuestion: 'publishing_goal' },
+        { value: '1000', label: '1000 words per session', nextQuestion: 'publishing_goal' },
+        { value: '2000', label: '2000+ words per session', nextQuestion: 'publishing_goal' },
+        { value: 'no_target', label: 'No fixed target', nextQuestion: 'publishing_goal' },
       ],
     },
 
@@ -5410,10 +7788,10 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'traditional', label: 'Traditional Publisher' },
         { value: 'online', label: 'Online Platforms (Wattpad, Medium)' },
         { value: 'film', label: 'Adaptation for Film / Series' },
+        { value: 'contest', label: 'Writing Competitions & Awards' },
         { value: 'personal', label: 'Personal Satisfaction Only' },
       ],
     },
-
   ],
 },
 
@@ -5462,6 +7840,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'legal', label: 'Legal / Policy Research', nextQuestion: 'research_type' },
         { value: 'design', label: 'UX / Design Research', nextQuestion: 'research_type' },
         { value: 'environment', label: 'Environmental Research', nextQuestion: 'research_type' },
+        { value: 'defence', label: 'Defence / Strategic Research', nextQuestion: 'research_type' },
+        { value: 'economics', label: 'Economics & Public Policy', nextQuestion: 'research_type' },
       ],
     },
 
@@ -5478,6 +7858,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'mixed', label: 'Mixed Methods', nextQuestion: 'research_method' },
         { value: 'theoretical', label: 'Theoretical / Literature-Based', nextQuestion: 'research_method' },
         { value: 'experimental', label: 'Experimental / Lab Research', nextQuestion: 'research_method' },
+        { value: 'comparative', label: 'Comparative Research', nextQuestion: 'research_method' },
       ],
     },
 
@@ -5489,11 +7870,23 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which research method will you use?',
       type: 'single',
       options: [
-        { value: 'survey', label: 'Surveys & Questionnaires', nextQuestion: 'data_source' },
-        { value: 'interview', label: 'Interviews / Focus Groups', nextQuestion: 'data_source' },
-        { value: 'case_study', label: 'Case Studies', nextQuestion: 'data_source' },
-        { value: 'experiment', label: 'Experiments / Simulations', nextQuestion: 'data_source' },
-        { value: 'secondary', label: 'Secondary Data Analysis', nextQuestion: 'data_source' },
+        { value: 'survey', label: 'Surveys & Questionnaires', nextQuestion: 'sample_size' },
+        { value: 'interview', label: 'Interviews / Focus Groups', nextQuestion: 'sample_size' },
+        { value: 'case_study', label: 'Case Studies', nextQuestion: 'sample_size' },
+        { value: 'experiment', label: 'Experiments / Simulations', nextQuestion: 'sample_size' },
+        { value: 'secondary', label: 'Secondary Data Analysis', nextQuestion: 'sample_size' },
+      ],
+    },
+
+    {
+      key: 'sample_size',
+      text: 'What is your expected sample size?',
+      type: 'single',
+      options: [
+        { value: 'small', label: 'Small (Below 50)', nextQuestion: 'data_source' },
+        { value: 'medium', label: 'Medium (50–500)', nextQuestion: 'data_source' },
+        { value: 'large', label: 'Large (500+)', nextQuestion: 'data_source' },
+        { value: 'not_applicable', label: 'Not Applicable (Theoretical)', nextQuestion: 'data_source' },
       ],
     },
 
@@ -5519,10 +7912,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which tools do you plan to use?',
       type: 'single',
       options: [
-        { value: 'manual', label: 'Manual / Traditional Methods', nextQuestion: 'skill_level' },
-        { value: 'software', label: 'Statistical / Research Software', nextQuestion: 'skill_level' },
-        { value: 'ai_tools', label: 'AI Tools (ChatGPT, SPSS, Python)', nextQuestion: 'skill_level' },
-        { value: 'lab', label: 'Laboratory Equipment', nextQuestion: 'skill_level' },
+        { value: 'manual', label: 'Manual / Traditional Methods', nextQuestion: 'analysis_approach' },
+        { value: 'software', label: 'Statistical Software (SPSS, R, Excel)', nextQuestion: 'analysis_approach' },
+        { value: 'ai_tools', label: 'AI Tools (ChatGPT, Python, ML)', nextQuestion: 'analysis_approach' },
+        { value: 'lab', label: 'Laboratory Equipment', nextQuestion: 'analysis_approach' },
+      ],
+    },
+
+    {
+      key: 'analysis_approach',
+      text: 'How will you analyze your data?',
+      type: 'single',
+      options: [
+        { value: 'statistical', label: 'Statistical Analysis', nextQuestion: 'skill_level' },
+        { value: 'thematic', label: 'Thematic / Content Analysis', nextQuestion: 'skill_level' },
+        { value: 'predictive', label: 'Predictive / AI Modeling', nextQuestion: 'skill_level' },
+        { value: 'descriptive', label: 'Descriptive Analysis', nextQuestion: 'skill_level' },
       ],
     },
 
@@ -5534,9 +7939,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your current research skill level?',
       type: 'single',
       options: [
-        { value: 'beginner', label: 'Beginner (Need full guidance)', nextQuestion: 'output_goal' },
-        { value: 'intermediate', label: 'Intermediate (Some experience)', nextQuestion: 'output_goal' },
-        { value: 'advanced', label: 'Advanced / Researcher', nextQuestion: 'output_goal' },
+        { value: 'beginner', label: 'Beginner (Need full guidance)', nextQuestion: 'publication_target' },
+        { value: 'intermediate', label: 'Intermediate (Some experience)', nextQuestion: 'publication_target' },
+        { value: 'advanced', label: 'Advanced / Researcher', nextQuestion: 'publication_target' },
+      ],
+    },
+
+    {
+      key: 'publication_target',
+      text: 'Do you plan to publish your research?',
+      type: 'single',
+      options: [
+        { value: 'journal', label: 'International Journal', nextQuestion: 'output_goal' },
+        { value: 'conference', label: 'Conference Presentation', nextQuestion: 'output_goal' },
+        { value: 'patent', label: 'Patent / Intellectual Property', nextQuestion: 'output_goal' },
+        { value: 'internal', label: 'Internal / Academic Submission', nextQuestion: 'output_goal' },
+        { value: 'no', label: 'No Publication Plan', nextQuestion: 'output_goal' },
       ],
     },
 
@@ -5646,9 +8064,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'How do you prefer to make strategic decisions?',
       type: 'single',
       options: [
-        { value: 'data', label: 'Data & Analysis Based', nextQuestion: 'resources' },
-        { value: 'intuition', label: 'Experience & Intuition', nextQuestion: 'resources' },
-        { value: 'hybrid', label: 'Combination of Both', nextQuestion: 'resources' },
+        { value: 'data', label: 'Data & Analysis Based', nextQuestion: 'competitive_position' },
+        { value: 'intuition', label: 'Experience & Intuition', nextQuestion: 'competitive_position' },
+        { value: 'hybrid', label: 'Combination of Both', nextQuestion: 'competitive_position' },
+      ],
+    },
+
+    /* ====================== 6️⃣ COMPETITIVE POSITION ====================== */
+    {
+      key: 'competitive_position',
+      text: 'What is your current competitive position?',
+      type: 'single',
+      options: [
+        { value: 'leader', label: 'Market Leader / Strong Position', nextQuestion: 'resources' },
+        { value: 'challenger', label: 'Challenger / Growing Competitor', nextQuestion: 'resources' },
+        { value: 'newcomer', label: 'New Entrant / Beginner', nextQuestion: 'resources' },
+        { value: 'underdog', label: 'Underdog / Resource Limited', nextQuestion: 'resources' },
       ],
     },
 
@@ -5688,10 +8119,22 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What should your strategy focus on most?',
       type: 'single',
       options: [
-        { value: 'speed', label: 'Speed & Quick Wins', nextQuestion: 'success_metric' },
-        { value: 'quality', label: 'Quality & Sustainability', nextQuestion: 'success_metric' },
-        { value: 'scale', label: 'Scaling & Expansion', nextQuestion: 'success_metric' },
-        { value: 'control', label: 'Control & Risk Management', nextQuestion: 'success_metric' },
+        { value: 'speed', label: 'Speed & Quick Wins', nextQuestion: 'adaptability' },
+        { value: 'quality', label: 'Quality & Sustainability', nextQuestion: 'adaptability' },
+        { value: 'scale', label: 'Scaling & Expansion', nextQuestion: 'adaptability' },
+        { value: 'control', label: 'Control & Risk Management', nextQuestion: 'adaptability' },
+      ],
+    },
+
+    /* ====================== 🔟 ADAPTABILITY ====================== */
+    {
+      key: 'adaptability',
+      text: 'How adaptable should your strategy be?',
+      type: 'single',
+      options: [
+        { value: 'fixed', label: 'Fixed Plan – Strict Execution', nextQuestion: 'success_metric' },
+        { value: 'flexible', label: 'Flexible – Adjust with Situations', nextQuestion: 'success_metric' },
+        { value: 'dynamic', label: 'Highly Dynamic – Rapid Iteration', nextQuestion: 'success_metric' },
       ],
     },
 
@@ -5708,6 +8151,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'impact', label: 'Impact & Influence' },
         { value: 'stability', label: 'Stability & Security' },
         { value: 'mastery', label: 'Skill & Mastery' },
+        { value: 'legacy', label: 'Long-Term Legacy & Recognition' },
       ],
     },
 
@@ -5716,132 +8160,10 @@ export const dreamCategories: DreamCategory[] = [
 
 /*
 ┌─────────────────────────┐
-│       Target Dream      │
+│  entrance_exams Dream   │
 └─────────────────────────┘
 */
 
-{
-  key: 'target',
-  name: 'Target & Goal Setting',
-  icon: 'Target',
-  description: 'Setting clear targets and achieving measurable goals',
-  questions: [
-
-    /* ======================
-       1️⃣ TARGET PURPOSE
-    ====================== */
-    {
-      key: 'target_purpose',
-      text: 'Why are you setting this target?',
-      type: 'single',
-      options: [
-        { value: 'personal', label: 'Personal Life Goal', nextQuestion: 'target_area' },
-        { value: 'career', label: 'Career / Job Goal', nextQuestion: 'target_area' },
-        { value: 'business', label: 'Business / Startup Goal', nextQuestion: 'target_area' },
-        { value: 'education', label: 'Education / Learning Goal', nextQuestion: 'target_area' },
-        { value: 'health', label: 'Health / Fitness Goal', nextQuestion: 'target_area' },
-      ],
-    },
-
-    /* ======================
-       2️⃣ TARGET AREA
-    ====================== */
-    {
-      key: 'target_area',
-      text: 'Which area does your target belong to?',
-      type: 'single',
-      options: [
-        { value: 'finance', label: 'Money / Income', nextQuestion: 'target_type' },
-        { value: 'skill', label: 'Skill Development', nextQuestion: 'target_type' },
-        { value: 'position', label: 'Position / Rank', nextQuestion: 'target_type' },
-        { value: 'performance', label: 'Performance / Results', nextQuestion: 'target_type' },
-        { value: 'impact', label: 'Impact / Influence', nextQuestion: 'target_type' },
-      ],
-    },
-
-    /* ======================
-       3️⃣ TARGET TYPE
-    ====================== */
-    {
-      key: 'target_type',
-      text: 'What kind of target is this?',
-      type: 'single',
-      options: [
-        { value: 'short_term', label: 'Short-Term Target', nextQuestion: 'time_frame' },
-        { value: 'mid_term', label: 'Mid-Term Target', nextQuestion: 'time_frame' },
-        { value: 'long_term', label: 'Long-Term Target', nextQuestion: 'time_frame' },
-      ],
-    },
-
-    /* ======================
-       4️⃣ TIME FRAME
-    ====================== */
-    {
-      key: 'time_frame',
-      text: 'What is the time frame for this target?',
-      type: 'single',
-      options: [
-        { value: 'days', label: 'Days', nextQuestion: 'measurement_type' },
-        { value: 'weeks', label: 'Weeks', nextQuestion: 'measurement_type' },
-        { value: 'months', label: 'Months', nextQuestion: 'measurement_type' },
-        { value: 'years', label: 'Years', nextQuestion: 'measurement_type' },
-      ],
-    },
-
-    /* ======================
-       5️⃣ MEASUREMENT TYPE
-    ====================== */
-    {
-      key: 'measurement_type',
-      text: 'How will this target be measured?',
-      type: 'single',
-      options: [
-        { value: 'numeric', label: 'Numbers (marks, money, count)', nextQuestion: 'target_value' },
-        { value: 'milestone', label: 'Milestones / Steps', nextQuestion: 'target_value' },
-        { value: 'habit', label: 'Habit / Consistency', nextQuestion: 'target_value' },
-      ],
-    },
-
-    /* ======================
-       6️⃣ TARGET VALUE
-    ====================== */
-    {
-      key: 'target_value',
-      text: 'Enter your target value or description',
-      type: 'text',
-      nextQuestion: 'difficulty_level',
-    },
-
-    /* ======================
-       7️⃣ DIFFICULTY LEVEL
-    ====================== */
-    {
-      key: 'difficulty_level',
-      text: 'How difficult is this target for you?',
-      type: 'single',
-      options: [
-        { value: 'easy', label: 'Easy & Comfortable', nextQuestion: 'commitment_level' },
-        { value: 'medium', label: 'Challenging but Achievable', nextQuestion: 'commitment_level' },
-        { value: 'hard', label: 'Very Challenging', nextQuestion: 'commitment_level' },
-      ],
-    },
-
-    /* ======================
-       8️⃣ COMMITMENT LEVEL
-    ====================== */
-    {
-      key: 'commitment_level',
-      text: 'How committed are you to achieving this target?',
-      type: 'single',
-      options: [
-        { value: 'low', label: 'Low Commitment' },
-        { value: 'medium', label: 'Moderate Commitment' },
-        { value: 'high', label: 'Full Commitment (No Excuses)' },
-      ],
-    },
-
-  ],
-},
 
 
 {
@@ -5854,47 +8176,56 @@ export const dreamCategories: DreamCategory[] = [
     /* ======================
        1️⃣ CURRENT EDUCATION
     ====================== */
-    {
-      key: 'current_level',
-      text: 'What is your current education level?',
-      type: 'single',
-      options: [
-        { value: 'below_10', label: 'Below 10th Class', nextQuestion: 'school_exams' },
-        { value: '10th', label: '10th Passed', nextQuestion: 'after_10th' },
-        { value: 'inter', label: 'Intermediate / 12th', nextQuestion: 'after_inter' },
-        { value: 'polytechnic', label: 'Polytechnic / Diploma', nextQuestion: 'after_polytechnic' },
-        { value: 'degree', label: 'Degree / UG', nextQuestion: 'after_degree' },
-        { value: 'pg', label: 'Post Graduation', nextQuestion: 'after_pg' },
-      ],
-    },
+{
+  key: 'current_level',
+  text: 'What is your current education level?',
+  type: 'single',
+  options: [
+    { value: 'below_10', label: 'Below 10th Class', nextQuestion: 'school_exams' },
+    { value: '10th', label: '10th Passed', nextQuestion: 'after_10th' },
+    { value: 'inter', label: 'Intermediate / 12th', nextQuestion: 'after_inter' },
+    { value: 'polytechnic', label: 'Polytechnic / Diploma', nextQuestion: 'after_polytechnic' },
+    { value: 'iti', label: 'ITI / Skill Training', nextQuestion: 'after_10th' },
+    { value: 'degree', label: 'Degree / UG', nextQuestion: 'after_degree' },
+    { value: 'pg', label: 'Post Graduation', nextQuestion: 'after_pg' },
+    { value: 'phd', label: 'PhD / Research Scholar', nextQuestion: 'after_pg' },
+    { value: 'working', label: 'Working Professional', nextQuestion: 'after_degree' },
+    { value: 'dropout', label: 'Gap Year / Dropped Out', nextQuestion: 'after_10th' },
+    { value: 'open_school', label: 'Open Schooling (NIOS / State Open)', nextQuestion: 'after_10th' },
+    { value: 'abroad_student', label: 'Planning Study Abroad', nextQuestion: 'after_degree' },
+  ],
+},
 
     /* ======================
        2️⃣ SCHOOL LEVEL
     ====================== */
     {
       key: 'school_exams',
-      text: 'Which school-level exam path are you interested in?',
+      text: 'Which school-level exam are you preparing for?',
       type: 'single',
       options: [
-        { value: 'foundation', label: 'Foundation / Olympiads', nextQuestion: 'exam_goal' },
-        { value: 'navodaya', label: 'Navodaya Vidyalaya', nextQuestion: 'exam_goal' },
-        { value: 'sainik', label: 'Sainik School', nextQuestion: 'exam_goal' },
-        { value: 'scholarship', label: 'Scholarship Exams', nextQuestion: 'exam_goal' },
+        { value: 'navodaya', label: 'JNVST (Navodaya)' },
+        { value: 'sainik', label: 'AISSEE (Sainik School)' },
+        { value: 'rms', label: 'RMS Entrance Exam' },
+        { value: 'olympiad', label: 'Science / Maths Olympiads (IMO, NSO, NTSE)' },
+        { value: 'nmms', label: 'NMMS Scholarship' },
       ],
     },
-
     /* ======================
        3️⃣ AFTER 10TH
     ====================== */
     {
       key: 'after_10th',
-      text: 'What do you want to pursue after 10th?',
+      text: 'What entrance exam after 10th?',
       type: 'single',
       options: [
-        { value: 'intermediate', label: 'Intermediate (MPC / BiPC / Arts)', nextQuestion: 'after_inter' },
-        { value: 'poly_cet', label: 'POLYCET (Polytechnic)', nextQuestion: 'after_polytechnic' },
-        { value: 'iti', label: 'ITI / Skill Courses', nextQuestion: 'exam_goal' },
-        { value: 'paramedical', label: 'Paramedical Courses', nextQuestion: 'exam_goal' },
+        { value: 'poly_cet', label: 'POLYCET' },
+        { value: 'iti', label: 'ITI Admission Tests' },
+        { value: 'paramedical', label: 'Paramedical Entrance' },
+        { value: 'nda_early', label: 'NDA (after 12th planning)' },
+        { value: 'intermediate', label: 'Intermediate (MPC / BiPC / Arts)' },
+        { value: 'railway_group_d', label: 'Railway Group D'},
+        { value: 'ssc_mts', label: 'SSC MTS' },
       ],
     },
 
@@ -5916,6 +8247,24 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
+    {
+      key: 'after_inter',
+      text: 'Which entrance exam after Intermediate?',
+      type: 'single',
+      options: [
+        { value: 'jee', label: 'JEE Main / Advanced', nextQuestion: 'exam_goal' },
+        { value: 'neet', label: 'NEET UG', nextQuestion: 'exam_goal' },
+        { value: 'state_cet', label: 'All State CETs (EAMCET / KCET / MHT-CET)', nextQuestion: 'exam_goal' },
+        { value: 'cuet', label: 'CUET UG', nextQuestion: 'exam_goal' },
+        { value: 'clat', label: 'CLAT / AILET (Law)', nextQuestion: 'exam_goal' },
+        { value: 'nift', label: 'NIFT / NID / UCEED (Design)', nextQuestion: 'exam_goal' },
+        { value: 'nda', label: 'NDA / Defence', nextQuestion: 'exam_goal' },
+        { value: 'hotel', label: 'NCHMCT (Hotel Management)', nextQuestion: 'exam_goal' },
+        { value: 'agriculture', label: 'ICAR AIEEA', nextQuestion: 'exam_goal' },
+        { value: 'ca_foundation', label: 'CA Foundation', nextQuestion: 'exam_goal' },
+      ],
+    },
+
     /* ======================
        5️⃣ AFTER POLYTECHNIC
     ====================== */
@@ -5924,10 +8273,11 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What is your plan after Polytechnic / Diploma?',
       type: 'single',
       options: [
-        { value: 'ecet', label: 'ECET (Lateral Entry BTech)', nextQuestion: 'exam_goal' },
-        { value: 'leee', label: 'Other Lateral Entry Exams', nextQuestion: 'exam_goal' },
-        { value: 'govt_jobs', label: 'Government Jobs (Diploma)', nextQuestion: 'exam_goal' },
-        { value: 'private_jobs', label: 'Private Jobs / Industry', nextQuestion: 'exam_goal' },
+        { value: 'ecet', label: 'ECET / Lateral Entry BTech', nextQuestion: 'exam_goal' },
+        { value: 'gate_diploma', label: 'GATE (Some Streams)', nextQuestion: 'exam_goal' },
+        { value: 'rrb_je', label: 'RRB JE', nextQuestion: 'exam_goal' },
+        { value: 'ssc_je', label: 'SSC JE', nextQuestion: 'exam_goal' },
+        { value: 'psu', label: 'PSU Diploma Recruitment', nextQuestion: 'exam_goal' },
       ],
     },
 
@@ -5940,13 +8290,19 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'gate', label: 'GATE (MTech / PSU)', nextQuestion: 'exam_goal' },
-        { value: 'upsc', label: 'UPSC (IAS / IPS)', nextQuestion: 'exam_goal' },
-        { value: 'cat', label: 'CAT / XAT (MBA)', nextQuestion: 'exam_goal' },
-        { value: 'ssc', label: 'SSC / Banking Exams', nextQuestion: 'exam_goal' },
+        { value: 'upsc', label: 'UPSC CSE (IAS / IPS / IFS)', nextQuestion: 'exam_goal' },
+        { value: 'state_psc', label: 'State PSC (Group 1/2/3)', nextQuestion: 'exam_goal' },
+        { value: 'cat', label: 'CAT / XAT / SNAP / NMAT (MBA)', nextQuestion: 'exam_goal' },
+        { value: 'banking', label: 'IBPS / SBI PO / RBI Grade B', nextQuestion: 'exam_goal' },
+        { value: 'ssc_cgl', label: 'SSC CGL', nextQuestion: 'exam_goal' },
+        { value: 'railways', label: 'RRB NTPC / ALP', nextQuestion: 'exam_goal' },
+        { value: 'defence_grad', label: 'CDS / AFCAT / CAPF', nextQuestion: 'exam_goal' },
+        { value: 'judiciary', label: 'Judiciary / APO Exams', nextQuestion: 'exam_goal' },
         { value: 'gre', label: 'GRE / GMAT (Abroad)', nextQuestion: 'exam_goal' },
-        { value: 'defence_grad', label: 'Defence (CDS / AFCAT)', nextQuestion: 'exam_goal' },
+        { value: 'ies', label: 'Engineering Services (ESE)', nextQuestion: 'exam_goal' },
       ],
     },
+
 
     /* ======================
        7️⃣ AFTER POST GRADUATION
@@ -5956,26 +8312,78 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What do you want after Post Graduation?',
       type: 'single',
       options: [
-        { value: 'phd', label: 'PhD / Research Entrance', nextQuestion: 'exam_goal' },
+        { value: 'phd', label: 'PhD Entrance (University Level)', nextQuestion: 'exam_goal' },
         { value: 'ugc_net', label: 'UGC NET / JRF', nextQuestion: 'exam_goal' },
-        { value: 'faculty', label: 'Teaching / Professor', nextQuestion: 'exam_goal' },
-        { value: 'industry', label: 'Industry / Corporate Roles', nextQuestion: 'exam_goal' },
+        { value: 'csir_net', label: 'CSIR NET', nextQuestion: 'exam_goal' },
+        { value: 'set', label: 'State Eligibility Test (SET)', nextQuestion: 'exam_goal' },
+        { value: 'drdo_isro', label: 'DRDO / ISRO / BARC Exams', nextQuestion: 'exam_goal' },
+        { value: 'research_fellowship', label: 'ICMR / DBT / Research Fellowships', nextQuestion: 'exam_goal' },
+      ],
+    },
+    {
+      key: 'research_exams',
+      text: 'Which research fellowship exam are you targeting?',
+      type: 'single',
+      options: [
+        { value: 'jrf', label: 'UGC NET JRF', nextQuestion: 'exam_goal' },
+        { value: 'csir_jrf', label: 'CSIR JRF', nextQuestion: 'exam_goal' },
+        { value: 'icmr', label: 'ICMR Research Fellowship', nextQuestion: 'exam_goal' },
+        { value: 'dbt', label: 'DBT Fellowship', nextQuestion: 'exam_goal' },
+        { value: 'drdo', label: 'DRDO Scientist Entry', nextQuestion: 'exam_goal' },
+        { value: 'isro', label: 'ISRO Scientist / Research Entry', nextQuestion: 'exam_goal' },
       ],
     },
 
-    /* ======================
-       8️⃣ FINAL GOAL
-    ====================== */
+    /* ====================== 8️⃣ GOVERNMENT JOBS ====================== */
     {
-      key: 'exam_goal',
-      text: 'What is your main goal?',
+      key: 'job_exams',
+      text: 'Which government job exam interests you?',
       type: 'single',
       options: [
-        { value: 'higher_study', label: 'Higher Education' },
-        { value: 'govt_job', label: 'Government Job' },
-        { value: 'private_job', label: 'Private Job' },
-        { value: 'research', label: 'Research / Academia' },
-        { value: 'abroad', label: 'Study Abroad' },
+        { value: 'upsc', label: 'UPSC Civil Services (IAS/IPS/IFS)', nextQuestion: 'exam_goal' },
+        { value: 'ssc', label: 'SSC (CGL / CHSL / MTS)', nextQuestion: 'exam_goal' },
+        { value: 'banking', label: 'IBPS / SBI PO / Clerk', nextQuestion: 'exam_goal' },
+        { value: 'railways', label: 'RRB (NTPC / Group D / ALP)', nextQuestion: 'exam_goal' },
+        { value: 'defence', label: 'Army / Navy / Air Force', nextQuestion: 'exam_goal' },
+        { value: 'state_psc', label: 'State PSC (Group 1/2/3)', nextQuestion: 'exam_goal' },
+        { value: 'teaching', label: 'TET / DSC / KVS / NVS', nextQuestion: 'exam_goal' },
+        { value: 'police', label: 'Police / SI / Constable Exams', nextQuestion: 'exam_goal' },
+        { value: 'paramilitary', label: 'CRPF / BSF / CISF', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ====================== 9️⃣ STUDY ABROAD ====================== */
+    {
+      key: 'abroad_exams',
+      text: 'Which exam are you preparing for study abroad?',
+      type: 'single',
+      options: [
+        { value: 'ielts', label: 'IELTS', nextQuestion: 'exam_goal' },
+        { value: 'toefl', label: 'TOEFL', nextQuestion: 'exam_goal' },
+        { value: 'pte', label: 'PTE Academic', nextQuestion: 'exam_goal' },
+        { value: 'gre', label: 'GRE', nextQuestion: 'exam_goal' },
+        { value: 'gmat', label: 'GMAT', nextQuestion: 'exam_goal' },
+        { value: 'sat', label: 'SAT (UG Abroad)', nextQuestion: 'exam_goal' },
+        { value: 'usmle', label: 'USMLE (Medical Abroad)', nextQuestion: 'exam_goal' },
+        { value: 'plab', label: 'PLAB (UK Medical)', nextQuestion: 'exam_goal' },
+      ],
+    },
+
+    /* ====================== 🔟 EXAM GOAL (MODIFIED) ====================== */
+    {
+      key: 'exam_goal',
+      text: 'What is your main goal with this exam?',
+      type: 'single',
+      options: [
+        { value: 'college_admission', label: 'Get Admission in Top College / University' },
+        { value: 'government_job', label: 'Secure Government Job' },
+        { value: 'research_career', label: 'Build Research / Academic Career' },
+        { value: 'psu_job', label: 'Join PSU / Public Sector Company' },
+        { value: 'study_abroad', label: 'Study Abroad Opportunity' },
+        { value: 'promotion', label: 'Career Promotion / Internal Growth' },
+        { value: 'scholarship', label: 'Scholarship / Fellowship Funding' },
+        { value: 'backup_plan', label: 'Backup Career Option' },
+        { value: 'skill_upgrade', label: 'Skill Upgrade & Competitive Edge' },
       ],
     },
 
@@ -6008,6 +8416,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'business', label: 'Business / Startup', nextQuestion: 'planning_area' },
         { value: 'education', label: 'Education / Study', nextQuestion: 'planning_area' },
         { value: 'project', label: 'Project / Task', nextQuestion: 'planning_area' },
+        { value: 'financial', label: 'Financial Planning', nextQuestion: 'planning_area' }, // ✅ NEW
+        { value: 'health', label: 'Health & Fitness Planning', nextQuestion: 'planning_area' }, // ✅ NEW
       ],
     },
 
@@ -6024,6 +8434,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'resources', label: 'Resources & Budget', nextQuestion: 'time_horizon' },
         { value: 'execution', label: 'Execution Strategy', nextQuestion: 'time_horizon' },
         { value: 'growth', label: 'Growth & Improvement', nextQuestion: 'time_horizon' },
+        { value: 'productivity', label: 'Productivity System', nextQuestion: 'time_horizon' }, // ✅ NEW
+        { value: 'risk_management', label: 'Risk & Contingency Planning', nextQuestion: 'time_horizon' }, // ✅ NEW
       ],
     },
 
@@ -6038,7 +8450,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'daily', label: 'Daily Plan', nextQuestion: 'planning_depth' },
         { value: 'weekly', label: 'Weekly Plan', nextQuestion: 'planning_depth' },
         { value: 'monthly', label: 'Monthly Plan', nextQuestion: 'planning_depth' },
+        { value: 'quarterly', label: 'Quarterly Plan', nextQuestion: 'planning_depth' }, // ✅ NEW
         { value: 'yearly', label: 'Yearly Plan', nextQuestion: 'planning_depth' },
+        { value: 'long_term', label: '3–5 Year Vision Plan', nextQuestion: 'planning_depth' }, // ✅ NEW
       ],
     },
 
@@ -6053,6 +8467,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'basic', label: 'Basic Outline', nextQuestion: 'flexibility_level' },
         { value: 'detailed', label: 'Detailed Step-by-Step', nextQuestion: 'flexibility_level' },
         { value: 'advanced', label: 'Advanced with Tracking', nextQuestion: 'flexibility_level' },
+        { value: 'kpi_based', label: 'KPI / Metrics Based Planning', nextQuestion: 'flexibility_level' }, // ✅ NEW
       ],
     },
 
@@ -6082,8 +8497,11 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'discipline', label: 'Lack of Discipline', nextQuestion: 'support_needed' },
         { value: 'resources', label: 'Limited Resources', nextQuestion: 'support_needed' },
         { value: 'motivation', label: 'Low Motivation', nextQuestion: 'support_needed' },
+        { value: 'unexpected', label: 'Unexpected Events / Emergencies', nextQuestion: 'support_needed' }, // ✅ NEW
+        { value: 'skills', label: 'Skill Gaps', nextQuestion: 'support_needed' }, // ✅ NEW
       ],
     },
+
 
     /* ======================
        7️⃣ SUPPORT NEEDED
@@ -6093,145 +8511,47 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What kind of support would help you?',
       type: 'single',
       options: [
-        { value: 'schedule', label: 'Daily Schedule / Planner' },
-        { value: 'roadmap', label: 'Clear Roadmap' },
-        { value: 'tracking', label: 'Progress Tracking System' },
-        { value: 'mentor', label: 'Mentor / Guidance' },
+        { value: 'schedule', label: 'Daily Schedule / Planner', nextQuestion: 'tracking_method' },
+        { value: 'roadmap', label: 'Clear Roadmap', nextQuestion: 'tracking_method' },
+        { value: 'tracking', label: 'Progress Tracking System', nextQuestion: 'tracking_method' },
+        { value: 'mentor', label: 'Mentor / Guidance', nextQuestion: 'tracking_method' },
+        { value: 'accountability', label: 'Accountability Partner', nextQuestion: 'tracking_method' }, // ✅ NEW
       ],
     },
-
-    
-
-  ],
-  
-},
-
-{
-  key: 'energy_saving',
-  name: 'Energy & Power Saving',
-  icon: 'Zap',
-  description: 'Energy efficiency, power saving techniques, and cost reduction',
-  questions: [
-
-    /* ======================
-       1️⃣ PURPOSE
-    ====================== */
-    {
-      key: 'energy_purpose',
-      text: 'Why do you want to focus on energy saving?',
+      {
+      key: 'tracking_method',
+      text: 'How would you like to track your progress?',
       type: 'single',
       options: [
-        { value: 'cost', label: 'Reduce Electricity Bills', nextQuestion: 'usage_area' },
-        { value: 'environment', label: 'Environmental Protection', nextQuestion: 'usage_area' },
-        { value: 'industry', label: 'Industrial Power Optimization', nextQuestion: 'usage_area' },
-        { value: 'business', label: 'Energy Consulting / Business', nextQuestion: 'usage_area' },
+        { value: 'manual', label: 'Notebook / Manual Tracking', nextQuestion: 'review_cycle' },
+        { value: 'app', label: 'Mobile App / Digital Tool', nextQuestion: 'review_cycle' },
+        { value: 'spreadsheet', label: 'Excel / Google Sheets', nextQuestion: 'review_cycle' },
+        { value: 'ai', label: 'AI-Based Smart Tracking', nextQuestion: 'review_cycle' }, // ✅ NEW
       ],
     },
 
     /* ======================
-       2️⃣ USAGE AREA
+       9️⃣ REVIEW CYCLE (NEW)
     ====================== */
     {
-      key: 'usage_area',
-      text: 'Where do you want to apply energy saving?',
+      key: 'review_cycle',
+      text: 'How often will you review and adjust your plan?',
       type: 'single',
       options: [
-        { value: 'home', label: 'Home / Residential', nextQuestion: 'power_source' },
-        { value: 'office', label: 'Office / Corporate', nextQuestion: 'power_source' },
-        { value: 'industry', label: 'Factory / Industry', nextQuestion: 'power_source' },
-        { value: 'commercial', label: 'Commercial Buildings', nextQuestion: 'power_source' },
+        { value: 'daily', label: 'Daily Review' },
+        { value: 'weekly', label: 'Weekly Review' },
+        { value: 'monthly', label: 'Monthly Review' },
+        { value: 'milestone', label: 'After Each Milestone' },
       ],
     },
-
-    /* ======================
-       3️⃣ POWER SOURCE
-    ====================== */
-    {
-      key: 'power_source',
-      text: 'What is the primary power source?',
-      type: 'single',
-      options: [
-        { value: 'grid', label: 'Electric Grid', nextQuestion: 'energy_problem' },
-        { value: 'solar', label: 'Solar Power', nextQuestion: 'energy_problem' },
-        { value: 'diesel', label: 'Generator / Diesel', nextQuestion: 'energy_problem' },
-        { value: 'hybrid', label: 'Hybrid (Grid + Solar)', nextQuestion: 'energy_problem' },
-      ],
-    },
-
-    /* ======================
-       4️⃣ CURRENT PROBLEM
-    ====================== */
-    {
-      key: 'energy_problem',
-      text: 'What is the biggest power-related issue?',
-      type: 'single',
-      options: [
-        { value: 'high_bill', label: 'High Electricity Bills', nextQuestion: 'saving_focus' },
-        { value: 'wastage', label: 'Energy Wastage', nextQuestion: 'saving_focus' },
-        { value: 'inefficiency', label: 'Low Efficiency Equipment', nextQuestion: 'saving_focus' },
-        { value: 'power_loss', label: 'Power Loss / Downtime', nextQuestion: 'saving_focus' },
-      ],
-    },
-
-    /* ======================
-       5️⃣ SAVING FOCUS
-    ====================== */
-    {
-      key: 'saving_focus',
-      text: 'Which area should be optimized?',
-      type: 'single',
-      options: [
-        { value: 'lighting', label: 'Lighting Systems', nextQuestion: 'automation_level' },
-        { value: 'machinery', label: 'Machinery & Motors', nextQuestion: 'automation_level' },
-        { value: 'hvac', label: 'HVAC / Cooling Systems', nextQuestion: 'automation_level' },
-        { value: 'behavior', label: 'Human Usage Behavior', nextQuestion: 'automation_level' },
-      ],
-    },
-
-    /* ======================
-       6️⃣ AUTOMATION
-    ====================== */
-    {
-      key: 'automation_level',
-      text: 'Do you want automation in power saving?',
-      type: 'single',
-      options: [
-        { value: 'none', label: 'Manual Control', nextQuestion: 'investment_level' },
-        { value: 'partial', label: 'Partial Automation (Sensors)', nextQuestion: 'investment_level' },
-        { value: 'full', label: 'Full Smart Automation (IoT)', nextQuestion: 'investment_level' },
-      ],
-    },
-
-    /* ======================
-       7️⃣ INVESTMENT
-    ====================== */
-    {
-      key: 'investment_level',
-      text: 'What is your investment capacity?',
-      type: 'single',
-      options: [
-        { value: 'low', label: 'Low / No Investment', nextQuestion: 'time_frame' },
-        { value: 'medium', label: 'Medium Investment', nextQuestion: 'time_frame' },
-        { value: 'high', label: 'High (Industrial Scale)', nextQuestion: 'time_frame' },
-      ],
-    },
-
-    /* ======================
-       8️⃣ RESULTS EXPECTATION
-    ====================== */
-    {
-      key: 'time_frame',
-      text: 'When do you want results?',
-      type: 'single',
-      options: [
-        { value: 'immediate', label: 'Immediate Savings' },
-        { value: 'short', label: 'Within 3–6 Months' },
-        { value: 'long', label: 'Long-Term Savings' },
-      ],
-    },
-
   ],
 },
+
+/*
+┌─────────────────────────┐
+│  usable_tips Dream      │
+└─────────────────────────┘
+*/
 
 {
   key: 'usable_tips',
@@ -6251,6 +8571,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'energy', label: 'Energy & Power Saving', nextQuestion: 'life_area' },
         { value: 'mental', label: 'Mental Peace & Focus', nextQuestion: 'life_area' },
         { value: 'technology', label: 'Smart Use of Technology', nextQuestion: 'life_area' },
+        { value: 'productivity', label: 'Productivity & Efficiency', nextQuestion: 'life_area' }, // ✅ NEW
+        { value: 'relationships', label: 'Relationships & Social Life', nextQuestion: 'life_area' }, // ✅ NEW
       ],
     },
 
@@ -6264,6 +8586,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'college', label: 'College / School', nextQuestion: 'daily_habits' },
         { value: 'travel', label: 'Travel / Outdoor', nextQuestion: 'daily_habits' },
         { value: 'digital', label: 'Digital Life', nextQuestion: 'daily_habits' },
+        { value: 'family', label: 'Family Environment', nextQuestion: 'daily_habits' },
       ],
     },
 
@@ -6277,6 +8600,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'focus', label: 'Focus & Concentration', nextQuestion: 'smart_skills' },
         { value: 'discipline', label: 'Self-Discipline', nextQuestion: 'smart_skills' },
         { value: 'screen', label: 'Screen Time Control', nextQuestion: 'smart_skills' },
+        { value: 'consistency', label: 'Consistency & Habit Tracking', nextQuestion: 'smart_skills' }, // ✅ NEW
+        { value: 'reading', label: 'Daily Reading Habit', nextQuestion: 'smart_skills' },
       ],
     },
 
@@ -6290,6 +8615,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'minimal', label: 'Minimal Living', nextQuestion: 'health_lifestyle' },
         { value: 'automation', label: 'Automating Daily Tasks', nextQuestion: 'health_lifestyle' },
         { value: 'problem', label: 'Problem Solving in Daily Life', nextQuestion: 'health_lifestyle' },
+        { value: 'negotiation', label: 'Negotiation Skills', nextQuestion: 'health_lifestyle' }, // ✅ NEW
+        { value: 'communication', label: 'Better Communication', nextQuestion: 'health_lifestyle' },
       ],
     },
 
@@ -6302,6 +8629,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'exercise', label: 'Basic Exercise & Movement', nextQuestion: 'safety_awareness' },
         { value: 'posture', label: 'Posture & Body Care', nextQuestion: 'safety_awareness' },
         { value: 'stress', label: 'Stress Reduction', nextQuestion: 'safety_awareness' },
+        { value: 'hydration', label: 'Proper Water Intake', nextQuestion: 'safety_awareness' }, // ✅ NEW
+        { value: 'mental_health', label: 'Mental Health Care', nextQuestion: 'safety_awareness' }, // ✅ NEW
       ],
     },
 
@@ -6314,8 +8643,10 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'digital_safety', label: 'Digital & Online Safety', nextQuestion: 'financial_awareness' },
         { value: 'travel_safety', label: 'Travel Safety', nextQuestion: 'financial_awareness' },
         { value: 'emergency', label: 'Emergency Preparedness', nextQuestion: 'financial_awareness' },
+        { value: 'cyber_fraud', label: 'Online Fraud Prevention', nextQuestion: 'financial_awareness' }, // ✅ NEW
       ],
     },
+
 
     {
       key: 'financial_awareness',
@@ -6326,6 +8657,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'spending', label: 'Smart Spending', nextQuestion: 'personal_growth' },
         { value: 'planning', label: 'Monthly Planning', nextQuestion: 'personal_growth' },
         { value: 'avoid_debt', label: 'Avoiding Unnecessary Debt', nextQuestion: 'personal_growth' },
+        { value: 'investment', label: 'Basic Investment Knowledge', nextQuestion: 'personal_growth' }, // ✅ NEW
+        { value: 'emergency_fund', label: 'Emergency Fund Planning', nextQuestion: 'personal_growth' }, // ✅ NEW
       ],
     },
 
@@ -6334,10 +8667,23 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Which personal growth area do you want to improve?',
       type: 'single',
       options: [
-        { value: 'confidence', label: 'Self-Confidence', nextQuestion: 'final_outcome' },
-        { value: 'communication', label: 'Daily Communication Skills', nextQuestion: 'final_outcome' },
-        { value: 'learning', label: 'Continuous Learning Habit', nextQuestion: 'final_outcome' },
-        { value: 'mindset', label: 'Positive Mindset', nextQuestion: 'final_outcome' },
+        { value: 'confidence', label: 'Self-Confidence', nextQuestion: 'daily_productivity_style' },
+        { value: 'communication', label: 'Daily Communication Skills', nextQuestion: 'daily_productivity_style' },
+        { value: 'learning', label: 'Continuous Learning Habit', nextQuestion: 'daily_productivity_style' },
+        { value: 'mindset', label: 'Positive Mindset', nextQuestion: 'daily_productivity_style' },
+        { value: 'emotional', label: 'Emotional Intelligence', nextQuestion: 'daily_productivity_style' }, // ✅ NEW
+      ],
+    },
+
+    {
+      key: 'daily_productivity_style',
+      text: 'What productivity style suits you best?',
+      type: 'single',
+      options: [
+        { value: 'structured', label: 'Highly Structured Routine', nextQuestion: 'final_outcome' },
+        { value: 'flexible', label: 'Flexible & Adaptive Style', nextQuestion: 'final_outcome' },
+        { value: 'goal_oriented', label: 'Goal-Oriented Focused Work', nextQuestion: 'final_outcome' },
+        { value: 'minimalist', label: 'Simple & Minimal Lifestyle', nextQuestion: 'final_outcome' },
       ],
     },
 
@@ -6349,11 +8695,18 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'better_life', label: 'Better Daily Life' },
         { value: 'smart_living', label: 'Smart & Efficient Living' },
         { value: 'healthy_balance', label: 'Healthy Work-Life Balance' },
+        { value: 'financial_stability', label: 'Financial Stability' }, // ✅ NEW
         { value: 'all', label: 'All of the Above' },
       ],
     },
   ],
 },
+
+/*
+┌─────────────────────────┐
+│  corporate_contacts     │
+└─────────────────────────┘
+*/
 
 
 {
@@ -6372,6 +8725,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'partnership', label: 'Partnerships / Collaborations', nextQuestion: 'industry_focus' },
         { value: 'investment', label: 'Investors / Funding', nextQuestion: 'industry_focus' },
         { value: 'knowledge', label: 'Learning & Mentorship', nextQuestion: 'industry_focus' },
+        { value: 'vendor', label: 'Vendor / Supplier Network', nextQuestion: 'industry_focus' }, 
       ],
     },
 
@@ -6388,6 +8742,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'construction', label: 'Construction / Infrastructure', nextQuestion: 'contact_level' },
         { value: 'logistics', label: 'Logistics / Supply Chain', nextQuestion: 'contact_level' },
         { value: 'startup', label: 'Startups / Entrepreneurs', nextQuestion: 'contact_level' },
+        { value: 'energy', label: 'Energy / Power Sector', nextQuestion: 'contact_level' }, // ✅ NEW
+        { value: 'media', label: 'Media / Entertainment', nextQuestion: 'contact_level' },
       ],
     },
 
@@ -6401,6 +8757,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'senior', label: 'Senior Management', nextQuestion: 'contact_roles' },
         { value: 'cxos', label: 'CXOs (CEO, CTO, CFO, etc.)', nextQuestion: 'contact_roles' },
         { value: 'founders', label: 'Founders / Co-founders', nextQuestion: 'contact_roles' },
+        { value: 'board', label: 'Board Members / Advisors', nextQuestion: 'contact_roles' },
       ],
     },
 
@@ -6415,6 +8772,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'procurement', label: 'Procurement / Vendors', nextQuestion: 'contact_channel' },
         { value: 'legal', label: 'Legal / Compliance', nextQuestion: 'contact_channel' },
         { value: 'marketing', label: 'Marketing / Branding', nextQuestion: 'contact_channel' },
+        { value: 'operations', label: 'Operations / Supply Chain Head', nextQuestion: 'contact_channel' }, // ✅ NEW
+        { value: 'finance_head', label: 'Finance Head / CFO Office', nextQuestion: 'contact_channel' },
       ],
     },
 
@@ -6428,6 +8787,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'events', label: 'Conferences / Networking Events', nextQuestion: 'communication_skill' },
         { value: 'referrals', label: 'Referrals', nextQuestion: 'communication_skill' },
         { value: 'cold_calls', label: 'Cold Calls / Outreach', nextQuestion: 'communication_skill' },
+        { value: 'industry_groups', label: 'Industry Associations / Groups', nextQuestion: 'communication_skill' }, 
       ],
     },
 
@@ -6440,6 +8800,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'negotiation', label: 'Negotiation Skills', nextQuestion: 'tools_usage' },
         { value: 'followup', label: 'Follow-ups & Relationship Building', nextQuestion: 'tools_usage' },
         { value: 'presentation', label: 'Presentation & Public Speaking', nextQuestion: 'tools_usage' },
+        { value: 'corporate_etiquette', label: 'Corporate Etiquette & Professional Behavior', nextQuestion: 'tools_usage' }, 
+
       ],
     },
 
@@ -6451,6 +8813,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'crm', label: 'CRM Tools (Zoho, HubSpot, etc.)', nextQuestion: 'ethics_compliance' },
         { value: 'spreadsheets', label: 'Excel / Google Sheets', nextQuestion: 'ethics_compliance' },
         { value: 'manual', label: 'Manual Tracking', nextQuestion: 'ethics_compliance' },
+        { value: 'automation', label: 'Automated Contact & Follow-up System', nextQuestion: 'ethics_compliance' }, 
       ],
     },
 
@@ -6473,11 +8836,19 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'career_growth', label: 'Career Growth' },
         { value: 'business_expansion', label: 'Business Expansion' },
         { value: 'long_term_network', label: 'Strong Long-Term Network' },
+        { value: 'brand_visibility', label: 'Personal Brand Visibility' }, 
         { value: 'multiple', label: 'All of the Above' },
       ],
     },
   ],
 },
+
+/*
+┌─────────────────────────┐
+│  manpower_handling      │
+└─────────────────────────┘
+*/
+
 
 {
   key: 'manpower_handling',
@@ -6494,6 +8865,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'cost_reduction', label: 'Reduce Manpower Cost', nextQuestion: 'workplace_type' },
         { value: 'optimization', label: 'Optimize Workforce Utilization', nextQuestion: 'workplace_type' },
         { value: 'scaling', label: 'Manage Growth & Scaling Teams', nextQuestion: 'workplace_type' },
+        { value: 'digital_transformation', label: 'Digital Workforce Transformation', nextQuestion: 'workplace_type' },
+
       ],
     },
 
@@ -6507,19 +8880,35 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'construction', label: 'Construction / Site Work', nextQuestion: 'manpower_size' },
         { value: 'hospital', label: 'Hospital / Healthcare', nextQuestion: 'manpower_size' },
         { value: 'service', label: 'Service Industry / Operations', nextQuestion: 'manpower_size' },
+        { value: 'retail', label: 'Retail / Store Operations', nextQuestion: 'manpower_size' }, // ✅ NEW
+        { value: 'warehouse', label: 'Warehouse / Logistics Hub', nextQuestion: 'manpower_size' },
+
       ],
     },
 
-    {
+ {
       key: 'manpower_size',
       text: 'How large is the workforce you are handling?',
       type: 'single',
       options: [
-        { value: 'small', label: '1 – 20 Employees', nextQuestion: 'skill_level' },
-        { value: 'medium', label: '21 – 100 Employees', nextQuestion: 'skill_level' },
-        { value: 'large', label: '100+ Employees', nextQuestion: 'skill_level' },
+        { value: 'small', label: '1 – 20 Employees', nextQuestion: 'employment_structure' },
+        { value: 'medium', label: '21 – 100 Employees', nextQuestion: 'employment_structure' },
+        { value: 'large', label: '100+ Employees', nextQuestion: 'employment_structure' },
       ],
     },
+
+    // ✅ NEW SECTION
+    {
+      key: 'employment_structure',
+      text: 'What type of employment structure do you follow?',
+      type: 'single',
+      options: [
+        { value: 'permanent', label: 'Permanent Employees', nextQuestion: 'skill_level' },
+        { value: 'contract', label: 'Contract / Temporary Workers', nextQuestion: 'skill_level' },
+        { value: 'mixed', label: 'Mixed Workforce', nextQuestion: 'skill_level' },
+      ],
+    },
+
 
     {
       key: 'skill_level',
@@ -6544,6 +8933,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'attrition', label: 'High Employee Turnover', nextQuestion: 'work_allocation' },
         { value: 'discipline', label: 'Discipline & Behavior Issues', nextQuestion: 'work_allocation' },
         { value: 'skill_gap', label: 'Skill Gaps & Training Needs', nextQuestion: 'work_allocation' },
+        { value: 'overstaffing', label: 'Overstaffing / Idle Time', nextQuestion: 'work_allocation' }, // ✅ NEW
+        { value: 'understaffing', label: 'Understaffing / Work Overload', nextQuestion: 'work_allocation' },
       ],
     },
 
@@ -6559,15 +8950,27 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    {
+   {
       key: 'shift_management',
       text: 'Do you use shift-based manpower management?',
       type: 'single',
       options: [
-        { value: 'single', label: 'Single Shift', nextQuestion: 'cost_saving_methods' },
-        { value: 'double', label: 'Double Shift', nextQuestion: 'cost_saving_methods' },
-        { value: 'triple', label: 'Three Shifts / 24x7', nextQuestion: 'cost_saving_methods' },
-        { value: 'flexible', label: 'Flexible / Rotational Shifts', nextQuestion: 'cost_saving_methods' },
+        { value: 'single', label: 'Single Shift', nextQuestion: 'overtime_management' },
+        { value: 'double', label: 'Double Shift', nextQuestion: 'overtime_management' },
+        { value: 'triple', label: 'Three Shifts / 24x7', nextQuestion: 'overtime_management' },
+        { value: 'flexible', label: 'Flexible / Rotational Shifts', nextQuestion: 'overtime_management' },
+      ],
+    },
+
+    // ✅ NEW SECTION
+    {
+      key: 'overtime_management',
+      text: 'How do you handle overtime?',
+      type: 'single',
+      options: [
+        { value: 'planned', label: 'Planned & Controlled Overtime', nextQuestion: 'cost_saving_methods' },
+        { value: 'frequent', label: 'Frequent Overtime Required', nextQuestion: 'cost_saving_methods' },
+        { value: 'none', label: 'No Overtime System', nextQuestion: 'cost_saving_methods' },
       ],
     },
 
@@ -6595,15 +8998,27 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
 
-    {
+       {
       key: 'monitoring_tools',
       text: 'How do you want to monitor manpower performance?',
       type: 'single',
       options: [
-        { value: 'attendance', label: 'Attendance & Time Tracking', nextQuestion: 'compliance' },
-        { value: 'kpi', label: 'KPIs & Productivity Metrics', nextQuestion: 'compliance' },
-        { value: 'supervisor', label: 'Supervisor Reports', nextQuestion: 'compliance' },
-        { value: 'software', label: 'HR / ERP Software', nextQuestion: 'compliance' },
+        { value: 'attendance', label: 'Attendance & Time Tracking', nextQuestion: 'analytics' },
+        { value: 'kpi', label: 'KPIs & Productivity Metrics', nextQuestion: 'analytics' },
+        { value: 'supervisor', label: 'Supervisor Reports', nextQuestion: 'analytics' },
+        { value: 'software', label: 'HR / ERP Software', nextQuestion: 'analytics' },
+      ],
+    },
+
+    // ✅ NEW SECTION
+    {
+      key: 'analytics',
+      text: 'Do you use workforce analytics for decision making?',
+      type: 'single',
+      options: [
+        { value: 'advanced', label: 'Advanced Data Analytics', nextQuestion: 'compliance' },
+        { value: 'basic', label: 'Basic Reports Only', nextQuestion: 'compliance' },
+        { value: 'none', label: 'No Analytics Used', nextQuestion: 'compliance' },
       ],
     },
 
@@ -6627,10 +9042,17 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'higher_output', label: 'Higher Output & Efficiency' },
         { value: 'stability', label: 'Stable & Disciplined Workforce' },
         { value: 'growth', label: 'Scalable Workforce for Growth' },
+        { value: 'data_driven', label: 'Data-Driven Workforce Decisions' },
       ],
     },
   ],
 },
+
+/*
+┌─────────────────────────┐
+│      story_novel        │
+└─────────────────────────┘
+*/
 
 
 {
@@ -6649,6 +9071,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'career', label: 'Career as Writer', nextQuestion: 'writing_format' },
         { value: 'publish', label: 'Publish a Book', nextQuestion: 'writing_format' },
         { value: 'expression', label: 'Self Expression', nextQuestion: 'writing_format' },
+        { value: 'income', label: 'Earn Income from Writing', nextQuestion: 'writing_format' },
       ],
     },
 
@@ -6661,6 +9084,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'novel', label: 'Novel', nextQuestion: 'genre' },
         { value: 'series', label: 'Story Series', nextQuestion: 'genre' },
         { value: 'script', label: 'Script / Screenplay', nextQuestion: 'genre' },
+        { value: 'novella', label: 'Novella', nextQuestion: 'genre' }, // ✅ NEW
+        { value: 'web_novel', label: 'Web Novel / Online Series', nextQuestion: 'genre' },
       ],
     },
 
@@ -6675,6 +9100,9 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'scifi', label: 'Science Fiction', nextQuestion: 'audience' },
         { value: 'horror', label: 'Horror', nextQuestion: 'audience' },
         { value: 'drama', label: 'Drama / Life Story', nextQuestion: 'audience' },
+        { value: 'historical', label: 'Historical Fiction', nextQuestion: 'audience' }, // ✅ NEW
+        { value: 'mythology', label: 'Mythology / Folklore', nextQuestion: 'audience' }, // ✅ NEW
+        { value: 'motivational', label: 'Inspirational / Motivational', nextQuestion: 'audience' },
       ],
     },
 
@@ -6687,6 +9115,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'teen', label: 'Teenagers', nextQuestion: 'language' },
         { value: 'adult', label: 'Adults', nextQuestion: 'language' },
         { value: 'all', label: 'All Age Groups', nextQuestion: 'language' },
+        { value: 'niche', label: 'Specific Niche Audience', nextQuestion: 'language' },
       ],
     },
 
@@ -6699,6 +9128,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'telugu', label: 'Telugu', nextQuestion: 'experience' },
         { value: 'hindi', label: 'Hindi', nextQuestion: 'experience' },
         { value: 'mixed', label: 'Mixed Language', nextQuestion: 'experience' },
+        { value: 'regional', label: 'Other Regional Language', nextQuestion: 'experience' },
       ],
     },
 
@@ -6710,18 +9140,33 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'beginner', label: 'Beginner', nextQuestion: 'writing_style' },
         { value: 'intermediate', label: 'Intermediate', nextQuestion: 'writing_style' },
         { value: 'advanced', label: 'Advanced', nextQuestion: 'writing_style' },
+        { value: 'published', label: 'Previously Published Author', nextQuestion: 'writing_style' }, 
       ],
     },
 
-    {
+{
       key: 'writing_style',
       text: 'What writing style do you prefer?',
       type: 'single',
       options: [
-        { value: 'simple', label: 'Simple & Easy Language', nextQuestion: 'inspiration' },
-        { value: 'descriptive', label: 'Detailed & Descriptive', nextQuestion: 'inspiration' },
-        { value: 'dialogue', label: 'Dialogue Driven', nextQuestion: 'inspiration' },
-        { value: 'poetic', label: 'Poetic / Artistic', nextQuestion: 'inspiration' },
+        { value: 'simple', label: 'Simple & Easy Language', nextQuestion: 'story_structure' },
+        { value: 'descriptive', label: 'Detailed & Descriptive', nextQuestion: 'story_structure' },
+        { value: 'dialogue', label: 'Dialogue Driven', nextQuestion: 'story_structure' },
+        { value: 'poetic', label: 'Poetic / Artistic', nextQuestion: 'story_structure' },
+        { value: 'fast_paced', label: 'Fast-Paced & Engaging', nextQuestion: 'story_structure' }, // ✅ NEW
+      ],
+    },
+
+    // ✅ NEW STRUCTURE SECTION
+    {
+      key: 'story_structure',
+      text: 'How do you want to structure your story?',
+      type: 'single',
+      options: [
+        { value: 'three_act', label: 'Three-Act Structure', nextQuestion: 'inspiration' },
+        { value: 'hero_journey', label: 'Hero’s Journey', nextQuestion: 'inspiration' },
+        { value: 'non_linear', label: 'Non-Linear Narrative', nextQuestion: 'inspiration' },
+        { value: 'episodic', label: 'Episodic Format', nextQuestion: 'inspiration' },
       ],
     },
 
@@ -6734,8 +9179,21 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'imagination', label: 'Pure Imagination', nextQuestion: 'publishing_goal' },
         { value: 'movies', label: 'Movies / Series', nextQuestion: 'publishing_goal' },
         { value: 'books', label: 'Books / Novels', nextQuestion: 'publishing_goal' },
+        { value: 'history', label: 'History & Culture', nextQuestion: 'writing_habit' },
       ],
     },
+
+    {
+      key: 'writing_habit',
+      text: 'How often can you dedicate time to writing?',
+      type: 'single',
+      options: [
+        { value: 'daily', label: 'Daily Writing Practice', nextQuestion: 'publishing_goal' },
+        { value: 'weekly', label: 'Weekly Writing Sessions', nextQuestion: 'publishing_goal' },
+        { value: 'flexible', label: 'Flexible Schedule', nextQuestion: 'publishing_goal' },
+      ],
+    },
+
 
     {
       key: 'publishing_goal',
@@ -6746,11 +9204,21 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'publisher', label: 'Approach Publisher' },
         { value: 'platforms', label: 'Post on Writing Platforms' },
         { value: 'personal', label: 'Keep it Personal' },
+        
+        { value: 'adaptation', label: 'Adapt for Film / Web Series' }, // ✅ NEW
+        { value: 'competition', label: 'Submit to Writing Competitions' },
       ],
     },
 
   ],
 },
+
+/*
+┌─────────────────────────┐
+│     ladies_caring       │
+└─────────────────────────┘
+*/
+
 
 {
   key: 'ladies_caring',
@@ -6768,6 +9236,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'family', label: 'Family & Home Care', nextQuestion: 'age_group' },
         { value: 'health', label: 'Health & Physical Care', nextQuestion: 'age_group' },
         { value: 'emotional', label: 'Emotional & Mental Care', nextQuestion: 'age_group' },
+        { value: 'career_support', label: 'Career & Personal Growth Support', nextQuestion: 'age_group' },
       ],
     },
 
@@ -6780,6 +9249,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'young', label: 'Young Women', nextQuestion: 'daily_care' },
         { value: 'adult', label: 'Adult Women', nextQuestion: 'daily_care' },
         { value: 'senior', label: 'Senior Women', nextQuestion: 'daily_care' },
+        { value: 'all', label: 'All Age Groups', nextQuestion: 'daily_care' },
       ],
     },
 
@@ -6792,6 +9262,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'diet', label: 'Diet & Nutrition', nextQuestion: 'health_topics' },
         { value: 'fitness', label: 'Fitness & Exercise', nextQuestion: 'health_topics' },
         { value: 'sleep', label: 'Sleep & Routine', nextQuestion: 'health_topics' },
+        { value: 'skin', label: 'Skin & Beauty Care', nextQuestion: 'health_topics' },
       ],
     },
 
@@ -6804,6 +9275,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'hormonal', label: 'Hormonal Balance', nextQuestion: 'mental_care' },
         { value: 'pregnancy', label: 'Pregnancy & Motherhood', nextQuestion: 'mental_care' },
         { value: 'general', label: 'General Health & Immunity', nextQuestion: 'mental_care' },
+        { value: 'pcos', label: 'PCOS / PCOD Awareness', nextQuestion: 'mental_care' }, // ✅ NEW
+        { value: 'menopause', label: 'Menopause Care', nextQuestion: 'mental_care' },
       ],
     },
 
@@ -6816,18 +9289,31 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'confidence', label: 'Confidence & Self-esteem', nextQuestion: 'safety' },
         { value: 'relationships', label: 'Relationship Handling', nextQuestion: 'safety' },
         { value: 'peace', label: 'Mental Peace & Balance', nextQuestion: 'safety' },
+        { value: 'anxiety', label: 'Anxiety & Emotional Stability', nextQuestion: 'safety' },
       ],
     },
 
-    {
+ {
       key: 'safety',
       text: 'Which safety-related guidance do you need?',
       type: 'single',
       options: [
-        { value: 'personal', label: 'Personal Safety Awareness', nextQuestion: 'career_life' },
-        { value: 'workplace', label: 'Workplace Safety', nextQuestion: 'career_life' },
-        { value: 'travel', label: 'Travel Safety', nextQuestion: 'career_life' },
-        { value: 'digital', label: 'Online / Digital Safety', nextQuestion: 'career_life' },
+        { value: 'personal', label: 'Personal Safety Awareness', nextQuestion: 'legal_awareness' },
+        { value: 'workplace', label: 'Workplace Safety', nextQuestion: 'legal_awareness' },
+        { value: 'travel', label: 'Travel Safety', nextQuestion: 'legal_awareness' },
+        { value: 'digital', label: 'Online / Digital Safety', nextQuestion: 'legal_awareness' },
+      ],
+    },
+
+    // ✅ NEW SECTION
+    {
+      key: 'legal_awareness',
+      text: 'Do you want awareness about women’s legal rights?',
+      type: 'single',
+      options: [
+        { value: 'yes_full', label: 'Yes, Full Legal Rights Guidance', nextQuestion: 'career_life' },
+        { value: 'basic', label: 'Basic Awareness Only', nextQuestion: 'career_life' },
+        { value: 'no', label: 'Not Required', nextQuestion: 'career_life' },
       ],
     },
 
@@ -6839,6 +9325,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'career_growth', label: 'Career Growth', nextQuestion: 'financial_care' },
         { value: 'work_life', label: 'Work–Life Balance', nextQuestion: 'financial_care' },
         { value: 'skills', label: 'Skill Development', nextQuestion: 'financial_care' },
+        { value: 'entrepreneur', label: 'Women Entrepreneurship', nextQuestion: 'financial_care' },
         { value: 'not_now', label: 'Not Required Now', nextQuestion: 'financial_care' },
       ],
     },
@@ -6851,6 +9338,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'saving', label: 'Savings & Budgeting' },
         { value: 'independent', label: 'Financial Independence' },
         { value: 'planning', label: 'Future Planning' },
+        { value: 'investment', label: 'Investment & Wealth Building' },
         { value: 'no', label: 'No Financial Guidance Needed' },
       ],
     },
@@ -6858,7 +9346,11 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
-
+/*
+┌─────────────────────────┐
+│  interior_design        │
+└─────────────────────────┘
+*/
 
 {
   key: 'interior_design',
@@ -6991,6 +9483,12 @@ export const dreamCategories: DreamCategory[] = [
   ],
 },
 
+/*
+┌─────────────────────────┐
+│          poetry         │
+└─────────────────────────┘
+*/
+
 
 {
   key: 'poetry',
@@ -7008,6 +9506,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'storytelling', label: 'Storytelling Through Words', nextQuestion: 'poetry_type' },
         { value: 'art', label: 'Artistic Creativity', nextQuestion: 'poetry_type' },
         { value: 'career', label: 'Career / Publishing', nextQuestion: 'poetry_type' },
+        { value: 'healing', label: 'Emotional Healing & Therapy', nextQuestion: 'poetry_type' },
       ],
     },
 
@@ -7020,6 +9519,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'rhyming', label: 'Rhyming Poetry', nextQuestion: 'poetry_theme' },
         { value: 'haiku', label: 'Haiku / Short Poems', nextQuestion: 'poetry_theme' },
         { value: 'narrative', label: 'Narrative Poetry', nextQuestion: 'poetry_theme' },
+        { value: 'slam', label: 'Spoken Word / Slam Poetry', nextQuestion: 'poetry_theme' }, // ✅ NEW
+        { value: 'sonnet', label: 'Sonnet (Structured Form)', nextQuestion: 'poetry_theme' },
       ],
     },
 
@@ -7032,6 +9533,8 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'nature', label: 'Nature & Life', nextQuestion: 'language_choice' },
         { value: 'pain', label: 'Pain, Struggle & Healing', nextQuestion: 'language_choice' },
         { value: 'motivation', label: 'Motivation & Hope', nextQuestion: 'language_choice' },
+        { value: 'social', label: 'Social Issues & Society', nextQuestion: 'language_choice' }, // ✅ NEW
+        { value: 'spiritual', label: 'Spirituality & Philosophy', nextQuestion: 'language_choice' },
       ],
     },
 
@@ -7044,6 +9547,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'telugu', label: 'Telugu', nextQuestion: 'experience_level' },
         { value: 'hindi', label: 'Hindi', nextQuestion: 'experience_level' },
         { value: 'mixed', label: 'Mixed Languages', nextQuestion: 'experience_level' },
+        { value: 'regional', label: 'Other Regional Language', nextQuestion: 'experience_level' },
       ],
     },
 
@@ -7056,6 +9560,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'intermediate', label: 'Intermediate', nextQuestion: 'writing_style' },
         { value: 'advanced', label: 'Advanced', nextQuestion: 'writing_style' },
         { value: 'exploring', label: 'Just Exploring', nextQuestion: 'writing_style' },
+        
       ],
     },
 
@@ -7068,20 +9573,35 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'deep', label: 'Deep & Emotional', nextQuestion: 'learning_goal' },
         { value: 'symbolic', label: 'Symbolic & Metaphorical', nextQuestion: 'learning_goal' },
         { value: 'experimental', label: 'Experimental Style', nextQuestion: 'learning_goal' },
+        { value: 'minimal', label: 'Minimalistic & Short Lines', nextQuestion: 'learning_goal' },
       ],
     },
 
-    {
+     {
       key: 'learning_goal',
       text: 'What do you want to learn in poetry?',
       type: 'single',
       options: [
-        { value: 'vocabulary', label: 'Improve Vocabulary', nextQuestion: 'sharing_platform' },
-        { value: 'imagery', label: 'Imagery & Metaphors', nextQuestion: 'sharing_platform' },
-        { value: 'rhythm', label: 'Rhythm & Flow', nextQuestion: 'sharing_platform' },
-        { value: 'emotion', label: 'Expressing Emotions Better', nextQuestion: 'sharing_platform' },
+        { value: 'vocabulary', label: 'Improve Vocabulary', nextQuestion: 'performance_interest' },
+        { value: 'imagery', label: 'Imagery & Metaphors', nextQuestion: 'performance_interest' },
+        { value: 'rhythm', label: 'Rhythm & Flow', nextQuestion: 'performance_interest' },
+        { value: 'emotion', label: 'Expressing Emotions Better', nextQuestion: 'performance_interest' },
+        { value: 'structure', label: 'Poetic Structure & Forms', nextQuestion: 'performance_interest' }, // ✅ NEW
       ],
     },
+
+    // ✅ NEW SECTION
+    {
+      key: 'performance_interest',
+      text: 'Are you interested in performing your poetry?',
+      type: 'single',
+      options: [
+        { value: 'yes_stage', label: 'Yes, Open Mic / Stage', nextQuestion: 'sharing_platform' },
+        { value: 'online_video', label: 'Yes, YouTube / Instagram Reels', nextQuestion: 'sharing_platform' },
+        { value: 'no', label: 'No, Only Writing', nextQuestion: 'sharing_platform' },
+      ],
+    },
+
 
     {
       key: 'sharing_platform',
@@ -7092,6 +9612,7 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'social', label: 'Social Media', nextQuestion: 'final_expectation' },
         { value: 'stage', label: 'Open Mic / Stage', nextQuestion: 'final_expectation' },
         { value: 'publish', label: 'Books / Online Publishing', nextQuestion: 'final_expectation' },
+        { value: 'competitions', label: 'Poetry Competitions', nextQuestion: 'final_expectation' }, 
       ],
     },
 
@@ -7103,12 +9624,160 @@ export const dreamCategories: DreamCategory[] = [
         { value: 'peace', label: 'Mental Peace' },
         { value: 'expression', label: 'Emotional Expression' },
         { value: 'identity', label: 'Creative Identity' },
+        { value: 'recognition', label: 'Recognition & Fame' },
         { value: 'all', label: 'All of the Above' },
       ],
     },
 
   ],
+},
+
+
+{
+  key: 'gym',
+  name: 'Gym & Fitness',
+  icon: 'Dumbbell',
+  description: 'Gym training, body transformation, strength building, and diet planning',
+  questions: [
+
+    /* ====================== 1️⃣ FITNESS GOAL ====================== */
+    {
+      key: 'fitness_goal',
+      text: 'What is your main fitness goal?',
+      type: 'single',
+      options: [
+        { value: 'bulk', label: 'Bulk (Muscle Gain)', nextQuestion: 'experience_level' },
+        { value: 'cut', label: 'Cut (Fat Loss)', nextQuestion: 'experience_level' },
+        { value: 'fit', label: 'Stay Fit & Active', nextQuestion: 'experience_level' },
+        { value: 'strength', label: 'Increase Strength', nextQuestion: 'experience_level' },
+        { value: 'endurance', label: 'Improve Stamina & Endurance', nextQuestion: 'experience_level' },
+        { value: 'weight_loss', label: 'Weight Loss', nextQuestion: 'experience_level' },
+        { value: 'weight_gain', label: 'Healthy Weight Gain', nextQuestion: 'experience_level' },
+      ],
+    },
+
+    /* ====================== 2️⃣ EXPERIENCE LEVEL ====================== */
+    {
+      key: 'experience_level',
+      text: 'What is your gym experience level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'Beginner (0–3 months)', nextQuestion: 'gym_type' },
+        { value: 'intermediate', label: 'Intermediate (3–12 months)', nextQuestion: 'gym_type' },
+        { value: 'advanced', label: 'Advanced (1+ years)', nextQuestion: 'gym_type' },
+      ],
+    },
+
+    /* ====================== 3️⃣ GYM TYPE ====================== */
+    {
+      key: 'gym_type',
+      text: 'Which type of training do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'weight_training', label: 'Weight Training (Machines & Free Weights)', nextQuestion: 'training_split' },
+        { value: 'crossfit', label: 'CrossFit', nextQuestion: 'training_split' },
+        { value: 'calisthenics', label: 'Calisthenics / Bodyweight Training', nextQuestion: 'training_split' },
+        { value: 'cardio', label: 'Cardio Focused Training', nextQuestion: 'training_split' },
+        { value: 'functional', label: 'Functional Training', nextQuestion: 'training_split' },
+        { value: 'powerlifting', label: 'Powerlifting', nextQuestion: 'training_split' },
+        { value: 'home_workout', label: 'Home Workouts', nextQuestion: 'training_split' },
+      ],
+    },
+
+    /* ====================== 4️⃣ TRAINING SPLIT ====================== */
+    {
+      key: 'training_split',
+      text: 'How many days per week can you train?',
+      type: 'single',
+      options: [
+        { value: '3_days', label: '3 Days', nextQuestion: 'diet_preference' },
+        { value: '4_days', label: '4 Days', nextQuestion: 'diet_preference' },
+        { value: '5_days', label: '5 Days', nextQuestion: 'diet_preference' },
+        { value: '6_days', label: '6 Days', nextQuestion: 'diet_preference' },
+      ],
+    },
+
+    /* ====================== 5️⃣ DIET PREFERENCE ====================== */
+    {
+      key: 'diet_preference',
+      text: 'What is your diet preference?',
+      type: 'single',
+      options: [
+        { value: 'veg', label: 'Vegetarian', nextQuestion: 'calorie_level' },
+        { value: 'nonveg', label: 'Non-Vegetarian', nextQuestion: 'calorie_level' },
+        { value: 'vegan', label: 'Vegan', nextQuestion: 'calorie_level' },
+        { value: 'mixed', label: 'Mixed Diet', nextQuestion: 'calorie_level' },
+      ],
+    },
+
+    /* ====================== 6️⃣ CALORIE PLAN ====================== */
+    {
+      key: 'calorie_level',
+      text: 'What type of calorie plan do you need?',
+      type: 'single',
+      options: [
+        { value: 'surplus', label: 'Calorie Surplus (For Bulking)', nextQuestion: 'protein_need' },
+        { value: 'deficit', label: 'Calorie Deficit (For Cutting)', nextQuestion: 'protein_need' },
+        { value: 'maintenance', label: 'Maintenance Calories (Stay Fit)', nextQuestion: 'protein_need' },
+      ],
+    },
+
+    /* ====================== 7️⃣ PROTEIN REQUIREMENT ====================== */
+    {
+      key: 'protein_need',
+      text: 'Do you want help calculating protein intake?',
+      type: 'single',
+      options: [
+        { value: 'yes', label: 'Yes, Calculate per Body Weight', nextQuestion: 'supplements' },
+        { value: 'no', label: 'No, Basic Guidance Only', nextQuestion: 'supplements' },
+      ],
+    },
+
+    /* ====================== 8️⃣ SUPPLEMENTS ====================== */
+    {
+      key: 'supplements',
+      text: 'Are you interested in supplements?',
+      type: 'single',
+      options: [
+        { value: 'whey', label: 'Whey Protein', nextQuestion: 'health_condition' },
+        { value: 'creatine', label: 'Creatine', nextQuestion: 'health_condition' },
+        { value: 'multivitamin', label: 'Multivitamins', nextQuestion: 'health_condition' },
+        { value: 'mass_gainer', label: 'Mass Gainer', nextQuestion: 'health_condition' },
+        { value: 'no', label: 'No Supplements', nextQuestion: 'health_condition' },
+      ],
+    },
+
+    /* ====================== 9️⃣ HEALTH CONDITION ====================== */
+    {
+      key: 'health_condition',
+      text: 'Do you have any health conditions?',
+      type: 'single',
+      options: [
+        { value: 'none', label: 'No Health Issues', nextQuestion: 'final_expectation' },
+        { value: 'back_pain', label: 'Back / Joint Pain', nextQuestion: 'final_expectation' },
+        { value: 'bp', label: 'High / Low Blood Pressure', nextQuestion: 'final_expectation' },
+        { value: 'diabetes', label: 'Diabetes', nextQuestion: 'final_expectation' },
+        { value: 'obesity', label: 'Obesity', nextQuestion: 'final_expectation' },
+      ],
+    },
+
+    /* ====================== 🔟 FINAL EXPECTATION ====================== */
+    {
+      key: 'final_expectation',
+      text: 'What result do you expect?',
+      type: 'single',
+      options: [
+        { value: 'aesthetic', label: 'Aesthetic Physique' },
+        { value: 'athletic', label: 'Athletic Body' },
+        { value: 'strong', label: 'Strong & Powerful' },
+        { value: 'healthy', label: 'Healthy Lifestyle' },
+        { value: 'confidence', label: 'Confidence Boost' },
+      ],
+    },
+
+  ],
 }
+
 
 
 

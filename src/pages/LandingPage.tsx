@@ -58,7 +58,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
     
     {/* WhatsApp Redirect */}
     <a 
-      href={`https://wa.me/${whatsappNumber}?text=Hi HJR Team, I need help with my career path!`}
+      href={`https://wa.me/${whatsappNumber}?text=Hi J#₹ Team, I need help with my career path!`}
       target="_blank"
       rel="noopener noreferrer"
       className="group bg-white/95 p-6 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(37,99,235,1)] border-4 border-black hover:translate-y-[-4px] hover:translate-x-[-4px] hover:shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] transition-all"
