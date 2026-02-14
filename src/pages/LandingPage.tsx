@@ -57,12 +57,14 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
   <div className="flex justify-center max-w-4xl mx-auto">
     
     {/* WhatsApp Redirect */}
-    <a 
-      href={`https://wa.me/${whatsappNumber}?text=Hi J#₹ Team, I need help with my career path!`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group bg-white/95 p-6 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(37,99,235,1)] border-4 border-black hover:translate-y-[-4px] hover:translate-x-[-4px] hover:shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] transition-all"
-    >
+<a 
+  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    "Hi J#₹ Team, I need help with my career path!"
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group bg-white/95 p-6 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(37,99,235,1)] border-4 border-black hover:translate-y-[-4px] hover:translate-x-[-4px] hover:shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] transition-all"
+>
       <div className="flex flex-col items-center gap-3 text-center">
         
         <div className="bg-green-100 p-3 rounded-xl group-hover:bg-green-500 transition-colors">
@@ -174,7 +176,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
           <h3 className="text-3xl font-black text-white uppercase mb-10 tracking-widest">Student Stories</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Rahul S.", role: "Class 12 Student", text: "HJR turned my stress into a plan. I knew I loved Sports, but I didn't know how to make it a career while studying. The roadmap fixed that.", stars: 5 },
+              { name: "Rahul S.", role: "Class 12 Student", text: " J#₹ turned my stress into a plan. I knew I loved Sports, but I didn't know how to make it a career while studying. The roadmap fixed that.", stars: 5 },
               { name: "Anjali K.", role: "Parent", text: "As a parent, I wanted to help but didn't want to push. This platform helped us talk about dreams in a practical way. Highly recommended.", stars: 5 },
               { name: "Vikram M.", role: "B.Tech Student", text: "The AI questions are actually smart. It asked me about my family situation and time, not just my grades. Very realistic guidance.", stars: 5 }
             ].map((review, i) => (
