@@ -1,4 +1,4 @@
-# HJR - Happy Joshful Resources
+# J#₹ - Happy Joshful Resources
 
 ## Student Dream Guidance & Consulting Platform
 

@@ -1,5 +1,5 @@
 /*
-  # HJR Dream Guidance System Schema
+  #  J#₹ Dream Guidance System Schema
 
   1. New Tables
     - `students`

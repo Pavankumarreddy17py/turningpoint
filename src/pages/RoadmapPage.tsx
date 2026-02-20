@@ -2,18 +2,15 @@ import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import {
   Target,
-  Award,
   BookOpen,
   Calendar,
   Clock,
   Lightbulb,
-  Home,
   PlayCircle,
   MessageCircle,
   RotateCcw,
   ShieldCheck,
   ClipboardCheck,
-  ArrowRight
 } from 'lucide-react';
 
 /* ---------------- TYPES ---------------- */
@@ -45,6 +42,7 @@ export function RoadmapPage({
   dreamKey,
   responses = {},
 }: RoadmapPageProps) {
+  
   /* ---------------- LOADING ---------------- */
   if (loading) {
     return (
@@ -70,40 +68,39 @@ export function RoadmapPage({
 
   /* ---------------- HELPERS ---------------- */
 
-const handleWhatsApp = (): void => {
-  if (typeof window === 'undefined') return;
+  const handleWhatsApp = (): void => {
+    if (typeof window === 'undefined') return;
 
-  const phone: string = '917259771515';
+    const phone: string = '917259771515';
 
-  const mainDream: string = (dreamKey || 'Selected Dream')
-    .replace(/-/g, ' ')
-    .toUpperCase();
+    const mainDream: string = (dreamKey || 'Selected Dream')
+      .replace(/-/g, ' ')
+      .toUpperCase();
 
-  const lines: string[] = [];
+    const lines: string[] = [];
 
-  lines.push(`DREAM:- ${mainDream}`);
+    lines.push(`DREAM:- ${mainDream}`);
 
-  Object.entries(responses).forEach(([question, answer]) => {
-    const q = question.replace(/_/g, ' ').toUpperCase();
-    const a = answer.replace(/_/g, ' ').toUpperCase();
-    lines.push(`${q}:- ${a}`);
-  });
+    Object.entries(responses).forEach(([question, answer]) => {
+      const q = question.replace(/_/g, ' ').toUpperCase();
+      const a = answer.replace(/_/g, ' ').toUpperCase();
+      lines.push(`${q}:- ${a}`);
+    });
 
-  const message: string = encodeURIComponent(lines.join('\n'));
+    const message: string = encodeURIComponent(lines.join('\n'));
 
-  window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-};
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  };
 
+  /** ✅ 100% BULLETPROOF YOUTUBE REDIRECT LINK */
+  const getYouTubeSearchUrl = (dreamKey: string, roadmap: Roadmap) => {
+    const cleanDreamKey = dreamKey.replace(/-/g, ' ');
+    // Combining the dream category and the specific AI-generated role for highly accurate videos
+    const query = `${cleanDreamKey} ${roadmap.exact_role} career guidance roadmap step by step`;
+    const encodedQuery = encodeURIComponent(query);
 
-  /** ✅ FIXED YOUTUBE EMBED LINKS */
-  const getDreamVideo = (key: string) => {
-    const map: Record<string, string> = {
-      cricket: 'https://www.youtube.com/embed/S_B7_T3q8_c',
-      'software-engineer': 'https://www.youtube.com/embed/uXW7pX-S7S0',
-      upsc: 'https://www.youtube.com/embed/3uN6_X_C5wM',
-      default: 'https://www.youtube.com/embed/P66_YmS5Cmk',
-    };
-    return map[key] || map.default;
+    // Standard YouTube search link (Opens perfectly in browser or YouTube App)
+    return `https://www.youtube.com/results?search_query=${encodedQuery}`;
   };
 
   /* ---------------- UI ---------------- */
@@ -112,9 +109,7 @@ const handleWhatsApp = (): void => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-12">
       <div className="max-w-5xl mx-auto px-4">
 
-        {/* --- ADDED: SELECTION DETAILS AT TOP --- */}
-{/* --- IMPROVED SELECTION SUMMARY --- */}
-{/* --- NEO-BRUTALIST SELECTION SUMMARY --- */}
+        {/* --- NEO-BRUTALIST SELECTION SUMMARY --- */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-8 w-2 bg-blue-600 rounded-full"></div>
@@ -196,21 +191,28 @@ const handleWhatsApp = (): void => {
           </Card>
         </div>
 
-        {/* ---------- VIDEO SECTION ---------- */}
+        {/* ---------- VIDEO SECTION (NO IFRAME) ---------- */}
         <section className="mb-16">
           <h3 className="text-2xl font-black flex items-center gap-2 mb-4">
             <PlayCircle /> Expert Video Guidance
           </h3>
 
-          <div className="aspect-video rounded-2xl overflow-hidden border-4 border-black shadow-xl">
-            <iframe
-              src={getDreamVideo(dreamKey)}
-              title="Career Guidance Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
+          <a
+            href={getYouTubeSearchUrl(dreamKey, roadmap)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-[#FF0000] text-white rounded-3xl p-8 md:p-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:translate-x-1 transition-all text-center group"
+          >
+            <div className="flex flex-col items-center justify-center gap-4">
+              <PlayCircle size={72} className="group-hover:scale-110 transition-transform" />
+              <h4 className="text-3xl md:text-4xl font-black uppercase italic leading-tight">
+                Watch "{roadmap.confirmed_dream}" Guides on YouTube
+              </h4>
+              <p className="font-bold text-red-100 text-sm md:text-base mt-2 max-w-xl mx-auto uppercase tracking-wider">
+                Click here to instantly open the YouTube App and see the best career roadmaps for your exact role.
+              </p>
+            </div>
+          </a>
         </section>
 
         {/* ---------- DETAILS ---------- */}
@@ -260,22 +262,6 @@ const handleWhatsApp = (): void => {
             </ul>
           </Card>
         </div>
-
-        {/* ---------- MENTOR BOOKING ---------- */}
-        <section className="mt-16">
-          <h3 className="text-2xl font-black mb-4">
-            Book a Mentor Session
-          </h3>
-
-          {/* ✅ CALENDLY EMBED (RELIABLE) */}
-          <div className="border-4 border-black rounded-2xl overflow-hidden">
-            <iframe
-              src="https://calendly.com/your-mentor-link/30min"
-              className="w-full h-[700px]"
-              frameBorder="0"
-            />
-          </div>
-        </section>
 
         {/* ---------- ACTIONS ---------- */}
         <div className="flex flex-col md:flex-row gap-6 justify-center mt-16">

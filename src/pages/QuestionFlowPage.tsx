@@ -33,10 +33,18 @@ export function QuestionFlowPage({
   const dreamCategory = getDreamCategory(dreamKey);
 
   useEffect(() => {
+    setResponses({});
+    setCurrentAnswer('');
+    setError('');
+    setCurrentStep(1);
+
     const firstQuestion = getFirstQuestion(dreamKey);
     if (firstQuestion) {
       setCurrentQuestion(firstQuestion);
       setQuestionHistory([firstQuestion]);
+    } else {
+      setCurrentQuestion(null);
+      setQuestionHistory([]);
     }
   }, [dreamKey]);
 
@@ -99,11 +107,16 @@ export function QuestionFlowPage({
     const newHistory = [...questionHistory];
     newHistory.pop();
     const previousQuestion = newHistory[newHistory.length - 1];
+    const keysToKeep = new Set(newHistory.map((q) => q.key));
+    const trimmedResponses = Object.fromEntries(
+      Object.entries(responses).filter(([key]) => keysToKeep.has(key))
+    );
 
     setQuestionHistory(newHistory);
+    setResponses(trimmedResponses);
     setCurrentQuestion(previousQuestion);
     setCurrentStep(currentStep - 1);
-    setCurrentAnswer(responses[previousQuestion.key] || '');
+    setCurrentAnswer(trimmedResponses[previousQuestion.key] || '');
     setError('');
   };
 
