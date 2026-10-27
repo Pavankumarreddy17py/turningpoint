@@ -36,7 +36,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-4 pt-16 pb-12 text-center">
         <header className="mb-12">
           <img src={logoImg} alt="HJR Logo" className="w-32 h-32 mx-auto mb-6 drop-shadow-xl" />
-          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">J#₹ -Jayaho janatha  Happy Resources </h1>
+          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">J#₹-7 - Jindhagi Happy resource-7 </h1>
           <h2 className="text-3xl font-bold text-blue-100 mb-6 drop-shadow-sm">Turning Confusion into Clear Dream Paths</h2>
           <Button 
             size="lg" 
@@ -59,7 +59,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
     {/* WhatsApp Redirect */}
 <a 
   href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Hi J#₹ Team, I need help with my career path!"
+    "Hi J#₹-7 Team, I need help with my career path!"
   )}`}
   target="_blank"
   rel="noopener noreferrer"
@@ -176,7 +176,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
           <h3 className="text-3xl font-black text-white uppercase mb-10 tracking-widest">Student Stories</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Rahul S.", role: "Class 12 Student", text: " J#₹ turned my stress into a plan. I knew I loved Sports, but I didn't know how to make it a career while studying. The roadmap fixed that.", stars: 5 },
+              { name: "Rahul S.", role: "Class 12 Student", text: " J#₹-7 turned my stress into a plan. I knew I loved Sports, but I didn't know how to make it a career while studying. The roadmap fixed that.", stars: 5 },
               { name: "Anjali K.", role: "Parent", text: "As a parent, I wanted to help but didn't want to push. This platform helped us talk about dreams in a practical way. Highly recommended.", stars: 5 },
               { name: "Vikram M.", role: "B.Tech Student", text: "The AI questions are actually smart. It asked me about my family situation and time, not just my grades. Very realistic guidance.", stars: 5 }
             ].map((review, i) => (
@@ -211,7 +211,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
         <section className="mb-24">
           <div className="bg-white/95 rounded-3xl p-12 max-w-5xl mx-auto shadow-2xl border border-gray-200">
             <h3 className="text-4xl font-black text-black uppercase mb-10 tracking-widest text-center">
-              Who Is J#₹ For?
+              Who Is J#₹-7 For?
             </h3>
                   
             <div className="grid md:grid-cols-3 gap-8 text-left">
@@ -314,7 +314,7 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
 
         <footer className="pt-10 border-t border-white/20">
           <img src={logoImg} alt="HJR Logo" className="h-10 mx-auto mb-4 grayscale brightness-200 opacity-50" />
-          <p className="text-sm text-white/70">© 2026 Turning Point • HJR</p>
+          <p className="text-sm text-white/70">© 2026 Turning Point-7 • HJR</p>
           <div className="flex justify-center gap-6 mt-4 text-[10px] text-white/40 uppercase font-black tracking-widest">
             <button onClick={() => setAppState('faq')}>Privacy</button>
             <button onClick={() => setAppState('faq')}>Terms</button>

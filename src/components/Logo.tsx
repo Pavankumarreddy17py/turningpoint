@@ -10,7 +10,7 @@ export const Logo = ({ className = "h-12 w-auto" }: { className?: string }) => {
         className="h-full object-contain"
       />
       <span className="font-bold text-xl text-blue-900 hidden md:block">
-        J#₹ - Jayaho janatha  Happy Resources
+        J#₹-7 - Jindhagi Happy resource -7
       </span>
     </div>
   );

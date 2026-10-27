@@ -8,7 +8,7 @@ export function FAQsPage({ onBack }: { onBack: () => void }) {
 
   const faqs = [
     {
-      q: "Is Turning Point free to use?",
+      q: "Is Turning point-7 free to use?",
       a: "Yes. You can explore dreams, answer AI questions, and get initial guidance completely free."
     },
     {
@@ -21,7 +21,7 @@ export function FAQsPage({ onBack }: { onBack: () => void }) {
     },
     {
       q: "Is this platform only for toppers?",
-      a: "No. Turning Point is built for everyone—average students, slow learners, and late starters included."
+      a: "No. Turning point-7 is built for everyone—average students, slow learners, and late starters included."
     },
     {
       q: "Can parents use this with their children?",

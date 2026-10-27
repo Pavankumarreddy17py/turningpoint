@@ -15,7 +15,7 @@ export function ChatbotPage({ onBack }: ChatbotPageProps) {
             <MessageSquare size={24} />
           </div>
           <div>
-            <h1 className="text-xl font-black uppercase italic leading-none">J#₹ AI Assistant</h1>
+            <h1 className="text-xl font-black uppercase italic leading-none">J#₹-7 AI Assistant</h1>
             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1 text-left">24/7 Guidance Support</p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export function ChatbotPage({ onBack }: ChatbotPageProps) {
             width="100%"
             style={{ height: '100%', minHeight: '700px' }}
             frameBorder="0"
-            title="J#₹ Chatbot"
+            title="J#₹-7 Chatbot"
           ></iframe>
         </div>
       </div>

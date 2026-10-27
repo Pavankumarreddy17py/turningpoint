@@ -253,19 +253,23 @@ export const dreamCategories: DreamCategory[] = [
       ],
       nextQuestion: 'study_hours',
     },
-
-    {
+{
       key: 'mechanical_interest',
       text: 'Which mechanical domain do you prefer?',
       type: 'single',
       options: [
         { value: 'automobile', label: 'Automobile Engineering' },
-        { value: 'robotics', label: 'Robotics' },
+        { value: 'robotics', label: 'Robotics & Automation' },
         { value: 'thermal', label: 'Thermal Engineering' },
+        { value: 'manufacturing', label: 'Manufacturing & Production' },
+        { value: 'aerospace', label: 'Aerospace & Aeronautical' },
+        { value: 'design', label: 'Design & Drafting (CAD/CAM)' },
+        { value: 'hvac', label: 'HVAC (Heating, Ventilation & Air Conditioning)' },
+        { value: 'mechatronics', label: 'Mechatronics' },
+        { value: 'marine', label: 'Marine Engineering' },
       ],
       nextQuestion: 'study_hours',
     },
-
     {
       key: 'civil_interest',
       text: 'Which civil engineering field attracts you?',

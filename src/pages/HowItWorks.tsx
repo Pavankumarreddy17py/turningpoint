@@ -33,11 +33,11 @@ export function HowItWorksPage({ onBack, onStart }: HowItWorksProps) {
 
         {/* Page Title */}
         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 text-black">
-          How Turning Point Works
+          How Turning Point-7 Works
         </h2>
 
         <p className="text-gray-800 font-medium text-lg max-w-3xl mb-16">
-          Turning Point helps you transform your dream into a clear, achievable life plan using
+          Turning Point-7 helps you transform your dream into a clear, achievable life plan using
           structured thinking, AI intelligence, and real-world logic.
         </p>
 
@@ -110,7 +110,7 @@ export function HowItWorksPage({ onBack, onStart }: HowItWorksProps) {
             <div>
               <h3 className="text-2xl font-black mb-2 uppercase">Get a Personalized Roadmap</h3>
               <p className="text-gray-800 font-medium text-lg">
-                Based on your answers, Turning Point creates a clear roadmap that includes:
+                Based on your answers, Turning Point-7 creates a clear roadmap that includes:
               </p>
               <ul className="list-disc ml-6 mt-3 text-gray-800 font-medium space-y-1">
                 <li>Skill-building path</li>
@@ -125,7 +125,7 @@ export function HowItWorksPage({ onBack, onStart }: HowItWorksProps) {
         {/* Why Trust Section */}
         <div className="mt-20 border-t-4 border-black pt-14">
           <h3 className="text-3xl font-black uppercase mb-10">
-            Why Turning Point Is Different
+            Why Turning Point-7 Is Different
           </h3>
 
           <div className="grid md:grid-cols-2 gap-10">
@@ -177,7 +177,7 @@ export function HowItWorksPage({ onBack, onStart }: HowItWorksProps) {
             Your Dream Deserves a Plan
           </h3>
           <p className="text-gray-800 font-medium max-w-xl mx-auto mb-8">
-            Turning Point helps you stop guessing and start moving forward with clarity.
+            Turning Point-7 helps you stop guessing and start moving forward with clarity.
           </p>
 
           <Button

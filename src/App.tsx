@@ -141,10 +141,10 @@ function App() {
       <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-[100] shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={handleBackToLanding}>
-            <img src={logoImg} alt="Turning Point" className="h-10 w-auto object-contain" />
+            <img src={logoImg} alt="Turning point-7" className="h-10 w-auto object-contain" />
             <div className="flex flex-col">
               <span className="text-lg font-bold text-black leading-tight">Turning Point</span>
-              <span className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">J#₹ Platform</span>
+              <span className="text-[10px] text-gray-500 font-medium uppercase tracking-widest">J#₹-7 Platform</span>
             </div>
           </div>
           

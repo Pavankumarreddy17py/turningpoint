@@ -1,5 +1,5 @@
 /*
-  #  J#₹ Dream Guidance System Schema
+  #  J#₹-7 Dream Guidance System Schema
 
   1. New Tables
     - `students`
