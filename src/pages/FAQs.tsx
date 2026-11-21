@@ -3,7 +3,13 @@ import { useState } from 'react';
 // ✅ 1. Import your global background image
 import faqsBg from '../assets/faq.png';
 
-export function FAQsPage({ onBack }: { onBack: () => void }) {
+export function FAQsPage({
+  onBack,
+  onStart,
+}: {
+  onBack: () => void;
+  onStart: () => void;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
@@ -114,12 +120,19 @@ export function FAQsPage({ onBack }: { onBack: () => void }) {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 text-center">
+<div className="mt-20 text-center flex flex-col items-center gap-6">
           <div className="inline-block bg-white/80 backdrop-blur-sm border-2 border-black rounded-full px-8 py-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <p className="text-black font-black uppercase tracking-wider text-sm">
               Still unsure? Start exploring and let clarity come step by step.
             </p>
           </div>
+
+          <button
+            onClick={onStart}
+            className="bg-yellow-300 text-black border-4 border-black rounded-2xl px-8 py-4 font-black uppercase tracking-wider text-sm shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-yellow-400 transition-all cursor-pointer"
+          >
+            🚀 Start Your Dream Journey
+          </button>
         </div>
 
       </div>

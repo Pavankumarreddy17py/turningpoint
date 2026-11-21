@@ -4,7 +4,6 @@ import { LandingPage } from './pages/LandingPage';
 import { DreamSelectionPage } from './pages/DreamSelectionPage';
 import { QuestionFlowPage } from './pages/QuestionFlowPage';
 import { ConfirmationPage } from './pages/ConfirmationPage';
-import { RoadmapPage } from './pages/RoadmapPage';
 import { RoadmapInfoPage } from './pages/RoadmapInfo';
 import { HowItWorksPage } from './pages/HowItWorks';
 import { ForParentsPage } from './pages/ForParents';
@@ -13,6 +12,7 @@ import { FAQsPage } from './pages/FAQs';
 import { ChatbotPage } from './pages/ChatbotPage';
 import { Menu, X, Star, Send } from 'lucide-react'; 
 import feedbackBg from "./assets/feedback.png";
+import { RoadmapPage, EmergencyActionCard } from './pages/RoadmapPage';
 // Removed Supabase import
 import { getDreamCategory } from './data/dreamTrees';
 import logoImg from './assets/main logo of tp.png';
@@ -72,11 +72,16 @@ function App() {
     setAppState('questions');
   };
 
-  const handleQuestionComplete = (responses: Record<string, string>) => {
-    // Replaced Supabase saveResponses with purely local state
-    setSessionData({ ...sessionData, responses });
+const handleQuestionComplete = (responses: Record<string, string>) => {
+  setSessionData({ ...sessionData, responses });
+
+  // ✅ Skip ConfirmationPage for emergency services and open the Call card directly
+  if (sessionData.dreamKey === 'emergency_services') {
+    setAppState('roadmap');
+  } else {
     setAppState('confirmation');
-  };
+  }
+};
 
   const handleConfirmRoadmap = async () => {
     if (sessionData.dreamKey === 'emergency_services') {
@@ -120,21 +125,39 @@ function App() {
     setAppState('selection');
   };
 
-  const submitFeedback = () => {
+const submitFeedback = async () => {
     if (rating === 0) return alert("Please select a rating!");
     setSubmittingFeedback(true);
-    
-    // Simulating a backend save locally
-    setTimeout(() => {
-      console.log("Feedback saved locally:", { rating, comment });
-      alert("Thank you for your feedback!");
-      setAppState('landing');
-      setRating(0);
-      setComment("");
-      setSubmittingFeedback(false);
-    }, 500);
-  };
 
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/f44ec18629d4cddadfba3e985b8c9018", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `Turning Point (J#₹-7) Feedback - ${rating}/5 Stars`,
+          Rating: `${rating} / 5 Stars`,
+          Comment: comment || "No additional comment.",
+        }),
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your feedback has been sent.");
+        setAppState('landing');
+        setRating(0);
+        setComment("");
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Feedback error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmittingFeedback(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-white">
       {/* --- UNIVERSAL RESPONSIVE NAVBAR --- */}
@@ -185,15 +208,17 @@ function App() {
         {appState === 'how-it-works' && <HowItWorksPage onBack={handleBackToLanding} onStart={handleGetStarted} />}
         {appState === 'parents' && <ForParentsPage onBack={handleBackToLanding} />}
         {appState === 'ai-guidance' && <AiGuidancePage onBack={handleBackToLanding} />}
-        {appState === 'faq' && <FAQsPage onBack={handleBackToLanding} />}
+        {appState === 'faq' && (
+  <FAQsPage onBack={handleBackToLanding} onStart={handleGetStarted} />
+)}
         {appState === 'chatbot' && <ChatbotPage onBack={() => setAppState('landing')} />}
         
         {/* FEEDBACK PAGE UI */}
+{/* FEEDBACK PAGE UI */}
         {appState === 'feedback' && (
           <div 
-            className="min-h-[80vh] flex items-center justify-center p-6"
+            className="min-h-[calc(100vh-4rem)] w-full flex items-center justify-center p-6"
             style={{
-              /* ✅ Background image with a 90% white overlay */
               backgroundImage: `url('${feedbackBg}')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import {
@@ -11,6 +12,11 @@ import {
   RotateCcw,
   ShieldCheck,
   ClipboardCheck,
+  PhoneCall,
+  Copy,
+  Check,
+  MapPin,
+  AlertTriangle,
 } from 'lucide-react';
 
 /* ---------------- TYPES ---------------- */
@@ -33,7 +39,119 @@ interface RoadmapPageProps {
   responses: Record<string, string>;
 }
 
-/* ---------------- COMPONENT ---------------- */
+interface EmergencyActionCardProps {
+  selectedNumber: string;
+  onStartNew: () => void;
+}
+
+/* ---------------- EMERGENCY ACTION CARD ---------------- */
+
+export function EmergencyActionCard({
+  selectedNumber,
+  onStartNew,
+}: EmergencyActionCardProps) {
+  const [copied, setCopied] = useState(false);
+  const [locating, setLocating] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(selectedNumber);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleShareLocation = () => {
+    if (!navigator.geolocation) {
+      alert('Geolocation is not supported by your browser.');
+      return;
+    }
+
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        const mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+        const sosMessage = `🚨 EMERGENCY! I need help immediately. Here is my live location: ${mapsUrl}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(sosMessage)}`, '_blank');
+        setLocating(false);
+      },
+      () => {
+        alert('Unable to fetch location. Please enable GPS permissions.');
+        setLocating(false);
+      }
+    );
+  };
+
+  return (
+    <div className="min-h-[80vh] flex items-center justify-center p-6">
+      <div className="max-w-lg w-full bg-white border-4 border-black p-8 rounded-[2.5rem] shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] text-center">
+        {/* Top Emergency Badge */}
+        <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 border-2 border-red-600 px-4 py-1.5 rounded-full font-black uppercase text-xs mb-6">
+          <AlertTriangle size={16} /> Emergency Helpline Ready
+        </div>
+
+        <h2 className="text-5xl font-black text-black tracking-tight mb-2">
+          {selectedNumber}
+        </h2>
+        <p className="text-gray-600 font-bold mb-8">
+          Tap the button below to dial immediately.
+        </p>
+
+        {/* PRIMARY ONE-TAP CALL BUTTON */}
+        <a
+          href={`tel:${selectedNumber}`}
+          className="w-full bg-red-600 text-white py-5 px-6 rounded-2xl border-4 border-black font-black uppercase text-xl flex items-center justify-center gap-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all mb-4"
+        >
+          <PhoneCall size={26} /> Call {selectedNumber} Now
+        </a>
+
+        {/* SECONDARY ACTIONS: COPY & SHARE GPS LOCATION */}
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          <button
+            onClick={handleCopy}
+            className="bg-gray-100 text-black py-3.5 px-4 rounded-xl border-2 border-black font-black uppercase text-xs flex items-center justify-center gap-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-gray-200 transition-all"
+          >
+            {copied ? <Check size={16} className="text-green-600" /> : <Copy size={16} />}
+            {copied ? 'Copied!' : 'Copy Number'}
+          </button>
+
+          <button
+            onClick={handleShareLocation}
+            disabled={locating}
+            className="bg-green-400 text-black py-3.5 px-4 rounded-xl border-2 border-black font-black uppercase text-xs flex items-center justify-center gap-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:bg-green-300 transition-all"
+          >
+            <MapPin size={16} />
+            {locating ? 'Locating...' : 'WhatsApp SOS'}
+          </button>
+        </div>
+
+        {/* UNIVERSAL 112 FALLBACK */}
+        {selectedNumber !== '112' && (
+          <div className="border-t-2 border-black/10 pt-6 mb-6">
+            <p className="text-xs font-bold text-gray-500 uppercase mb-3">
+              Line busy or unsure? Call India's All-in-One Helpline:
+            </p>
+            <a
+              href="tel:112"
+              className="inline-flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full font-black uppercase text-sm hover:bg-gray-800 transition-colors"
+            >
+              <PhoneCall size={16} /> Quick Dial 112
+            </a>
+          </div>
+        )}
+
+        {/* BACK BUTTON */}
+        <button
+          onClick={onStartNew}
+          className="text-xs font-black uppercase text-gray-500 hover:text-black flex items-center justify-center gap-1 mx-auto"
+        >
+          <RotateCcw size={14} /> Choose Another Helpline
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ---------------- ROADMAP PAGE COMPONENT ---------------- */
 
 export function RoadmapPage({
   roadmap,
@@ -42,7 +160,17 @@ export function RoadmapPage({
   dreamKey,
   responses = {},
 }: RoadmapPageProps) {
-  
+  /* ---------------- EMERGENCY SERVICES OVERRIDE ---------------- */
+  if (dreamKey === 'emergency_services') {
+    const selectedNumber = Object.values(responses).pop() || '112';
+    return (
+      <EmergencyActionCard
+        selectedNumber={selectedNumber}
+        onStartNew={onStartNew}
+      />
+    );
+  }
+
   /* ---------------- LOADING ---------------- */
   if (loading) {
     return (
@@ -67,7 +195,6 @@ export function RoadmapPage({
   }
 
   /* ---------------- HELPERS ---------------- */
-
   const handleWhatsApp = (): void => {
     if (typeof window === 'undefined') return;
 
@@ -92,23 +219,18 @@ export function RoadmapPage({
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
 
-  /** ✅ 100% BULLETPROOF YOUTUBE REDIRECT LINK */
   const getYouTubeSearchUrl = (dreamKey: string, roadmap: Roadmap) => {
     const cleanDreamKey = dreamKey.replace(/-/g, ' ');
-    // Combining the dream category and the specific AI-generated role for highly accurate videos
     const query = `${cleanDreamKey} ${roadmap.exact_role} career guidance roadmap step by step`;
     const encodedQuery = encodeURIComponent(query);
 
-    // Standard YouTube search link (Opens perfectly in browser or YouTube App)
     return `https://www.youtube.com/results?search_query=${encodedQuery}`;
   };
 
   /* ---------------- UI ---------------- */
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-12">
       <div className="max-w-5xl mx-auto px-4">
-
         {/* --- NEO-BRUTALIST SELECTION SUMMARY --- */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
@@ -120,13 +242,20 @@ export function RoadmapPage({
 
           <div className="bg-slate-900 rounded-[2.5rem] p-8 shadow-[12px_12px_0px_0px_rgba(37,99,235,1)] border-4 border-black relative overflow-hidden">
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none" 
-                 style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+            <div
+              className="absolute inset-0 opacity-10 pointer-events-none"
+              style={{
+                backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+              }}
+            />
 
             <div className="relative z-10">
               {/* Main Dream Heading */}
               <div className="mb-10">
-                <p className="text-blue-400 text-xs font-black uppercase tracking-[0.3em] mb-2">Confirmed Goal</p>
+                <p className="text-blue-400 text-xs font-black uppercase tracking-[0.3em] mb-2">
+                  Confirmed Goal
+                </p>
                 <h2 className="text-5xl font-black text-white uppercase italic leading-none tracking-tighter">
                   {dreamKey.replace(/-/g, ' ')}
                 </h2>
@@ -135,13 +264,16 @@ export function RoadmapPage({
               {/* Selection Badges Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {Object.entries(responses).map(([question, answer]) => (
-                  <div 
-                    key={question} 
+                  <div
+                    key={question}
                     className="bg-white/5 border-2 border-white/10 rounded-2xl p-5 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div className="p-2 bg-blue-600/20 rounded-lg group-hover:bg-blue-600 transition-colors">
-                        <ClipboardCheck size={16} className="text-blue-400 group-hover:text-white" />
+                        <ClipboardCheck
+                          size={16}
+                          className="text-blue-400 group-hover:text-white"
+                        />
                       </div>
                       <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-none">
                         {question.replace(/_/g, ' ')}
@@ -173,9 +305,7 @@ export function RoadmapPage({
           <h1 className="text-4xl font-black mb-2">
             Your Personalized Roadmap
           </h1>
-          <p className="text-lg text-gray-600">
-            Dream → Clarity → Action
-          </p>
+          <p className="text-lg text-gray-600">Dream → Clarity → Action</p>
         </div>
 
         {/* ---------- DREAM SUMMARY ---------- */}
@@ -204,12 +334,16 @@ export function RoadmapPage({
             className="block w-full bg-[#FF0000] text-white rounded-3xl p-8 md:p-12 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:translate-x-1 transition-all text-center group"
           >
             <div className="flex flex-col items-center justify-center gap-4">
-              <PlayCircle size={72} className="group-hover:scale-110 transition-transform" />
+              <PlayCircle
+                size={72}
+                className="group-hover:scale-110 transition-transform"
+              />
               <h4 className="text-3xl md:text-4xl font-black uppercase italic leading-tight">
                 Watch "{roadmap.confirmed_dream}" Guides on YouTube
               </h4>
               <p className="font-bold text-red-100 text-sm md:text-base mt-2 max-w-xl mx-auto uppercase tracking-wider">
-                Click here to instantly open the YouTube App and see the best career roadmaps for your exact role.
+                Click here to instantly open the YouTube App and see the best
+                career roadmaps for your exact role.
               </p>
             </div>
           </a>
@@ -217,7 +351,6 @@ export function RoadmapPage({
 
         {/* ---------- DETAILS ---------- */}
         <div className="space-y-6">
-
           <Card>
             <Lightbulb className="mb-2 text-orange-600" />
             <h3 className="font-bold text-lg mb-2">Required Skills</h3>

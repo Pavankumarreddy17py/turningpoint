@@ -38,7 +38,6 @@ export const dreamCategories: DreamCategory[] = [
   icon: 'PhoneCall',
   description: 'Emergency help and helpline numbers across India',
   questions: [
-
     /* ======================
        1️⃣ EMERGENCY TYPE
     ====================== */
@@ -47,13 +46,16 @@ export const dreamCategories: DreamCategory[] = [
       text: 'What kind of emergency help do you need?',
       type: 'single',
       options: [
-        { value: 'police', label: 'Police Emergency', nextQuestion: 'police_numbers' },
-        { value: 'medical', label: 'Medical / Ambulance', nextQuestion: 'medical_numbers' },
-        { value: 'fire', label: 'Fire Emergency', nextQuestion: 'fire_numbers' },
-        { value: 'women', label: 'Women Safety', nextQuestion: 'women_numbers' },
-        { value: 'child', label: 'Child Safety', nextQuestion: 'child_numbers' },
-        { value: 'mental', label: 'Mental Health Support', nextQuestion: 'mental_numbers' },
-        { value: 'disaster', label: 'Disaster Management', nextQuestion: 'disaster_numbers' },
+        { value: 'police', label: '🚔 Police Emergency', nextQuestion: 'police_numbers' },
+        { value: 'medical', label: '🚑 Medical / Ambulance', nextQuestion: 'medical_numbers' },
+        { value: 'fire', label: '🔥 Fire & Gas Leak', nextQuestion: 'fire_numbers' },
+        { value: 'women', label: '👩 Women Safety', nextQuestion: 'women_numbers' },
+        { value: 'child', label: '🧒 Child Safety', nextQuestion: 'child_numbers' },
+        { value: 'cyber', label: '💻 Cyber Crime & Online Fraud', nextQuestion: 'cyber_numbers' },
+        { value: 'travel', label: '🚆 Road, Highway & Railway', nextQuestion: 'travel_numbers' },
+        { value: 'senior', label: '👴 Senior Citizen Support', nextQuestion: 'senior_numbers' },
+        { value: 'mental', label: '🧠 Mental Health & Anti-Ragging', nextQuestion: 'mental_numbers' },
+        { value: 'disaster', label: '🌊 Disaster Management', nextQuestion: 'disaster_numbers' },
       ],
     },
 
@@ -65,8 +67,9 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Police Emergency Numbers (All India)',
       type: 'single',
       options: [
-        { value: '112', label: '📞 112 – National Emergency Number' },
-        { value: '100', label: '📞 100 – Police Control Room' },
+        { value: '112', phone: '112', label: '📞 112 – National Emergency Number (All-in-One)' },
+        { value: '100', phone: '100', label: '📞 100 – Police Control Room' },
+        { value: '103', phone: '103', label: '🚦 103 – Traffic Police Helpline' },
       ],
     },
 
@@ -78,21 +81,24 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Medical / Ambulance Emergency Numbers',
       type: 'single',
       options: [
-        { value: '108', label: '🚑 108 – Ambulance (All India)' },
-        { value: '112', label: '📞 112 – Emergency Support' },
+        { value: '108', phone: '108', label: '🚑 108 – Emergency Ambulance (All India)' },
+        { value: '102', phone: '102', label: '🏥 102 – National Ambulance Service (Maternity/Patient)' },
+        { value: '104', phone: '104', label: '🩺 104 – State Health Advice Helpline' },
+        { value: '1066', phone: '1066', label: '☠️ 1066 – Anti-Poison Helpline' },
       ],
     },
 
     /* ======================
-       FIRE
+       FIRE & GAS LEAK
     ====================== */
     {
       key: 'fire_numbers',
-      text: 'Fire Emergency Numbers',
+      text: 'Fire & LPG Gas Emergency Numbers',
       type: 'single',
       options: [
-        { value: '101', label: '🔥 101 – Fire Services' },
-        { value: '112', label: '📞 112 – Emergency Support' },
+        { value: '101', phone: '101', label: '🔥 101 – Fire Brigade Services' },
+        { value: '1906', phone: '1906', label: '⛽ 1906 – LPG Gas Leak Emergency' },
+        { value: '112', phone: '112', label: '📞 112 – National Emergency Support' },
       ],
     },
 
@@ -104,9 +110,9 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Women Safety Helplines',
       type: 'single',
       options: [
-        { value: '181', label: '👩 181 – Women Helpline' },
-        { value: '1091', label: '🚔 1091 – Women Police' },
-        { value: '112', label: '📞 112 – Emergency' },
+        { value: '181', phone: '181', label: '👩 181 – Women Helpline (Domestic Abuse/Distress)' },
+        { value: '1091', phone: '1091', label: '🚔 1091 – Women Police Helpline' },
+        { value: '112', phone: '112', label: '📞 112 – National Emergency' },
       ],
     },
 
@@ -118,20 +124,62 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Child Safety & Protection',
       type: 'single',
       options: [
-        { value: '1098', label: '🧒 1098 – Child Helpline' },
-        { value: '112', label: '📞 112 – Emergency' },
+        { value: '1098', phone: '1098', label: '🧒 1098 – Childline India (24/7)' },
+        { value: '112', phone: '112', label: '📞 112 – National Emergency' },
       ],
     },
 
     /* ======================
-       MENTAL HEALTH
+       CYBER CRIME
+    ====================== */
+    {
+      key: 'cyber_numbers',
+      text: 'Cyber Crime & Financial Fraud',
+      type: 'single',
+      options: [
+        { value: '1930', phone: '1930', label: '💻 1930 – National Cyber Crime & UPI Fraud Helpline' },
+        { value: '112', phone: '112', label: '📞 112 – Emergency Police Support' },
+      ],
+    },
+
+    /* ======================
+       ROAD & RAILWAY
+    ====================== */
+    {
+      key: 'travel_numbers',
+      text: 'Road, Highway & Railway Emergencies',
+      type: 'single',
+      options: [
+        { value: '1033', phone: '1033', label: '🛣️ 1033 – National Highway Emergency (NHAI)' },
+        { value: '1073', phone: '1073', label: '🚗 1073 – Road Accident Helpline' },
+        { value: '139', phone: '139', label: '🚆 139 – Indian Railways Security & Medical Help' },
+      ],
+    },
+
+    /* ======================
+       SENIOR CITIZEN
+    ====================== */
+    {
+      key: 'senior_numbers',
+      text: 'Senior Citizen Support',
+      type: 'single',
+      options: [
+        { value: '14567', phone: '14567', label: '👴 14567 – Elder Line (National Senior Citizen Helpline)' },
+        { value: '112', phone: '112', label: '📞 112 – National Emergency' },
+      ],
+    },
+
+    /* ======================
+       MENTAL HEALTH & STUDENT SUPPORT
     ====================== */
     {
       key: 'mental_numbers',
-      text: 'Mental Health Support',
+      text: 'Mental Health & Student Safety',
       type: 'single',
       options: [
-        { value: 'tele_manas', label: '🧠 Tele MANAS – 14416 / 1-800-891-4416' },
+        { value: '14416', phone: '14416', label: '🧠 14416 – Tele MANAS (24/7 Mental Health)' },
+        { value: '18005990019', phone: '18005990019', label: '💚 1800-599-0019 – KIRAN Mental Health Helpline' },
+        { value: '18001805522', phone: '18001805522', label: '🎓 1800-180-5522 – National Anti-Ragging Helpline' },
       ],
     },
 
@@ -143,11 +191,11 @@ export const dreamCategories: DreamCategory[] = [
       text: 'Disaster Management & Relief',
       type: 'single',
       options: [
-        { value: 'ndma', label: '🌊 NDMA – 1078' },
-        { value: '112', label: '📞 112 – Emergency Support' },
+        { value: '1078', phone: '1078', label: '🌊 1078 – NDMA (Disaster Management)' },
+        { value: '1070', phone: '1070', label: '🚨 1070 – Natural Calamities Relief Commissioner' },
+        { value: '112', phone: '112', label: '📞 112 – Emergency Support' },
       ],
     },
-
   ],
 },
 
@@ -176,248 +224,994 @@ export const dreamCategories: DreamCategory[] = [
     /* ================================================== */
     /* SCHOOL */
     /* ================================================== */
+    /* ======================
+       1️⃣ CLASS LEVEL ENTRY
+    ====================== */
     {
       key: 'school_stream',
-      text: 'Which stream are you interested in?',
+      text: 'Which class are you currently studying in?',
       type: 'single',
       options: [
-        { value: 'science_pcm', label: 'Science (PCM)', nextQuestion: 'school_goal' },
-        { value: 'science_pcb', label: 'Science (PCB)', nextQuestion: 'school_goal' },
-        { value: 'commerce', label: 'Commerce', nextQuestion: 'school_goal' },
-        { value: 'arts', label: 'Arts / Humanities', nextQuestion: 'school_goal' },
-      ],
-    },
-    {
-      key: 'school_goal',
-      text: 'What is your main goal after school?',
-      type: 'single',
-      options: [
-        { value: 'competitive_exams', label: 'Competitive Exams (JEE / NEET / CA / UPSC)' },
-        { value: 'college_abroad', label: 'Study Abroad' },
-        { value: 'job_or_skill', label: 'Skill-based Job' },
-      ],
-      nextQuestion: 'study_hours',
-    },
+        {
+          value: 'below_8',
+        label: 'Below Class 8 (Class 1–7)',
+        nextQuestion: 'below_8_skills',
+      },
+      {
+        value: 'class_8_10',
+        label: 'High School (Class 8–10)',
+        nextQuestion: 'class_8_10_focus',
+      },
+      {
+        value: 'class_11_12',
+        label: 'Senior Secondary / Intermediate (Class 11–12)',
+        nextQuestion: 'class_11_12_stream',
+      },
+    ],
+  },
 
+  /* ================================================== */
+  /* PATH A: BELOW CLASS 8 */
+  /* ================================================== */
+
+  {
+    key: 'below_8_skills',
+    text: 'Which early skill or interest do you enjoy most?',
+    type: 'single',
+    options: [
+      {
+        value: 'coding_logic',
+        label: 'Coding, Puzzles & Logic Games (Scratch / Blockly)',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'science_robotics',
+        label: 'Science Experiments, Space & Basic Robotics',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'math_olympiads',
+        label: 'Mental Maths, Abacus & Olympiads',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'communication',
+        label: 'English Speaking, Reading & Storytelling',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'creative_arts',
+        label: 'Drawing, Painting, Craft & Animation',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'sports_fitness',
+        label: 'Sports, Chess & Physical Fitness',
+        nextQuestion: 'below_8_goal',
+      },
+      {
+        value: 'performing_arts',
+        label: 'Music, Dance & Performing Arts',
+        nextQuestion: 'below_8_goal',
+      },
+    ],
+  },
+
+  {
+    key: 'below_8_goal',
+    text: 'What is your main focus right now?',
+    type: 'single',
+    options: [
+      {
+        value: 'strong_basics',
+        label: 'Building Strong School Basics (Maths, Science, English)',
+        nextQuestion: 'study_hours',
+      },
+      {
+        value: 'olympiads_competitions',
+        label: 'Olympiads, Sainik School / Navodaya Preparation',
+        nextQuestion: 'study_hours',
+      },
+      {
+        value: 'hobby_to_talent',
+        label: 'Turning a Hobby into a Serious Talent',
+        nextQuestion: 'study_hours',
+      },
+    ],
+  },
+
+  /* ================================================== */
+  /* PATH B: CLASS 8–10 */
+  /* ================================================== */
+
+  {
+    key: 'class_8_10_focus',
+    text: 'What is your main priority in Class 8–10?',
+    type: 'single',
+    options: [
+      {
+        value: 'board_foundation',
+        label: 'Board Exams + Early Foundation (JEE / NEET / NTSE / Olympiads)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'explore_skills',
+        label: 'Learning Practical & Future-Ready Skills (NEP 2020)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'after_10_path',
+        label: 'Deciding What to Choose After 10th (Inter vs Diploma vs ITI)',
+        nextQuestion: 'after_10th_plan',
+      },
+    ],
+  },
+
+  /* ================================================== */
+  /* AFTER CLASS 10 PATH */
+  /* ================================================== */
+
+  {
+    key: 'after_10th_plan',
+    text: 'Which path are you considering right after Class 10?',
+    type: 'single',
+    options: [
+      {
+        value: 'intermediate_11_12',
+        label: 'Class 11–12 / Intermediate (MPC, BiPC, MEC, CEC, HEC)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'polytechnic_diploma',
+        label: 'Polytechnic / Engineering Diploma (3 Years)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'iti_vocational',
+        label: 'ITI / Short-Term Skill & Trade Courses',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'not_sure',
+        label: 'Not Sure Yet – Need Guidance',
+        nextQuestion: 'indian_school_skills',
+      },
+    ],
+  },
+
+  /* ================================================== */
+  /* PATH C: CLASS 11–12 */
+  /* ================================================== */
+
+  {
+    key: 'class_11_12_stream',
+    text: 'Which stream are you studying or interested in?',
+    type: 'single',
+    options: [
+      {
+        value: 'science_pcm',
+        label: 'Science – PCM / MPC (Maths, Physics, Chemistry)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'science_pcb',
+        label: 'Science – PCB / BiPC (Biology, Physics, Chemistry)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'science_pcmb',
+        label: 'Science – PCMB (Both Maths & Biology)',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'commerce_math',
+        label: 'Commerce with Maths / MEC',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'commerce_no_math',
+        label: 'Commerce without Maths / CEC',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'arts_humanities',
+        label: 'Arts / Humanities / HEC',
+        nextQuestion: 'indian_school_skills',
+      },
+      {
+        value: 'vocational',
+        label: 'Vocational / Polytechnic / ITI',
+        nextQuestion: 'indian_school_skills',
+      },
+    ],
+  },
+
+  /* ================================================== */
+  /* COMMON: INDIAN SCHOOL SKILLS */
+  /* ================================================== */
+
+  {
+    key: 'indian_school_skills',
+    text: 'Which skill subject or career skill do you want to build alongside school?',
+    type: 'single',
+    options: [
+      {
+        value: 'ai_data_science',
+        label: 'Artificial Intelligence (AI) & Data Science',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'coding_it',
+        label: 'Coding, IT & Web/App Development',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'robotics_electronics',
+        label: 'Robotics, Electronics & IoT',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'financial_literacy',
+        label: 'Financial Literacy, Banking & Stock Markets',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'entrepreneurship',
+        label: 'Entrepreneurship, Business & Marketing',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'design_animation',
+        label: 'Design Thinking, Graphic Design & Animation',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'media_communication',
+        label: 'Mass Media, Content Creation & Public Speaking',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'healthcare_wellness',
+        label: 'Healthcare, First Aid, Yoga & Physical Education',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'agriculture_food',
+        label: 'Agriculture, Food Production & Biotechnology',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'hospitality_tourism',
+        label: 'Tourism, Hospitality & Culinary Arts',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'automotive_hardware',
+        label: 'Automotive, Electrical & Technical Trades',
+        nextQuestion: 'school_goal',
+      },
+      {
+        value: 'none_academics_only',
+        label: 'Focus Only on Core Academic Subjects',
+        nextQuestion: 'school_goal',
+      },
+    ],
+  },
     /* ================================================== */
     /* UNDERGRADUATE */
     /* ================================================== */
+/* ======================
+       UNDERGRADUATE ENTRY
+    ====================== */
+   
+/* ==================================================
+   UNDERGRADUATE ENTRY
+================================================== */
+
 {
-      key: 'ug_type',
-      text: 'Which undergraduate path are you considering?',
-      type: 'single',
-      options: [
-        { value: 'engineering', label: 'Engineering & Tech (B.Tech / BE)', nextQuestion: 'engineering_branch' },
-        { value: 'medical', label: 'Medical & Healthcare (MBBS, BDS, B.Pharm, Nursing)', nextQuestion: 'medical_branch' },
-        { value: 'degree', label: 'General Degree (BSc / BCom / BA)', nextQuestion: 'degree_stream' },
-        { value: 'management', label: 'Business & Management (BBA / BMS)', nextQuestion: 'management_interest' },
-        { value: 'law', label: 'Integrated Law (BA LLB / BBA LLB)', nextQuestion: 'law_interest' },
-        { value: 'architecture_design', label: 'Architecture & Design (B.Arch / B.Des)', nextQuestion: 'design_interest' },
-        { value: 'agriculture', label: 'Agriculture & Allied Sciences (BSc Agri)', nextQuestion: 'agri_interest' },
-        { value: 'hospitality', label: 'Hotel Management & Aviation (BHM)', nextQuestion: 'hospitality_interest' },
-        { value: 'professional', label: 'Other Professional Courses (CA, CS, CMA)', nextQuestion: 'professional_course' },
-      ],
-    },
-    /* ---------- ENGINEERING ---------- */
-    {
-      key: 'engineering_branch',
-      text: 'Which engineering branch are you interested in?',
-      type: 'single',
-      options: [
-        { value: 'cse', label: 'Computer Science (CSE)', nextQuestion: 'cse_specialization' },
-        { value: 'it', label: 'Information Technology (IT)', nextQuestion: 'it_interest' },
-        { value: 'ai_ml', label: 'AI & Machine Learning', nextQuestion: 'ai_goal' },
-        { value: 'data_science', label: 'Data Science', nextQuestion: 'data_goal' },
-        { value: 'cyber_security', label: 'Cyber Security', nextQuestion: 'cyber_goal' },
-        { value: 'ece', label: 'Electronics & Communication (ECE)', nextQuestion: 'ece_interest' },
-        { value: 'eee', label: 'Electrical & Electronics (EEE)', nextQuestion: 'eee_interest' },
-        { value: 'mechanical', label: 'Mechanical Engineering', nextQuestion: 'mechanical_interest' },
-        { value: 'civil', label: 'Civil Engineering', nextQuestion: 'civil_interest' },
-        { value: 'chemical', label: 'Chemical Engineering', nextQuestion: 'chemical_interest' },
-        { value: 'aerospace', label: 'Aerospace & Aeronautical', nextQuestion: 'aerospace_interest' },
-        { value: 'biotech', label: 'Biotechnology', nextQuestion: 'biotech_goal' },
-        { value: 'marine', label: 'Marine Engineering', nextQuestion: 'marine_interest' },
-        { value: 'metallurgical', label: 'Metallurgical & Materials', nextQuestion: 'metallurgy_interest' },
-        { value: 'agricultural', label: 'Agricultural Engineering', nextQuestion: 'agri_interest' }
-      ],
-    },
-    {
-      key: 'cse_specialization',
-      text: 'How do you prefer to acquire your CSE skills and qualifications?',
-      type: 'single',
-      options: [
-        { value: 'college', label: 'Traditional College (Full-time B.Tech/B.E.)', nextQuestion: 'cse_college_target' },
-        { value: 'self_taught', label: 'Self-Taught (Online courses, YouTube, Projects)', nextQuestion: 'cse_self_taught_resource' },
-        { value: 'bootcamp', label: 'Intensive Bootcamps / Skill Academies', nextQuestion: 'cse_bootcamp_type' },
-        { value: 'online_degree', label: 'Online Degree / Distance Education', nextQuestion: 'cse_online_degree_type' },
-      ],
-    },
+  key: 'ug_type',
+  text: 'Which undergraduate path are you considering?',
+  type: 'single',
+  options: [
+    { value: 'engineering', label: 'Engineering & Tech (B.Tech / BE)', nextQuestion: 'engineering_branch' },
+    { value: 'medical', label: 'Medical & Healthcare (MBBS, BDS, B.Pharm, Nursing)', nextQuestion: 'medical_branch' },
+    { value: 'degree', label: 'General Degree (BSc / BCom / BA / BCA)', nextQuestion: 'degree_stream' },
+    { value: 'management', label: 'Business & Management (BBA / BMS / IPM)', nextQuestion: 'management_interest' },
+    { value: 'law', label: 'Integrated Law (BA LLB / BBA LLB)', nextQuestion: 'law_interest' },
+    { value: 'architecture_design', label: 'Architecture & Design (B.Arch / B.Des)', nextQuestion: 'design_interest' },
+    { value: 'agriculture', label: 'Agriculture & Allied Sciences (BSc Agri)', nextQuestion: 'ug_agri_interest' },
+    { value: 'hospitality', label: 'Hotel Management, Aviation & Tourism (BHM)', nextQuestion: 'hospitality_interest' },
+    { value: 'professional', label: 'Professional Courses (CA, CS, CMA, ACCA, CFA)', nextQuestion: 'professional_course' },
+  ],
+},
 
-    // --- BRANCH 1: TRADITIONAL COLLEGE ---
-    {
-      key: 'cse_college_target',
-      text: 'What is your target for traditional college admission?',
-      type: 'single',
-      options: [
-        { value: 'tier_1', label: 'Top Tier Institutes (IITs, NITs, IIITs via JEE)' },
-        { value: 'state_level', label: 'State Level Engineering Colleges (EAMCET, KCET, etc.)' },
-        { value: 'private_direct', label: 'Private Universities / Direct Admission' },
-      ],
-      nextQuestion: 'study_hours',
-    },
+/* ==================================================
+   1. ENGINEERING & TECHNOLOGY
+================================================== */
 
-    // --- BRANCH 2: SELF-TAUGHT ---
-    {
-      key: 'cse_self_taught_resource',
-      text: 'Which primary method will you use for self-learning?',
-      type: 'single',
-      options: [
-        { value: 'free_structured', label: 'Free Structured Curriculum (FreeCodeCamp, The Odin Project)' },
-        { value: 'video_tutorials', label: 'Video Courses (YouTube, Udemy, Coursera)' },
-        { value: 'project_based', label: 'Building Projects & Open Source (GitHub)' },
-      ],
-      nextQuestion: 'study_hours',
-    },
-
-    // --- BRANCH 3: BOOTCAMPS ---
-    {
-      key: 'cse_bootcamp_type',
-      text: 'What financial and structure model are you looking for in a bootcamp?',
-      type: 'single',
-      options: [
-        { value: 'isa', label: 'Pay After Placement (Income Share Agreement)' },
-        { value: 'paid_upfront', label: 'Paid Upfront (Usually 3-6 months specialized training)' },
-        { value: 'internship_model', label: 'Training + Guaranteed Internship Model' },
-      ],
-      nextQuestion: 'study_hours',
-    },
-
-    // --- BRANCH 4: ONLINE DEGREE ---
-    {
-      key: 'cse_online_degree_type',
-      text: 'Which type of online degree program interests you?',
-      type: 'single',
-      options: [
-        { value: 'premium_indian', label: 'Premier Indian Institute (e.g., IIT Madras Online B.S. in Data Science)' },
-        { value: 'bca_mca', label: 'Standard Online BCA / MCA from UGC recognized universities' },
-        { value: 'foreign_uni', label: 'Foreign University Remote Degree (via Coursera / edX)' },
-      ],
-      nextQuestion: 'study_hours',
-    },
-
-    {
-      key: 'cyber_goal',
-      text: 'Which cyber security path do you prefer?',
-      type: 'single',
-      options: [
-        { value: 'ethical_hacking', label: 'Ethical Hacking' },
-        { value: 'security_analyst', label: 'Security Analyst' },
-        { value: 'forensics', label: 'Digital Forensics' },
-      ],
-      nextQuestion: 'study_hours',
-    },
-
-    {
-      key: 'ece_interest',
-      text: 'Which ECE area interests you most?',
-      type: 'single',
-      options: [
-        { value: 'embedded', label: 'Embedded Systems' },
-        { value: 'vlsi', label: 'VLSI Design' },
-        { value: 'telecom', label: 'Telecommunications' },
-      ],
-      nextQuestion: 'study_hours',
-    },
 {
-      key: 'mechanical_interest',
-      text: 'Which mechanical domain do you prefer?',
-      type: 'single',
-      options: [
-        { value: 'automobile', label: 'Automobile Engineering' },
-        { value: 'robotics', label: 'Robotics & Automation' },
-        { value: 'thermal', label: 'Thermal Engineering' },
-        { value: 'manufacturing', label: 'Manufacturing & Production' },
-        { value: 'aerospace', label: 'Aerospace & Aeronautical' },
-        { value: 'design', label: 'Design & Drafting (CAD/CAM)' },
-        { value: 'hvac', label: 'HVAC (Heating, Ventilation & Air Conditioning)' },
-        { value: 'mechatronics', label: 'Mechatronics' },
-        { value: 'marine', label: 'Marine Engineering' },
-      ],
-      nextQuestion: 'study_hours',
-    },
-    {
-      key: 'civil_interest',
-      text: 'Which civil engineering field attracts you?',
-      type: 'single',
-      options: [
-        { value: 'construction', label: 'Construction Management' },
-        { value: 'structural', label: 'Structural Engineering' },
-        { value: 'environmental', label: 'Environmental Engineering' },
+  key: 'engineering_branch',
+  text: 'Which engineering branch are you interested in?',
+  type: 'single',
+  options: [
+    { value: 'cse', label: 'Computer Science (CSE)', nextQuestion: 'cse_specialization' },
+    { value: 'it', label: 'Information Technology (IT)', nextQuestion: 'it_interest' },
+    { value: 'ai_ml', label: 'AI & Machine Learning', nextQuestion: 'ai_goal' },
+    { value: 'data_science', label: 'Data Science', nextQuestion: 'data_goal' },
+    { value: 'cyber_security', label: 'Cyber Security', nextQuestion: 'cyber_goal' },
+    { value: 'ece', label: 'Electronics & Communication (ECE)', nextQuestion: 'ece_interest' },
+    { value: 'eee', label: 'Electrical & Electronics (EEE)', nextQuestion: 'eee_interest' },
+    { value: 'mechanical', label: 'Mechanical Engineering', nextQuestion: 'mechanical_interest' },
+    { value: 'civil', label: 'Civil Engineering', nextQuestion: 'civil_interest' },
+    { value: 'chemical', label: 'Chemical Engineering', nextQuestion: 'chemical_interest' },
+    { value: 'aerospace', label: 'Aerospace & Aeronautical', nextQuestion: 'aerospace_interest' },
+    { value: 'biotech', label: 'Biotechnology', nextQuestion: 'biotech_goal' },
+    { value: 'marine', label: 'Marine Engineering', nextQuestion: 'marine_interest' },
+    { value: 'metallurgical', label: 'Metallurgical & Materials', nextQuestion: 'metallurgy_interest' },
+    { value: 'agricultural', label: 'Agricultural Engineering', nextQuestion: 'eng_agri_interest' },
+    { value: 'mining', label: 'Mining Engineering', nextQuestion: 'mining_interest' },
+  ],
+},
+
+/* ==================================================
+   CSE SPECIALIZATION
+================================================== */
+
+{
+  key: 'cse_specialization',
+  text: 'How do you prefer to acquire your CSE skills and qualifications?',
+  type: 'single',
+  options: [
+    { value: 'college', label: 'Traditional College (Full-time B.Tech / B.E.)', nextQuestion: 'cse_college_target' },
+    { value: 'self_taught', label: 'Self-Taught (Online courses, YouTube, Projects)', nextQuestion: 'cse_self_taught_resource' },
+    { value: 'bootcamp', label: 'Intensive Bootcamps / Skill Academies', nextQuestion: 'cse_bootcamp_type' },
+    { value: 'online_degree', label: 'Online Degree / Distance Education', nextQuestion: 'cse_online_degree_type' },
+  ],
+},
+
+{
+  key: 'cse_college_target',
+  text: 'What is your target for traditional college admission?',
+  type: 'single',
+  options: [
+    { value: 'tier_1', label: 'Top Tier Institutes (IITs, NITs, IIITs via JEE)', nextQuestion: 'ug_industry_skills' },
+    { value: 'state_level', label: 'State Level Engineering Colleges (EAMCET, KCET, MHT-CET)', nextQuestion: 'ug_industry_skills' },
+    { value: 'private_direct', label: 'Private Universities / Direct Admission', nextQuestion: 'ug_industry_skills' },
+    { value: 'abroad_cs', label: 'Foreign University (US, UK, Germany, Canada)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'cse_self_taught_resource',
+  text: 'Which primary method will you use for self-learning?',
+  type: 'single',
+  options: [
+    { value: 'free_structured', label: 'Free Structured Curriculum (FreeCodeCamp, The Odin Project)', nextQuestion: 'ug_industry_skills' },
+    { value: 'video_tutorials', label: 'Video Courses (YouTube, Udemy, Coursera)', nextQuestion: 'ug_industry_skills' },
+    { value: 'project_based', label: 'Building Projects & Open Source (GitHub)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'cse_bootcamp_type',
+  text: 'What financial and structure model are you looking for in a bootcamp?',
+  type: 'single',
+  options: [
+    { value: 'isa', label: 'Pay After Placement (Income Share Agreement)', nextQuestion: 'ug_industry_skills' },
+    { value: 'paid_upfront', label: 'Paid Upfront (3–6 months specialized training)', nextQuestion: 'ug_industry_skills' },
+    { value: 'internship_model', label: 'Training + Guaranteed Internship Model', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'cse_online_degree_type',
+  text: 'Which type of online degree program interests you?',
+  type: 'single',
+  options: [
+    { value: 'premium_indian', label: 'Premier Indian Institute (e.g., IIT Madras Online B.S.)', nextQuestion: 'ug_industry_skills' },
+    { value: 'bca_mca', label: 'Standard Online BCA / MCA (UGC recognized)', nextQuestion: 'ug_industry_skills' },
+    { value: 'foreign_uni', label: 'Foreign University Remote Degree (Coursera / edX)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+/* ==================================================
+   OTHER ENGINEERING BRANCHES
+================================================== */
+
+{
+  key: 'it_interest',
+  text: 'Which area of Information Technology interests you most?',
+  type: 'single',
+  options: [
+    { value: 'cloud_devops', label: 'Cloud Computing, Docker, Kubernetes & DevOps', nextQuestion: 'ug_industry_skills' },
+    { value: 'full_stack', label: 'Full-Stack Web & Mobile App Development', nextQuestion: 'ug_industry_skills' },
+    { value: 'network_admin', label: 'Networking & System Administration', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'ai_goal',
+  text: 'Which AI & Machine Learning track do you want to focus on?',
+  type: 'single',
+  options: [
+    { value: 'gen_ai', label: 'Generative AI, LLMs & RAG Systems', nextQuestion: 'ug_industry_skills' },
+    { value: 'ml_engineer', label: 'Machine Learning & Deep Learning Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'computer_vision', label: 'Computer Vision & Robotics AI', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'data_goal',
+  text: 'Which Data Science role fits your interest?',
+  type: 'single',
+  options: [
+    { value: 'data_analyst', label: 'Data Analytics & Business Intelligence (SQL, Power BI)', nextQuestion: 'ug_industry_skills' },
+    { value: 'data_scientist', label: 'Predictive Modeling & Statistical Data Science', nextQuestion: 'ug_industry_skills' },
+    { value: 'data_engineer', label: 'Big Data & Data Engineering (Spark, Pipelines)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'cyber_goal',
+  text: 'Which Cyber Security path do you prefer?',
+  type: 'single',
+  options: [
+    { value: 'ethical_hacking', label: 'Ethical Hacking & Penetration Testing', nextQuestion: 'ug_industry_skills' },
+    { value: 'security_analyst', label: 'SOC & Cloud Security Analyst', nextQuestion: 'ug_industry_skills' },
+    { value: 'forensics', label: 'Digital Forensics & Incident Response', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'ece_interest',
+  text: 'Which ECE area interests you most?',
+  type: 'single',
+  options: [
+    { value: 'embedded', label: 'Embedded Systems & IoT', nextQuestion: 'ug_industry_skills' },
+    { value: 'vlsi', label: 'VLSI & Semiconductor Chip Design', nextQuestion: 'ug_industry_skills' },
+    { value: 'telecom', label: '5G / Telecommunications & Signal Processing', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'eee_interest',
+  text: 'What is your focus within Electrical & Electronics?',
+  type: 'single',
+  options: [
+    { value: 'power_systems', label: 'Power Systems & Renewable Energy', nextQuestion: 'ug_industry_skills' },
+    { value: 'ev_tech', label: 'Electric Vehicles (EV) & Battery Tech', nextQuestion: 'ug_industry_skills' },
+    { value: 'control_automation', label: 'Industrial Automation & PLC / SCADA', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'mechanical_interest',
+  text: 'Which Mechanical Engineering domain do you prefer?',
+  type: 'single',
+  options: [
+    { value: 'automobile', label: 'Automobile & EV Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'robotics', label: 'Robotics & Automation', nextQuestion: 'ug_industry_skills' },
+    { value: 'thermal', label: 'Thermal & Energy Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'manufacturing', label: 'Manufacturing & Production', nextQuestion: 'ug_industry_skills' },
+    { value: 'aerospace', label: 'Aerospace & Aeronautical', nextQuestion: 'ug_industry_skills' },
+    { value: 'design', label: 'Design & Drafting (CAD / CAM / CAE)', nextQuestion: 'ug_industry_skills' },
+    { value: 'hvac', label: 'HVAC (Heating, Ventilation & Air Conditioning)', nextQuestion: 'ug_industry_skills' },
+    { value: 'mechatronics', label: 'Mechatronics', nextQuestion: 'ug_industry_skills' },
+    { value: 'marine', label: 'Marine Engineering', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'civil_interest',
+  text: 'Which Civil Engineering field attracts you?',
+  type: 'single',
+  options: [
+    { value: 'construction', label: 'Construction Management & BIM', nextQuestion: 'ug_industry_skills' },
+    { value: 'structural', label: 'Structural & Earthquake Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'environmental', label: 'Environmental & Smart City Planning', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'chemical_interest',
+  text: 'Which Chemical Engineering sector do you want to work in?',
+  type: 'single',
+  options: [
+    { value: 'petrochemical', label: 'Petrochemicals, Oil & Gas', nextQuestion: 'ug_industry_skills' },
+    { value: 'pharma', label: 'Pharmaceuticals & Process Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'materials', label: 'Polymers, Green Hydrogen & Advanced Materials', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'aerospace_interest',
+  text: 'Which Aerospace domain excites you?',
+  type: 'single',
+  options: [
+    { value: 'space_tech', label: 'Space Technology & Satellites (ISRO / Private Space)', nextQuestion: 'ug_industry_skills' },
+    { value: 'aircraft_design', label: 'Aircraft & Drone (UAV) Design', nextQuestion: 'ug_industry_skills' },
+    { value: 'avionics', label: 'Avionics & Propulsion Systems', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'biotech_goal',
+  text: 'What is your Biotechnology career goal?',
+  type: 'single',
+  options: [
+    { value: 'research', label: 'Biotech & Bioinformatics Research', nextQuestion: 'ug_industry_skills' },
+    { value: 'pharma', label: 'Pharmaceutical & Clinical Trials', nextQuestion: 'ug_industry_skills' },
+    { value: 'genetics', label: 'Genetics, Genomics & Healthcare Tech', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'marine_interest',
+  text: 'What is your goal in Marine Engineering?',
+  type: 'single',
+  options: [
+    { value: 'ship_design', label: 'Naval Architecture (Ship Design)', nextQuestion: 'ug_industry_skills' },
+    { value: 'onboard_engineer', label: 'Merchant Navy / Onboard Marine Engineer', nextQuestion: 'ug_industry_skills' },
+    { value: 'offshore', label: 'Offshore Oil, Gas & Port Operations', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'metallurgy_interest',
+  text: 'Which area of Metallurgy & Materials do you prefer?',
+  type: 'single',
+  options: [
+    { value: 'physical', label: 'Physical Metallurgy & Alloys', nextQuestion: 'ug_industry_skills' },
+    { value: 'extractive', label: 'Extractive Metallurgy & Steel Plants', nextQuestion: 'ug_industry_skills' },
+    { value: 'nanotech', label: 'Nanomaterials & Semiconductor Materials', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'eng_agri_interest',
+  text: 'What is your focus in Agricultural Engineering?',
+  type: 'single',
+  options: [
+    { value: 'farm_machinery', label: 'Agri-Tech, Drones & Farm Machinery', nextQuestion: 'ug_industry_skills' },
+    { value: 'irrigation', label: 'Soil & Water Conservation Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'food_processing', label: 'Food Processing & Cold Chain Tech', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'mining_interest',
+  text: 'Which Mining Engineering path do you want to pursue?',
+  type: 'single',
+  options: [
+    { value: 'surface', label: 'Surface Mining & PSU Roles (Coal India / NMDC)', nextQuestion: 'ug_industry_skills' },
+    { value: 'underground', label: 'Underground Mining & Safety Engineering', nextQuestion: 'ug_industry_skills' },
+    { value: 'mineral_processing', label: 'Mineral Processing & Geology', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+/* ==================================================
+   2. NON-ENGINEERING UG PATHS
+================================================== */
+
+{
+  key: 'medical_branch',
+  text: 'Which Medical & Healthcare path are you aiming for?',
+  type: 'single',
+  options: [
+    { value: 'mbbs', label: 'MBBS (Allopathic Medicine / Doctor)' },
+    { value: 'bds_ayush', label: 'BDS (Dental) / BAMS / BHMS (AYUSH)'},
+    { value: 'bpharm', label: 'Pharmacy (B.Pharm / Pharm.D)'},
+    { value: 'nursing_allied', label: 'BSc Nursing, Physiotherapy (BPT) & Allied Health'},
+    { value: 'neet_pg_usmle', label: 'NEET PG / NEXT / USMLE / PLAB Exam Prep' },
+    { value: 'clinical_research', label: 'Clinical Research, Medical Writing & Trials' },
+    { value: 'hospital_mgmt', label: 'Hospital Administration & Healthcare Management' },
+    { value: 'patient_comm', label: 'Clinical Communication & Emergency First-Aid' },
+    { value: 'health_tech', label: 'Health-Tech, Telemedicine & Medical AI Basics' },
       ],
       nextQuestion: 'study_hours',
     },
 
-    {
-      key: 'biotech_goal',
-      text: 'What is your biotech career goal?',
+{
+  key: 'degree_stream',
+  text: 'Which General Degree stream are you choosing?',
+  type: 'single',
+  options: [
+    { value: 'bsc_bca', label: 'BSc (Maths, Physics, CS, Data) / BCA', nextQuestion: 'ug_industry_skills' },
+    { value: 'bcom', label: 'BCom (Accounting, Finance, Banking)', nextQuestion: 'ug_industry_skills' },
+    { value: 'ba', label: 'BA (Economics, Psychology, Journalism, Civil Services Prep)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'management_interest',
+  text: 'Which Business & Management area interests you?',
+  type: 'single',
+  options: [
+    { value: 'finance_consulting', label: 'Finance, Investment Banking & Consulting', nextQuestion: 'ug_industry_skills' },
+    { value: 'marketing_product', label: 'Digital Marketing, Sales & Product Management', nextQuestion: 'ug_industry_skills' },
+    { value: 'entrepreneurship', label: 'Startups, Family Business & Operations', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'law_interest',
+    text: 'Which legal skill do you want to master alongside your LLB?',
+    type: 'single',
+    options: [
+      { value: 'moot_court_advocacy', label: 'Moot Court, Public Speaking & Courtroom Advocacy' },
+      { value: 'legal_drafting', label: 'Legal Drafting, Contract Review & Research (SCC/Manupatra)' },
+      { value: 'judiciary_upsc', label: 'Judiciary (PCS-J) / UPSC / LLM Entrance Prep' },
+      { value: 'corporate_ma', label: 'Corporate Law, M&A, Compliance & Taxation' },
+      { value: 'cyber_ip_law', label: 'Cyber Law, Intellectual Property (IPR) & Arbitration' },
+    ],
+    nextQuestion: 'study_hours',
+  },
+{
+  key: 'design_interest',
+  text: 'Which Architecture or Design track excites you?',
+  type: 'single',
+  options: [
+    { value: 'architecture', label: 'Architecture (B.Arch via NATA / JEE Paper 2)', nextQuestion: 'ug_industry_skills' },
+    { value: 'ui_ux_product', label: 'UI/UX, Product & Interaction Design (UCEED / NID)', nextQuestion: 'ug_industry_skills' },
+    { value: 'fashion_interior', label: 'Fashion, Graphic & Interior Design (NIFT)', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+{
+  key: 'ug_agri_interest',
+  text: 'Which agriculture or allied skill do you want to focus on?',
       type: 'single',
       options: [
-        { value: 'research', label: 'Biotech Research' },
-        { value: 'pharma', label: 'Pharmaceutical Industry' },
-        { value: 'genetics', label: 'Genetics & Genomics' },
+        { value: 'agri_govt_exams', label: 'ICAR JRF / NABARD / IBPS AFO / State Agri Officer Prep' },
+        { value: 'agritech_drones', label: 'Precision Farming, Agri-Drones & GIS Mapping' },
+        { value: 'organic_hydroponics', label: 'Organic Farming, Hydroponics & Greenhouse Tech' },
+        { value: 'agribusiness_supply', label: 'Agri-Business, Export & Supply Chain Management' },
       ],
       nextQuestion: 'study_hours',
     },
+
+{
+  key: 'hospitality_interest',
+  text: 'Which Hospitality or Aviation path are you targeting?',
+  type: 'single',
+  options: [
+    { value: 'hotel_culinary', label: 'Luxury Hotel Management & Culinary Arts (IHM)' },
+    { value: 'aviation_pilot', label: 'Commercial Pilot (CPL) / Cabin Crew / Aviation Management' },
+    { value: 'travel_events', label: 'Global Tourism & Event Management' },
+    { value: 'grooming_comm', label: 'Personality Development, Grooming & Foreign Languages' },
+    { value: 'culinary_fb', label: 'Culinary Arts, Bakery & F&B Management' },
+    { value: 'aviation_safety', label: 'Aviation Regulations, Cabin Safety & Ground Ops' },
+    { value: 'hotel_event_ops', label: 'Luxury Hotel Operations & Event Management' },
+    ],
+    nextQuestion: 'study_hours',
+  },
+
+{
+  key: 'professional_course',
+  text: 'Which Professional Certification are you pursuing?',
+  type: 'single',
+  options: [
+    { value: 'ca_cs_cma', label: 'Indian Statutory (CA / CS / CMA)', nextQuestion: 'ug_industry_skills' },
+    { value: 'global_finance', label: 'Global Finance (CFA / ACCA / CPA / FRM)', nextQuestion: 'ug_industry_skills' },
+    { value: 'actuarial', label: 'Actuarial Science & Risk Management', nextQuestion: 'ug_industry_skills' },
+  ],
+},
+
+/* ==================================================
+   3. UNIVERSAL INDIAN & GLOBAL INDUSTRY SKILLS
+================================================== */
+
+{
+  key: 'ug_industry_skills',
+  text: 'Which high-demand skill (Indian or Global) do you want to master alongside your degree?',
+  type: 'single',
+  options: [
+    { value: 'dsa_system_design', label: 'DSA, Full-Stack Dev & System Design (Tech Placements)', nextQuestion: 'study_hours' },
+    { value: 'ai_cloud_data', label: 'AI/ML, Cloud (AWS/GCP) & Data Analytics', nextQuestion: 'study_hours' },
+    { value: 'core_tools', label: 'Core Industry Tools (AutoCAD, SolidWorks, VLSI, MATLAB)', nextQuestion: 'study_hours' },
+    { value: 'finance_excel', label: 'Financial Modeling, Tally, Excel & Stock Markets', nextQuestion: 'study_hours' },
+    { value: 'product_design_media', label: 'UI/UX (Figma), Video Editing & Digital Marketing', nextQuestion: 'study_hours' },
+    { value: 'communication_english', label: 'English Fluency, Public Speaking & Interview Prep', nextQuestion: 'study_hours' },
+    { value: 'competitive_gate_cat', label: 'Competitive Exams (GATE / CAT / UPSC / GRE / IELTS)', nextQuestion: 'study_hours' },
+    { value: 'freelancing_startup', label: 'Freelancing, Client Acquisition & Startup Building', nextQuestion: 'study_hours' },
+  ],
+},
 
     /* ---------- POSTGRADUATE ---------- */
+    /* ======================
+       1. POSTGRADUATE GOAL
+    ====================== */
     {
       key: 'pg_goal',
       text: 'Why do you want to pursue postgraduate studies?',
       type: 'single',
       options: [
-        { value: 'higher_salary', label: 'Higher Salary' },
-        { value: 'specialization', label: 'Deep Specialization' },
-        { value: 'career_shift', label: 'Career Shift' },
-        { value: 'research', label: 'Research Interest' },
+        { value: 'higher_salary', label: 'Higher Salary & Senior Roles' },
+        { value: 'specialization', label: 'Deep Technical or Domain Specialization' },
+        { value: 'career_shift', label: 'Career Shift / Pivot to a New Field' },
+        { value: 'research_academia', label: 'Research, PhD or University Teaching (Professor)' },
+        { value: 'global_career', label: 'Global Career, International Exposure or PR' },
+        { value: 'entrepreneurship', label: 'Networking, Leadership & Startup Building' },
       ],
       nextQuestion: 'pg_field',
     },
 
+    /* ======================
+       2. POSTGRADUATE FIELD
+    ====================== */
     {
       key: 'pg_field',
-      text: 'Which field for postgraduate?',
+      text: 'Which postgraduate degree or path are you targeting?',
       type: 'single',
       options: [
-        { value: 'mtech', label: 'M.Tech' },
-        { value: 'mba', label: 'MBA' },
-        { value: 'msc', label: 'M.Sc' },
-        { value: 'abroad_masters', label: 'Masters Abroad' },
+        { value: 'mtech', label: 'M.Tech / ME / MS by Research (India)', nextQuestion: 'pg_mtech_focus' },
+        { value: 'mba', label: 'MBA / PGDM / Executive MBA', nextQuestion: 'pg_mba_focus' },
+        { value: 'mca', label: 'MCA (Master of Computer Applications)', nextQuestion: 'pg_mca_focus' },
+        { value: 'msc_ma_mcom', label: 'M.Sc / MA / M.Com (Sciences, Arts, Commerce)', nextQuestion: 'pg_general_focus' },
+        { value: 'medical_pg', label: 'Medical & Pharma PG (MD / MS / MDS / M.Pharm / MPH)', nextQuestion: 'pg_medical_focus' },
+        { value: 'llm', label: 'LLM (Master of Laws)', nextQuestion: 'pg_llm_focus' },
+        { value: 'mdes_march', label: 'M.Des / M.Arch (Design & Architecture)', nextQuestion: 'pg_design_focus' },
+        { value: 'abroad_masters', label: 'Masters Abroad (MS / MBA / MIM / MSc)', nextQuestion: 'pg_abroad_region' },
+        { value: 'phd', label: 'PhD / Doctoral Fellowship (India or Abroad)', nextQuestion: 'pg_phd_focus' },
+      ],
+    },
+
+    /* ======================
+       3. FIELD-SPECIFIC FOLLOW-UPS
+    ====================== */
+    {
+      key: 'pg_mtech_focus',
+      text: 'Which M.Tech / MS (India) track are you aiming for?',
+      type: 'single',
+      options: [
+        { value: 'iit_nit_gate', label: 'IITs / IISc / NITs via GATE' },
+        { value: 'iiit_bits', label: 'IIITs / BITS / Top Private Universities' },
+        { value: 'psu_gate', label: 'PSU Jobs via GATE (ISRO, BARC, ONGC, NTPC)' },
+        { value: 'working_prof_mtech', label: 'Part-Time / Online M.Tech for Working Professionals' },
+      ],
+      nextQuestion: 'pg_skills_tech_eng',
+    },
+    {
+      key: 'pg_mba_focus',
+      text: 'Which MBA specialization or track interests you?',
+      type: 'single',
+      options: [
+        { value: 'finance_ib', label: 'Finance, Investment Banking & FinTech' },
+        { value: 'consulting_strategy', label: 'Strategy, Consulting & General Management' },
+        { value: 'marketing_product', label: 'Marketing, Brand & Product Management' },
+        { value: 'business_analytics', label: 'Business Analytics, Operations & Supply Chain' },
+        { value: 'hr_entrepreneurship', label: 'Human Resources (HR) & Entrepreneurship' },
+      ],
+      nextQuestion: 'pg_skills_mba',
+    },
+    {
+      key: 'pg_mca_focus',
+      text: 'What is your target for MCA?',
+      type: 'single',
+      options: [
+        { value: 'nit_nimcet', label: 'NITs via NIMCET' },
+        { value: 'central_cuet', label: 'Central & State Universities via CUET PG / State CET' },
+        { value: 'online_mca', label: 'Online MCA alongside a Tech Job' },
+      ],
+      nextQuestion: 'pg_skills_tech_eng',
+    },
+    {
+      key: 'pg_general_focus',
+      text: 'Which M.Sc / MA / M.Com specialization are you targeting?',
+      type: 'single',
+      options: [
+        { value: 'msc_data_cs', label: 'M.Sc Data Science, AI, Maths or Statistics (IIT JAM / CUET)' },
+        { value: 'msc_core_science', label: 'M.Sc Physics, Chemistry, Biotech or Life Sciences' },
+        { value: 'ma_econ_psych', label: 'MA Economics, Psychology, Public Policy or Journalism' },
+        { value: 'mcom_finance', label: 'M.Com Accounting, Finance & Taxation' },
+      ],
+      nextQuestion: 'pg_skills_research_academia',
+    },
+    {
+      key: 'pg_medical_focus',
+      text: 'Which Medical or Healthcare PG path are you pursuing?',
+      type: 'single',
+      options: [
+        { value: 'md_ms', label: 'MD / MS Clinical Specialization (NEET PG / INI-CET)' },
+        { value: 'mds_mph', label: 'MDS (Dental) / MPH (Public Health) / MHA (Hospital Admin)' },
+        { value: 'mpharm', label: 'M.Pharm / Pharmaceutics / Clinical Research (GPAT / NIPER)' },
+        { value: 'abroad_med', label: 'Abroad Medical Licensing (USMLE / PLAB / AMC)' },
+      ],
+      nextQuestion: 'pg_skills_medical',
+    },
+    {
+      key: 'pg_llm_focus',
+      text: 'Which LLM specialization are you targeting?',
+      type: 'single',
+      options: [
+        { value: 'corporate_commercial', label: 'Corporate, Commercial & Tax Law (CLAT PG / NLUs)' },
+        { value: 'constitutional_criminal', label: 'Constitutional, Criminal & Judicial Services' },
+        { value: 'ipr_tech_law', label: 'IPR, Cyber Law, AI Regulation & International Arbitration' },
+      ],
+      nextQuestion: 'pg_skills_law',
+    },
+    {
+      key: 'pg_design_focus',
+      text: 'Which Design or Architecture PG track are you targeting?',
+      type: 'single',
+      options: [
+        { value: 'mdes_ux_product', label: 'M.Des UI/UX, Interaction & Product Design (CEED / NID)' },
+        { value: 'march_urban', label: 'M.Arch, Urban Planning & Sustainable Design (GATE)' },
+        { value: 'visual_media', label: 'Visual Communication, Animation & Game Design' },
+      ],
+      nextQuestion: 'pg_skills_design',
+    },
+    {
+      key: 'pg_abroad_region',
+      text: 'Which region are you targeting for your Masters Abroad?',
+      type: 'single',
+      options: [
+        { value: 'usa_canada', label: 'USA / Canada (MS, MBA, Co-op Programs)' },
+        { value: 'uk_ireland', label: 'UK / Ireland (1-Year Masters)' },
+        { value: 'germany_europe', label: 'Germany / Europe (Low/Zero Tuition Public Universities)' },
+        { value: 'australia_nz', label: 'Australia / New Zealand / Singapore' },
+      ],
+      nextQuestion: 'pg_skills_abroad',
+    },
+    {
+      key: 'pg_phd_focus',
+      text: 'Where do you plan to pursue your PhD?',
+      type: 'single',
+      options: [
+        { value: 'india_iit_iisc', label: 'India – IITs / IISc / Central Universities (UGC NET / CSIR NET / GATE)' },
+        { value: 'abroad_funded_phd', label: 'Abroad – Fully Funded PhD (US / Europe / UK)' },
+        { value: 'industrial_rd', label: 'Industrial R&D / Executive PhD' },
+      ],
+      nextQuestion: 'pg_skills_research_academia',
+    },
+
+    /* ======================
+       4. DOMAIN-SPECIFIC PG SKILLS (INDIAN & GLOBAL)
+    ====================== */
+    {
+      key: 'pg_skills_tech_eng',
+      text: 'Which advanced technical or exam skill do you want to prioritize?',
+      type: 'single',
+      options: [
+        { value: 'gate_nimcet_prep', label: 'GATE / NIMCET / CUET PG Exam Mastery' },
+        { value: 'system_design_dsa', label: 'Advanced DSA, System Design & Cloud Architecture (AWS/K8s)' },
+        { value: 'ai_ml_llm_research', label: 'AI/ML, Deep Learning, LLMs & Research Paper Implementation' },
+        { value: 'core_eng_tools', label: 'Core R&D Tools (VLSI, Embedded, ANSYS, MATLAB, CAD/CAE)' },
+        { value: 'thesis_publications', label: 'Research Methodology, IEEE/Springer Publications & Patents' },
       ],
       nextQuestion: 'study_hours',
     },
-
-    /* ---------- RESEARCH ---------- */
     {
-      key: 'research_interest',
-      text: 'Which research domain excites you?',
+      key: 'pg_skills_mba',
+      text: 'Which MBA entrance or executive skill do you want to master?',
       type: 'single',
       options: [
-        { value: 'ai_research', label: 'AI Research' },
-        { value: 'space', label: 'Space & Aerospace' },
-        { value: 'biotech_research', label: 'Biotechnology Research' },
-        { value: 'social_science', label: 'Social Science Research' },
+        { value: 'cat_xat_gmat', label: 'CAT / XAT / SNAP / GMAT & GD-PI Preparation' },
+        { value: 'case_study_consulting', label: 'Case Interviews, Guesstimates & Management Consulting' },
+        { value: 'fin_modeling_val', label: 'Financial Modeling, Valuation, M&A & CFA Prep' },
+        { value: 'product_analytics', label: 'Product Management, SQL, Power BI & Growth Analytics' },
+        { value: 'exec_comm', label: 'Executive Communication, Negotiation & Leadership' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    {
+      key: 'pg_skills_research_academia',
+      text: 'Which academic or research skill do you want to build?',
+      type: 'single',
+      options: [
+        { value: 'net_jrf_jam', label: 'UGC NET / CSIR NET / JRF / IIT JAM / CUET PG Prep' },
+        { value: 'data_stats_r_python', label: 'Statistical Analysis (Python, R, SPSS, Econometrics)' },
+        { value: 'academic_writing', label: 'Academic Writing, LaTeX, Literature Review & Publishing' },
+        { value: 'teaching_pedagogy', label: 'Assistant Professor Prep, Grant Writing & Lab Skills' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    {
+      key: 'pg_skills_medical',
+      text: 'Which medical PG skill or exam prep is your top priority?',
+      type: 'single',
+      options: [
+        { value: 'neet_pg_inicet', label: 'NEET PG / INI-CET / GPAT / NIPER Exam Prep' },
+        { value: 'usmle_plab', label: 'USMLE / PLAB / OET International Licensing' },
+        { value: 'clinical_trials', label: 'Clinical Trials, Pharmacovigilance & Regulatory Affairs' },
+        { value: 'biostats_epi', label: 'Biostatistics, Epidemiology & Medical Research Publishing' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    {
+      key: 'pg_skills_law',
+      text: 'Which advanced legal skill do you want to master?',
+      type: 'single',
+      options: [
+        { value: 'clat_pg_net', label: 'CLAT PG / AILET PG / UGC NET Law Prep' },
+        { value: 'corporate_drafting', label: 'Advanced Contract Drafting, M&A & Cross-Border Arbitration' },
+        { value: 'judiciary_advocacy', label: 'Higher Judiciary Prep, Writ Drafting & Appellate Advocacy' },
+        { value: 'legal_research', label: 'Policy Research, Legal Publishing & AI/Tech Regulation' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    {
+      key: 'pg_skills_design',
+      text: 'Which advanced design or architecture skill do you want to master?',
+      type: 'single',
+      options: [
+        { value: 'ceed_gate_portfolio', label: 'CEED / NID DAT / GATE Arch & Portfolio Curation' },
+        { value: 'ux_research_systems', label: 'UX Research, Design Systems, Prototyping & AI Design Tools' },
+        { value: 'bim_sustainable', label: 'BIM (Revit), Parametric Design (Rhino/Grasshopper) & LEED' },
+        { value: 'design_leadership', label: 'Design Strategy, Brand Direction & Global Freelancing' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    {
+      key: 'pg_skills_abroad',
+      text: 'Which international admission or global career skill do you need most?',
+      type: 'single',
+      options: [
+        { value: 'gre_gmat_ielts', label: 'GRE / GMAT + IELTS / TOEFL / Duolingo Test Prep' },
+        { value: 'profile_sop_lor', label: 'SOP, LOR, Academic CV & Scholarship Applications (DAAD/Fulbright)' },
+        { value: 'foreign_language', label: 'Foreign Language Learning (German A1–B2, French, Japanese)' },
+        { value: 'global_job_prep', label: 'Global Resume, LinkedIn Networking & Cold-Emailing Professors' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+    /* ---------- RESEARCH ---------- */
+    /* ======================
+       RESEARCH PATH
+    ====================== */
+    {
+      key: 'research_interest',
+      text: 'Which research domain excites you most?',
+      type: 'single',
+      options: [
+        { value: 'ai_quantum', label: 'AI, Machine Learning & Quantum Computing' },
+        { value: 'space_defense', label: 'Space, Aerospace & Defense R&D (ISRO / DRDO / NASA)' },
+        { value: 'biotech_medical', label: 'Biotechnology, Genetics & Medical Research (ICMR / AIIMS)' },
+        { value: 'core_science_semicon', label: 'Physics, Chemistry, Materials & Semiconductors' },
+        { value: 'climate_energy', label: 'Climate Change, Clean Energy & Sustainability' },
+        { value: 'robotics_hardware', label: 'Robotics, Autonomous Systems & IoT' },
+        { value: 'econ_policy_social', label: 'Economics, Public Policy & Social Sciences' },
+        { value: 'psych_humanities', label: 'Psychology, Neuroscience & Humanities' },
+        { value: 'agri_food_research', label: 'Agriculture, Food Science & Environmental Research' },
+      ],
+      nextQuestion: 'research_destination',
+    },
+
+    {
+      key: 'research_destination',
+      text: 'Where do you want to pursue your research career?',
+      type: 'single',
+      options: [
+        { value: 'india_premier', label: 'Indian Premier Institutes (IISc, IITs, TIFR, IISERs, CSIR)' },
+        { value: 'india_govt_labs', label: 'Indian Govt R&D Labs (ISRO, DRDO, BARC, ICMR)' },
+        { value: 'abroad_phd', label: 'Abroad – Fully Funded PhD / MS (US, Europe, UK, Singapore)' },
+        { value: 'corporate_rd', label: 'Corporate & Industrial R&D (Google DeepMind, Microsoft, Pharma)' },
+        { value: 'ug_early_research', label: 'Undergraduate / Early Research Internships First' },
+      ],
+      nextQuestion: 'research_skills',
+    },
+
+    {
+      key: 'research_skills',
+      text: 'Which research skill or exam prep do you need to build right now?',
+      type: 'single',
+      options: [
+        { value: 'indian_fellowships', label: 'Indian Fellowships & Exams (CSIR-NET, UGC-NET, GATE, JEST, PMRF)' },
+        { value: 'abroad_research_prep', label: 'Abroad Research Prep (GRE, IELTS, SOP & Cold-Emailing Professors)' },
+        { value: 'paper_writing_latex', label: 'Literature Review, LaTeX & Publishing (IEEE, Nature, Scopus)' },
+        { value: 'data_simulation_tools', label: 'Research Coding & Simulation (Python, R, MATLAB, ANSYS, SPSS)' },
+        { value: 'lab_patents_grants', label: 'Experimental Lab Skills, Patents (IPR) & Grant Writing' },
       ],
       nextQuestion: 'research_commitment',
     },
 
     {
       key: 'research_commitment',
-      text: 'Are you ready for 4–6 years of deep research work?',
+      text: 'Are you ready for 4–6 years of deep, long-term research work?',
       type: 'single',
       options: [
-        { value: 'yes', label: 'Yes, fully committed' },
-        { value: 'maybe', label: 'Not sure yet' },
-        { value: 'no', label: 'Not ready for long-term research' },
+        { value: 'yes', label: 'Yes, fully committed to deep research' },
+        { value: 'maybe', label: 'Not sure yet – want to test with a short internship first' },
+        { value: 'no', label: 'Not ready for 4–6 years – prefer applied industry roles' },
       ],
       nextQuestion: 'study_hours',
     },
@@ -427,20 +1221,58 @@ export const dreamCategories: DreamCategory[] = [
     /* ================================================== */
     {
       key: 'study_hours',
-      text: 'How many hours per day can you realistically study?',
+      text: 'How many hours per day can you realistically study or practice?',
       type: 'number',
       validation: { min: 1, max: 16 },
+      nextQuestion: 'learning_style',
+    },
+
+    {
+      key: 'learning_style',
+      text: 'How do you learn best?',
+      type: 'single',
+      options: [
+        { value: 'self_paced_online', label: 'Self-Paced Online (YouTube, Courses, Documentation)' },
+        { value: 'structured_coaching', label: 'Structured Coaching / Live Classes / Mentorship' },
+        { value: 'hands_on_projects', label: 'Hands-On Projects, Labs & Real-World Practice' },
+        { value: 'books_notes', label: 'Textbooks, Standard Reference Books & Written Notes' },
+      ],
+      nextQuestion: 'location_preference',
+    },
+
+    {
+      key: 'location_preference',
+      text: 'Where are you open to studying or working?',
+      type: 'single',
+      options: [
+        { value: 'home_state', label: 'Near Home / Within My Home State' },
+        { value: 'anywhere_india', label: 'Anywhere in India (Top Cities & Institutes)' },
+        { value: 'abroad', label: 'Abroad (International Universities / Global Jobs)' },
+        { value: 'remote_online', label: 'Online / Remote Flexibility' },
+      ],
       nextQuestion: 'financial_constraint',
     },
 
     {
       key: 'financial_constraint',
-      text: 'Do you have financial constraints?',
+      text: 'What is your financial situation for this path?',
       type: 'single',
       options: [
-        { value: 'no', label: 'No constraints' },
-        { value: 'moderate', label: 'Need affordable options' },
-        { value: 'high', label: 'Need scholarships / free education' },
+        { value: 'no', label: 'No constraints – can invest in paid courses / private colleges' },
+        { value: 'moderate', label: 'Moderate – need affordable options or education loans' },
+        { value: 'high', label: 'High constraints – need scholarships, stipends, or free resources' },
+      ],
+      nextQuestion: 'support_system',
+    },
+
+    {
+      key: 'support_system',
+      text: 'How is your family and mentor support for this goal?',
+      type: 'single',
+      options: [
+        { value: 'full_support', label: 'Full family support' },
+        { value: 'need_convincing', label: 'Unsure – need a clear plan to convince my parents' },
+        { value: 'independent', label: 'Managing completely on my own' },
       ],
       nextQuestion: 'confidence_level',
     },
@@ -450,15 +1282,14 @@ export const dreamCategories: DreamCategory[] = [
       text: 'How confident are you about this education path?',
       type: 'single',
       options: [
-        { value: 'very_confident', label: 'Very Confident' },
-        { value: 'somewhat', label: 'Somewhat Confident' },
-        { value: 'confused', label: 'Still Confused' },
+        { value: 'very_confident', label: 'Very Confident – Ready to execute' },
+        { value: 'somewhat', label: 'Somewhat Confident – Need a structured roadmap' },
+        { value: 'confused', label: 'Still Confused – Need clarity and backup options' },
       ],
     },
 
   ],
 },
-
 
 /*
 ┌─────────────────────────┐
@@ -518,6 +1349,67 @@ export const dreamCategories: DreamCategory[] = [
       ],
     },
     {
+      key: 'basketball_position',
+      text: 'Your position in Basketball?',
+      type: 'single',
+      options: [
+        { value: 'point_guard', label: 'Point Guard', nextQuestion: 'competition_level' },
+        { value: 'shooting_guard', label: 'Shooting Guard', nextQuestion: 'competition_level' },
+        { value: 'forward', label: 'Small / Power Forward', nextQuestion: 'competition_level' },
+        { value: 'center', label: 'Center', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    // 🏐 VOLLEYBALL
+    {
+      key: 'volleyball_role',
+      text: 'Your role in Volleyball?',
+      type: 'single',
+      options: [
+        { value: 'setter', label: 'Setter', nextQuestion: 'competition_level' },
+        { value: 'spiker', label: 'Outside / Opposite Hitter (Spiker)', nextQuestion: 'competition_level' },
+        { value: 'middle_blocker', label: 'Middle Blocker', nextQuestion: 'competition_level' },
+        { value: 'libero', label: 'Libero (Defense)', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    // 🥊 BOXING
+    {
+      key: 'boxing_weight',
+      text: 'Your Boxing weight category?',
+      type: 'single',
+      options: [
+        { value: 'flyweight', label: 'Flyweight / Bantamweight', nextQuestion: 'competition_level' },
+        { value: 'lightweight', label: 'Lightweight / Welterweight', nextQuestion: 'competition_level' },
+        { value: 'middleweight', label: 'Middleweight', nextQuestion: 'competition_level' },
+        { value: 'heavyweight', label: 'Heavyweight', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    // 🤼 WRESTLING
+    {
+      key: 'wrestling_style',
+      text: 'Which Wrestling style do you prefer?',
+      type: 'single',
+      options: [
+        { value: 'freestyle', label: 'Freestyle Wrestling', nextQuestion: 'competition_level' },
+        { value: 'greco_roman', label: 'Greco-Roman Wrestling', nextQuestion: 'competition_level' },
+        { value: 'kushti', label: 'Traditional Indian Kushti / Pehlwani', nextQuestion: 'competition_level' },
+      ],
+    },
+
+    // 🥋 KARATE
+    {
+      key: 'karate_belt',
+      text: 'Your current Karate belt level?',
+      type: 'single',
+      options: [
+        { value: 'beginner', label: 'White / Yellow / Orange Belt', nextQuestion: 'competition_level' },
+        { value: 'intermediate', label: 'Green / Blue / Brown Belt', nextQuestion: 'competition_level' },
+        { value: 'black', label: 'Black Belt (Dan)', nextQuestion: 'competition_level' },
+      ],
+    },
+    {
   key: 'tennis_style',
   text: 'Tennis playing style?',
   type: 'single',
@@ -536,6 +1428,7 @@ export const dreamCategories: DreamCategory[] = [
     { value: 'grass', label: 'Grass', nextQuestion: 'competition_level' },
   ],
 },
+
 {
   key: 'baseball_role',
   text: 'Your role in baseball?',
