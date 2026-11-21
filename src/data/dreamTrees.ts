@@ -202,17 +202,22 @@ export const dreamCategories: DreamCategory[] = [
     /* ================================================== */
     /* UNDERGRADUATE */
     /* ================================================== */
-    {
+{
       key: 'ug_type',
       text: 'Which undergraduate path are you considering?',
       type: 'single',
       options: [
-        { value: 'engineering', label: 'Engineering (B.Tech / BE)', nextQuestion: 'engineering_branch' },
-        { value: 'degree', label: 'Degree (BSc / BCom / BA)', nextQuestion: 'degree_stream' },
-        { value: 'professional', label: 'Professional Courses', nextQuestion: 'professional_course' },
+        { value: 'engineering', label: 'Engineering & Tech (B.Tech / BE)', nextQuestion: 'engineering_branch' },
+        { value: 'medical', label: 'Medical & Healthcare (MBBS, BDS, B.Pharm, Nursing)', nextQuestion: 'medical_branch' },
+        { value: 'degree', label: 'General Degree (BSc / BCom / BA)', nextQuestion: 'degree_stream' },
+        { value: 'management', label: 'Business & Management (BBA / BMS)', nextQuestion: 'management_interest' },
+        { value: 'law', label: 'Integrated Law (BA LLB / BBA LLB)', nextQuestion: 'law_interest' },
+        { value: 'architecture_design', label: 'Architecture & Design (B.Arch / B.Des)', nextQuestion: 'design_interest' },
+        { value: 'agriculture', label: 'Agriculture & Allied Sciences (BSc Agri)', nextQuestion: 'agri_interest' },
+        { value: 'hospitality', label: 'Hotel Management & Aviation (BHM)', nextQuestion: 'hospitality_interest' },
+        { value: 'professional', label: 'Other Professional Courses (CA, CS, CMA)', nextQuestion: 'professional_course' },
       ],
     },
-
     /* ---------- ENGINEERING ---------- */
     {
       key: 'engineering_branch',
@@ -220,14 +225,84 @@ export const dreamCategories: DreamCategory[] = [
       type: 'single',
       options: [
         { value: 'cse', label: 'Computer Science (CSE)', nextQuestion: 'cse_specialization' },
+        { value: 'it', label: 'Information Technology (IT)', nextQuestion: 'it_interest' },
         { value: 'ai_ml', label: 'AI & Machine Learning', nextQuestion: 'ai_goal' },
         { value: 'data_science', label: 'Data Science', nextQuestion: 'data_goal' },
         { value: 'cyber_security', label: 'Cyber Security', nextQuestion: 'cyber_goal' },
         { value: 'ece', label: 'Electronics & Communication (ECE)', nextQuestion: 'ece_interest' },
+        { value: 'eee', label: 'Electrical & Electronics (EEE)', nextQuestion: 'eee_interest' },
         { value: 'mechanical', label: 'Mechanical Engineering', nextQuestion: 'mechanical_interest' },
         { value: 'civil', label: 'Civil Engineering', nextQuestion: 'civil_interest' },
+        { value: 'chemical', label: 'Chemical Engineering', nextQuestion: 'chemical_interest' },
+        { value: 'aerospace', label: 'Aerospace & Aeronautical', nextQuestion: 'aerospace_interest' },
         { value: 'biotech', label: 'Biotechnology', nextQuestion: 'biotech_goal' },
+        { value: 'marine', label: 'Marine Engineering', nextQuestion: 'marine_interest' },
+        { value: 'metallurgical', label: 'Metallurgical & Materials', nextQuestion: 'metallurgy_interest' },
+        { value: 'agricultural', label: 'Agricultural Engineering', nextQuestion: 'agri_interest' }
       ],
+    },
+    {
+      key: 'cse_specialization',
+      text: 'How do you prefer to acquire your CSE skills and qualifications?',
+      type: 'single',
+      options: [
+        { value: 'college', label: 'Traditional College (Full-time B.Tech/B.E.)', nextQuestion: 'cse_college_target' },
+        { value: 'self_taught', label: 'Self-Taught (Online courses, YouTube, Projects)', nextQuestion: 'cse_self_taught_resource' },
+        { value: 'bootcamp', label: 'Intensive Bootcamps / Skill Academies', nextQuestion: 'cse_bootcamp_type' },
+        { value: 'online_degree', label: 'Online Degree / Distance Education', nextQuestion: 'cse_online_degree_type' },
+      ],
+    },
+
+    // --- BRANCH 1: TRADITIONAL COLLEGE ---
+    {
+      key: 'cse_college_target',
+      text: 'What is your target for traditional college admission?',
+      type: 'single',
+      options: [
+        { value: 'tier_1', label: 'Top Tier Institutes (IITs, NITs, IIITs via JEE)' },
+        { value: 'state_level', label: 'State Level Engineering Colleges (EAMCET, KCET, etc.)' },
+        { value: 'private_direct', label: 'Private Universities / Direct Admission' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+
+    // --- BRANCH 2: SELF-TAUGHT ---
+    {
+      key: 'cse_self_taught_resource',
+      text: 'Which primary method will you use for self-learning?',
+      type: 'single',
+      options: [
+        { value: 'free_structured', label: 'Free Structured Curriculum (FreeCodeCamp, The Odin Project)' },
+        { value: 'video_tutorials', label: 'Video Courses (YouTube, Udemy, Coursera)' },
+        { value: 'project_based', label: 'Building Projects & Open Source (GitHub)' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+
+    // --- BRANCH 3: BOOTCAMPS ---
+    {
+      key: 'cse_bootcamp_type',
+      text: 'What financial and structure model are you looking for in a bootcamp?',
+      type: 'single',
+      options: [
+        { value: 'isa', label: 'Pay After Placement (Income Share Agreement)' },
+        { value: 'paid_upfront', label: 'Paid Upfront (Usually 3-6 months specialized training)' },
+        { value: 'internship_model', label: 'Training + Guaranteed Internship Model' },
+      ],
+      nextQuestion: 'study_hours',
+    },
+
+    // --- BRANCH 4: ONLINE DEGREE ---
+    {
+      key: 'cse_online_degree_type',
+      text: 'Which type of online degree program interests you?',
+      type: 'single',
+      options: [
+        { value: 'premium_indian', label: 'Premier Indian Institute (e.g., IIT Madras Online B.S. in Data Science)' },
+        { value: 'bca_mca', label: 'Standard Online BCA / MCA from UGC recognized universities' },
+        { value: 'foreign_uni', label: 'Foreign University Remote Degree (via Coursera / edX)' },
+      ],
+      nextQuestion: 'study_hours',
     },
 
     {

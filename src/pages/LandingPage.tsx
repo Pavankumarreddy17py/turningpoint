@@ -36,7 +36,10 @@ export function LandingPage({ onGetStarted, setAppState }: LandingPageProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-4 pt-16 pb-12 text-center">
         <header className="mb-12">
           <img src={logoImg} alt="HJR Logo" className="w-32 h-32 mx-auto mb-6 drop-shadow-xl" />
-          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">J#₹-7 - Jindhagi Happy resource-7 </h1>
+          <h1 className="text-6xl font-extrabold mb-4 tracking-tight text-white drop-shadow-md uppercase">
+  <span className="block">J#₹-7</span>
+  <span className="block">Jindhagi Happy resource-7</span>
+</h1>
           <h2 className="text-3xl font-bold text-blue-100 mb-6 drop-shadow-sm">Turning Confusion into Clear Dream Paths</h2>
           <Button 
             size="lg" 

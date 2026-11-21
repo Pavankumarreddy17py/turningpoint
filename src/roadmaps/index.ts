@@ -1266,7 +1266,7 @@ function generateFilmRoadmap(dreamName: string, responses: Record<string, string
     backup_options: [
       'Consulting or advising others based on your acquired knowledge',
       'Teaching or creating educational content in this specific niche',
-      'Applying the skill to a related, secondary industry',
+      
       'Taking a project management role overseeing practitioners of this skill',
       'Freelance contracting on specialized tasks'
     ],
